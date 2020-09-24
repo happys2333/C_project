@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/C++/arraylist.h
+iostream
+-
+string
+-
+sstream
+-
+
+/Users/happys/Desktop/project/C++/main.cpp
+iostream
+-
+main.h
+/Users/happys/Desktop/project/C++/main.h
+
+/Users/happys/Desktop/project/C++/main.h
+string
+/Users/happys/Desktop/project/C++/string
+vector
+-
+arraylist.h
+/Users/happys/Desktop/project/C++/arraylist.h
+TargetConditionals.h
+-
+vector
+-
+
