@@ -19,9 +19,13 @@ void error(int code,string filename,int line){
                    "Error reports: in file %s in line %d",filename.c_str(),line);
             exit(-1);
         case -2:
-            printf("Error: unsupported system please use other system and try again.\n"
+            printf("Error: unsupported command, please check your input\n"
                    "Error reports: in file %s in line %d",filename.c_str(),line);
-            exit(-2);
+            break;
+        case -3:
+            printf("Error: wrong command please try again\n"
+                   "Error reports: in file %s in line %d",filename.c_str(),line);
+            break;
         default:
             printf("Error: Unknown error, please connect with the author \n"
                    "Error reports: in file %s in line %d",filename.c_str(),line);
@@ -85,42 +89,92 @@ private:
     string result;
     int mode=0;
 public:
-    string addzeros(string str,int begin,int end){
-        for (int i=begin;i<end;i++){
-            str+="0";
-        }
-        return str;
-    }
-    
-    string add(string a1,string a2){
-        string temp= a1;
-        for(int i=0;i<a1.length();++i){
-            a1[i]=temp[a1.length()-i-1];
-        }
-        temp=a2;
-        for(int i=0;i<a2.length();++i){
-            a2[i]=temp[a2.length()-i-1];
-        }
-        a1+="0";a2+="0";
-        int maxlength= a1.length()>a2.length()?a1.length():a2.length();
-        a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
-        string result,tempstr;
-        int add;
-        for(int i=0;i<maxlength;i++){
-            add=a1[i]+a2[i]-'0'-'0';
-            if (add>=10){
-                a1[i+1]+=1;
-                add-=10;
+    ArrayList<string> split(string original,string need){
+        ArrayList<string> result;
+        string temp,pattern;
+        size_t len=need.length();
+        for(size_t i = 0; i < original.length(); i++)
+        {
+            if(need[0] == original[i])
+            {
+                pattern = original.substr(i, len);
+                if(pattern == need)
+                {
+                    i += len - 1;
+                    if(!temp.empty())
+                    {
+                        result.add(temp);
+                        temp.clear();
+                    }
+                }
+                else
+                {
+                    temp.push_back(original[i]);
+                }
             }
-            tempstr=(char(add) + '0');
-            result.insert(0, tempstr);
+            else
+            {
+                temp.push_back(original[i]);
+            }
         }
-        if(result[0]=='0'){
-            result.erase(0,1);
+
+        if(!temp.empty())
+        {
+            result.add(temp);
         }
+
         return result;
     }
-    string minus
+    string changetonormal(string a1){
+        if (a1.find('e')){
+            ArrayList<string> num=split(a1,"e");
+            if (num.size()!=2) {
+                error(-2,__FILE_NAME__,__LINE__);
+                return "wrong";
+            }
+            if (a1.find('.')){
+
+            } else{
+
+            }
+        }
+    }
+    string add(string s1,string s2){
+
+    }
+    string minus(string s1,string s2){
+
+    }
+    string multiple(string s1,string s2){
+
+    }
+    string mod(string s1,string s2){
+
+    }
+    string divide(string s1,string s2){
+        string s = "", t = "";
+        int n = s1.length(), m = s2.length();
+        bool flag = false;
+        for (int i = 0; i < n; i ++) {
+            s += s1[i];
+            int num = 0;
+            while (cmp(s, s2) == false) {
+                num ++;
+                s = sub(s, s2);
+            }
+            if (num > 0) {
+                flag = true;
+                char c = (char)(num + '0');
+                t += c;
+            }
+            else if (flag) {
+                t += '0';
+            }
+        }
+        if (t.length() == 0) t = "0";
+        while (s[0] == '0' && s.length() > 1) s = s.substr(1);
+        return make_pair(t, s);
+    }
     void finish(){
         num.clear();
         dosome.clear();
@@ -128,20 +182,41 @@ public:
         result="";
         mode=0;
     }
-    void setcmd(string command){
-
-    }
 
 }calculator;
+void onlyline(string cmd){
+    string needsovle="";
+    for (int i=2;i<cmd.length();i++){
+        needsovle[i-3]=cmd[i];
+    }
+    printf("正在计算您的表达式： %s 请稍后",needsovle.c_str());
+}
+void multiline(){
+
+}
 void gethelp(){
-    printf("");
+    printf("本程序由开心制作\n"
+           "版本：1.0\n"
+           "相关可以操控的指令如下：\n"
+           "-h 获取计算器帮助\n"
+           "-c 表达式 进行简单的单行计算，支持（）和常用函数表达式\n"
+           "-s 进入多行表达式模式，在进入后会给予提示，请在进入后进行输入\n"
+           "-q 退出本程序\n");
 }
 void mainloop(){
     string cmd="";
     printf("本程序是一款高级智能的计算器，采用c++编写而成，通过控制台指令进行操控，如果您想获取帮助请输入-h，如果您想退出请输入-q\n");
     while (cmd!="-q"){
-
+        printf("请输入您的指令>>>");
+        cmd=readlinecmd();
+        if (cmd[0]!='-'){
+            error(-3,__FILE_NAME__,__LINE__);
+            continue;
+        } else if (cmd=="-h") gethelp();
+        else if (cmd[1]=='c') onlyline(cmd);
+        else if (cmd[1]=='s') multiline();
     }
+    printf("感谢您的使用");
 }
 
 

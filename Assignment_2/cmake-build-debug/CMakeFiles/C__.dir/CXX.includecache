@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/happys/Desktop/project/C++/arraylist.h
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/arraylist.h
 iostream
 -
 string
@@ -14,19 +14,17 @@ string
 sstream
 -
 
-/Users/happys/Desktop/project/C++/main.cpp
-iostream
--
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/main.cpp
 main.h
-/Users/happys/Desktop/project/C++/main.h
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/main.h
 
-/Users/happys/Desktop/project/C++/main.h
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/main.h
 string
-/Users/happys/Desktop/project/C++/string
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/string
 vector
 -
 arraylist.h
-/Users/happys/Desktop/project/C++/arraylist.h
+/Users/happys/Desktop/project/C++/C_project/Assignment_2/arraylist.h
 TargetConditionals.h
 -
 vector
