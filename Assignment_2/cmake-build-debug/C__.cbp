@@ -89,6 +89,9 @@
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/Assignment_2/main.h">
 			<Option target="C__"/>
 		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/Assignment_2/mathsin.h">
+			<Option target="C__"/>
+		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/Assignment_2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

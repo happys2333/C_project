@@ -11,6 +11,7 @@
 #include <vector>
 #include "arraylist.h"
 #include <algorithm>
+#include "mathsin.h"
 using namespace std;
 /* 这里是一些常用的科学函数
  * */
@@ -107,12 +108,15 @@ public:
             error(2,__FILE_NAME__,__LINE__);
         }
         int len=s1.length();
-        for (int i=len-1;i>s1.find('.')-1;i--){
+        for (int i=len-1;i>s1.find('.');i--){
             if (s1[i]=='0'||s1[i]=='.'){
                 s1.pop_back();
             } else{
                 break;
             }
+        }
+        if(s1=="0."){
+            return "0";
         }
         return s1;
     }
@@ -159,12 +163,14 @@ public:
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
-        } else if (a2.find('.')==-1){
+        }
+        if (a2.find('.')==-1){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
             }
-        } else if (a1len==a2len) {}
+        }
+        if (a1len==a2len) {}
         else{
             if (a1len>a2len){
                 for (int i=0;i<a1len-a2len;i++){
@@ -204,10 +210,17 @@ public:
                 a1[i+1]+=1;
                 add-=10;
             }
+            if (a1[i+1]=='.'){
+                tempstr=(char(add) + '0');
+                result.insert(0, tempstr);
+                result.insert(0,".");
+                i++;
+                continue;
+            }
             tempstr=(char(add) + '0');
             result.insert(0, tempstr);
         }
-        if(result[0]=='0'){
+        if(result[0]=='0'&&result[1]!='.'){
             result.erase(0,1);
         }
         result=delremin(result);
@@ -229,7 +242,7 @@ public:
                     return true;
                 }
             }
-            if (len1>len2) return true;
+            if (len1>=len2) return true;
             else return false;
         }
     }
@@ -242,12 +255,14 @@ public:
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
-        } else if (a2.find('.')==-1){
+        }
+        if (a2.find('.')==-1){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
             }
-        } else if (a1len==a2len) {}
+        }
+        if (a1len==a2len) {}
         else{
             if (a1len>a2len){
                 for (int i=0;i<a1len-a2len;i++){
@@ -302,7 +317,7 @@ public:
             tempstr=(char(add) + '0');
             result.insert(0, tempstr);
         }
-        if(result[0]=='0'){
+        if(result[0]=='0'&&result[1]!='.'){
             result.erase(0,1);
         }
         result=delremin(result);
@@ -365,7 +380,35 @@ public:
         return delremin(result);
     }
     string sins(string x){
+        return doubletostr(lookup_sin(stold(x)),7);
+    }
+    string coss(string x){
+        return doubletostr(lookup_cos(stold(x)),7);
+    }
+    string tans(string x){
+        return doubletostr(lookup_tan(stold(x)),7);
+    }
+    string cots(string x){
+        return doubletostr(lookup_cot(stold(x)),7);
+    }
+    string facts(string x){
+        if(x=="1"||x=="0") return "1";
+        string result="0";
+        long long ned=stoll(x);
+        for(long long i=0;i<ned;i++){
 
+        }
+    }
+    string exps(string x){
+        return doubletostr(exp(stold(x)),10);
+    }
+    string getMax(string x,string y){
+        if(big(x,y)) return x;
+        return y;
+    }
+    string getMin(string x,string y){
+        if(big(x,y)) return y;
+        return x;
     }
 
 }function;

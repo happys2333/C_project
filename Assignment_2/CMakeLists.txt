@@ -3,4 +3,4 @@ project(C__)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(C__ main.cpp main.h arraylist.h)
+add_executable(C__ main.cpp main.h arraylist.h mathsin.h)
