@@ -150,7 +150,6 @@ string addzeros(string str,int begin,int end){
     return str;
 }
 string add(string a1,string a2){
-    if (a1.find('.')==-1||a2.find('.')==-1){
         int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
         if (a1.find('.')==-1){
             a1+='.';
@@ -166,11 +165,11 @@ string add(string a1,string a2){
         else{
             if (a1len>a2len){
                 for (int i=0;i<a1len-a2len;i++){
-                    a1+='0';
+                    a2+='0';
                 }
             } else{
                 for (int i=0;i<a2len-a1len;i++){
-                    a2+='0';
+                    a1+='0';
                 }
             }
         }
@@ -182,9 +181,9 @@ string add(string a1,string a2){
         for(int i=0;i<a2.length();++i){
             a2[i]=temp[a2.length()-i-1];
         }
-        a1+="0";a2+="0";
         int maxlength= a1.length()>a2.length()?a1.length():a2.length();
         a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
+        a1+="0";a2+="0";
         string result,tempstr;
         int add;
         for(int i=0;i<maxlength;i++){
@@ -195,6 +194,8 @@ string add(string a1,string a2){
                     add-=10;
                     tempstr=(char(add) + '0');
                     result.insert(0, tempstr);
+                    result.insert(0,".");
+                    i++;
                     continue;
                 }
                 a1[i+1]+=1;
@@ -206,8 +207,69 @@ string add(string a1,string a2){
         if(result[0]=='0'){
             result.erase(0,1);
         }
+        result=delremin(result);
         return result;
-    } else{
+    }
+```
+这里需要说明的是，此段代码参考了我上次的整数加法的方法，对于浮点数我采取的是当检测到小数点的时候直接跳过而将需要进位的数据向前移位，从而保证运算的准确性。
+#### 减法
+减法的思想和加法相似，区别是需要在计算前对两个字符串全部进行比较，这里只需要考虑两个整数情况，对于存在负数的情况，会在语法树解析中进行处理    
+首先需要对其大小比较
+```cpp
+ bool big(string str1,string str2){
+         if(str1.find('.')>str2.find('.')){
+             return true;
+         }else if(str1.find('.')<str2.find('.')){
+             return false;
+         }else{
+             int len1 = str1.length(),len2 = str2.length();
+             int len=min(len1,len2);
+             for(int i=0;i<len;i++){
+                 if(str1<str2){
+                     return false;
+                 }
+                 else if (str1>str2){
+                     return true;
+                 }
+             }
+             if (len1>len2) return true;
+             else return false;
+         }
+     }
+```
+然后采取和加法相似的技巧进行运算
+```cpp
+string minusnum(string a1,string a2){
+        bool positve;
+        big(a1,a2)?positve=true:positve=false;
+        int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
+        if (a1.find('.')==-1){
+            a1+='.';
+            for (int i=0;i<a2len;i++){
+                a1+='0';
+            }
+        } else if (a2.find('.')==-1){
+            a2+='.';
+            for (int i=0;i<a1len;i++){
+                a2+='0';
+            }
+        } else if (a1len==a2len) {}
+        else{
+            if (a1len>a2len){
+                for (int i=0;i<a1len-a2len;i++){
+                    a2+='0';
+                }
+            } else{
+                for (int i=0;i<a2len-a1len;i++){
+                    a1+='0';
+                }
+            }
+        }
+        if (!positve){
+            string t=a1;
+            a1=a2;
+            a2=t;
+        }
         string temp= a1;
         for(int i=0;i<a1.length();++i){
             a1[i]=temp[a1.length()-i-1];
@@ -216,16 +278,32 @@ string add(string a1,string a2){
         for(int i=0;i<a2.length();++i){
             a2[i]=temp[a2.length()-i-1];
         }
-        a1+="0";a2+="0";
         int maxlength= a1.length()>a2.length()?a1.length():a2.length();
         a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
+        a1+="0";a2+="0";
         string result,tempstr;
         int add;
         for(int i=0;i<maxlength;i++){
-            add=a1[i]+a2[i]-'0'-'0';
-            if (add>=10){
-                a1[i+1]+=1;
-                add-=10;
+            add=a1[i]-a2[i];
+            if (add<0){
+                if (a1[i+1]=='.'){
+                    a1[i+2]-=1;
+                    add+=10;
+                    tempstr=(char(add) + '0');
+                    result.insert(0, tempstr);
+                    result.insert(0,".");
+                    i++;
+                    continue;
+                }
+                a1[i+1]-=1;
+                add+=10;
+            }
+            if (a1[i+1]=='.'){
+                tempstr=(char(add) + '0');
+                result.insert(0, tempstr);
+                result.insert(0,".");
+                i++;
+                continue;
             }
             tempstr=(char(add) + '0');
             result.insert(0, tempstr);
@@ -233,13 +311,12 @@ string add(string a1,string a2){
         if(result[0]=='0'){
             result.erase(0,1);
         }
+        result=delremin(result);
+        if(positve) return result;
+        result.insert(0,"-");
         return result;
     }
-}
 ```
-这里需要说明的是，此段代码参考了我上次的整数加法的方法，对于浮点数我采取的是当检测到小数点的时候直接跳过而将需要进位的数据向前移位，从而保证运算的准确性。
-#### 减法
-减法的思路和加法有所区别，主要是应该考虑前后两个数的大小差异，对于
 #### 乘法
 乘法原理告诉我们，乘以多少就相当于加多少次，所以乘法这里我直接是进行了循环相加来处理。
 所以这样的实现是不能进行浮点数乘浮点数，只能进行浮点数乘以整数的实现    
@@ -292,6 +369,16 @@ string divide(string s1,string s2){
 ```
 ### 其他科学函数
 对于常用的科学函数，本程序并未实现更进一步的高精度计算，因为本身一部分的科学函数进行高精度计算是没有意义的，所以本程序对于绝大部分的函数都采取了使用原生C++库和一点优化的方法，其中三角函数等内容通过pi进行了伪高精度运算。
+这里我们实现了如下的函数   
+- sqrt[] 开根
+- sin[] sin函数
+- cos[] cos函数
+- tan[] tan函数
+- exp[] 自然指数
+- pow[] 乘方
+- fort[] 阶乘
+- max[] 获取最大值
+- min[] 获取最小值
 ## 语法树分析
 #### 对于单行计算，采取递归方法进行计算，利用对语法树的分析，从而对数据进行计算，优先计算括号内，然后再计算科学函数，然后是乘除法，最后进行加减计算，在计算时，会对负负得正的情况进行处理，从而简化计算。
 
@@ -322,3 +409,4 @@ macOS：
 - 科学计数法：本程序支持输入科学计数法的表达方法（例如：1e10）。
 - 清晰的注释：采取仿照EA公司的注释规范，增强代码可读性。
 - 更多的科学计算：参考了其他计算器的设计方法，实现了很多科学常数的存储，方便进行运算。
+- 库文件和主函数的分开：通过将库和主函数的分开，可以更好对代码进行以后对迁移

@@ -153,95 +153,162 @@ public:
         return str;
     }
     string add(string a1,string a2){
-        if (a1.find('.')==-1||a2.find('.')==-1){
-            int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
-            if (a1.find('.')==-1){
-                a1+='.';
-                for (int i=0;i<a2len;i++){
-                    a1+='0';
-                }
-            } else if (a2.find('.')==-1){
-                a2+='.';
-                for (int i=0;i<a1len;i++){
+        int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
+        if (a1.find('.')==-1){
+            a1+='.';
+            for (int i=0;i<a2len;i++){
+                a1+='0';
+            }
+        } else if (a2.find('.')==-1){
+            a2+='.';
+            for (int i=0;i<a1len;i++){
+                a2+='0';
+            }
+        } else if (a1len==a2len) {}
+        else{
+            if (a1len>a2len){
+                for (int i=0;i<a1len-a2len;i++){
                     a2+='0';
                 }
-            } else if (a1len==a2len) {}
-            else{
-                if (a1len>a2len){
-                    for (int i=0;i<a1len-a2len;i++){
-                        a1+='0';
-                    }
-                } else{
-                    for (int i=0;i<a2len-a1len;i++){
-                        a2+='0';
-                    }
+            } else{
+                for (int i=0;i<a2len-a1len;i++){
+                    a1+='0';
                 }
             }
-            string temp= a1;
-            for(int i=0;i<a1.length();++i){
-                a1[i]=temp[a1.length()-i-1];
-            }
-            temp=a2;
-            for(int i=0;i<a2.length();++i){
-                a2[i]=temp[a2.length()-i-1];
-            }
-            a1+="0";a2+="0";
-            int maxlength= a1.length()>a2.length()?a1.length():a2.length();
-            a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
-            string result,tempstr;
-            int add;
-            for(int i=0;i<maxlength;i++){
-                add=a1[i]+a2[i]-'0'-'0';
-                if (add>=10){
-                    if (a1[i+1]=='.'){
-                        a1[i+2]+=1;
-                        add-=10;
-                        tempstr=(char(add) + '0');
-                        result.insert(0, tempstr);
-                        continue;
-                    }
-                    a1[i+1]+=1;
+        }
+        string temp= a1;
+        for(int i=0;i<a1.length();++i){
+            a1[i]=temp[a1.length()-i-1];
+        }
+        temp=a2;
+        for(int i=0;i<a2.length();++i){
+            a2[i]=temp[a2.length()-i-1];
+        }
+        int maxlength= a1.length()>a2.length()?a1.length():a2.length();
+        a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
+        a1+="0";a2+="0";
+        string result,tempstr;
+        int add;
+        for(int i=0;i<maxlength;i++){
+            add=a1[i]+a2[i]-'0'-'0';
+            if (add>=10){
+                if (a1[i+1]=='.'){
+                    a1[i+2]+=1;
                     add-=10;
+                    tempstr=(char(add) + '0');
+                    result.insert(0, tempstr);
+                    result.insert(0,".");
+                    i++;
+                    continue;
                 }
-                tempstr=(char(add) + '0');
-                result.insert(0, tempstr);
+                a1[i+1]+=1;
+                add-=10;
             }
-            if(result[0]=='0'){
-                result.erase(0,1);
-            }
-            result=delremin(result);
-            return result;
-        } else{
-            string temp= a1;
-            for(int i=0;i<a1.length();++i){
-                a1[i]=temp[a1.length()-i-1];
-            }
-            temp=a2;
-            for(int i=0;i<a2.length();++i){
-                a2[i]=temp[a2.length()-i-1];
-            }
-            a1+="0";a2+="0";
-            int maxlength= a1.length()>a2.length()?a1.length():a2.length();
-            a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
-            string result,tempstr;
-            int add;
-            for(int i=0;i<maxlength;i++){
-                add=a1[i]+a2[i]-'0'-'0';
-                if (add>=10){
-                    a1[i+1]+=1;
-                    add-=10;
+            tempstr=(char(add) + '0');
+            result.insert(0, tempstr);
+        }
+        if(result[0]=='0'){
+            result.erase(0,1);
+        }
+        result=delremin(result);
+        return result;
+    }
+    bool big(string str1,string str2){
+        if(str1.find('.')>str2.find('.')){
+            return true;
+        }else if(str1.find('.')<str2.find('.')){
+            return false;
+        }else{
+            int len1 = str1.length(),len2 = str2.length();
+            int len=min(len1,len2);
+            for(int i=0;i<len;i++){
+                if(str1<str2){
+                    return false;
                 }
-                tempstr=(char(add) + '0');
-                result.insert(0, tempstr);
+                else if (str1>str2){
+                    return true;
+                }
             }
-            if(result[0]=='0'){
-                result.erase(0,1);
-            }
-            return result;
+            if (len1>len2) return true;
+            else return false;
         }
     }
-    string minusnum(string s1,string s2){
-        bool flag=postive
+    string minusnum(string a1,string a2){
+        bool positve;
+        big(a1,a2)?positve=true:positve=false;
+        int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
+        if (a1.find('.')==-1){
+            a1+='.';
+            for (int i=0;i<a2len;i++){
+                a1+='0';
+            }
+        } else if (a2.find('.')==-1){
+            a2+='.';
+            for (int i=0;i<a1len;i++){
+                a2+='0';
+            }
+        } else if (a1len==a2len) {}
+        else{
+            if (a1len>a2len){
+                for (int i=0;i<a1len-a2len;i++){
+                    a2+='0';
+                }
+            } else{
+                for (int i=0;i<a2len-a1len;i++){
+                    a1+='0';
+                }
+            }
+        }
+        if (!positve){
+            string t=a1;
+            a1=a2;
+            a2=t;
+        }
+        string temp= a1;
+        for(int i=0;i<a1.length();++i){
+            a1[i]=temp[a1.length()-i-1];
+        }
+        temp=a2;
+        for(int i=0;i<a2.length();++i){
+            a2[i]=temp[a2.length()-i-1];
+        }
+        int maxlength= a1.length()>a2.length()?a1.length():a2.length();
+        a1.length()>a2.length()?a2=addzeros(a2,a2.length(),maxlength):a1=addzeros(a1,a1.length(),maxlength);
+        a1+="0";a2+="0";
+        string result,tempstr;
+        int add;
+        for(int i=0;i<maxlength;i++){
+            add=a1[i]-a2[i];
+            if (add<0){
+                if (a1[i+1]=='.'){
+                    a1[i+2]-=1;
+                    add+=10;
+                    tempstr=(char(add) + '0');
+                    result.insert(0, tempstr);
+                    result.insert(0,".");
+                    i++;
+                    continue;
+                }
+                a1[i+1]-=1;
+                add+=10;
+            }
+            if (a1[i+1]=='.'){
+                tempstr=(char(add) + '0');
+                result.insert(0, tempstr);
+                result.insert(0,".");
+                i++;
+                continue;
+            }
+            tempstr=(char(add) + '0');
+            result.insert(0, tempstr);
+        }
+        if(result[0]=='0'){
+            result.erase(0,1);
+        }
+        result=delremin(result);
+        if(positve) return result;
+        result.insert(0,"-");
+        return result;
     }
     string multiple(string s1,string s2){
         if(s2.find('.')!=-1) {//浮点数乘法进行非精准计算
@@ -403,6 +470,7 @@ void onlyline(string cmd){
 
 }
 class mut{
+public:
     string name;
     string value;
 };
@@ -413,10 +481,14 @@ void multiline(){
     string expression;
     mut M;
     ArrayList<mut> ex;
+    expression=readlinecmd();
     while (expression!="end"){
-
+        string name=expression.substr(0,expression.find('=')),value=expression.substr(expression.find('=')+1,expression.length());
+        M.name=name;
+        M.value=value;
+        ex.add(M);//传入动态数组
+        expression=readlinecmd();
     }
-
 }
 void gethelp(){
     printf("本程序由开心制作\n"
