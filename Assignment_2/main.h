@@ -480,6 +480,9 @@ public:
         }
         return doubletostr(d,len);
     }
+    /*
+     * 这里是对命令行的处理，通过递归实现
+     * */
     string calcut(string expression){
         string num1,num2,dosomething,temp;
         int left=expression.find('('),right=expression.find(')');
@@ -490,9 +493,11 @@ public:
             }
         } else {
             string result;
+            for (int i=0;i<expression.length();i++){
 
+            }
 
-            return
+            return result;
         }
     }
     void finish(){
