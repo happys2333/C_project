@@ -42,6 +42,19 @@ string calcut(string expression){
                 switch(expression[low-1]){
                     case 'w': //pow
                         expression.replace()
+                        break;
+                    case 'p':  //exp
+                        break;
+                    case 'x': //max
+                        break;
+                    case 'n': //min and sin and tan
+                        break;
+                    case 's': //cos and abs
+                        break;
+                    case 't': //cot and fact and sqrt
+                        break;
+                    default:
+                        break;
                 }
             }
         }
