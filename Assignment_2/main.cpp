@@ -17,7 +17,6 @@
 using namespace std;
 int main()
 {
-    string str="2*5/2*6+7+(8*9)+2";
-    cout<<calculator.calcut(str)<<endl;
+    multiline();
     return 0;
 }

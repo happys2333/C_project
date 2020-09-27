@@ -257,6 +257,9 @@ public:
         bool positve;
         big(a1,a2)?positve=true:positve=false;
         int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
+        if(a1.find('.')==-1&&a2.find('.')==-1){
+            goto intager;
+        }
         if (a1.find('.')==-1){
             a1+='.';
             for (int i=0;i<a2len;i++){
@@ -281,7 +284,7 @@ public:
                 }
             }
         }
-        if (!positve){
+       intager: if (!positve){
             string t=a1;
             a1=a2;
             a2=t;
@@ -352,7 +355,7 @@ public:
             positve= !positve;
         }
         if(s2[0]=='-') positve = !positve;
-        string result="0",temp="0";
+        string result="",temp="0";
         for (long long i=0;i<needed;i++){
             temp=add(s1,temp);
         }
@@ -413,12 +416,16 @@ public:
         error(2,__FILE_NAME__,__LINE__);
     }
     string facts(string x){
+        if(x[0]=='-') error(-4,__FILE_NAME__,__LINE__);
         if(x=="1"||x=="0") return "1";
         string result="0";
         long long ned=stoll(x);
-        for(long long i=0;i<ned;i++){
-
+        long long finalr=ned;
+        for(long long i=ned-1;i>0;i--){
+            ned = ned * i;
         }
+        result = to_string(ned);
+        return result;
     }
     string exps(string x){
         return doubletostr(exp(stold(x)),10);
@@ -623,7 +630,7 @@ public:
                         } //max
 
                         case 'n': //min and sin and tan
-                            switch(expression[low-4]){
+                            switch(expression[low-3]){
                                 case 'm':{
                                     string temp=getSub(expression,low+1,high);
                                     num1=getSub(temp,0,temp.find_first_of(','));
@@ -649,7 +656,7 @@ public:
                             }
                             break;
                         case 's': //cos and abs
-                            switch(expression[low-4]){
+                            switch(expression[low-3]){
                                 case 'c':{
                                     string temp=getSub(expression,low+1,high);
                                     temp=fun.coss(temp);
@@ -715,7 +722,7 @@ public:
                             po=i;
                         } else break;
                     }for (int i=index+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='-'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -741,11 +748,40 @@ public:
                     expression=expression.replace(po,num1.length()+num2.length()+1,result);
                 }
             }
+            //重新处理相关符号问题
+        index=0,index2=0;
+        while (true){
+            index=expression.find_first_of('+',index);
+            index2=expression.find_first_of('-',index2);
+            if(index==-1&&index2==-1) break;
+            if(index!=-1){
+                if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
+                if(index==0){
+                    if(expression[index+1]=='-') expression=expression.replace(0,2,"-");
+                    else expression=expression.replace(0,2,"");
+                }
+                else{
+                    if(expression[index+1]=='-') expression=expression.replace(index,2,"-");
+                    else expression=expression.replace(index,2,"+");
+                }
+            }
+            else if(index2!=-1){
+                if(expression[index2+1]!='+'&&expression[index2+1]!='-') { index2++;continue;}
+                if(index2==0){
+                    if(expression[index2+1]=='-') expression=expression.replace(0,2,"");
+                    else expression=expression.replace(0,2,"-");
+                }
+                else{
+                    if(expression[index2+1]=='-') expression=expression.replace(index2,2,"+");
+                    else expression=expression.replace(index2,2,"-");
+                }
+            }
+        }
             //第三次遍历处理加减法
             while (true) {
                 string num1,num2,result;
                 index=expression.find_first_of('+'),index2=expression.find_first_of('-');
-                if(index==-1&&index2==-1) break;
+                if(index<=0&&index2<=0) break;
                 if(index==-1) index=expression.length();
                 if(index2==-1) index2=expression.length();
                 if(index<index2){
@@ -800,7 +836,7 @@ public:
 };
 void multiline(){
     printf("欢迎进入多行操作模式，请您输入表达式，并在结束的时候输入end结束，注意，每行只能给一个变量进行负值，且结尾必须是需要输出的表达式\n"
-           "每行的格式是  变量名=表达式\n"
+           "每行的格式是:变量名=表达式\n"
            "最后一行的内容必须是表达式\n");
     string expression,anthor;
     mut M;
@@ -815,9 +851,8 @@ void multiline(){
         expression=readlinecmd();
     }
     int i=0;
-    while (true){
+    //将整个表达式进行转化成为标准表达式
 
-    }
 }
 void gethelp(){
     printf("本程序由开心制作\n"
