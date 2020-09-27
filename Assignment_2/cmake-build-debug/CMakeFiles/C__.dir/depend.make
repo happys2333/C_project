@@ -3,4 +3,6 @@
 
 CMakeFiles/C__.dir/main.cpp.o: ../arraylist.h
 CMakeFiles/C__.dir/main.cpp.o: ../main.cpp
+CMakeFiles/C__.dir/main.cpp.o: ../main.h
+CMakeFiles/C__.dir/main.cpp.o: ../mathsin.h
 

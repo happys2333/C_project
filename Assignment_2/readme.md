@@ -1,8 +1,9 @@
 # CS205 C/C++ Programming Assignment 2
 ## 概况
-##### 测试平台：windows10 x64 macOS 10.15 linux(kali)
-##### 编码：UTF-8
-##### C++标准：C++11
+![license](https://camo.githubusercontent.com/818cfc3c9527eef024edfb6ed40de7ec77301cfa/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f6d69746872696c2e737667)
+##### 测试平台：`windows10 x64` `macOS 10.15` `linux(kali)`
+##### 编码：`UTF-8`
+##### C++标准：`C++11`
 ## 目录
 - [设计思路与分析](#设计思路与分析)
 - [代码](#代码)
@@ -382,14 +383,104 @@ string divide(string s1,string s2){
 - abs[] 绝对值
 - max[] 获取最大值
 - min[] 获取最小值
+- get[] 使用一个科学数值    
+*本软件可以使用的科学数值使用方法如下，在get[]中输入如下内容即可调用*
+- pi 圆周率
+- sqrt_2 根号2
+- e 自然对数底数
+- sqrt_pi 根号下圆周率
+- pi_2 圆周率一半
 ## 语法树分析
 #### 对于单行计算，采取递归方法进行计算，利用对语法树的分析，从而对数据进行计算，优先计算括号内，然后再计算科学函数，然后是乘除法，最后进行加减计算，在计算时，会对负负得正的情况进行处理，从而简化计算。
-
+这里实现的是一个对输入的详细分析   
+_首先是对科学计数法进行处理_
+```cpp
+//处理科学计数法
+//处理科学计数法
+        int in=0;
+        while (true){
+            in=expression.find('e',in);
+            if(in==-1) break;
+            else{
+                string num="",temp="";
+                int left=0,right=expression.length();
+                for(int i=in-1;i>=0;i--){
+                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                        num = expression[i]+num;
+                    }
+                    else{
+                        left=i+1;
+                        break;
+                    }
+                }if(num==""){
+                    in++;
+                    continue;
+                }
+                num+="e";
+                for(int i=in+1;i<expression.length();i++){
+                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                        num += expression[i];
+                    }
+                    else{
+                        right=i;
+                        break;
+                    }
+                }
+                expression=expression.replace(left,right-left,changetonormal(num));
+            }
+        }
+```
+接下来是对正负号处理，这里处理的是1+-2=1-2这种类似的情况
+```cpp
+//对正负号处理
+        int index=0,index2=0;
+        while (true){
+            index=expression.find('+',index);
+            index2=expression.find('-',index2);
+            if(index==-1&&index2==-1) break;
+            if(index!=-1){
+                if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
+                if(index==0){
+                    if(expression[index+1]=='-') expression=expression.replace(0,2,"-");
+                    else expression=expression.replace(0,2,"");
+                }
+                else{
+                    if(expression[index+1]=='-') expression=expression.replace(index,2,"-");
+                    else expression=expression.replace(index,2,"+");
+                }
+            }
+            else if(index2!=-1){
+                if(expression[index2+1]!='+'&&expression[index2+1]!='-') { index2++;continue;}
+                if(index2==0){
+                    if(expression[index2+1]=='-') expression=expression.replace(0,2,"");
+                    else expression=expression.replace(0,2,"-");
+                }
+                else{
+                    if(expression[index2+1]=='-') expression=expression.replace(index2,2,"+");
+                    else expression=expression.replace(index2,2,"-");
+                }
+            }
+        }
+```
 #### 对于多行计算，采取类的方法进行处理，在处理这部分的时候调用了我上半年写的一个函数库的一部分，实现了仿照java的动态数组。
 这个库可以访问我上半年在CSDN的帖子，更多内容由于本次作业尚未涉及，所以这里我就没有把整个库的内容全部放出    
 帖子地址：[C++中实现java的方法（二）](https://blog.csdn.net/u013441283/article/details/104188281)   
-在每次
+在每次记录的时候，会对其对value进行计算（相当于进行一次单行运算）然后将这个返回值传入该动态数组。     
+最后进行最后一行的表达式计算，在运算前会进行遍历将所有未知数全部替换，然后进行一次单行运算
 ## 代码
+*main.cpp文件*
+```cpp
+
+```
+*arratlist.h*
+```cpp
+
+```
+*mathsin.h*
+```cpp
+
+```
+*main.h*
 ```cpp
 
 ```

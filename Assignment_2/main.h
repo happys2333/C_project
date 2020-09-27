@@ -15,7 +15,7 @@
 using namespace std;
 /* 这里是一些常用的科学函数
  * */
-#define M_exp "2.71828182845904523536028747135"
+#define M_e "2.71828182845904523536028747135"
 #define M_sqrt_2 "1.41421356237309504880168872421"
 #define M_pi "3.14159265358979323846264338328"
 #define M_sqrt_pi "1.77245385090551602729816748334"
@@ -391,6 +391,18 @@ public:
     string cots(string x){
         return doubletostr(lookup_cot(stold(x)),7);
     }
+    string abss(string x){
+        if(x[0]=='-'){return x.erase(0,1);}
+        else{return x;}
+    }
+    string gets(string x){
+        if(x=="pi") return M_pi;
+        if(x=="sqrt_2") return M_sqrt_2;
+        if(x=="sqrt_pi") return M_sqrt_pi;
+        if(x=="e") return M_e;
+        if(x=="pi_2") return M_pi_2;
+        error(2,__FILE_NAME__,__LINE__);
+    }
     string facts(string x){
         if(x=="1"||x=="0") return "1";
         string result="0";
@@ -411,7 +423,7 @@ public:
         return x;
     }
 
-}function;
+}fun;
 //计算器主要区域：包括整个对数据的分析与处理，计算的内容等。
 class Calculator{
 private:
@@ -483,23 +495,218 @@ public:
     /*
      * 这里是对命令行的处理，通过递归实现
      * */
+    string getSub(string needed,int begin, int end){
+        if(begin==-1 ||end==-1){
+            error(2,__FILE_NAME__,__LINE__);
+        }
+        if (begin>end){
+            error(2,__FILE_NAME__,__LINE__);
+        }
+        string result;
+        for(int i=begin; i<end;i++){
+            result +=needed[i];
+        }
+        return result;
+    }
     string calcut(string expression){
-        string num1,num2,dosomething,temp;
-        int left=expression.find('('),right=expression.find(')');
-        if (left!=-1){
-            temp=expression.substr(left,right);
-            while (temp.find('(')!=-1){
+        //处理科学计数法
+        int in=0;
+        while (true){
+            in=expression.find('e',in);
+            if(in==-1) break;
+            else{
+                string num="",temp="";
+                int left=0,right=expression.length();
+                for(int i=in-1;i>=0;i--){
+                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                        num = expression[i]+num;
+                    }
+                    else{
+                        left=i+1;
+                        break;
+                    }
+                }if(num==""){
+                    in++;
+                    continue;
+                }
+                num+="e";
+                for(int i=in+1;i<expression.length();i++){
+                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                        num += expression[i];
+                    }
+                    else{
+                        right=i;
+                        break;
+                    }
+                }
+                expression=expression.replace(left,right-left,changetonormal(num));
+            }
+        }
+        //对正负号处理
+        int index=0,index2=0;
+        while (true){
+            index=expression.find('+',index);
+            index2=expression.find('-',index2);
+            if(index==-1&&index2==-1) break;
+            if(index!=-1){
+                if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
+                if(index==0){
+                    if(expression[index+1]=='-') expression=expression.replace(0,2,"-");
+                    else expression=expression.replace(0,2,"");
+                }
+                else{
+                    if(expression[index+1]=='-') expression=expression.replace(index,2,"-");
+                    else expression=expression.replace(index,2,"+");
+                }
+            }
+            else if(index2!=-1){
+                if(expression[index2+1]!='+'&&expression[index2+1]!='-') { index2++;continue;}
+                if(index2==0){
+                    if(expression[index2+1]=='-') expression=expression.replace(0,2,"");
+                    else expression=expression.replace(0,2,"-");
+                }
+                else{
+                    if(expression[index2+1]=='-') expression=expression.replace(index2,2,"+");
+                    else expression=expression.replace(index2,2,"-");
+                }
+            }
+        }
+        string num1,num2,dosomething,tmp;
+        int left=expression.find('('),right=expression.find_last_of(')');
+        if (left==-1&&right!=-1){
+            error(2,__FILE_NAME__,__LINE__);
+        }
+        else if (right==-1&&left!=-1){
+            error(2,__FILE_NAME__,__LINE__);
+        }
+        while (left!=-1&&right!=-1){
+                tmp = getSub(expression,left+1,right);
+                tmp = calcut(tmp);
+                expression=expression.replace(left,right-left+1,tmp);
+                left=expression.find('('),right=expression.find_last_of(')');
+        }
+            int low=0,high=0;
+            //先遍历第一次实现对所有科学函数的处理转化
+            while (true){
+                low=expression.find('[',low);
+                high=expression.find(']',high);
+                if(high==-1&&low!=-1) error(2,__FILE_NAME__,__LINE__);
+                else if(high!=-1&&low==-1) error(2,__FILE_NAME__,__LINE__);
+                else if(high==-1&&low==-1) break;
+                else{
+                    switch(expression[low-1]){
+                        case 'w':{
+                            string temp=getSub(expression,low+1,high);
+                            num1=getSub(temp,0,temp.find(','));
+                            num2=getSub(temp,temp.find(',')+1,temp.length());
+                            temp=fun.pows(num1,num2);
+                            expression=expression.replace(low-3,3+high-low+1,temp);
+                            break;
+                        } //pow
+                        case 'p':{
+                            string temp=getSub(expression,low+1,high);
+                            temp=fun.exps(temp);
+                            expression=expression.replace(low-3,3+high-low+1,temp);
+                            break;
+                        }  //exp
+                        case 'x':{
+                            string temp=getSub(expression,low+1,high);
+                            num1=getSub(temp,0,temp.find(','));
+                            num2=getSub(temp,temp.find(',')+1,temp.length());
+                            temp=fun.getMax(num1,num2);
+                            expression=expression.replace(low-3,3+high-low+1,temp);
+                            break;
+                        } //max
+
+                        case 'n': //min and sin and tan
+                            switch(expression[low-3]){
+                                case 'm':{
+                                    string temp=getSub(expression,low+1,high);
+                                    num1=getSub(temp,0,temp.find(','));
+                                    num2=getSub(temp,temp.find(',')+1,temp.length());
+                                    temp=fun.getMin(num1,num2);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+                                case 's':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.sins(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+
+                                case 't':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.tans(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+
+                            }
+                            break;
+                        case 's': //cos and abs
+                            switch(expression[low-3]){
+                                case 'c':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.coss(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+
+                                case 'a':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.abss(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+                            }
+                            break;
+                        case 't': //cot and fact and sqrt get
+                            switch(expression[low-1]){
+                                case 'o':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.cots(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+                                case 'r':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.sqrts(temp);
+                                    expression=expression.replace(low-4,4+high-low+1,temp);
+                                    break;
+                                }
+                                case 'c':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.facts(temp);
+                                    expression=expression.replace(low-4,4+high-low+1,temp);
+                                    break;
+                                }
+                                case 'e':{
+                                    string temp=getSub(expression,low+1,high);
+                                    temp=fun.gets(temp);
+                                    expression=expression.replace(low-3,3+high-low+1,temp);
+                                    break;
+                                }
+
+                            }
+                            break;
+                        default:
+                            error(-4,__FILE_NAME__,__LINE__);
+                    }
+
+                }
+            }
+            string temp=expression;
+            //第二次遍历处理乘除法
+            while (true) {
 
             }
-        } else {
-            string result;
-            for (int i=0;i<expression.length();i++){
+            //第三次遍历处理加减法
+            while (true) {
 
             }
-
             return result;
         }
-    }
     void finish(){
         num.clear();
         dosome.clear();
@@ -507,15 +714,14 @@ public:
         result="";
         mode=0;
     }
-
 }calculator;
 void onlyline(string cmd){
     string needsovle="";
     for (int i=2;i<cmd.length();i++){
         needsovle[i-3]=cmd[i];
     }
-    printf("正在计算您的表达式： %s 请稍后",needsovle.c_str());
-
+    printf("正在计算您的表达式： %s 请稍后\n",needsovle.c_str());
+    printf("您的表达式的结果是： %s \n",calculator.calcut(needsovle).c_str());
 }
 class mut{
 public:
@@ -526,16 +732,21 @@ void multiline(){
     printf("欢迎进入多行操作模式，请您输入表达式，并在结束的时候输入end结束，注意，每行只能给一个变量进行负值，且结尾必须是需要输出的表达式\n"
            "每行的格式是  变量名=表达式\n"
            "最后一行的内容必须是表达式\n");
-    string expression;
+    string expression,anthor;
     mut M;
     ArrayList<mut> ex;
     expression=readlinecmd();
     while (expression!="end"){
         string name=expression.substr(0,expression.find('=')),value=expression.substr(expression.find('=')+1,expression.length());
         M.name=name;
-        M.value=value;
+        M.value=calculator.calcut(value);
         ex.add(M);//传入动态数组
+        anthor=expression;
         expression=readlinecmd();
+    }
+    int i=0;
+    while (true){
+
     }
 }
 void gethelp(){
