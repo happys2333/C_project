@@ -1,6 +1,9 @@
 # CS205 C/C++ Programming Assignment 2
 ## 概况
-![license](https://camo.githubusercontent.com/818cfc3c9527eef024edfb6ed40de7ec77301cfa/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f6d69746872696c2e737667)
+![license](https://img.shields.io/badge/license-MIT-yellowgreen)
+![language](https://img.shields.io/badge/language-C%2B%2B-brightgreen)
+![author](https://img.shields.io/badge/author-happys-blue)
+![support](https://img.shields.io/badge/supported%20OS-Windows%20Linux%20macOS-red)
 ##### 测试平台：`windows10 x64` `macOS 10.15` `linux(kali)`
 ##### 编码：`UTF-8`
 ##### C++标准：`C++11`
@@ -461,6 +464,91 @@ _首先是对科学计数法进行处理_
                 }
             }
         }
+```
+然后对剩余进行乘法除法处理
+```cpp
+while (true){
+                string num1,num2,result;
+                index=expression.find_first_of('*'),index2=expression.find_first_of('/');
+                if(index==-1&&index2==-1) break;
+                if(index==-1) index=expression.length();
+                if(index2==-1) index2=expression.length();
+                if(index<index2){
+                    int po=0;
+                    for(int i=index-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }for (int i=index+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='-'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.multiple(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
+                else{
+                    int po=0;
+                    for(int i=index2-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }
+                    for (int i=index2+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.divide(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
+            }
+```
+最后对整个最终表达式进行一遍加减处理即可
+```cpp
+while (true) {
+                string num1,num2,result;
+                index=expression.find_first_of('+'),index2=expression.find_first_of('-');
+                if(index<=0&&index2<=0) break;
+                if(index==-1) index=expression.length();
+                if(index2==-1) index2=expression.length();
+                if(index<index2){
+                    int po=0;
+                    for(int i=index-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }for (int i=index+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.add(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
+                else{
+                    int po=0;
+                    for(int i=index2-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }
+                    for (int i=index2+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.minusnum(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
 ```
 #### 对于多行计算，采取类的方法进行处理，在处理这部分的时候调用了我上半年写的一个函数库的一部分，实现了仿照java的动态数组。
 这个库可以访问我上半年在CSDN的帖子，更多内容由于本次作业尚未涉及，所以这里我就没有把整个库的内容全部放出    

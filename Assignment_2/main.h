@@ -103,7 +103,7 @@ string delblock(string s1){
         if (s1[i]==' '){continue;}
         result+=s1[i];
     }
-    return s1;
+    return result;
 }
 class Fuction{
 public:
@@ -843,6 +843,7 @@ void multiline(){
     ArrayList<mut> ex;
     expression=readlinecmd();
     while (expression!="end"){
+        expression=delblock(expression);
         string name=expression.substr(0,expression.find_first_of('=')),value=expression.substr(expression.find_first_of('=')+1,expression.length());
         M.name=name;
         M.value=calculator.calcut(value);
@@ -850,8 +851,12 @@ void multiline(){
         anthor=expression;
         expression=readlinecmd();
     }
-    int i=0;
     //将整个表达式进行转化成为标准表达式
+    for(int i=0;i<ex.size();i++) {
+        string name = ex.get(i).name;
+        string value = ex.get(i).value;
+
+    }
 
 }
 void gethelp(){
@@ -873,6 +878,7 @@ void mainloop(){
     while (cmd!="-q"){
         printf("请输入您的指令>>>");
         cmd=readlinecmd();
+        cmd=delblock(cmd);
         if (cmd[0]!='-'){
             error(-3,__FILE_NAME__,__LINE__);
             continue;
