@@ -15,12 +15,9 @@
 #include<string>
 
 using namespace std;
-string change(string cmd){
-
-}
 int main()
 {
-    string str="++2.5e3+-exp[2]+get[1e2]+4*5-2*4+89+23";
+    string str="2*5/2*6+7+(8*9)+2";
     cout<<calculator.calcut(str)<<endl;
     return 0;
 }

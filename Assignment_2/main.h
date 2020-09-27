@@ -39,6 +39,10 @@ void error(int code,string filename,int line){
             printf("There is an error in the expression you typed, please retype it\n"
                    "Error reports: in file %s in line %d",filename.c_str(),line);
             exit(-4);
+        case -5:
+            printf("You shouldn't divide a number by zero!\n"
+                   "Error reports: in file %s in line %d",filename.c_str(),line);
+            exit(-5);
         default:
             printf("Error: Unknown error, please connect with the author \n"
                    "Error reports: in file %s in line %d",filename.c_str(),line);
@@ -105,18 +109,15 @@ class Fuction{
 public:
     string delremin(string s1){
         if(s1.find('.')==-1){
-            error(2,__FILE_NAME__,__LINE__);
+            return s1;
         }
         int len=s1.length();
-        for (int i=len-1;i>s1.find('.');i--){
+        for (int i=len-1;i>=s1.find('.');i--){
             if (s1[i]=='0'||s1[i]=='.'){
                 s1.pop_back();
             } else{
                 break;
             }
-        }
-        if(s1=="0."){
-            return "0";
         }
         return s1;
     }
@@ -131,7 +132,7 @@ public:
         return delremin(out.str());
     }
     string changetonormal(string a1){
-        int point=a1.find('e');
+        int point=a1.find_first_of('e');
         string temp;
         for(int i=point+1;i<a1.length();i++){
             if(a1[i]<='9'&&a1[i]>='0') temp+=a1[i];
@@ -141,7 +142,7 @@ public:
         long double d;
         ss>>d;
         s2>>len;
-        if (a1.find('-')!=-1){
+        if (a1.find_first_of('-')!=-1){
             int len2=a1.find('.');
             if (len-len2>3){
                 error(-4,__FILE_NAME__,__LINE__);
@@ -158,13 +159,16 @@ public:
     }
     string add(string a1,string a2){
         int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
-        if (a1.find('.')==-1){
+        if(a1.find('.')==-1&&a2.find('.')==-1){
+            goto intager;
+        }
+        else if (a1.find('.')==-1){
             a1+='.';
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
         }
-        if (a2.find('.')==-1){
+        else if (a2.find('.')==-1){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
@@ -182,7 +186,7 @@ public:
                 }
             }
         }
-        string temp= a1;
+       intager: string temp= a1;
         for(int i=0;i<a1.length();++i){
             a1[i]=temp[a1.length()-i-1];
         }
@@ -195,7 +199,7 @@ public:
         a1+="0";a2+="0";
         string result,tempstr;
         int add;
-        for(int i=0;i<maxlength;i++){
+        for(int i=0;i<=maxlength;i++){
             add=a1[i]+a2[i]-'0'-'0';
             if (add>=10){
                 if (a1[i+1]=='.'){
@@ -209,6 +213,9 @@ public:
                 }
                 a1[i+1]+=1;
                 add-=10;
+                tempstr=(char(add) + '0');
+                result.insert(0, tempstr);
+                continue;
             }
             if (a1[i+1]=='.'){
                 tempstr=(char(add) + '0');
@@ -326,6 +333,7 @@ public:
         return result;
     }
     string multiple(string s1,string s2){
+        if(s1=="0"||s2=="0"){return "0";}
         if(s2.find('.')!=-1) {//浮点数乘法进行非精准计算
             string temp;
             long double a1=stod(s1),a2=stod(s2);
@@ -341,11 +349,9 @@ public:
                 tmp+=s1[i];
             }
             s1=tmp;
-            positve= false;
+            positve= !positve;
         }
-        if (needed<0){
-            positve=(!positve);
-        }
+        if(s2[0]=='-') positve = !positve;
         string result="0",temp="0";
         for (long long i=0;i<needed;i++){
             temp=add(s1,temp);
@@ -361,6 +367,9 @@ public:
         return result;
     }
     string divide(string s1,string s2){
+        if(s2=="0"){
+            error(-5,__FILE_NAME__,__LINE__);
+        }
         long double a1=stold(s1),a2=stold(s2);
         string result= doubletostr(a1/a2,10);
         return delremin(result);
@@ -426,12 +435,6 @@ public:
 }fun;
 //计算器主要区域：包括整个对数据的分析与处理，计算的内容等。
 class Calculator{
-private:
-    ArrayList<string> num;
-    string cmd;
-    ArrayList<string> dosome;
-    string result;
-    int mode=0;
 public:
     ArrayList<string> split(string original,string need){
         ArrayList<string> result;
@@ -476,7 +479,7 @@ public:
         return out.str();
     }
     string changetonormal(string a1){
-        int point=a1.find('e');
+        int point=a1.find_first_of('e');
         string temp;
         for(int i=point+1;i<a1.length();i++){
             if(a1[i]<='9'&&a1[i]>='0') temp+=a1[i];
@@ -486,7 +489,7 @@ public:
         long double d;
         ss>>d;
         s2>>len;
-        if (a1.find('-')!=-1){
+        if (a1.find_first_of('-')!=-1){
             int len2=a1.find('.');
             if (len-len2>3){return "wrong";}
         }
@@ -512,7 +515,7 @@ public:
         //处理科学计数法
         int in=0;
         while (true){
-            in=expression.find('e',in);
+            in=expression.find_first_of('e',in);
             if(in==-1) break;
             else{
                 string num="",temp="";
@@ -539,14 +542,15 @@ public:
                         break;
                     }
                 }
+                in=0;
                 expression=expression.replace(left,right-left,changetonormal(num));
             }
         }
         //对正负号处理
         int index=0,index2=0;
         while (true){
-            index=expression.find('+',index);
-            index2=expression.find('-',index2);
+            index=expression.find_first_of('+',index);
+            index2=expression.find_first_of('-',index2);
             if(index==-1&&index2==-1) break;
             if(index!=-1){
                 if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
@@ -572,7 +576,7 @@ public:
             }
         }
         string num1,num2,dosomething,tmp;
-        int left=expression.find('('),right=expression.find_last_of(')');
+        int left=expression.find_first_of('('),right=expression.find_last_of(')');
         if (left==-1&&right!=-1){
             error(2,__FILE_NAME__,__LINE__);
         }
@@ -583,13 +587,13 @@ public:
                 tmp = getSub(expression,left+1,right);
                 tmp = calcut(tmp);
                 expression=expression.replace(left,right-left+1,tmp);
-                left=expression.find('('),right=expression.find_last_of(')');
+                left=expression.find_first_of('('),right=expression.find_last_of(')');
         }
             int low=0,high=0;
             //先遍历第一次实现对所有科学函数的处理转化
             while (true){
-                low=expression.find('[',low);
-                high=expression.find(']',high);
+                low=expression.find_first_of('[');
+                high=expression.find_first_of(']');
                 if(high==-1&&low!=-1) error(2,__FILE_NAME__,__LINE__);
                 else if(high!=-1&&low==-1) error(2,__FILE_NAME__,__LINE__);
                 else if(high==-1&&low==-1) break;
@@ -597,8 +601,8 @@ public:
                     switch(expression[low-1]){
                         case 'w':{
                             string temp=getSub(expression,low+1,high);
-                            num1=getSub(temp,0,temp.find(','));
-                            num2=getSub(temp,temp.find(',')+1,temp.length());
+                            num1=getSub(temp,0,temp.find_first_of(','));
+                            num2=getSub(temp,temp.find_first_of(',')+1,temp.length());
                             temp=fun.pows(num1,num2);
                             expression=expression.replace(low-3,3+high-low+1,temp);
                             break;
@@ -611,19 +615,19 @@ public:
                         }  //exp
                         case 'x':{
                             string temp=getSub(expression,low+1,high);
-                            num1=getSub(temp,0,temp.find(','));
-                            num2=getSub(temp,temp.find(',')+1,temp.length());
+                            num1=getSub(temp,0,temp.find_first_of(','));
+                            num2=getSub(temp,temp.find_first_of(',')+1,temp.length());
                             temp=fun.getMax(num1,num2);
                             expression=expression.replace(low-3,3+high-low+1,temp);
                             break;
                         } //max
 
                         case 'n': //min and sin and tan
-                            switch(expression[low-3]){
+                            switch(expression[low-4]){
                                 case 'm':{
                                     string temp=getSub(expression,low+1,high);
-                                    num1=getSub(temp,0,temp.find(','));
-                                    num2=getSub(temp,temp.find(',')+1,temp.length());
+                                    num1=getSub(temp,0,temp.find_first_of(','));
+                                    num2=getSub(temp,temp.find_first_of(',')+1,temp.length());
                                     temp=fun.getMin(num1,num2);
                                     expression=expression.replace(low-3,3+high-low+1,temp);
                                     break;
@@ -645,7 +649,7 @@ public:
                             }
                             break;
                         case 's': //cos and abs
-                            switch(expression[low-3]){
+                            switch(expression[low-4]){
                                 case 'c':{
                                     string temp=getSub(expression,low+1,high);
                                     temp=fun.coss(temp);
@@ -662,7 +666,7 @@ public:
                             }
                             break;
                         case 't': //cot and fact and sqrt get
-                            switch(expression[low-1]){
+                            switch(expression[low-2]){
                                 case 'o':{
                                     string temp=getSub(expression,low+1,high);
                                     temp=fun.cots(temp);
@@ -687,33 +691,99 @@ public:
                                     expression=expression.replace(low-3,3+high-low+1,temp);
                                     break;
                                 }
-
                             }
                             break;
                         default:
                             error(-4,__FILE_NAME__,__LINE__);
                     }
-
                 }
             }
             string temp=expression;
+            index=0,index2=0;
             //第二次遍历处理乘除法
-            while (true) {
-
+            while (true){
+                string num1,num2,result;
+                index=expression.find_first_of('*'),index2=expression.find_first_of('/');
+                if(index==-1&&index2==-1) break;
+                if(index==-1) index=expression.length();
+                if(index2==-1) index2=expression.length();
+                if(index<index2){
+                    int po=0;
+                    for(int i=index-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }for (int i=index+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.multiple(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
+                else{
+                    int po=0;
+                    for(int i=index2-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }
+                    for (int i=index2+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.divide(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
             }
             //第三次遍历处理加减法
             while (true) {
-
+                string num1,num2,result;
+                index=expression.find_first_of('+'),index2=expression.find_first_of('-');
+                if(index==-1&&index2==-1) break;
+                if(index==-1) index=expression.length();
+                if(index2==-1) index2=expression.length();
+                if(index<index2){
+                    int po=0;
+                    for(int i=index-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }for (int i=index+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.add(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
+                else{
+                    int po=0;
+                    for(int i=index2-1;i>=0;i--){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num1 =expression[i]+num1;
+                            po=i;
+                        } else break;
+                    }
+                    for (int i=index2+1;i<expression.length();i++){
+                        if(expression[i]>='0'&&expression[i]<='9'){
+                            num2 +=expression[i];
+                        } else break;
+                    }
+                    if(num1.length()==0||num2.length()==0) error(9,__FILE_NAME__,__LINE__);
+                    result=fun.minusnum(num1,num2);
+                    expression=expression.replace(po,num1.length()+num2.length()+1,result);
+                }
             }
-            return result;
+            return expression;
         }
-    void finish(){
-        num.clear();
-        dosome.clear();
-        cmd="";
-        result="";
-        mode=0;
-    }
 }calculator;
 void onlyline(string cmd){
     string needsovle="";
@@ -737,7 +807,7 @@ void multiline(){
     ArrayList<mut> ex;
     expression=readlinecmd();
     while (expression!="end"){
-        string name=expression.substr(0,expression.find('=')),value=expression.substr(expression.find('=')+1,expression.length());
+        string name=expression.substr(0,expression.find_first_of('=')),value=expression.substr(expression.find_first_of('=')+1,expression.length());
         M.name=name;
         M.value=calculator.calcut(value);
         ex.add(M);//传入动态数组
