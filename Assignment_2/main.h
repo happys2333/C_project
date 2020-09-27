@@ -140,7 +140,6 @@ public:
     string add(string a1,string a2){
         int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
         if(a1.find('.')==-1&&a2.find('.')==-1){
-            goto intager;
         }
         else if (a1.find('.')==-1){
             a1+='.';
@@ -154,7 +153,7 @@ public:
                 a2+='0';
             }
         }
-        if (a1len==a2len) {}
+        else if (a1len==a2len) {}
         else{
             if (a1len>a2len){
                 for (int i=0;i<a1len-a2len;i++){
@@ -166,7 +165,7 @@ public:
                 }
             }
         }
-       intager: string temp= a1;
+        string temp= a1;
         for(int i=0;i<a1.length();++i){
             a1[i]=temp[a1.length()-i-1];
         }
@@ -238,21 +237,20 @@ public:
         big(a1,a2)?positve=true:positve=false;
         int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
         if(a1.find('.')==-1&&a2.find('.')==-1){
-            goto intager;
         }
-        if (a1.find('.')==-1){
+       else if (a1.find('.')==-1){
             a1+='.';
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
         }
-        if (a2.find('.')==-1){
+        else if (a2.find('.')==-1){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
             }
         }
-        if (a1len==a2len) {}
+        else if (a1len==a2len) {}
         else{
             if (a1len>a2len){
                 for (int i=0;i<a1len-a2len;i++){
@@ -508,7 +506,7 @@ public:
                 string num="",temp="";
                 int left=0,right=expression.length();
                 for(int i=in-1;i>=0;i--){
-                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                    if((expression[i]>='0'&&expression[i]<='9'||expression[i]=='.')||expression[i]=='.'){
                         num = expression[i]+num;
                     }
                     else{
@@ -521,7 +519,7 @@ public:
                 }
                 num+="e";
                 for(int i=in+1;i<expression.length();i++){
-                    if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
+                    if((expression[i]>='0'&&expression[i]<='9'||expression[i]=='.')||expression[i]=='.'){
                         num += expression[i];
                     }
                     else{
@@ -705,12 +703,12 @@ public:
                 if(index<index2){
                     int po=0;
                     for(int i=index-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'||expression[i]=='-'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }for (int i=index+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='-'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'||expression[i]=='-'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -721,13 +719,13 @@ public:
                 else{
                     int po=0;
                     for(int i=index2-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }
                     for (int i=index2+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -775,12 +773,12 @@ public:
                 if(index<index2){
                     int po=0;
                     for(int i=index-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }for (int i=index+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -791,13 +789,13 @@ public:
                 else{
                     int po=0;
                     for(int i=index2-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }
-                    for (int i=index2+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'){
+                    for (int i=index2+1;i<expression.length();i++||expression[i]=='.'){
+                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
