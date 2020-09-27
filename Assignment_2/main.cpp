@@ -17,6 +17,7 @@
 using namespace std;
 int main()
 {
-    multiline();
+    changetheconsle();
+    mainloop();
     return 0;
 }

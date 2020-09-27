@@ -131,26 +131,6 @@ public:
         out<<num;
         return delremin(out.str());
     }
-    string changetonormal(string a1){
-        int point=a1.find_first_of('e');
-        string temp;
-        for(int i=point+1;i<a1.length();i++){
-            if(a1[i]<='9'&&a1[i]>='0') temp+=a1[i];
-        }
-        stringstream ss(a1),s2(temp);
-        int len;
-        long double d;
-        ss>>d;
-        s2>>len;
-        if (a1.find_first_of('-')!=-1){
-            int len2=a1.find('.');
-            if (len-len2>3){
-                error(-4,__FILE_NAME__,__LINE__);
-                return "wrong";
-            }
-        }
-        return doubletostr(d,len);
-    }
     string addzeros(string str,int begin,int end){
         for (int i=begin;i<end;i++){
             str+="0";
@@ -583,20 +563,28 @@ public:
             }
         }
         string num1,num2,dosomething,tmp;
-        int left=expression.find_first_of('('),right=expression.find_last_of(')');
-        if (left==-1&&right!=-1){
-            error(2,__FILE_NAME__,__LINE__);
+        while (true){
+            int left=expression.find_first_of('('),right=expression.find_first_of(')');
+            if (left==-1&&right==-1){break;}
+            if (left==-1&&right!=-1){
+                error(2,__FILE_NAME__,__LINE__);
+            }
+            if (right==-1&&left!=-1){
+                error(2,__FILE_NAME__,__LINE__);
+            }int mark=left;
+            while (left<right){
+                if (left!=-1){
+                    mark=left;
+                }
+                if(left==-1){ break;}
+                left=expression.find_first_of('(',left+1);
+            }
+            left=mark;
+            tmp = getSub(expression,left+1,right);
+            tmp = calcut(tmp);
+            expression=expression.replace(left,right-left+1,tmp);
         }
-        else if (right==-1&&left!=-1){
-            error(2,__FILE_NAME__,__LINE__);
-        }
-        while (left!=-1&&right!=-1){
-                tmp = getSub(expression,left+1,right);
-                tmp = calcut(tmp);
-                expression=expression.replace(left,right-left+1,tmp);
-                left=expression.find_first_of('('),right=expression.find_last_of(')');
-        }
-            int low=0,high=0;
+          int low=0,high=0;
             //先遍历第一次实现对所有科学函数的处理转化
             while (true){
                 low=expression.find_first_of('[');
@@ -823,9 +811,8 @@ public:
 }calculator;
 void onlyline(string cmd){
     string needsovle="";
-    for (int i=2;i<cmd.length();i++){
-        needsovle[i-3]=cmd[i];
-    }
+    needsovle=cmd.erase(0,3);
+    needsovle=delblock(needsovle);
     printf("正在计算您的表达式： %s 请稍后\n",needsovle.c_str());
     printf("您的表达式的结果是： %s \n",calculator.calcut(needsovle).c_str());
 }
@@ -835,29 +822,29 @@ public:
     string value;
 };
 void multiline(){
-    printf("欢迎进入多行操作模式，请您输入表达式，并在结束的时候输入end结束，注意，每行只能给一个变量进行负值，且结尾必须是需要输出的表达式\n"
+    printf("欢迎进入多行操作模式，请输入您想计算的表达式\n"
            "每行的格式是:变量名=表达式\n"
-           "最后一行的内容必须是表达式\n");
-    string expression,anthor;
+           "最后一行的内容必须是表达式，不能带等号\n");
+    string expression;
     mut M;
     ArrayList<mut> ex;
-    expression=readlinecmd();
-    while (expression!="end"){
+    while (true){
+        expression=readlinecmd();
         expression=delblock(expression);
+        if(expression.find_first_of('=')==-1){break;}
         string name=expression.substr(0,expression.find_first_of('=')),value=expression.substr(expression.find_first_of('=')+1,expression.length());
         M.name=name;
         M.value=calculator.calcut(value);
         ex.add(M);//传入动态数组
-        anthor=expression;
-        expression=readlinecmd();
     }
     //将整个表达式进行转化成为标准表达式
     for(int i=0;i<ex.size();i++) {
         string name = ex.get(i).name;
         string value = ex.get(i).value;
-
+        int left = expression.find_first_of(name);
+        expression=expression.replace(left,name.size(),value);
     }
-
+    cout<<calculator.calcut(expression)<<endl;
 }
 void gethelp(){
     printf("本程序由开心制作\n"
@@ -878,7 +865,6 @@ void mainloop(){
     while (cmd!="-q"){
         printf("请输入您的指令>>>");
         cmd=readlinecmd();
-        cmd=delblock(cmd);
         if (cmd[0]!='-'){
             error(-3,__FILE_NAME__,__LINE__);
             continue;
