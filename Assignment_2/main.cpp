@@ -5,15 +5,7 @@
  * file name: main.cpp
  * purpose : main function main entry of the program
  * **********************************************************/
-//#include "main.h"
-//int main() {
-//    changetheconsle();
-//    mainloop();
-//}
-#include<iostream>
 #include "main.h"
-#include<string>
-
 using namespace std;
 int main()
 {
