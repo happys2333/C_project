@@ -79,8 +79,10 @@ string findout()
 #if defined MAC
     return "mac";
 #elif defined WIN32
+#define __FILE_NAME__ __FILE__
     return "windows";
 #elif defined LINUX
+    #define __FILE_NAME__ __FILE__
     return "linux";
 #else
     return "unknown";
@@ -90,6 +92,7 @@ void changetheconsle(){
     string sy=findout();
     if(sy=="windows"){
         system("chcp 65001");
+        system("cls");
     }
     if (sy=="unknown"){
         error(-1,__FILE_NAME__,__LINE__);

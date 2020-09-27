@@ -16,9 +16,12 @@
 本程序由于需要高精度运算，鉴于上次作业的方法具有一定局限性，所以本次我采用的是高精度的另一种算法，基本原理是通过对字符串输入分析。     
 本程序在设计的时候综合考虑了主流操作系统的不同，所以利用对操作系统的判断采取不同措施，从而实现了对不同系统进行不同的编译
 ```cpp
+/* 这部分函数负责对平台进行识别，如果发现是windows平台就会更改控制台为UTF-8编码，以此来实现中文支持
+ * */
 #if defined(__APPLE__)
 # include <TargetConditionals.h>
 #include <vector>
+
 # if defined(TARGET_OS_MAC) && TARGET_OS_MAC
 #   define MAC
 # endif
@@ -32,6 +35,7 @@ string findout()
 #if defined MAC
     return "mac";
 #elif defined WIN32
+#define __FILE_NAME__ __FILE__
     return "windows";
 #elif defined LINUX
     return "linux";
@@ -39,12 +43,19 @@ string findout()
     return "unknown";
 #endif
 }
+void changetheconsle(){
+    string sy=findout();
+    if(sy=="windows"){
+        system("chcp 65001");
+        system("cls");
+    }
+    if (sy=="unknown"){
+        error(-1,__FILE_NAME__,__LINE__);
+    }
+    printf("您的系统是：%s\n",sy.c_str());
+    printf("欢迎使用科学计算器中文版 版本号：1.0");
+}
 ```
-运行效果在平台上如下：      
-windows平台    
-![windows](运行结果/Windows.png)    
-Linux平台        
-![linux](运行结果/Linux.png)    
 通过在不同操作系统环境下的实验，我得出了在中文版系统中只有window原生命令行不支持UTF-8的命令行输出，在macOS和Linux下均可以正常输出中文字符，所以我在判断完成后对windows操作系统进行了编码格式的更改
 ```cpp
 void changetheconsle(){
@@ -2071,21 +2082,24 @@ XYYY+YY
 正在计算您的表达式： sin[3]+2 请稍后
 您的表达式的结果是： 2.141418 
 ```
-#### 对于不同平台的运行
+#### 对于不同平台的运行效果图
 Windows：
-
+![win](运行结果/Windows.png)
 Linux：
-
+![Linux](运行结果/Linux.png)
 macOS：
 
-#### 单行复杂计算
-
-#### 多行计算
 
 ## 程序亮点
+- 自动清理多余空格：通过设计，本程序实现了对空格的自动清理，防止出现问题
+- 清晰的报错： 所有可能出现的错误都声明了错误内容和具体出现的文件以及行数
+- 高智商的自动化分析：本程序可以自动化分析括号嵌套和多个括号的情况，同时在多行模式下支持变量名的自定义化，保证用户的自由性
+- 开源的程序代码：本程序遵从MIT license 请在使用时标注清楚作者
+- 支持用户对程序的玩弄：在报错类型中考虑到了用户的各种错误操作，所以会在用户使用错误的情况下直接抛出错误
+- 支持多行运算时不同的输入： 你可以在多行运算的等号右边赋值的时候采用一个计算式，程序会自动帮你算好
 - 多种平台的跨平台：可以自动识别几乎主流的三大操作系统（window平台，Linux平台和macOS平台）。
 - 支持中文的输出：由于windows平台的限制，C++是不能直接在windows上输出中文的，但是本程序通过跨平台编译的方法实现了对windows平台上中的支持。
-- 高精度的运算：通过直接使用计算机的字符串来操作数据从而实现了
+- 高精度的运算：通过直接使用计算机的字符串来操作数据从而实现了程序的高精度运算
 - 快速读取用户输入：不使用cin而改用getchar的方法实现了对用户读取的快速录入，理论上会比cin的直接读取要快一倍以上。
 - 多种模式：支持多种计算器模式运行。
 - 科学计数法：本程序支持输入科学计数法的表达方法（例如：1e10）。
