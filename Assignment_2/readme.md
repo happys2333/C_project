@@ -374,7 +374,7 @@ string multiple(string s1,string s2){
     }
 ```
 #### 除法
-######目前尚未支持对除法的高精度运算
+###### 目前尚未支持对除法的高精度运算
 ```cpp
 string divide(string s1,string s2){
         long double a1=stold(s1),a2=stold(s2);
@@ -2046,7 +2046,7 @@ void mainloop(){
 
 #endif //C___FIND_H
 ```
-##测试结果
+## 测试结果
 ```shell script
 您的系统是：mac
 欢迎使用科学计算器中文版 版本号：1.0本程序是一款高级智能的计算器，采用c++编写而成，通过控制台指令进行操控，如果您想获取帮助请输入-h，如果您想退出请输入-q
