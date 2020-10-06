@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/as3.dir/cross_system.cpp.o"
-  "CMakeFiles/as3.dir/main.cpp.o"
-  "as3"
+  "CMakeFiles/as3.dir/normal/main.cpp.obj"
+  "as3.exe"
+  "as3.exe.manifest"
   "as3.pdb"
+  "libas3.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

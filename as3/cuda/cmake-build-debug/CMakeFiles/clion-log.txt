@@ -1,0 +1,4 @@
+H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" G:\project\funnycode\C_project\as3\cuda
+-- Configuring done
+-- Generating done
+-- Build files have been written to: G:/project/funnycode/C_project/as3/cuda/cmake-build-debug

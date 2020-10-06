@@ -4,10 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/happys/Desktop/project/C++/C_project/as3/cross_system.cpp" "/Users/happys/Desktop/project/C++/C_project/as3/cmake-build-debug/CMakeFiles/as3.dir/cross_system.cpp.o"
-  "/Users/happys/Desktop/project/C++/C_project/as3/main.cpp" "/Users/happys/Desktop/project/C++/C_project/as3/cmake-build-debug/CMakeFiles/as3.dir/main.cpp.o"
+  "G:/project/funnycode/C_project/as3/normal/main.cpp" "G:/project/funnycode/C_project/as3/cmake-build-debug/CMakeFiles/as3.dir/normal/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
