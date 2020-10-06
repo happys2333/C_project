@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/LinkedList.h">
+			<Option target="as3"/>
+		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/main.cpp">
 			<Option target="as3"/>
 		</Unit>
