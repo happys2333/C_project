@@ -143,6 +143,33 @@ as3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/as3.dir/build.make CMakeFiles/as3.dir/build
 .PHONY : as3/fast
 
+cross_system.o: cross_system.cpp.o
+
+.PHONY : cross_system.o
+
+# target to build an object file
+cross_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as3.dir/build.make CMakeFiles/as3.dir/cross_system.cpp.o
+.PHONY : cross_system.cpp.o
+
+cross_system.i: cross_system.cpp.i
+
+.PHONY : cross_system.i
+
+# target to preprocess a source file
+cross_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as3.dir/build.make CMakeFiles/as3.dir/cross_system.cpp.i
+.PHONY : cross_system.cpp.i
+
+cross_system.s: cross_system.cpp.s
+
+.PHONY : cross_system.s
+
+# target to generate assembly for a file
+cross_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as3.dir/build.make CMakeFiles/as3.dir/cross_system.cpp.s
+.PHONY : cross_system.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... as3"
+	@echo "... cross_system.o"
+	@echo "... cross_system.i"
+	@echo "... cross_system.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

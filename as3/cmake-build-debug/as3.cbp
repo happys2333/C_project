@@ -83,6 +83,12 @@
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/LinkedList.h">
 			<Option target="as3"/>
 		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/cross_system.cpp">
+			<Option target="as3"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/cross_system.h">
+			<Option target="as3"/>
+		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/main.cpp">
 			<Option target="as3"/>
 		</Unit>
