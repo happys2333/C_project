@@ -11,12 +11,6 @@ iostream
 -
 
 G:/project/funnycode/C_project/as3/cuda/GPU.h
-iostream
--
-cuda_runtime.h
--
-device_launch_parameters.h
--
 
 G:/project/funnycode/C_project/as3/cuda/main.cu
 iostream

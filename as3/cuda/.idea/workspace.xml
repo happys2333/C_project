@@ -23,7 +23,7 @@
       <config projectName="cuda" targetName="cuda" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
@@ -63,6 +63,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\project\funnycode\C_project\as3\cuda" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -89,7 +94,9 @@
       <option name="presentableId" value="Default" />
       <updated>1601976230437</updated>
       <workItem from="1601976232434" duration="6607000" />
-      <workItem from="1601997073726" duration="674000" />
+      <workItem from="1601997073726" duration="1273000" />
+      <workItem from="1602037211131" duration="249000" />
+      <workItem from="1602037477102" duration="10425000" />
     </task>
     <servers />
   </component>
@@ -113,22 +120,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601976276599" />
-    <state width="1876" height="279" key="GridCell.Tab.0.bottom" timestamp="1601997506250">
+    <state width="1876" height="296" key="GridCell.Tab.0.bottom" timestamp="1602061770827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601997506250" />
-    <state width="1876" height="279" key="GridCell.Tab.0.center" timestamp="1601997506250">
+    <state width="1876" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
+    <state width="1876" height="296" key="GridCell.Tab.0.center" timestamp="1602061770827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601997506250" />
-    <state width="1876" height="279" key="GridCell.Tab.0.left" timestamp="1601997506249">
+    <state width="1876" height="296" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
+    <state width="1876" height="296" key="GridCell.Tab.0.left" timestamp="1602061770827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601997506249" />
-    <state width="1876" height="279" key="GridCell.Tab.0.right" timestamp="1601997506250">
+    <state width="1876" height="296" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
+    <state width="1876" height="296" key="GridCell.Tab.0.right" timestamp="1602061770827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601997506250" />
+    <state width="1876" height="296" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
     <state width="913" height="344" key="GridCell.Tab.1.bottom" timestamp="1601996974409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
