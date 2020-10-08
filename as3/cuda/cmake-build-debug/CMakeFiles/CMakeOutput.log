@@ -7,7 +7,7 @@ Id flags:  -v;--keep;--keep-dir;tmp
 The output was:
 0
 
-G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" 
+G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" 
 **********************************************************************
 ** Visual Studio 2019 Developer Command Prompt v16.7.0
 ** Copyright (c) 2020 Microsoft Corporation
@@ -154,13 +154,13 @@ Compilation of the CUDA compiler identification source "CMakeCUDACompilerId.cu" 
 
 Compilation of the CUDA compiler identification source "CMakeCUDACompilerId.cu" produced "a.lib"
 
-The CUDA compiler identification is NVIDIA, found in "G:/project/funnycode/C_project/as3/cuda/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCUDA/a.exe"
+The CUDA compiler identification is NVIDIA, found in "G:/project/C_project/as3/cuda/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCUDA/a.exe"
 
 Parsed CUDA nvcc implicit link information from above output:
   found 'PATH=' string: [E:\vs\Common7\IDE\\Extensions\Microsoft\IntelliCode\CLI;E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64;E:\vs\Common7\IDE\VC\VCPackages;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TestWindow;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;E:\vs\MSBuild\Current\bin\Roslyn;E:\vs\Team Tools\Performance Tools\x64;E:\vs\Team Tools\Performance Tools;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\\x64;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64;C:\Program Files (x86)\Windows Kits\10\bin\x64;E:\vs\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;E:\vs\Common7\IDE\;E:\vs\Common7\Tools\;E:\vs\Common7\IDE\\Extensions\Microsoft\IntelliCode\CLI;E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64;E:\vs\Common7\IDE\VC\VCPackages;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TestWindow;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;E:\vs\MSBuild\Current\bin\Roslyn;E:\vs\Team Tools\Performance Tools\x64;E:\vs\Team Tools\Performance Tools;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\\x64;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64;C:\Program Files (x86)\Windows Kits\10\bin\x64;E:\vs\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;E:\vs\Common7\IDE\;E:\vs\Common7\Tools\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;E:\SDK\Python64\Scripts\;E:\SDK\Python64\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;G:\latex\CTEX\UserData\miktex\bin;G:\latex\CTEX\MiKTeX\miktex\bin;G:\latex\CTEX\CTeX\ctex\bin;G:\latex\CTEX\CTeX\cct\bin;G:\latex\CTEX\CTeX\ty\bin;G:\latex\CTEX\Ghostscript\gs9.05\bin;G:\latex\CTEX\GSview\gsview;G:\latex\CTEX\WinEdt;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;E:\SDK\go\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;E:\SDK\Pascal\bin\i386-Win32;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\vs\VC\Tools\MSVC\14.26.28801\bin\Hostx64\x64\cl.exe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\NASM;H:\developmenttool\apps\IDEA-U\ch-0\202.6948.69\plugins\maven\lib\maven3\bin;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\10132\.cargo\bin;E:\SDK\ruby\Ruby27-x64\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;C:\Users\10132\AppData\Local\atom\bin;C:\Users\10132\go\bin;C:\Users\10132\AppData\Local\GitHubDesktop\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;E:\vs\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;E:\SDK\Python64\Scripts\;E:\SDK\Python64\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;G:\latex\CTEX\UserData\miktex\bin;G:\latex\CTEX\MiKTeX\miktex\bin;G:\latex\CTEX\CTeX\ctex\bin;G:\latex\CTEX\CTeX\cct\bin;G:\latex\CTEX\CTeX\ty\bin;G:\latex\CTEX\Ghostscript\gs9.05\bin;G:\latex\CTEX\GSview\gsview;G:\latex\CTEX\WinEdt;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;E:\SDK\go\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;E:\SDK\Pascal\bin\i386-Win32;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\vs\VC\Tools\MSVC\14.26.28801\bin\Hostx64\x64\cl.exe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\NASM;H:\developmenttool\apps\IDEA-U\ch-0\202.6948.69\plugins\maven\lib\maven3\bin;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\10132\.cargo\bin;E:\SDK\ruby\Ruby27-x64\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;C:\Users\10132\AppData\Local\atom\bin;C:\Users\10132\go\bin;C:\Users\10132\AppData\Local\GitHubDesktop\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;E:\vs\Common7\IDE\VC\Linux\bin\ConnectionManagerExe]
   found 'LIBRARIES=' string: ["/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin/../lib/x64"]
   considering line: []
-  considering line: [G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" ]
+  considering line: [G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" ]
   considering line: [**********************************************************************]
   considering line: [** Visual Studio 2019 Developer Command Prompt v16.7.0]
   considering line: [** Copyright (c) 2020 Microsoft Corporation]
@@ -212,7 +212,7 @@ Parsed CUDA nvcc include information from above output:
   found 'PATH=' string: [E:\vs\Common7\IDE\\Extensions\Microsoft\IntelliCode\CLI;E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64;E:\vs\Common7\IDE\VC\VCPackages;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TestWindow;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;E:\vs\MSBuild\Current\bin\Roslyn;E:\vs\Team Tools\Performance Tools\x64;E:\vs\Team Tools\Performance Tools;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\\x64;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64;C:\Program Files (x86)\Windows Kits\10\bin\x64;E:\vs\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;E:\vs\Common7\IDE\;E:\vs\Common7\Tools\;E:\vs\Common7\IDE\\Extensions\Microsoft\IntelliCode\CLI;E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64;E:\vs\Common7\IDE\VC\VCPackages;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TestWindow;E:\vs\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;E:\vs\MSBuild\Current\bin\Roslyn;E:\vs\Team Tools\Performance Tools\x64;E:\vs\Team Tools\Performance Tools;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\\x64;E:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64;C:\Program Files (x86)\Windows Kits\10\bin\x64;E:\vs\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;E:\vs\Common7\IDE\;E:\vs\Common7\Tools\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;E:\SDK\Python64\Scripts\;E:\SDK\Python64\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;G:\latex\CTEX\UserData\miktex\bin;G:\latex\CTEX\MiKTeX\miktex\bin;G:\latex\CTEX\CTeX\ctex\bin;G:\latex\CTEX\CTeX\cct\bin;G:\latex\CTEX\CTeX\ty\bin;G:\latex\CTEX\Ghostscript\gs9.05\bin;G:\latex\CTEX\GSview\gsview;G:\latex\CTEX\WinEdt;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;E:\SDK\go\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;E:\SDK\Pascal\bin\i386-Win32;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\vs\VC\Tools\MSVC\14.26.28801\bin\Hostx64\x64\cl.exe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\NASM;H:\developmenttool\apps\IDEA-U\ch-0\202.6948.69\plugins\maven\lib\maven3\bin;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\10132\.cargo\bin;E:\SDK\ruby\Ruby27-x64\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;C:\Users\10132\AppData\Local\atom\bin;C:\Users\10132\go\bin;C:\Users\10132\AppData\Local\GitHubDesktop\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;E:\vs\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;E:\SDK\Python64\Scripts\;E:\SDK\Python64\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;G:\latex\CTEX\UserData\miktex\bin;G:\latex\CTEX\MiKTeX\miktex\bin;G:\latex\CTEX\CTeX\ctex\bin;G:\latex\CTEX\CTeX\cct\bin;G:\latex\CTEX\CTeX\ty\bin;G:\latex\CTEX\Ghostscript\gs9.05\bin;G:\latex\CTEX\GSview\gsview;G:\latex\CTEX\WinEdt;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;E:\SDK\go\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;E:\SDK\Pascal\bin\i386-Win32;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\vs\VC\Tools\MSVC\14.26.28801\bin\Hostx64\x64\cl.exe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\NASM;H:\developmenttool\apps\IDEA-U\ch-0\202.6948.69\plugins\maven\lib\maven3\bin;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\10132\.cargo\bin;E:\SDK\ruby\Ruby27-x64\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;C:\Users\10132\AppData\Local\atom\bin;C:\Users\10132\go\bin;C:\Users\10132\AppData\Local\GitHubDesktop\bin;C:\Users\10132\AppData\Local\Microsoft\WindowsApps;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;E:\vs\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;E:\vs\Common7\IDE\VC\Linux\bin\ConnectionManagerExe]
   found 'LIBRARIES=' string: ["/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin/../lib/x64"]
   considering line: []
-  considering line: [G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" ]
+  considering line: [G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles\3.17.3\CompilerIdCUDA>call "E:/vs/VC/Tools/MSVC/14.27.29110/bin/HostX64/x64/../../../../../../../VC/Auxiliary/Build/vcvars64.bat" ]
   considering line: [**********************************************************************]
   considering line: [** Visual Studio 2019 Developer Command Prompt v16.7.0]
   considering line: [** Copyright (c) 2020 Microsoft Corporation]
@@ -262,38 +262,38 @@ Parsed CUDA nvcc include information from above output:
 
 
 Determining if the CUDA compiler works passed with the following output:
-Change Dir: G:/project/funnycode/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: G:/project/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_05af3\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_05af3.dir\build.make /nologo -L                  CMakeFiles\cmTC_05af3.dir\build
-Building CUDA object CMakeFiles/cmTC_05af3.dir/main.cu.obj
-	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd -x cu -c G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles\CMakeTmp\main.cu -o CMakeFiles\cmTC_05af3.dir\main.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_05af3.dir\,-FS
+Run Build Command(s):nmake /nologo cmTC_1168c\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_1168c.dir\build.make /nologo -L                  CMakeFiles\cmTC_1168c.dir\build
+Building CUDA object CMakeFiles/cmTC_1168c.dir/main.cu.obj
+	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd -x cu -c G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles\CMakeTmp\main.cu -o CMakeFiles\cmTC_1168c.dir\main.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_1168c.dir\,-FS
 main.cu
-Linking CUDA executable cmTC_05af3.exe
-	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_05af3.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_05af3.dir\main.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nm9A6C.tmp
-  正在创建库 cmTC_05af3.lib 和对象 cmTC_05af3.exp
-  正在创建库 cmTC_05af3.lib 和对象 cmTC_05af3.exp
+Linking CUDA executable cmTC_1168c.exe
+	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_1168c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_1168c.dir\main.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nmF98B.tmp
+  正在创建库 cmTC_1168c.lib 和对象 cmTC_1168c.exp
+  正在创建库 cmTC_1168c.lib 和对象 cmTC_1168c.exp
 
 
 
 Detecting CUDA compiler ABI info compiled with the following output:
-Change Dir: G:/project/funnycode/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: G:/project/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_2ca65\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_2ca65.dir\build.make /nologo -L                  CMakeFiles\cmTC_2ca65.dir\build
-Building CUDA object CMakeFiles/cmTC_2ca65.dir/CMakeCUDACompilerABI.cu.obj
-	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd   -Xcompiler=-v -x cu -c H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\share\cmake-3.17\Modules\CMakeCUDACompilerABI.cu -o CMakeFiles\cmTC_2ca65.dir\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_2ca65.dir\,-FS
+Run Build Command(s):nmake /nologo cmTC_20b65\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_20b65.dir\build.make /nologo -L                  CMakeFiles\cmTC_20b65.dir\build
+Building CUDA object CMakeFiles/cmTC_20b65.dir/CMakeCUDACompilerABI.cu.obj
+	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd   -Xcompiler=-v -x cu -c H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\share\cmake-3.17\Modules\CMakeCUDACompilerABI.cu -o CMakeFiles\cmTC_20b65.dir\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_20b65.dir\,-FS
 cl: 命令行 warning D9002 :忽略未知选项“-v”
 CMakeCUDACompilerABI.cu
 cl: 命令行 warning D9002 :忽略未知选项“-v”
 CMakeCUDACompilerABI.cu
 CMakeCUDACompilerABI.cu
 cl: 命令行 warning D9002 :忽略未知选项“-v”
-Linking CUDA executable cmTC_2ca65.exe
-	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_2ca65.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_2ca65.dir\CMakeCUDACompilerABI.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nmAC7D.tmp
+Linking CUDA executable cmTC_20b65.exe
+	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_20b65.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_20b65.dir\CMakeCUDACompilerABI.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nmCB5.tmp
 LINK : warning LNK4044: 无法识别的选项“/v”；已忽略
-  正在创建库 cmTC_2ca65.lib 和对象 cmTC_2ca65.exp
+  正在创建库 cmTC_20b65.lib 和对象 cmTC_20b65.exp
 LINK : warning LNK4044: 无法识别的选项“/v”；已忽略
 LINK : warning LNK4044: 无法识别的选项“/v”；已忽略
-  正在创建库 cmTC_2ca65.lib 和对象 cmTC_2ca65.exp
+  正在创建库 cmTC_20b65.lib 和对象 cmTC_20b65.exp
 
 
 
@@ -303,24 +303,24 @@ Parsed CUDA implicit include dir info from above output: rv=start
 
 Parsed CUDA implicit link information from above output:
   link line regex: [^( *|.*[/\])(link\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: G:/project/funnycode/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: G:/project/C_project/as3/cuda/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):nmake /nologo cmTC_2ca65\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_2ca65.dir\build.make /nologo -L                  CMakeFiles\cmTC_2ca65.dir\build]
-  ignore line: [Building CUDA object CMakeFiles/cmTC_2ca65.dir/CMakeCUDACompilerABI.cu.obj]
-  ignore line: [	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd   -Xcompiler=-v -x cu -c H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\share\cmake-3.17\Modules\CMakeCUDACompilerABI.cu -o CMakeFiles\cmTC_2ca65.dir\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_2ca65.dir\ -FS]
+  ignore line: [Run Build Command(s):nmake /nologo cmTC_20b65\fast && 	E:\vs\VC\Tools\MSVC\14.27.29110\bin\HostX64\x64\nmake.exe  -f CMakeFiles\cmTC_20b65.dir\build.make /nologo -L                  CMakeFiles\cmTC_20b65.dir\build]
+  ignore line: [Building CUDA object CMakeFiles/cmTC_20b65.dir/CMakeCUDACompilerABI.cu.obj]
+  ignore line: [	C:\PROGRA~1\NVIDIA~2\CUDA\v11.0\bin\nvcc.exe -forward-unknown-to-host-compiler   -D_WINDOWS -Xcompiler=" /GR /EHsc"  -Xcompiler="-Zi -Ob0 -Od /RTC1" -Xcompiler=-MDd   -Xcompiler=-v -x cu -c H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\share\cmake-3.17\Modules\CMakeCUDACompilerABI.cu -o CMakeFiles\cmTC_20b65.dir\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\cmTC_20b65.dir\ -FS]
   ignore line: [cl: 命令行 warning D9002 :忽略未知选项“-v”]
   ignore line: [CMakeCUDACompilerABI.cu]
   ignore line: [cl: 命令行 warning D9002 :忽略未知选项“-v”]
   ignore line: [CMakeCUDACompilerABI.cu]
   ignore line: [CMakeCUDACompilerABI.cu]
   ignore line: [cl: 命令行 warning D9002 :忽略未知选项“-v”]
-  ignore line: [Linking CUDA executable cmTC_2ca65.exe]
-  ignore line: [	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_2ca65.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_2ca65.dir\CMakeCUDACompilerABI.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nmAC7D.tmp]
+  ignore line: [Linking CUDA executable cmTC_20b65.exe]
+  ignore line: [	H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_20b65.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- E:\vs\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64\link.exe /nologo "CMakeFiles\cmTC_20b65.dir\CMakeCUDACompilerABI.cu.obj"  @C:\Users\10132\AppData\Local\Temp\nmCB5.tmp]
   ignore line: [LINK : warning LNK4044: 无法识别的选项“/v”；已忽略]
-  ignore line: [  正在创建库 cmTC_2ca65.lib 和对象 cmTC_2ca65.exp]
+  ignore line: [  正在创建库 cmTC_20b65.lib 和对象 cmTC_20b65.exp]
   ignore line: [LINK : warning LNK4044: 无法识别的选项“/v”；已忽略]
   ignore line: [LINK : warning LNK4044: 无法识别的选项“/v”；已忽略]
-  ignore line: [  正在创建库 cmTC_2ca65.lib 和对象 cmTC_2ca65.exp]
+  ignore line: [  正在创建库 cmTC_20b65.lib 和对象 cmTC_20b65.exp]
   ignore line: []
   ignore line: []
   implicit libs: []

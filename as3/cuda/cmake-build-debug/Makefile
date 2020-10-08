@@ -52,10 +52,10 @@ RM = H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = G:\project\funnycode\C_project\as3\cuda
+CMAKE_SOURCE_DIR = G:\project\C_project\as3\cuda
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = G:\project\funnycode\C_project\as3\cuda\cmake-build-debug
+CMAKE_BINARY_DIR = G:\project\C_project\as3\cuda\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -84,9 +84,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

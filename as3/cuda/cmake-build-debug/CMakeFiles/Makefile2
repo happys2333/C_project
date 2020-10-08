@@ -48,10 +48,10 @@ RM = H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = G:\project\funnycode\C_project\as3\cuda
+CMAKE_SOURCE_DIR = G:\project\C_project\as3\cuda
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = G:\project\funnycode\C_project\as3\cuda\cmake-build-debug
+CMAKE_BINARY_DIR = G:\project\C_project\as3\cuda\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -78,14 +78,14 @@ clean: CMakeFiles\cuda.dir\clean
 CMakeFiles\cuda.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cuda.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cuda.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cuda.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cuda.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target cuda"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target cuda"
 .PHONY : CMakeFiles\cuda.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\cuda.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\cuda.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\funnycode\C_project\as3\cuda\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\project\C_project\as3\cuda\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\cuda.dir\rule
 
 # Convenience name for target.

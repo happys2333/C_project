@@ -55,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,9 +70,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="cuda" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cuda" TARGET_NAME="cuda" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cuda" RUN_TARGET_NAME="cuda">
@@ -97,6 +98,7 @@
       <workItem from="1601997073726" duration="1273000" />
       <workItem from="1602037211131" duration="249000" />
       <workItem from="1602037477102" duration="10425000" />
+      <workItem from="1602121863997" duration="10481000" />
     </task>
     <servers />
   </component>
@@ -120,41 +122,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601976276599" />
-    <state width="1876" height="296" key="GridCell.Tab.0.bottom" timestamp="1602061770827">
+    <state width="913" height="300" key="GridCell.Tab.0.bottom" timestamp="1602131907588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
-    <state width="1876" height="296" key="GridCell.Tab.0.center" timestamp="1602061770827">
+    <state width="913" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602131907588" />
+    <state width="913" height="300" key="GridCell.Tab.0.center" timestamp="1602131907588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="296" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
-    <state width="1876" height="296" key="GridCell.Tab.0.left" timestamp="1602061770827">
+    <state width="913" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602131907588" />
+    <state width="913" height="300" key="GridCell.Tab.0.left" timestamp="1602131907588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="296" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
-    <state width="1876" height="296" key="GridCell.Tab.0.right" timestamp="1602061770827">
+    <state width="913" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602131907588" />
+    <state width="913" height="300" key="GridCell.Tab.0.right" timestamp="1602131907588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="296" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602061770827" />
-    <state width="913" height="344" key="GridCell.Tab.1.bottom" timestamp="1601996974409">
+    <state width="913" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602131907588" />
+    <state width="913" height="346" key="GridCell.Tab.1.bottom" timestamp="1602125028139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601996974409" />
-    <state width="913" height="344" key="GridCell.Tab.1.center" timestamp="1601996974408">
+    <state width="913" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
+    <state width="913" height="346" key="GridCell.Tab.1.center" timestamp="1602125028139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601996974408" />
-    <state width="913" height="344" key="GridCell.Tab.1.left" timestamp="1601996974408">
+    <state width="913" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
+    <state width="913" height="346" key="GridCell.Tab.1.left" timestamp="1602125028139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601996974407" />
-    <state width="913" height="344" key="GridCell.Tab.1.right" timestamp="1601996974408">
+    <state width="913" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
+    <state width="913" height="346" key="GridCell.Tab.1.right" timestamp="1602125028139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601996974408" />
+    <state width="913" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1601976290018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601976290018" />
+    <state x="1160" y="306" key="refactoring.ChangeSignatureDialog" timestamp="1602123374690">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1160" y="306" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602123374690" />
   </component>
 </project>

@@ -13,7 +13,10 @@ void unknownerror(int line,char *file){
     printf("Unknown error in file: %s, in line: %d",file,line);
     exit(1);
 }
-
+void failtoread(){
+    printf("fail to read: NO SUCH FILE");
+    exit(2);
+}
 
 
 

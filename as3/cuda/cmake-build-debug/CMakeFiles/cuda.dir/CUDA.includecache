@@ -6,17 +6,11 @@
 
 #IncludeRegexTransform: 
 
-G:/project/funnycode/C_project/as3/cuda/CodeError.h
-iostream
--
+G:/project/C_project/as3/cuda/GPU.h
 
-G:/project/funnycode/C_project/as3/cuda/GPU.h
-
-G:/project/funnycode/C_project/as3/cuda/main.cu
-iostream
+G:/project/C_project/as3/cuda/main.cu
+string
 -
 GPU.h
-G:/project/funnycode/C_project/as3/cuda/GPU.h
-CodeError.h
-G:/project/funnycode/C_project/as3/cuda/CodeError.h
+G:/project/C_project/as3/cuda/GPU.h
 

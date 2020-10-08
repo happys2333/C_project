@@ -5,17 +5,15 @@
  *
  *
  * ***/
-#include <iostream>
+#include <string>
 #include "GPU.h"
-#include "CodeError.h"
-__global__ void test(int i) {
+__global__ void test() {
     int tix = threadIdx.x;
     int tiy=threadIdx.y;
-    printf("%d %d\n",tix,tiy+i);
+    printf("%d\n",tix*blockDim.y+tiy);
 
 }
 int main() {
-
     printf("Welcome to the vector dot product calculator, you are using the CUDA version.\n"
            "We strongly recommend that you use this program with a lot of data, and if you have less data, try the other two versions\n"
            "This program supports to read in the relevant content through the file, instructions are only allowed to run in accordance with the normal command line\n");
