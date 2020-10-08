@@ -1,3 +1,0 @@
-G:/project/funnycode/C_project/as3/cmake-build-debug/CMakeFiles/as3.dir
-G:/project/funnycode/C_project/as3/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/project/funnycode/C_project/as3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "G:/project/funnycode/C_project/as3/normal/main.cpp" "G:/project/funnycode/C_project/as3/cmake-build-debug/CMakeFiles/as3.dir/normal/main.cpp.obj"
+  "/Users/happys/Desktop/project/C++/C_project/as3/Julia/main.cpp" "/Users/happys/Desktop/project/C++/C_project/as3/Julia/cmake-build-debug/CMakeFiles/Julia.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/Applications/Julia-1.5.app/Contents/Resources/julia/include/julia"
   )
 
 # Targets to which this target links.
