@@ -1,16 +1,31 @@
-using LinearAlgebra
-using Parsers
-function commandMode()
-        print("您正在使用的是 命令行 模式，请输入您的向量的维度")
-        dim = read()
+using LinearAlgebra#dot to get the answer
+#Julia core using BigFloat
+# begin at 1
 
-        n = read()
+path=pwd()
+fname = "results.txt"
+fout=open(fname,"w")
+function readfile(filename)
+    fread=open(filename,"r")
+    for line in eachline(f)
+	    print(line, "\n")
+	end
+end
+function printtofile(result)#file output
+    println(fout,result)
+end
+function commandMode()
+        println("您正在使用的是 命令行 模式，请输入您的向量的维度")
+        dim = readline()
+
+        println("请输入您的向量个数")
+        n = readline()
 
         for i = 1:n
 
         end
 
-
+end
 function fileMode()
 
 
