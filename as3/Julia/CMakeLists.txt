@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.17)
+project(Julia)
+set(CMAKE_CXX_STANDARD 14)
+set(julia_dir "/Applications/Julia-1.5.app/Contents/Resources/julia")#这里需要改成您本地的Julia目录
+set(INC_DIR "${julia_dir}/include/julia/")
+include_directories(${INC_DIR})
+set(libjulia "${julia_dir}/lib/")
+link_directories(${libjulia})
+link_libraries(julia)
+add_executable(Julia main.cpp)
+target_link_libraries(Julia julia)

@@ -1,3 +1,0 @@
-H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\as3.dir/objects.a
-D:\MingGW\bin\ar.exe cr CMakeFiles\as3.dir/objects.a @CMakeFiles\as3.dir\objects1.rsp
-D:\MingGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\as3.dir/objects.a -Wl,--no-whole-archive  -o as3.exe -Wl,--out-implib,libas3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\as3.dir\linklibs.rsp
