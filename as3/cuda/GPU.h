@@ -52,7 +52,7 @@ void completed(long long n,int dim,Vector* vectors){
             multitwovector<<<grid,block>>>(i,cuda_added,cuda_vector1,cuda_vector2);
         }
         multitwovector<<<grid2,block2>>>(needtobemul,cuda_added,cuda_vector1,cuda_vector2);
-        
+
 
 
         nowprogress+=progress;
