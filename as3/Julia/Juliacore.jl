@@ -5,47 +5,80 @@ using LinearAlgebra#dot to get the answer
 path=pwd()
 fname = "results.txt"
 fout=open(fname,"w")
-function readfile(filename)
-    fread=open(filename,"r")
-    for line in eachline(f)
-	    print(line, "\n")
-	end
-end
 function printtofile(result)#file output
     println(fout,result)
 end
+
 function commandMode()
         println("您正在使用的是 命令行 模式，请输入您的向量的维度")
-        dim = readline()
-        sum = BigFloat(0.0)
-        vector1 = zeros(BigFloat)
+        dim = parse(Int,readline())
+        vector = zeros(BigFloat,dim)
         println("请输入您的向量个数")
-        n = readline()
-        k = n/2
-        for i = 1:k
-            
+        n = parse(Int,readline())
+        vectors = []
+        println("请输入的时候以行为单位，每个数字请回车键入，不要用空格分割两个数字")
+        for i in 1:n
+            for j in 1:dim
+                vector[j] = parse(BigFloat,readline())
+            end
+            push!(vectors,vector)
         end
+        k = Int(n/2)
+        pr = 200 / n
+        now = 0
+        t1=time_ns()
+        for i = 1:k
+            result = dot(vectors[2*i],vectors[2*i-1])
+            printtofile(result)
+            now = now+ pr
+            println(string(now,"% has done."))
+        end
+        t2=time_ns()
+        println(string((t2-t1)/1e9,"seconds to finish this job"))
+        close(fout)
 end
 function fileMode()
-
-
-
-
+    println("您正在使用的是 文件 模式，请输入您的向量的维度")
+    dim = parse(Int,readline())
+    vector = zeros(BigFloat,dim)
+    println("请输入您的向量个数")
+    n = parse(Int,readline())
+    vectors = []
+    println("请输入您想打开的文件路径，使用绝对路径")
+    pathfile = readline()
+    fin = open(pathfile,"r")
+    for i in 1:n
+        for j in 1:dim
+            vector[j] = BigFloat(readline(fin))
+        end
+        push!(vectors,vector)
+    end
+    k = Int(n/2)
+    pr =200/n
+    now = 0
+    t1=time_ns()
+    for i = 1:k
+        result = dot(vectors[2*i],vectors[2*i-1])
+        printtofile(result)
+        now = now+ pr
+        println(string(now,"% has done."))
+    end
+    t2=time_ns()
+    println(string((t2-t1)/1e9,"seconds to finish this job"))
+    close(fout)
 end
-print("Julia核心已经初始化完成，正在进入主程序")
-print("欢迎继续使用本程序，输入-q退出程序，输入-f使用文件读取模式，输入-c进入命令行读取模式")
-cmd = readline()
+println("Julia核心已经初始化完成，正在进入主程序")
+println("欢迎继续使用本程序，输入-q退出程序，输入-f使用文件读取模式，输入-c进入命令行读取模式")
+global cmd = readline()
 while cmd!="-q"
-    if cmd[0]!='-'
+    if cmd[1]!='-'
+        print("wrong command, please try again")
+    elseif cmd[2]=='f'
+    fileMode()
+    elseif cmd[2]=='c'
+    commandMode()
+    else
         print("wrong command, please try again")
     end
-elseif cmd[1]=='f'
-    fileMode()
-end
-elseif cmd[1]=='c'
-    commandMode()
-end
-else
-    print("wrong command, please try again")
-end
+    global cmd = readline()
 end
