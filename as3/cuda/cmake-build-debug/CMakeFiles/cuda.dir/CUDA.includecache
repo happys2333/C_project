@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
+G:/project/C_project/as3/cuda/CodeError.h
+iostream
+-
+
 G:/project/C_project/as3/cuda/GPU.h
+iostream
+-
+cuda_runtime.h
+-
+device_launch_parameters.h
+-
+CodeError.h
+G:/project/C_project/as3/cuda/CodeError.h
+ctime
+-
+fstream
+-
 
 G:/project/C_project/as3/cuda/main.cu
 string
