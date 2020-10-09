@@ -1,1 +1,2 @@
-print("hello world")
+print("Julia核心已经初始化完成，正在进入主程序")
+print("欢迎继续使用本程序，")

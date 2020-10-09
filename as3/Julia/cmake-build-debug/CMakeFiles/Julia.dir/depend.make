@@ -30,5 +30,6 @@ CMakeFiles/Julia.dir/main.cpp.o: /Applications/Julia-1.5.app/Contents/Resources/
 CMakeFiles/Julia.dir/main.cpp.o: /Applications/Julia-1.5.app/Contents/Resources/julia/include/julia/uv/unix.h
 CMakeFiles/Julia.dir/main.cpp.o: /Applications/Julia-1.5.app/Contents/Resources/julia/include/julia/uv/version.h
 CMakeFiles/Julia.dir/main.cpp.o: /Applications/Julia-1.5.app/Contents/Resources/julia/include/julia/win32_ucontext.h
+CMakeFiles/Julia.dir/main.cpp.o: ../cross_system.h
 CMakeFiles/Julia.dir/main.cpp.o: ../main.cpp
 

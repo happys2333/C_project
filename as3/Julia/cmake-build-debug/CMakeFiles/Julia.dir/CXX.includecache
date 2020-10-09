@@ -270,6 +270,12 @@ dtypes.h
 setjmp.h
 -
 
+/Users/happys/Desktop/project/C++/C_project/as3/Julia/cross_system.h
+string
+-
+TargetConditionals.h
+-
+
 /Users/happys/Desktop/project/C++/C_project/as3/Julia/main.cpp
 julia.h
 -
@@ -277,4 +283,6 @@ zconf.h
 -
 string
 -
+cross_system.h
+/Users/happys/Desktop/project/C++/C_project/as3/Julia/cross_system.h
 
