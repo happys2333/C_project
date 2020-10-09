@@ -17,14 +17,14 @@ end
 function commandMode()
         println("您正在使用的是 命令行 模式，请输入您的向量的维度")
         dim = readline()
-
+        sum = BigFloat(0.0)
+        vector1 = zeros(BigFloat)
         println("请输入您的向量个数")
         n = readline()
-
-        for i = 1:n
-
+        k = n/2
+        for i = 1:k
+            
         end
-
 end
 function fileMode()
 
