@@ -4,24 +4,24 @@ using LinearAlgebra#dot to get the answer
 
 path=pwd()
 fname = "results.txt"
-fout=open(fname,"w")
-function printtofile(result)#file output
+function printtofile(fout,result)#file output
     println(fout,result)
 end
 
 function commandMode()
+    fout=open(fname,"w")
         println("您正在使用的是 命令行 模式，请输入您的向量的维度")
         dim = parse(Int,readline())
         vector = zeros(BigFloat,dim)
         println("请输入您的向量个数")
         n = parse(Int,readline())
-        vectors = []
+        vectors = Vector{Any}(undef,n)
         println("请输入的时候以行为单位，每个数字请回车键入，不要用空格分割两个数字")
         for i in 1:n
             for j in 1:dim
                 vector[j] = parse(BigFloat,readline())
             end
-            push!(vectors,vector)
+            vectors[i]=copy(vector)
         end
         k = Int(n/2)
         pr = 200 / n
@@ -29,7 +29,7 @@ function commandMode()
         t1=time_ns()
         for i = 1:k
             result = dot(vectors[2*i],vectors[2*i-1])
-            printtofile(result)
+            printtofile(fout,result)
             now = now+ pr
             println(string(now,"% has done."))
         end
@@ -38,28 +38,31 @@ function commandMode()
         close(fout)
 end
 function fileMode()
+    fout=open(fname,"w")
     println("您正在使用的是 文件 模式，请输入您的向量的维度")
     dim = parse(Int,readline())
     vector = zeros(BigFloat,dim)
     println("请输入您的向量个数")
     n = parse(Int,readline())
-    vectors = []
+    vectors = Vector{Any}(undef,n)
     println("请输入您想打开的文件路径，使用绝对路径")
     pathfile = readline()
     fin = open(pathfile,"r")
+    println("正在读取文件请稍后")
     for i in 1:n
         for j in 1:dim
             vector[j] = BigFloat(readline(fin))
         end
-        push!(vectors,vector)
+        vectors[i]=copy(vector)
     end
+    println("正在进行计算")
     k = Int(n/2)
     pr =200/n
     now = 0
     t1=time_ns()
     for i = 1:k
         result = dot(vectors[2*i],vectors[2*i-1])
-        printtofile(result)
+        printtofile(fout,result)
         now = now+ pr
         println(string(now,"% has done."))
     end
@@ -80,5 +83,6 @@ while cmd!="-q"
     else
         print("wrong command, please try again")
     end
+    println("请输入您的下一个指令，-q退出程序，输入-f使用文件读取模式，输入-c进入命令行读取模式")
     global cmd = readline()
 end
