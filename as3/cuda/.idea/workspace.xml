@@ -71,11 +71,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="cuda" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cuda" TARGET_NAME="cuda" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cuda" RUN_TARGET_NAME="cuda">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -107,6 +102,7 @@
       <workItem from="1602331191343" duration="2284000" />
       <workItem from="1602333506762" duration="783000" />
       <workItem from="1602334944433" duration="12964000" />
+      <workItem from="1602389597214" duration="29000" />
     </task>
     <servers />
   </component>
@@ -138,6 +134,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="408" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1602339690248" />
+    <state x="550" y="353" key="FileChooserDialogImpl" timestamp="1602389620733">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="550" y="353" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602389620733" />
     <state width="913" height="344" key="GridCell.Tab.0.bottom" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
