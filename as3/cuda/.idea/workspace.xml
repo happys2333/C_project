@@ -66,18 +66,24 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\project\C_project\as3\cuda" />
       <recent name="G:\project\funnycode\C_project\as3\cuda" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="cuda" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cuda" TARGET_NAME="cuda" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cuda" RUN_TARGET_NAME="cuda">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -93,7 +99,14 @@
       <workItem from="1601997073726" duration="1273000" />
       <workItem from="1602037211131" duration="249000" />
       <workItem from="1602037477102" duration="10425000" />
-      <workItem from="1602121863997" duration="15374000" />
+      <workItem from="1602121863997" duration="15400000" />
+      <workItem from="1602309098738" duration="1591000" />
+      <workItem from="1602312027665" duration="109000" />
+      <workItem from="1602312147871" duration="12535000" />
+      <workItem from="1602326079072" duration="4638000" />
+      <workItem from="1602331191343" duration="2284000" />
+      <workItem from="1602333506762" duration="783000" />
+      <workItem from="1602334944433" duration="12964000" />
     </task>
     <servers />
   </component>
@@ -117,38 +130,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601976276599" />
-    <state width="913" height="300" key="GridCell.Tab.0.bottom" timestamp="1602172694902">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340109641">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602172694902" />
-    <state width="913" height="300" key="GridCell.Tab.0.center" timestamp="1602172694902">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602340109641" />
+    <state width="408" height="466" key="DebuggerActiveHint" timestamp="1602339690248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602172694902" />
-    <state width="913" height="300" key="GridCell.Tab.0.left" timestamp="1602172694902">
+    <state width="408" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1602339690248" />
+    <state width="913" height="344" key="GridCell.Tab.0.bottom" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602172694902" />
-    <state width="913" height="300" key="GridCell.Tab.0.right" timestamp="1602172694902">
+    <state width="913" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.0.center" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602172694902" />
-    <state width="913" height="346" key="GridCell.Tab.1.bottom" timestamp="1602125028139">
+    <state width="913" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.0.left" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
-    <state width="913" height="346" key="GridCell.Tab.1.center" timestamp="1602125028139">
+    <state width="913" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.0.right" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
-    <state width="913" height="346" key="GridCell.Tab.1.left" timestamp="1602125028139">
+    <state width="913" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.1.bottom" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
-    <state width="913" height="346" key="GridCell.Tab.1.right" timestamp="1602125028139">
+    <state width="913" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.1.center" timestamp="1602386215019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602125028139" />
+    <state width="913" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.1.left" timestamp="1602386215019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="913" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
+    <state width="913" height="344" key="GridCell.Tab.1.right" timestamp="1602386215019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="913" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602386215019" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1601976290018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,5 +178,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1160" y="306" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602123374690" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1602330021689">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602330021689" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/GPU.h</url>
+          <line>88</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/GPU.h</url>
+          <line>159</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

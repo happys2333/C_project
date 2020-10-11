@@ -3,7 +3,7 @@
 #define CUDA_CODEERROR_H
 #include<iostream>
 using namespace std;
-void Wrongcmd(char* cmd){
+void Wrongcmd(string cmd){
     cout<<"you command :"<<cmd<<"isn't command we can recognition, please try again"<<endl;
 }
 void Wronglinenum(long line){

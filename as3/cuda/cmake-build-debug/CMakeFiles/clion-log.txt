@@ -1,11 +1,4 @@
-H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" G:\project\C_project\as3\cuda
--- The CUDA compiler identification is NVIDIA 11.0.194
--- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin/nvcc.exe
--- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin/nvcc.exe - works
--- Detecting CUDA compiler ABI info
--- Detecting CUDA compiler ABI info - done
--- Detecting CUDA compile features
--- Detecting CUDA compile features - done
+H:\developmenttool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" G:\project\C_project\as3\cuda
 -- Configuring done
 -- Generating done
 -- Build files have been written to: G:/project/C_project/as3/cuda/cmake-build-debug

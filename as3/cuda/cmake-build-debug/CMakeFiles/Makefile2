@@ -39,10 +39,10 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = H:\developmenttool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = H:\developmenttool\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = H:\developmenttool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
