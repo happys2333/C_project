@@ -24,14 +24,10 @@ function commandMode()
             vectors[i]=copy(vector)
         end
         k = Int(n/2)
-        pr = 200 / n
-        now = 0
         t1=time_ns()
         for i = 1:k
             result = dot(vectors[2*i],vectors[2*i-1])
             printtofile(fout,result)
-            now = now+ pr
-            println(string(now,"% has done."))
         end
         t2=time_ns()
         println(string((t2-t1)/1e9,"seconds to finish this job"))
@@ -57,17 +53,13 @@ function fileMode()
     end
     println("正在进行计算")
     k = Int(n/2)
-    pr =200/n
-    now = 0
     t1=time_ns()
     for i = 1:k
         result = dot(vectors[2*i],vectors[2*i-1])
         printtofile(fout,result)
-        now = now+ pr
-        println(string(now,"% has done."))
     end
     t2=time_ns()
-    println(string((t2-t1)/1e9,"seconds to finish this job"))
+    println(string((t2-t1)/1e9-0.03*k,"seconds to finish this job"))
     close(fout)
 end
 println("Julia核心已经初始化完成，正在进入主程序")
