@@ -1,3 +1,12 @@
+/****
+ *
+ * cuda version for the dot vectors
+ * speed : fast
+ * difficulty to use : hard
+ * system :Windows Linux with nvidia cuda
+ * author : happys
+ * date : 2020-10-10
+ * ****/
 #include "GPU.h"
 
 int main() {

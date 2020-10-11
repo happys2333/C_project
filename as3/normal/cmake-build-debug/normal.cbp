@@ -83,6 +83,9 @@
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/main.cpp">
 			<Option target="normal"/>
 		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/main.h">
+			<Option target="normal"/>
+		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -1,3 +1,11 @@
+/****
+ * julia version for the dot vectors
+ * speed : slow
+ * difficulty to use : not easy
+ * system :Windows Linux Mac OS with julia
+ * author : happys
+ * date : 2020-10-9
+ * ****/
 #include <julia.h>
 #include <zconf.h>
 #include <string>

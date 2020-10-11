@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="normal" targetName="normal" />
@@ -11,7 +29,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcc36e1-eae6-4b07-a957-8bfd2b22f63e" name="Default Changelist" comment="" />
+    <list default="true" id="2fcc36e1-eae6-4b07-a957-8bfd2b22f63e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Julia/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Julia/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cuda/GPU.h" beforeDir="false" afterPath="$PROJECT_DIR$/../cuda/GPU.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cuda/main.cu" beforeDir="false" afterPath="$PROJECT_DIR$/../cuda/main.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeError.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeError.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/normal.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/normal.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/normal.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/normal.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../result/QQ截图20201011102033.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +69,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,10 +98,91 @@
       <option name="presentableId" value="Default" />
       <updated>1602389627649</updated>
       <workItem from="1602389630708" duration="2765000" />
+      <workItem from="1602400679792" duration="733000" />
+      <workItem from="1602404496727" duration="1771000" />
+      <workItem from="1602427571890" duration="1733000" />
+      <workItem from="1602429402751" duration="2110000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="251" key="GridCell.Tab.0.bottom" timestamp="1602431552703">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="838" height="202" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602431331798" />
+    <state width="838" height="251" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1602430829170" />
+    <state width="1398" height="251" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1602431552703" />
+    <state width="1398" height="251" key="GridCell.Tab.0.center" timestamp="1602431552703">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="838" height="202" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1602431331797" />
+    <state width="838" height="251" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1602430829170" />
+    <state width="1398" height="251" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1602431552703" />
+    <state width="1398" height="251" key="GridCell.Tab.0.left" timestamp="1602431552702">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="838" height="202" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1602431331796" />
+    <state width="838" height="251" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1602430829169" />
+    <state width="1398" height="251" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1602431552702" />
+    <state width="1398" height="251" key="GridCell.Tab.0.right" timestamp="1602431552703">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="838" height="202" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1602431331797" />
+    <state width="838" height="251" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1602430829170" />
+    <state width="1398" height="251" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1602431552703" />
+    <state width="1398" height="251" key="GridCell.Tab.1.bottom" timestamp="1602431552704">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1398" height="251" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602431331615" />
+    <state width="838" height="251" key="GridCell.Tab.1.bottom/0.23.1440.812@0.23.1440.812" timestamp="1602430837160" />
+    <state width="1398" height="251" key="GridCell.Tab.1.bottom/0.23.1440.814@0.23.1440.814" timestamp="1602431552704" />
+    <state width="1398" height="251" key="GridCell.Tab.1.center" timestamp="1602431552704">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1398" height="251" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1602431331614" />
+    <state width="838" height="251" key="GridCell.Tab.1.center/0.23.1440.812@0.23.1440.812" timestamp="1602430837160" />
+    <state width="1398" height="251" key="GridCell.Tab.1.center/0.23.1440.814@0.23.1440.814" timestamp="1602431552704" />
+    <state width="1398" height="251" key="GridCell.Tab.1.left" timestamp="1602431552704">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1398" height="251" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1602431331614" />
+    <state width="838" height="251" key="GridCell.Tab.1.left/0.23.1440.812@0.23.1440.812" timestamp="1602430837159" />
+    <state width="1398" height="251" key="GridCell.Tab.1.left/0.23.1440.814@0.23.1440.814" timestamp="1602431552704" />
+    <state width="1398" height="251" key="GridCell.Tab.1.right" timestamp="1602431552704">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1398" height="251" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1602431331615" />
+    <state width="838" height="251" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1602430837160" />
+    <state width="1398" height="251" key="GridCell.Tab.1.right/0.23.1440.814@0.23.1440.814" timestamp="1602431552704" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.h</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.h</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

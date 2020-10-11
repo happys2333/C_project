@@ -105,6 +105,7 @@ void completed(const int n,const int dim,double** vectors){
     cout<<"All done!"<<endl<<"we use about "<<((double) all/CLOCKS_PER_SEC-0.1)<<"seconds to finish"<<endl;
 }
 void commandmode(){
+    printf("welcome to use command mode\n");
     int n=0;
     int dim=0;
     printf("Please enter your vector dimension:");
@@ -131,7 +132,7 @@ void commandmode(){
 }
 void fileMode(){
     printf("welcome to use file mode\n"
-           "Please makesure your file mode is same as the command mode\n");
+           "Please makesure your file txt type is same as the command mode\n");
     int n=0;
     int dim=0;
     printf("Please enter your vector dimension:");

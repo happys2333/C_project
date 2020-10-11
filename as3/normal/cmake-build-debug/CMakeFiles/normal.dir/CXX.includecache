@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/C++/C_project/as3/normal/CodeError.h
+iostream
+-
+
+/Users/happys/Desktop/project/C++/C_project/as3/normal/cross_system.h
+string
+-
+TargetConditionals.h
+-
+
+/Users/happys/Desktop/project/C++/C_project/as3/normal/main.cpp
+iostream
+-
+cross_system.h
+/Users/happys/Desktop/project/C++/C_project/as3/normal/cross_system.h
+main.h
+/Users/happys/Desktop/project/C++/C_project/as3/normal/main.h
+
+/Users/happys/Desktop/project/C++/C_project/as3/normal/main.h
+fstream
+-
+string
+-
+iostream
+-
+ctime
+-
+CodeError.h
+/Users/happys/Desktop/project/C++/C_project/as3/normal/CodeError.h
+
