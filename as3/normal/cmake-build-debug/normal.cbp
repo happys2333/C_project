@@ -4,91 +4,89 @@
 	<Project>
 		<Option title="normal"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="G:/project/C_project/as3/normal/cmake-build-debug"/>
+				<Option working_dir="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="normal">
-				<Option output="G:/project/C_project/as3/normal/cmake-build-debug/normal.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="G:/project/C_project/as3/normal/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="E:\vs\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="E:\vs\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 normal"/>
-					<CompileFile command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="normal/fast">
-				<Option output="G:/project/C_project/as3/normal/cmake-build-debug/normal.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="G:/project/C_project/as3/normal/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="E:\vs\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="E:\vs\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 normal/fast"/>
-					<CompileFile command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="G:/project/C_project/as3/normal/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="G:/project/C_project/as3/normal/cmake-build-debug"/>
+				<Option working_dir="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f G:\project\C_project\as3\normal\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="normal">
+				<Option output="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/normal" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 normal"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="normal/fast">
+				<Option output="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/normal" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 normal/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="G:/project/C_project/as3/normal/main.cpp">
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/main.cpp">
 			<Option target="normal"/>
 		</Unit>
-		<Unit filename="G:/project/C_project/as3/normal/main.h">
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/main.h">
 			<Option target="normal"/>
 		</Unit>
-		<Unit filename="G:/project/C_project/as3/normal/CMakeLists.txt">
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/normal/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

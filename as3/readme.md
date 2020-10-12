@@ -27,7 +27,7 @@ happys@kaixindeMacBook-Pro ~ % /Users/happys/Desktop/project/C++/C_project/as3/n
 同理在windows中也是一样的目录。             
 ### 概况
 三个不同版本中，有一些共同的特点，这里进行说明：    
-三个版本的输入格式基本相同，支持两种不同模式： 
+三个版本的输入格式基本相同，支持两种不同模式：
 - 命令行模式  
 本模式下，你可以通过命令行录入数据，你需要先录入你的向量维度，然后是向量的个数，在录入完成后要求你录入向量的内容，这里录入的格式如下：      
 例如向量（1，0）（2，5）两个    
@@ -282,7 +282,7 @@ cudaError_t dodot(double *c, const double *a, const double *b, unsigned int size
 系统：macOS 10.15.7        
 MacBook pro 2020 十三寸版本          
 CPU：2 GHz 四核Intel Core i5   
-内存：16 GB 
+内存：16 GB
 #### 测试CUDA版本的计算机：
 系统： Windows10 x64      
 CPU ：Intel Core i5 9400       
@@ -508,5 +508,3 @@ void fileMode(){
 # 相关思考
 - float的缺点是在相对精确度较高的情况下会丢失很多精确度，所以使用double会提高精确度，本程序中的Julia模板使用了BigFloat来进一步提高精确度
 - 相对来说，Julia的运算效率即使是很快的一种编程语言（因为本来就是以科学计算主打的）但是仍然在对比中远慢于c语言本身，在两千万数据量情况下
-
-
