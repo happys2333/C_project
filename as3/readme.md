@@ -202,6 +202,7 @@ jl_eval_string(path.c_str());
 在Julia这门语言中，拥有BigFloat特殊的数据类型，这个类型可以支持较长的浮点数，理论上可以支持长达五六十位的浮点数
 这样远比float和double精准度高的多      
 **这里说明一下：float的缺点是精度较低，如果你想实现更多的小数点后精确位数，那么使用double更合适**
+但是正因为如此，我们不得不牺牲了很多运算效率大概要比C语言慢十倍以上，但是我们这个版本只能进行高精度
 ### CUDA版本
 **由于英伟达的限制，本版本的程序只能支持window10 64位系统和Linux进行运行，且应该在运行或者编译前配置好cuda环境**
 思路较为简单，采取类似普通版本的思路，通过文件读写，实现本次运行的数据读取.
@@ -221,7 +222,7 @@ CPU：2 GHz 四核Intel Core i5
 CPU ：Intel Core i5 9400       
 内存：16 GB        
 GPU：RTX2070         
-
+### 测试模板
 由于三种版本均有不同的擅长领域，所以提供了两个测试样例的文件，分别是两千万组数据和两亿组数据的两种版本，对于
 测试模版为如下：
 ```shell
@@ -259,10 +260,160 @@ Julia核心已经初始化完成，正在进入主程序
 本程序使用的两个不同测试样例文件下载：         
 **两亿数据版本**链接: https://pan.baidu.com/s/1FGq8Kkj24Q7L9HsFvh6a1g  密码: 3mut         
 **两千万数据版本**链接: https://pan.baidu.com/s/1LSKRSwMQkoPm_7zfiNMJUQ  密码: q4qe    
+### 普通版本
+
 # 程序代码
 ### 普通版本
-**与CUDA版本源码类似，只是没有加入GPU加速模块**
 ```cpp
+/* main.cpp
+ * */
+/****
+ *
+ * normal version for the dot vectors
+ * speed : not so fast
+ * difficulty to use : easy
+ * system :Windows Linux Mac OS
+ * author : happys
+ * date : 2020-10-11
+ * ****/
+#include <iostream>
+#include "cross_system.h"
+#include "main.h"
+
+int main() {
+    changetheconsle();
+    printf("欢迎使用向量点乘计算器，您正在使用的版本是 C++ 版本\n"
+           "我们强烈建议您在数据量较小，且不要求很快的情况下使用本程序\n"
+           "如果您要求精准度请使用Julia版本，如果您要求速度请使用cuda版本\n"
+           "请输入指令，-q退出程序，-c命令行模式，-f文件模式，所有结果会在本程序的相同目录中生成result.txt文件保存\n");
+    string cmd;
+    cin>>cmd;
+    while(cmd!="-q"){
+        if(cmd[0]!='-'){
+            Wrongcmd(cmd);
+        }else if(cmd[1]=='c'){
+            printf("欢迎使用命令行模式\n");
+            commandmode();
+        }else if(cmd[1]=='f'){
+            printf("欢迎使用文件读取模式\n");
+            fileMode();
+        }else{
+            Wrongcmd(cmd);
+        }
+        printf("请输入您的命令：\n");
+        cin>>cmd;
+    }
+}
+/* main.h
+ * */
+//main function for the NORMAL version
+//date : 2020-10-11
+// written by : happys2333
+#ifndef NORMAL_MAIN_H
+#define NORMAL_MAIN_H
+#include<fstream>
+#include<string>
+#include<iostream>
+#include <ctime>
+#include "CodeError.h"
+void free(double** needtofree,int n){
+    for (int i=0;i<n;i++){
+        delete []needtofree[i];
+    }
+    delete []needtofree;
+    needtofree = NULL;
+}
+void completed(int n,int dim,double **vectors){
+    ofstream out("result.txt");
+    clock_t start, finish;
+    int k=n/2;
+    double result = 0;
+    start=clock();
+    for(int j=0;j<k;j++){
+        for(int i=dim-1;i>0;i--){
+            if(i>=8){
+                result += (
+                        vectors[2*j][i]*vectors[2*j+1][i]+
+                        vectors[2*j][i-1]*vectors[2*j+1][i-1]+
+                        vectors[2*j][i-2]*vectors[2*j+1][i-2]+
+                        vectors[2*j][i-3]*vectors[2*j+1][i-3]+vectors[2*j][i-4]*vectors[2*j+1][i-4]+
+                        vectors[2*j][i-5]*vectors[2*j+1][i-5]+vectors[2*j][i-6]*vectors[2*j+1][i-6]+
+                        vectors[2*j][i-7]*vectors[2*j+1][i-7]+vectors[2*j][i-8]*vectors[2*j+1][i-8]
+                );
+                i -= 8;
+                continue;
+            }
+            result += (vectors[2*j][i]*vectors[2*j+1][i]);
+        }
+        out<<result<<endl;
+    }
+    finish = clock();
+   printf("执行完成，用时： %f s",(double) (finish-start)/CLOCKS_PER_SEC );
+}
+void commandmode(){
+    printf("欢迎使用命令行模式，请按照规定使用本程序：");
+    int n=0;
+    int dim=0;
+    printf("请输入您的向量维度:");
+    scanf("%d",&dim);
+    printf("请输入您的向量个数:");
+    scanf("%d",&n);
+    if(n%2!=0){
+        Wronglinenum(n);
+        return;
+    }
+    double **vectors= new double *[n];
+    for(int j=0;j<n;j++){
+        vectors[j]=new double [dim];
+    }
+    double temp=0;
+    printf("请依次输入您的向量:");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<dim;j++){
+            scanf("%lf",&temp);
+            vectors[i][j]=temp;
+        }
+    }
+    completed(n,dim,vectors);
+    free(vectors);
+}
+void fileMode(){
+    printf("欢迎使用文件模式\n"
+           "请确保您的文件中的内容按照以结尾回车的方法分离每个数据\n");
+    int n=0;
+    int dim=0;
+    printf("请输入您的向量维度:");
+    scanf("%d",&dim);
+    printf("请输入您的向量个数:");
+    scanf("%d",&n);
+    if(n%2!=0){
+        Wronglinenum(n);
+        return;
+    }
+    printf("请输入您的文件路径（绝对路径）\n");
+    string filepath;
+    cin>>filepath;
+    ifstream in(filepath);
+    char line[1024];
+    auto **vectors= new double *[n];
+    for(int j=0;j<n;j++){
+        vectors[j]=new double [dim];
+    }
+    if(!in){
+        failtoread();
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<dim;j++){
+            in.getline(line,1024);
+            vectors[i][j]=stod(line);
+        }
+    }
+    completed(n,dim,vectors);
+    free(vectors);
+}
+#endif //NORMAL_MAIN_H
+/* cross_system.h
+ * */
 ```
 ### Julia版本
 ```julia
@@ -284,4 +435,7 @@ Julia核心已经初始化完成，正在进入主程序
 - Julia版本支持高精度大数运算
 - 直接输出文件，可以多种模式输入，增强程序的效率           
 # 相关思考
-- 
+- float的缺点是在相对精确度较高的情况下会丢失很多精确度，所以使用double会提高精确度，本程序中的Julia模板使用了BigFloat来进一步提高精确度
+- 相对来说，Julia的运算效率即使是很快的一种编程语言（因为本来就是以科学计算主打的）但是仍然在对比中远慢于c语言本身，在两千万数据量情况下
+
+
