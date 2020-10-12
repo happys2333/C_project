@@ -2,7 +2,6 @@ using LinearAlgebra#dot to get the answer
 #Julia core using BigFloat
 # begin at 1
 
-path=pwd()
 fname = "results.txt"
 function printtofile(fout,result)#file output
     println(fout,result)

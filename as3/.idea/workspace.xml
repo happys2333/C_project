@@ -29,7 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="780ffa02-896a-4aa9-b12b-61d1efd4c3f3" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normal/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/normal/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Julia/Juliacore.jl" beforeDir="false" afterPath="$PROJECT_DIR$/Julia/Juliacore.jl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normal/cmake-build-debug/result.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,13 +77,6 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -105,6 +99,7 @@
       <workItem from="1602146426362" duration="90000" />
       <workItem from="1602432204597" duration="1796000" />
       <workItem from="1602469652503" duration="618000" />
+      <workItem from="1602490791089" duration="2231000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1601218508802</created>
