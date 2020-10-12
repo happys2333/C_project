@@ -19,7 +19,12 @@ using namespace std;
 /*
  * CUDA core
  * */
-
+void tofree(double** needtofree,int len){
+    for (int i=0;i<n;i++){
+        delete [] needtofree[i];
+    }
+    delete [] needtofree;
+}
 __global__ void dot(double *c, const double *a, const double *b,int k)
 {
     int i = threadIdx.x+k*960;
@@ -129,6 +134,7 @@ void commandmode(){
         }
     }
         completed(n,dim,vectors);
+    tofree(vectors,n);
 }
 void fileMode(){
     printf("welcome to use file mode\n"
@@ -162,6 +168,7 @@ void fileMode(){
         }
     }
         completed(n,dim,vectors);
+    tofree(vectors,n);
 }
 void printGPUInfo(){
     cudaError_t cudaStatus;

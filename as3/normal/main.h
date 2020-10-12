@@ -8,6 +8,13 @@
 #include<iostream>
 #include <ctime>
 #include "CodeError.h"
+void free(double** needtofree,int n){
+    for (int i=0;i<n;i++){
+        delete []needtofree[i];
+    }
+    delete []needtofree;
+    needtofree = NULL;
+}
 void completed(int n,int dim,double **vectors){
     ofstream out("result.txt");
     clock_t start, finish;
@@ -60,6 +67,7 @@ void commandmode(){
         }
     }
     completed(n,dim,vectors);
+    free(vectors);
 }
 void fileMode(){
     printf("欢迎使用文件模式\n"
@@ -93,6 +101,7 @@ void fileMode(){
         }
     }
     completed(n,dim,vectors);
+    free(vectors);
 }
 
 
