@@ -224,7 +224,58 @@ CUDA里面和C语言中区分了两块存储位置，一个是共享内存，一
 - 共享内存 ： GPU使用，是提取效率最高的存储地区         
 - GPU显存：GPU使用，在GPU运算的时候效率较高，但是低于共享内存            
 - CPU内存：只能在CPU中使用，不能用GPU访问          
-所以我们必须在每次
+所以我们必须在每次把数据拷贝到GPU的显存中
+```cpp
+cudaError_t dodot(double *c, const double *a, const double *b, unsigned int size)
+{
+    double *dev_a = 0;
+    double *dev_b = 0;
+    double *dev_c = 0;
+    cudaError_t cudaStatus;
+
+    // Choose which GPU to run on, change this on a multi-GPU system.
+    cudaStatus = cudaSetDevice(0);
+
+
+    // Allocate GPU buffers for three vectors (two input, one output)    .
+    cudaStatus = cudaMalloc((void**)&dev_c, size * sizeof(double));
+
+
+    cudaStatus = cudaMalloc((void**)&dev_a, size * sizeof(double));
+
+
+    cudaStatus = cudaMalloc((void**)&dev_b, size * sizeof(double));
+
+
+    // Copy input vectors from host memory to GPU buffers.
+    cudaStatus = cudaMemcpy(dev_a, a, size * sizeof(double), cudaMemcpyHostToDevice);
+
+
+    cudaStatus = cudaMemcpy(dev_b, b, size * sizeof(double), cudaMemcpyHostToDevice);
+
+    int num = size/960;
+    int remin =size%960;
+
+    for(int i = 0; i <num;i++){
+        dot<<<1,960>>>(dev_c, dev_a, dev_b,i);
+    }
+    dot<<<1,remin>>>(dev_c, dev_a, dev_b,num);
+    cudaStatus = cudaGetLastError();
+
+    cudaStatus = cudaDeviceSynchronize();
+
+    cudaStatus = cudaMemcpy(c, dev_c, size * sizeof(double), cudaMemcpyDeviceToHost);
+
+
+    Error:
+    cudaFree(dev_c);
+    cudaFree(dev_a);
+    cudaFree(dev_b);
+    return cudaStatus;
+}
+```
+运行结束后释放了GPU中的占据的显存。
+本程序的内存管理机制更加优秀，在不需要的情况下及时释放了内存与显存，增强代码的稳定。
 # 测试
 测试平台说明：鉴于本程序有多种版本，我们在测试的时候使用了两台不同电脑进行测试。两台电脑的配置如下：          
 #### 测试Julia和C++版本的计算机：      
@@ -276,7 +327,9 @@ Julia核心已经初始化完成，正在进入主程序
 **两亿数据版本**链接: https://pan.baidu.com/s/1FGq8Kkj24Q7L9HsFvh6a1g  密码: 3mut         
 **两千万数据版本**链接: https://pan.baidu.com/s/1LSKRSwMQkoPm_7zfiNMJUQ  密码: q4qe    
 ### 普通版本
-
+普通版本使用的是两千万数据测试
+![普通版本](result/cpp.png)
+整体上在数据量比较低的情况下
 # 程序代码
 ### 普通版本
 ```cpp
