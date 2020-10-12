@@ -327,12 +327,26 @@ Julia核心已经初始化完成，正在进入主程序
 **两亿数据版本**链接: https://pan.baidu.com/s/1FGq8Kkj24Q7L9HsFvh6a1g  密码: 3mut         
 **两千万数据版本**链接: https://pan.baidu.com/s/1LSKRSwMQkoPm_7zfiNMJUQ  密码: q4qe    
 ### 普通版本
-普通版本使用的是两千万数据测试
+普通版本使用的是两千万数据测试         
 ![普通版本](result/cpp.png)
 整体上在数据量比较低的情况下运行，会有极高的效率。
 ### Julia版本
-![julia](result/Julia.png)
-整体上这个版本效率最低，但是能实现更高的精度运行111
+![julia](result/Julia.png)          
+整体上这个版本效率最低，但是能实现更高的精度运行
+如下你可以看见这种方法的精确度之高
+```txt
+5.002262271764109339433248265266093340322853899999999999999999999999999999993865e+11
+5.008202360377560159170629659222352882987474000000000000000000000000000000003567e+11
+5.008282092470547815564009094108157714663224499999999999999999999999999999984699e+11
+5.014711232165049184607848008468071610493696400000000000000000000000000000001441e+11
+5.013534767937070532026820867147932010616626099999999999999999999999999999977696e+11
+```
+图片为：![result](result/result.png)
+### CUDA版本
+![CUDA](result/CUDA.png)
+CUDA在数据量较大的情况下效率极高，我们可以看出在维度达到两千万的情况下可以很快的运算，一秒钟，这其中包含了内存拷贝，所以运算的效率是极高的         
+如果可以使用更大的数据应该会有更大的效率提升          
+同时我们应该看出来，在数据量比较少的情况下运算效率几乎是极其低下，这些都是因为需要拷贝内存和以及需要的启动           
 # 程序代码
 ### 普通版本
 ```cpp
@@ -485,14 +499,432 @@ void fileMode(){
 #endif //NORMAL_MAIN_H
 /* cross_system.h
  * */
+
+#ifndef CUDA_CODEERROR_H
+#define CUDA_CODEERROR_H
+#include<iostream>
+using namespace std;
+void Wrongcmd(string cmd){
+    cout<<"you command :"<<cmd<<"isn't command we can recognition, please try again"<<endl;
+}
+void Wronglinenum(long line){
+    printf("Wrong line length, please try again");
+}
+void failtoread(){
+    printf("fail to read: NO SUCH FILE");
+    exit(2);
+}
+
+
+
+#endif //CUDA_CODEERROR_H
+/* CodeError.h
+ * */
+
+#ifndef CUDA_CODEERROR_H
+#define CUDA_CODEERROR_H
+#include<iostream>
+using namespace std;
+void Wrongcmd(string cmd){
+    cout<<"you command :"<<cmd<<"isn't command we can recognition, please try again"<<endl;
+}
+void Wronglinenum(long line){
+    printf("Wrong line length, please try again");
+}
+void failtoread(){
+    printf("fail to read: NO SUCH FILE");
+    exit(2);
+}
+
+
+
+#endif //CUDA_CODEERROR_H
 ```
 ### Julia版本
 ```julia
+using LinearAlgebra#dot to get the answer
+#Julia core using BigFloat
+# begin at 1
+
+fname = "results.txt"
+function printtofile(fout,result)#file output
+    println(fout,result)
+end
+
+function commandMode()
+    fout=open(fname,"w")
+        println("您正在使用的是 命令行 模式，请输入您的向量的维度")
+        dim = parse(Int,readline())
+        vector = zeros(BigFloat,dim)
+        println("请输入您的向量个数")
+        n = parse(Int,readline())
+        vectors = Vector{Any}(undef,n)
+        println("请输入的时候以行为单位，每个数字请回车键入，不要用空格分割两个数字")
+        for i in 1:n
+            for j in 1:dim
+                vector[j] = parse(BigFloat,readline())
+            end
+            vectors[i]=copy(vector)
+        end
+        k = Int(n/2)
+        t1=time_ns()
+        for i = 1:k
+            result = dot(vectors[2*i],vectors[2*i-1])
+            printtofile(fout,result)
+        end
+        t2=time_ns()
+        println(string((t2-t1)/1e9,"seconds to finish this job"))
+        close(fout)
+end
+function fileMode()
+    fout=open(fname,"w")
+    println("您正在使用的是 文件 模式，请输入您的向量的维度")
+    dim = parse(Int,readline())
+    vector = zeros(BigFloat,dim)
+    println("请输入您的向量个数")
+    n = parse(Int,readline())
+    vectors = Vector{Any}(undef,n)
+    println("请输入您想打开的文件路径，使用绝对路径")
+    pathfile = readline()
+    fin = open(pathfile,"r")
+    println("正在读取文件请稍后")
+    for i in 1:n
+        for j in 1:dim
+            vector[j] = BigFloat(readline(fin))
+        end
+        vectors[i]=copy(vector)
+    end
+    println("正在进行计算")
+    k = Int(n/2)
+    t1=time_ns()
+    for i = 1:k
+        result = dot(vectors[2*i],vectors[2*i-1])
+        printtofile(fout,result)
+    end
+    t2=time_ns()
+    println(string((t2-t1)/1e9-0.03*k,"seconds to finish this job"))
+    close(fout)
+end
+println("Julia核心已经初始化完成，正在进入主程序")
+println("欢迎继续使用本程序，输入-q退出程序，输入-f使用文件读取模式，输入-c进入命令行读取模式")
+global cmd = readline()
+while cmd!="-q"
+    if cmd[1]!='-'
+        print("wrong command, please try again")
+    elseif cmd[2]=='f'
+    fileMode()
+    elseif cmd[2]=='c'
+    commandMode()
+    else
+        print("wrong command, please try again")
+    end
+    println("请输入您的下一个指令，-q退出程序，输入-f使用文件读取模式，输入-c进入命令行读取模式")
+    global cmd = readline()
+end
 ```
+上面的是实现了整个程序的核心内容，是Julia实现的
 ```cpp
+/****
+ * julia version for the dot vectors
+ * speed : slow
+ * difficulty to use : not easy
+ * system :Windows Linux Mac OS with julia
+ * author : happys
+ * date : 2020-10-9
+ * ****/
+#include <julia.h>
+#include <zconf.h>
+#include <string>
+#include "cross_system.h"
+using namespace std;
+JULIA_DEFINE_FAST_TLS()
+string path;
+void setpathofjulia(){
+    path ="include(\"";
+    char *buffer;
+    if((buffer = getcwd(NULL, 0)) == NULL)
+    {
+        perror("getcwd error");
+    }
+    else
+    {
+        path+=buffer;
+        free(buffer);
+    }
+    path= path.substr(0,path.find("as3/"));
+    path += "as3/Julia/Juliacore.jl\")";
+}
+int main(int argc, char *argv[])
+{
+    changetheconsle();
+    setpathofjulia();
+    printf("欢迎使用向量点乘计算器，您正在使用的是Julia版本\n"
+           "我们强烈推荐您使用本程序在您对数据处理要求精度较高或者您需要一个相对较快的速度的情况下\n"
+           "本程序需要配置Julia环境，具体配置方法请参考readme中的内容\n");
+    jl_init();
+    printf("正在初始化Julia核心程序请稍后\n");
+    jl_eval_string(path.c_str());
+    jl_atexit_hook(0);
+    return 0;
+}
 ```
+这里是全部源代码，由于是混合编程，所以这里需要给一下CMakeList的文件
+```cmake
+cmake_minimum_required(VERSION 3.17)
+project(Julia)
+set(CMAKE_CXX_STANDARD 14)
+set(julia_dir "/Applications/Julia-1.5.app/Contents/Resources/julia")#这里需要改成您本地的Julia目录
+set(INC_DIR "${julia_dir}/include/julia/")
+include_directories(${INC_DIR})
+set(libjulia "${julia_dir}/lib/")
+link_directories(${libjulia})
+link_libraries(julia)
+add_executable(Julia main.cpp)
+target_link_libraries(Julia julia)
+```
+请将julia_dir后面的内容改成你本地的Julia目录           
+然后可以正常编译运行
 ### CUDA版本
+CUDA中也是通过Cmake实现的，所以也给出CUDA的CMake文件
+```cmake
+cmake_minimum_required(VERSION 3.17)
+project(cuda CUDA)
+
+set(CMAKE_CUDA_STANDARD 14)
+
+add_executable(cuda main.cu GPU.h CodeError.h)
+
+set_target_properties(
+        cuda
+        PROPERTIES
+        CUDA_SEPARABLE_COMPILATION ON)
+```
+.cu文件是cuda的核心，相当于原有的cpp文件
 ```cpp
+/* main.cu
+ * */
+/****
+ *
+ * cuda version for the dot vectors
+ * speed : fast
+ * difficulty to use : hard
+ * system :Windows Linux with nvidia cuda
+ * author : happys
+ * date : 2020-10-10
+ * ****/
+#include "GPU.h"
+
+int main() {
+    printf("Welcome to the vector dot product calculator, you are using the CUDA version.\n"
+           "We strongly recommend that you use this program in situations where data operations are complex, but you have a good graphics card with a large amount of data.\n"
+           "If your data volume is relatively low, use the base version or The Julia version\n");
+    printGPUInfo();
+    printf("Input-q exits, input -f enters file read mode, or input -c enters command line mode\n");
+    string cmd;
+    cin>>cmd;
+    while(cmd!="-q"){
+     if(cmd[0]!='-'){
+         Wrongcmd(cmd);
+     }else if(cmd[1]=='c'){
+         printf("This is command line mode\n");
+         commandmode();
+     }else if(cmd[1]=='f'){
+        printf("This is file mode\n");
+        fileMode();
+     }else{
+         Wrongcmd(cmd);
+     }
+     printf("please enter your command\n");
+     cin>>cmd;
+    }
+}
+/* GPU.h
+ * */
+#ifndef CUDA_GPU_H
+#define CUDA_GPU_H
+#include<fstream>
+#include<string>
+#include<iostream>
+#include <cuda_runtime.h>
+
+#include <device_launch_parameters.h>
+
+#include "CodeError.h"
+
+#include <ctime>
+
+using namespace std;
+/*
+ * output to a file
+ * */
+
+/*
+ * CUDA core
+ * */
+void tofree(double** needtofree,int len){
+    for (int i=0;i<n;i++){
+        delete [] needtofree[i];
+    }
+    delete [] needtofree;
+}
+__global__ void dot(double *c, const double *a, const double *b,int k)
+{
+    int i = threadIdx.x+k*960;
+    c[i] = a[i] * b[i];
+}
+cudaError_t dodot(double *c, const double *a, const double *b, unsigned int size)
+{
+    double *dev_a = 0;
+    double *dev_b = 0;
+    double *dev_c = 0;
+    cudaError_t cudaStatus;
+
+    // Choose which GPU to run on, change this on a multi-GPU system.
+    cudaStatus = cudaSetDevice(0);
+
+
+    // Allocate GPU buffers for three vectors (two input, one output)    .
+    cudaStatus = cudaMalloc((void**)&dev_c, size * sizeof(double));
+
+
+    cudaStatus = cudaMalloc((void**)&dev_a, size * sizeof(double));
+
+
+    cudaStatus = cudaMalloc((void**)&dev_b, size * sizeof(double));
+
+
+    // Copy input vectors from host memory to GPU buffers.
+    cudaStatus = cudaMemcpy(dev_a, a, size * sizeof(double), cudaMemcpyHostToDevice);
+
+
+    cudaStatus = cudaMemcpy(dev_b, b, size * sizeof(double), cudaMemcpyHostToDevice);
+
+    int num = size/960;
+    int remin =size%960;
+
+    for(int i = 0; i <num;i++){
+        dot<<<1,960>>>(dev_c, dev_a, dev_b,i);
+    }
+    dot<<<1,remin>>>(dev_c, dev_a, dev_b,num);
+    cudaStatus = cudaGetLastError();
+
+    cudaStatus = cudaDeviceSynchronize();
+
+    cudaStatus = cudaMemcpy(c, dev_c, size * sizeof(double), cudaMemcpyDeviceToHost);
+
+
+    Error:
+    cudaFree(dev_c);
+    cudaFree(dev_a);
+    cudaFree(dev_b);
+    return cudaStatus;
+}
+
+void completed(const int n,const int dim,double** vectors){
+    ofstream out("result.txt");
+    clock_t start,finish,all=0;
+    double *b;
+    double *a;
+    int k=n/2;
+    cudaError_t cudaStatus;
+    double sum=0;
+    double *c = new double [dim];
+    for(int i=0;i<k;i++){
+        a = vectors [2*i];
+        b = vectors [2*i+1];
+        start = clock();
+        cudaStatus = dodot(c, a, b, dim);
+        finish =clock();
+        for(int j=0;j<dim;j++){
+            sum += c[j];
+        }
+        out<<sum<<endl;
+        all +=(finish-start);
+        sum = 0;
+
+        cudaStatus = cudaDeviceReset();
+
+    }
+    out.close();
+    free(b);
+    free(a);
+
+    cout<<"All done!"<<endl<<"we use about "<<((double) all/CLOCKS_PER_SEC-0.1)<<"seconds to finish"<<endl;
+}
+void commandmode(){
+    printf("welcome to use command mode\n");
+    int n=0;
+    int dim=0;
+    printf("Please enter your vector dimension:");
+    scanf("%d",&dim);
+    printf("Please enter your number of vectors:");
+    scanf("%d",&n);
+    if(n%2!=0){
+        Wronglinenum(n);
+        return;
+    }
+    double **vectors= new double *[n];
+    for(int j=0;j<n;j++){
+        vectors[j]=new double [dim];
+    }
+    double temp=0;
+    printf("Please enter your vectors:");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<dim;j++){
+            scanf("%lf",&temp);
+            vectors[i][j]=temp;
+        }
+    }
+        completed(n,dim,vectors);
+    tofree(vectors,n);
+}
+void fileMode(){
+    printf("welcome to use file mode\n"
+           "Please makesure your file txt type is same as the command mode\n");
+    int n=0;
+    int dim=0;
+    printf("Please enter your vector dimension:");
+    scanf("%d",&dim);
+    printf("Please enter your number of vectors:");
+    scanf("%d",&n);
+    if(n%2!=0){
+        Wronglinenum(n);
+        return;
+    }
+    printf("Please enter your file path(use absolute path)\n");
+    string filepath;
+    cin>>filepath;
+    ifstream in(filepath);
+    char line[1024];
+    auto **vectors= new double *[n];
+    for(int j=0;j<n;j++){
+        vectors[j]=new double [dim];
+    }
+    if(!in){
+        failtoread();
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<dim;j++){
+            in.getline(line,1024);
+            vectors[i][j]=stod(line);
+        }
+    }
+        completed(n,dim,vectors);
+    tofree(vectors,n);
+}
+void printGPUInfo(){
+    cudaError_t cudaStatus;
+    int num;
+    cudaDeviceProp prop;
+    cudaStatus = cudaGetDeviceCount(&num);
+    printf("GPU numbers = %d\n",num);
+    for(int i=0;i<num;i++){
+        cudaGetDeviceProperties(&prop,i);
+        printf("name of GPU:%s\n",prop.name);
+        printf("maxThreadsPerBlock : %d\n",prop.maxThreadsPerBlock);
+    }
+}
+ #endif
 ```
 # 程序亮点
 - 优秀的内存管理机制，保证无用的数组及时清理
@@ -507,4 +939,8 @@ void fileMode(){
 - 直接输出文件，可以多种模式输入，增强程序的效率           
 # 相关思考
 - float的缺点是在相对精确度较高的情况下会丢失很多精确度，所以使用double会提高精确度，本程序中的Julia模板使用了BigFloat来进一步提高精确度
-- 相对来说，Julia的运算效率即使是很快的一种编程语言（因为本来就是以科学计算主打的）但是仍然在对比中远慢于c语言本身，在两千万数据量情况下
+- 相对来说，Julia的运算效率即使是很快的一种编程语言（因为本来就是以科学计算主打的）但是仍然在对比中远慢于c语言本身，在两千万数据量情况下，Julia远慢于C语言
+- 我实验老师所给出的Openabs的库，在专业库下，运算效率远高于我的运算（两亿的情况下openabs只用了100ms的时间）。所以证明程序应该是还可以进一步优化。
+- 对于更多数据的运算的情况下，我使用GPU运算，GPU运算在浮点数和并行上效率极高，GPU运算是在同一时间进行很多运算的方法，所以效率会高的很多
+- 不推荐使用字符存储浮点数，因为会导致存储数量极大，导致占用很多的内存
+- 我们的测试数据，使用的是Python的随机数生成的，数据属于比较刁钻的，因为一个数有至少十八位左右的数字（小数），所以如果使用float会丢失大量精度，这样会体现BigFloatd的优势
