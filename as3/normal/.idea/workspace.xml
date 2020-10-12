@@ -69,7 +69,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,14 +78,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
-    <configuration name="normal" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="normal" TARGET_NAME="normal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="normal" RUN_TARGET_NAME="normal">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="normal" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="normal" TARGET_NAME="normal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="normal" RUN_TARGET_NAME="normal">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -102,6 +107,7 @@
       <workItem from="1602404496727" duration="1771000" />
       <workItem from="1602427571890" duration="1733000" />
       <workItem from="1602429402751" duration="2110000" />
+      <workItem from="1602508705660" duration="301000" />
     </task>
     <servers />
   </component>
@@ -121,6 +127,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="319" y="318" key="FileChooserDialogImpl" timestamp="1602509007685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="319" y="318" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602509007685" />
     <state width="1398" height="251" key="GridCell.Tab.0.bottom" timestamp="1602431552703">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
