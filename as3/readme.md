@@ -18,13 +18,13 @@
 - Julia版本：本版本相对较慢，但是实现了高精度的浮点数运算，这里理论上可以支持超过50位小数以上的计算。     
 **本程序中的数据量除了指总量以外更关注的是维度，如果维度较高则认为数据量高，同时，本程序运行时认为求点积是相邻两个向量运算，例如向量1和向量2，向量3和向量4**  
 *所有程序运行完的结果均输出在您运行程序的根目录下的result.txt文件中*    
-**⚠️注意：在运行新的运算的时候会覆盖原有的result，如果需要保留请先复制文件到其他地方**      
+**注意：在运行新的运算的时候会覆盖原有的result，如果需要保留请先复制文件到其他地方**      
 **这里存储的文件目录指的是您控制台的所在目录，如下代码：**
 ```shell
 happys@kaixindeMacBook-Pro ~ % /Users/happys/Desktop/project/C++/C_project/as3/normal/cmake-build-debug/normal ; exit;
 ```
 您的结果将保存于~目录下（也就是macOS中的用户根目录）      
-同理在windows中
+同理在windows中也是一样的目录。             
 ### 概况
 三个不同版本中，有一些共同的特点，这里进行说明：    
 三个版本的输入格式基本相同，支持两种不同模式： 
@@ -77,7 +77,72 @@ void free(double** needtofree,int n){
     needtofree = NULL;
 }
 ```
-通过这种方法，我们保证了在多次处理很多数据的时候
+通过这种方法，我们保证了在多次处理很多数据的时候可以及时的释放内存       
+```cpp
+ free(vectors);
+```
+这里给出命令行模式下的基本模式一部分函数
+```cpp
+void commandmode(){
+    printf("欢迎使用命令行模式，请按照规定使用本程序：");
+    int n=0;
+    int dim=0;
+    printf("请输入您的向量维度:");
+    scanf("%d",&dim);
+    printf("请输入您的向量个数:");
+    scanf("%d",&n);
+    if(n%2!=0){
+        Wronglinenum(n);
+        return;
+    }
+    double **vectors= new double *[n];
+    for(int j=0;j<n;j++){
+        vectors[j]=new double [dim];
+    }
+    double temp=0;
+    printf("请依次输入您的向量:");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<dim;j++){
+            scanf("%lf",&temp);
+            vectors[i][j]=temp;
+        }
+    }
+    completed(n,dim,vectors);
+    free(vectors);
+}
+```
+简单说明一下思路，先进行读取两个数据，分别是代表向量维度和向量个数，然后依次开辟相应的二维数组，
+然后依次读取相应的向量，在completed函数中进行运算
+```cpp
+void completed(int n,int dim,double **vectors){
+    ofstream out("result.txt");
+    clock_t start, finish;
+    int k=n/2;
+    double result = 0;
+    start=clock();
+    for(int j=0;j<k;j++){
+        for(int i=dim-1;i>0;i--){
+            if(i>=8){
+                result += (
+                        vectors[2*j][i]*vectors[2*j+1][i]+
+                        vectors[2*j][i-1]*vectors[2*j+1][i-1]+
+                        vectors[2*j][i-2]*vectors[2*j+1][i-2]+
+                        vectors[2*j][i-3]*vectors[2*j+1][i-3]+vectors[2*j][i-4]*vectors[2*j+1][i-4]+
+                        vectors[2*j][i-5]*vectors[2*j+1][i-5]+vectors[2*j][i-6]*vectors[2*j+1][i-6]+
+                        vectors[2*j][i-7]*vectors[2*j+1][i-7]+vectors[2*j][i-8]*vectors[2*j+1][i-8]
+                );
+                i -= 8;
+                continue;
+            }
+            result += (vectors[2*j][i]*vectors[2*j+1][i]);
+        }
+        out<<result<<endl;
+    }
+    finish = clock();
+   printf("执行完成，用时： %f s",(double) (finish-start)/CLOCKS_PER_SEC );
+}
+```
+这个函数实现了整个向量循环点积运算，优化是通过对8个为一组计算的，提高了一定程度的运算效率。
 ### Julia版本
 普通版本采用Julia做为主要的计算部分，这里还是通过上次的跨平台方法解决。   
 C语言部分以跨平台实现为主要内容：    
@@ -126,11 +191,17 @@ void changetheconsle(){
 #endif //AS3_CROSS_SYSTEM_H
 ```
 值得声明的是，本程序的跨平台是通过不同平台进行不同的动态链接库编译实现，所以你可以利用如下方法在gcc中实现：
-例如 Julia 被安装到 $JULIA_DIR，则可以用 gcc 来编译上面的测试程序 test.c:
+例如 Julia 被安装到 $JULIA_DIR，则可以用 gcc 来编译上面的测试程序 main.cpp:
 ```shell
 gcc -o test -fPIC -I$JULIA_DIR/include/julia -L$JULIA_DIR/lib -Wl,-rpath,$JULIA_DIR/lib main.cpp - ljulia
 ```
-
+本程序然后进行了调用Julia的方法
+```cpp
+jl_eval_string(path.c_str());
+```
+在Julia这门语言中，拥有BigFloat特殊的数据类型，这个类型可以支持较长的浮点数，理论上可以支持长达五六十位的浮点数
+这样远比float和double精准度高的多      
+**这里说明一下：float的缺点是精度较低，如果你想实现更多的小数点后精确位数，那么使用double更合适**
 ### CUDA版本
 **由于英伟达的限制，本版本的程序只能支持window10 64位系统和Linux进行运行，且应该在运行或者编译前配置好cuda环境**
 思路较为简单，采取类似普通版本的思路，通过文件读写，实现本次运行的数据读取.
@@ -211,5 +282,6 @@ Julia核心已经初始化完成，正在进入主程序
 - 源代码与主要代码的分离，便于代码的开发与维护
 - 支持多种不同模式运行，多个程序让用户可以直接选择
 - Julia版本支持高精度大数运算
-- 直接输出文件，可以多种模式输入，增强程序的效率
+- 直接输出文件，可以多种模式输入，增强程序的效率           
 # 相关思考
+- 

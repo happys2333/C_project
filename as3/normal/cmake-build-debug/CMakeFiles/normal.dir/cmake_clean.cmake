@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/normal.dir/main.cpp.o"
-  "normal"
+  "CMakeFiles/normal.dir/main.cpp.obj"
+  "normal.exe"
+  "normal.exe.manifest"
+  "normal.lib"
   "normal.pdb"
 )
 
