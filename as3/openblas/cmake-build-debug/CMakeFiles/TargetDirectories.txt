@@ -1,0 +1,3 @@
+/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles/openblass.dir
