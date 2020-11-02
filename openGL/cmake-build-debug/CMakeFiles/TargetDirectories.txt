@@ -1,3 +1,0 @@
-G:/C_project/openGL/cmake-build-debug/CMakeFiles/openGL.dir
-G:/C_project/openGL/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/C_project/openGL/cmake-build-debug/CMakeFiles/rebuild_cache.dir

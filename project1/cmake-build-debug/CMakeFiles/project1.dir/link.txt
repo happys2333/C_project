@@ -1,3 +1,0 @@
-E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\project1.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\project1.dir/objects.a @CMakeFiles\project1.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\project1.dir/objects.a -Wl,--no-whole-archive  -o project1.exe -Wl,--out-implib,libproject1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\project1.dir\linklibs.rsp
