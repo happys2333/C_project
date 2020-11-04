@@ -72,7 +72,7 @@ CMAKE_BINARY_DIR = G:\C_project\project\source\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/source.dir/all
+all: CMakeFiles/matrix.dir/all
 
 .PHONY : all
 
@@ -82,36 +82,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/source.dir/clean
+clean: CMakeFiles/matrix.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/source.dir
+# Target rules for target CMakeFiles/matrix.dir
 
 # All Build rule for target.
-CMakeFiles/source.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target source"
-.PHONY : CMakeFiles/source.dir/all
+CMakeFiles/matrix.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target matrix"
+.PHONY : CMakeFiles/matrix.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/source.dir/rule: cmake_check_build_system
+CMakeFiles/matrix.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\source\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/source.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/matrix.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\source\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/source.dir/rule
+.PHONY : CMakeFiles/matrix.dir/rule
 
 # Convenience name for target.
-source: CMakeFiles/source.dir/rule
+matrix: CMakeFiles/matrix.dir/rule
 
-.PHONY : source
+.PHONY : matrix
 
 # clean rule for target.
-CMakeFiles/source.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/clean
-.PHONY : CMakeFiles/source.dir/clean
+CMakeFiles/matrix.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/clean
+.PHONY : CMakeFiles/matrix.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

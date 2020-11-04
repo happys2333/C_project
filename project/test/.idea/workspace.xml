@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="project" targetName="project" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -36,6 +38,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -49,9 +52,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\C_project\project\test\lib" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -71,6 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604153409004</updated>
       <workItem from="1604153410356" duration="544000" />
+      <workItem from="1604473649742" duration="1240000" />
+      <workItem from="1604492938006" duration="938000" />
     </task>
     <servers />
   </component>
@@ -87,5 +98,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1604479428148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
+    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1604479428148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
+    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1604479428148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
+    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1604479428148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
   </component>
 </project>

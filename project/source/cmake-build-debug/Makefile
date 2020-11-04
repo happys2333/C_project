@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named source
+# Target rules for targets named matrix
 
 # Build rule for target.
-source: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 source
-.PHONY : source
+matrix: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrix
+.PHONY : matrix
 
 # fast build rule for target.
-source/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/build
-.PHONY : source/fast
+matrix/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/build
+.PHONY : matrix/fast
 
 library.obj: library.cpp.obj
 
@@ -148,7 +148,7 @@ library.obj: library.cpp.obj
 
 # target to build an object file
 library.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/library.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/library.cpp.obj
 .PHONY : library.cpp.obj
 
 library.i: library.cpp.i
@@ -157,7 +157,7 @@ library.i: library.cpp.i
 
 # target to preprocess a source file
 library.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/library.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/library.cpp.i
 .PHONY : library.cpp.i
 
 library.s: library.cpp.s
@@ -166,7 +166,7 @@ library.s: library.cpp.s
 
 # target to generate assembly for a file
 library.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\source.dir\build.make CMakeFiles/source.dir/library.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/library.cpp.s
 .PHONY : library.cpp.s
 
 # Help Target
@@ -177,7 +177,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... source
+	@echo ... matrix
 	@echo ... library.obj
 	@echo ... library.i
 	@echo ... library.s
