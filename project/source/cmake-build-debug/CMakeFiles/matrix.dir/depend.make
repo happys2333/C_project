@@ -3,5 +3,4 @@
 
 CMakeFiles/matrix.dir/library.cpp.obj: ../library.cpp
 CMakeFiles/matrix.dir/library.cpp.obj: ../library.h
-CMakeFiles/matrix.dir/library.cpp.obj: ../matrix.h
 

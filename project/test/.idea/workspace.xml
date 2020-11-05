@@ -52,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -60,14 +60,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -82,6 +82,7 @@
       <workItem from="1604153410356" duration="544000" />
       <workItem from="1604473649742" duration="1240000" />
       <workItem from="1604492938006" duration="938000" />
+      <workItem from="1604497133543" duration="152000" />
     </task>
     <servers />
   </component>
@@ -101,21 +102,48 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1604479428148">
+    <state width="914" height="343" key="GridCell.Tab.0.bottom" timestamp="1604497286872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1604479428148">
+    <state width="914" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.0.center" timestamp="1604497286872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1604479428148">
+    <state width="914" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.0.left" timestamp="1604497286871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1604479428148">
+    <state width="914" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286871" />
+    <state width="914" height="343" key="GridCell.Tab.0.right" timestamp="1604497286872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604479428148" />
+    <state width="914" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.1.bottom" timestamp="1604497286872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.1.center" timestamp="1604497286872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="343" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.1.left" timestamp="1604497286872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="343" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="343" key="GridCell.Tab.1.right" timestamp="1604497286872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

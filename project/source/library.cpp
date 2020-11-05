@@ -2,30 +2,34 @@
 
 #include <iostream>
 
-void hello() {
-    std::cout << "Hello, World!" << std::endl;
-}
 Matrix::Matrix(int col, int row) {
     this->col = col;
     this->row =row;
-    matrix = new float*[row];
-    for(int i=0;i<row;i++){
-        matrix[i] = new float [col];
+    int len = col*row;
+
+    matrix = new float [len];
+    for(int i=0;i<len;i++){
+        matrix[i] =0;
     }
 }
+Matrix::Matrix() {
+    row = 0;
+    col = 0;
+}
 Matrix::~Matrix() {
-    for (int i=0;i<row;i++){
-        delete [] matrix[i];
-    }
     delete [] matrix;
 }
 void Matrix::print() {
     for (int i=0;i<row;i++){
         for(int j=0;j<col;j++){
-         printf("%f",matrix[i][j]);
+         printf("%f ",matrix[j+i*col]);
         }
+        printf("\n");
     }
 }
-float Matrix::N_dot(float *r1, float *r2) {
-
+void Matrix::set(int col,int row,float element){
+    matrix
 }
+int GetCol();
+int Getrow();
+float Getelement(int col,int row);

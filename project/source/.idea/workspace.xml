@@ -35,7 +35,17 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\C_project\project\source\include" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.matrix">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="matrix" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="matrix" TARGET_NAME="matrix" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -52,8 +62,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.matrix" />
       <item itemvalue="CMake Application.source" />
+      <item itemvalue="CMake Application.matrix" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -65,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604458402817</updated>
       <workItem from="1604458405088" duration="4217000" />
-      <workItem from="1604494139541" duration="594000" />
+      <workItem from="1604494139541" duration="5176000" />
     </task>
     <servers />
   </component>
@@ -77,9 +87,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604474395399" />
-    <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1604473646987">
+    <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1604497130768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604473646987" />
+    <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604497130768" />
   </component>
 </project>
