@@ -24,9 +24,12 @@ private:
     *
     * */
     int mode = 0;
+    inline bool cando(Matrix left,Matrix right);
     float N_dot(float* row,float* col,int rowlen ,int collen);
     float Q_dot(float* row,float* col,int rowlen ,int collen);
     Matrix Strassen(Matrix left,Matrix right);
+    Matrix N_do(Matrix left,Matrix right);
+    Matrix Q_do(Matrix left, Matrix right);
 public:
     //create an empty matrix
     Matrix();
@@ -37,12 +40,13 @@ public:
     // Delect an matrix
     ~Matrix();
     // Some functions to use
-    void print();
+    void print();//print this matrix
     void build(float* array);
+    void clear();
     void set(int col,int row,float element);
     void setMode(int mode);
-    int GetCol();
-    int Getrow();
+    void GetCol(int col,float& colline);
+    void Getrow(int row,float& rowline);
     float Getelement(int col,int row);
 
 };
