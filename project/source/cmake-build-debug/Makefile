@@ -169,33 +169,6 @@ library.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/library.cpp.s
 .PHONY : library.cpp.s
 
-test.obj: test.cpp.obj
-
-.PHONY : test.obj
-
-# target to build an object file
-test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/test.cpp.obj
-.PHONY : test.cpp.obj
-
-test.i: test.cpp.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -208,9 +181,6 @@ help:
 	@echo ... library.obj
 	@echo ... library.i
 	@echo ... library.s
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 
