@@ -7,7 +7,7 @@ inline void Error(int type){
             printf("You can't multiply these two matrices!\n");
             break;
         case 2:
-            printf("");
+            printf("you can't add those two matrices!\n");
             break;
         default:
             printf("unknown error!\n");
@@ -54,6 +54,16 @@ float Matrix::N_dot(float *row, float *col, int rowlen, int collen) {
 void Matrix::Q_do(Matrix left, Matrix right, Matrix result) {
 
 }
+Matrix& Matrix::operator=(float *array) {
+    if(col==0||row==0){
+        printf("please set the col and row number before you want to do something! ");
+        return *new Matrix();
+    } else{
+        this->matrix = array;
+        return *this;
+    }
+}
+
 Matrix::Matrix(int col, int row) {
     this->col = col;
     this->row =row;
@@ -80,20 +90,31 @@ void Matrix::print() {
     }
 }
 void Matrix::set(int col,int row,float element){
-    matrix[col+row*this->col] = element;
+    matrix[(col-1)+(row-1)*this->col] = element;
 }
 void Matrix::GetCol(int col,float& colline){
+    float *re = new float [row];
+    for(int i=0;i<row;i++){
 
+    }
 }
 void Matrix::Getrow(int row,float& rowline){
 
-}
-float Getelement(int col,int row){
-    return
 }
 void Matrix::clear() {
     delete [] matrix;
     col = 0;
     row = 0;
     mode = 0;
+}
+
+Matrix &Matrix::operator+(Matrix &right) {
+
+}
+
+Matrix &Matrix::operator*(Matrix &right) {
+
+}
+float Matrix::Getelement(int col, int row) {
+    return matrix[(col-1)+(row-1)*this->col];
 }

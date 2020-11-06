@@ -44,6 +44,10 @@ public:
     // Some functions to use
     void print();//print this matrix
     void build(float* array);
+    Matrix& operator*(Matrix& right);//multiple
+    Matrix& operator=(float* array);//equal
+    Matrix& operator+(Matrix& right);//add
+
     void clear();
     void set(int col,int row,float element);
     void setMode(int semode);
