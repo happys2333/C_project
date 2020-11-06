@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "G:/C_project/project/source/library.cpp" "G:/C_project/project/source/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj"
+  "G:/C_project/project/source/test.cpp" "G:/C_project/project/source/cmake-build-debug/CMakeFiles/matrix.dir/test.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

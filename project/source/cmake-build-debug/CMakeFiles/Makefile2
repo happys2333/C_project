@@ -93,12 +93,12 @@ clean: CMakeFiles/matrix.dir/clean
 CMakeFiles/matrix.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrix.dir\build.make CMakeFiles/matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target matrix"
 .PHONY : CMakeFiles/matrix.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/matrix.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\source\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\source\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/matrix.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\source\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/matrix.dir/rule

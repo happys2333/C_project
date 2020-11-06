@@ -16,20 +16,22 @@ private:
     float* matrix;//matrix itself
     /*
     * The numerical mode represents the mode of operation required by the user
-    * 0: normal mode
-    * 1: Strassen mode
-    * 2:
-    *
-    *
+    * 0: normal mode(don't use any advanced method)
+    * 1: quick mode(use Strassen if it is possible)
+    * 2: SIMD mode(much powerful mode)
+    * 3: super mode (use quick and SIMD both)
     *
     * */
     int mode = 0;
-    inline bool cando(Matrix left,Matrix right);
+    static inline bool cando(const Matrix& left,const Matrix& right);
     float N_dot(float* row,float* col,int rowlen ,int collen);
-    float Q_dot(float* row,float* col,int rowlen ,int collen);
-    Matrix Strassen(Matrix left,Matrix right);
-    Matrix N_do(Matrix left,Matrix right);
-    Matrix Q_do(Matrix left, Matrix right);
+    void do_Strassen(float* left,float* right,int N,float *result);
+    void Strassen(Matrix left,Matrix right,Matrix result);
+    void N_do(Matrix left,Matrix right,Matrix result);
+    void Q_do(Matrix left,Matrix right,Matrix result);
+    static void add(const float* left,const float* right,float* result,int N);
+    static void Sub(const float* left,const float *right,float *result,int N);
+
 public:
     //create an empty matrix
     Matrix();
@@ -44,7 +46,7 @@ public:
     void build(float* array);
     void clear();
     void set(int col,int row,float element);
-    void setMode(int mode);
+    void setMode(int semode);
     void GetCol(int col,float& colline);
     void Getrow(int row,float& rowline);
     float Getelement(int col,int row);

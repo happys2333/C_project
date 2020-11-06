@@ -1,25 +1,57 @@
 #include "library.h"
 #include <iostream>
-
 inline void Error(int type){
+    printf("Error code : %d ",type);
+    switch (type) {
+        case 1:
+            printf("You can't multiply these two matrices!\n");
+            break;
+        case 2:
+            printf("");
+            break;
+        default:
+            printf("unknown error!\n");
+    }
+}
+void Matrix::add(const float *left, const float *right, float* result, int N) {
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            result[i*N+j] = left[i*N+j]+right[i*N+j];
+        }
+    }
+}
+Matrix::Matrix(int col , int row,float * array) {
+    this->col = col;
+    this->matrix = array;
+    this->row = row;
+}
+void Matrix::Sub(const float *left, const float *right, float *result, int N) {
+    int i,j;
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            result[i*N+j] = left[i*N+j]-right[i*N+j];
+        }
+    }
+}
+void Matrix::do_Strassen(float *left, float *right, int N, float *result) {
 
 }
-void Matrix::setMode(int mode) {
-    this->mode = mode;
+void Matrix::setMode(int semode) {
+    this->mode = semode;
 }
 void Matrix::build(float *array) {
     this->matrix = array;
 }
-inline bool Matrix::cando(Matrix left, Matrix right) {
+inline bool Matrix::cando(const Matrix& left, const Matrix& right) {
     return left.col == right.row;
 }
-Matrix Matrix::Strassen(Matrix left, Matrix right) {
+void Matrix::Strassen(Matrix left,Matrix right,Matrix result) {
 
 }
 float Matrix::N_dot(float *row, float *col, int rowlen, int collen) {
 
 }
-float Matrix::Q_dot(float *row, float *col, int rowlen, int collen) {
+void Matrix::Q_do(Matrix left, Matrix right, Matrix result) {
 
 }
 Matrix::Matrix(int col, int row) {

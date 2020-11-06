@@ -86,6 +86,9 @@
 		<Unit filename="G:/C_project/project/source/library.h">
 			<Option target="matrix"/>
 		</Unit>
+		<Unit filename="G:/C_project/project/source/test.cpp">
+			<Option target="matrix"/>
+		</Unit>
 		<Unit filename="G:/C_project/project/source/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

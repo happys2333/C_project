@@ -89,17 +89,32 @@ CMakeFiles/matrix.dir/library.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matrix.dir/library.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\C_project\project\source\library.cpp -o CMakeFiles\matrix.dir\library.cpp.s
 
+CMakeFiles/matrix.dir/test.cpp.obj: CMakeFiles/matrix.dir/flags.make
+CMakeFiles/matrix.dir/test.cpp.obj: ../test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/matrix.dir/test.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\matrix.dir\test.cpp.obj -c G:\C_project\project\source\test.cpp
+
+CMakeFiles/matrix.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matrix.dir/test.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\C_project\project\source\test.cpp > CMakeFiles\matrix.dir\test.cpp.i
+
+CMakeFiles/matrix.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matrix.dir/test.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\C_project\project\source\test.cpp -o CMakeFiles\matrix.dir\test.cpp.s
+
 # Object files for target matrix
 matrix_OBJECTS = \
-"CMakeFiles/matrix.dir/library.cpp.obj"
+"CMakeFiles/matrix.dir/library.cpp.obj" \
+"CMakeFiles/matrix.dir/test.cpp.obj"
 
 # External object files for target matrix
 matrix_EXTERNAL_OBJECTS =
 
 libmatrix.a: CMakeFiles/matrix.dir/library.cpp.obj
+libmatrix.a: CMakeFiles/matrix.dir/test.cpp.obj
 libmatrix.a: CMakeFiles/matrix.dir/build.make
 libmatrix.a: CMakeFiles/matrix.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmatrix.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\C_project\project\source\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmatrix.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\matrix.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\matrix.dir\link.txt --verbose=$(VERBOSE)
 

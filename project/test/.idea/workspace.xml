@@ -65,6 +65,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,6 +84,7 @@
       <workItem from="1604492938006" duration="938000" />
       <workItem from="1604497133543" duration="152000" />
       <workItem from="1604576726046" duration="596000" />
+      <workItem from="1604629122417" duration="1875000" />
     </task>
     <servers />
   </component>
@@ -98,22 +104,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="914" height="343" key="GridCell.Tab.0.bottom" timestamp="1604497286872">
+    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1604629567542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
-    <state width="914" height="343" key="GridCell.Tab.0.center" timestamp="1604497286872">
+    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604629567542" />
+    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1604629567542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
-    <state width="914" height="343" key="GridCell.Tab.0.left" timestamp="1604497286871">
+    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604629567542" />
+    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1604629567542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286871" />
-    <state width="914" height="343" key="GridCell.Tab.0.right" timestamp="1604497286872">
+    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604629567542" />
+    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1604629567542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
+    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604629567542" />
     <state width="914" height="343" key="GridCell.Tab.1.bottom" timestamp="1604497286872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -130,16 +136,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497286872" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
