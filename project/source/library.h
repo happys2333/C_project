@@ -18,17 +18,19 @@ private:
     * The numerical mode represents the mode of operation required by the user
     * 0: normal mode(don't use any advanced method)
     * 1: quick mode(use Strassen if it is possible)
-    * 2: SIMD mode(much powerful mode)
-    * 3: super mode (use quick and SIMD both)
-    *
+    * 2: open_MP mode(much powerful mode)
+    * 3: open mode ( so tricks to speed up )
+    * 4: open super (open mode with open MP)
+    * 5: open 8 core mode(use 8 core to do)
     * */
     int mode = 0;
     static inline bool cando(const Matrix& left,const Matrix& right);
-    float N_dot(float* row,float* col,int rowlen ,int collen);
     void do_Strassen(float* left,float* right,int N,float *result);
-    void Strassen(Matrix left,Matrix right,Matrix result);
-    void N_do(Matrix left,Matrix right,Matrix result);
-    void Q_do(Matrix left,Matrix right,Matrix result);
+    void Strassen(Matrix* left,Matrix* right,Matrix* result);
+    void open_do(Matrix* left,Matrix* right,Matrix* result);
+    void open_mp(Matrix* left,Matrix* right,Matrix* result);
+    void Open_super(Matrix* left,Matrix* right,Matrix* result);
+    void N_do(Matrix* left,Matrix* right,Matrix* result);
     static void add(const float* left,const float* right,float* result,int N);
     static void Sub(const float* left,const float *right,float *result,int N);
 
@@ -44,16 +46,15 @@ public:
     // Some functions to use
     void print();//print this matrix
     void build(float* array);
-    Matrix& operator*(Matrix& right);//multiple
+    Matrix operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
-    Matrix& operator+(Matrix& right);//add
-
+    Matrix operator+(Matrix& right) const;//add
+    Matrix operator-(Matrix& right);//minus
+    float* operator[](int i);
     void clear();
     void set(int col,int row,float element);
     void setMode(int semode);
-    void GetCol(int col,float& colline);
-    void Getrow(int row,float& rowline);
-    float Getelement(int col,int row);
+    inline float Getelement(int col,int row);
 
 };
 
