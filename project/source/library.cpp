@@ -1,7 +1,7 @@
 #include "library.h"
 #include <iostream>
-#include "omp.h"
-#define ThreadNum 4;
+#include <omp.h>
+#define ThreadNum 8;
 inline void Error(int type){
     printf("Error code : %d ",type);
     switch (type) {
@@ -28,7 +28,7 @@ void Matrix::add(const float *left, const float *right, float* result, int N) {
         }
     }
 }
-Matrix::Matrix(int col , int row,float * array) {
+Matrix::Matrix(int row , int col,float * array) {
     this->col = col;
     this->matrix = array;
     this->row = row;
@@ -57,23 +57,24 @@ void Matrix::setMode(int semode) {
 void Matrix::build(float *array) {
     this->matrix = array;
 }
-inline bool Matrix::cando(const Matrix& left, const Matrix& right) {
-    return left.col == right.row;
-}
-void Matrix::Strassen(Matrix* left,Matrix* right,Matrix* result) {
+void Matrix::Strassen(Matrix* right,Matrix* result) {
 
 }
-void Matrix::N_do(Matrix* left, Matrix* right, Matrix* result) {
+void Matrix::N_do(Matrix* right, Matrix* result) {
     /*
      * ikj mode
      * */
     float r ;
     int i,j,k;
-    for(i=0;i<left->row;i++){
-        for(k = 0;k<right->row;k++){
-            r = left->matrix[i*left->col+k];
-            for(j=0;j<right->col;j++){
-                result->matrix[i*right->col+j] = r*right->matrix[k*right->col+j];
+    int lrow,rrow,rcol;
+    lrow = this->row;
+    rrow = right->row;
+    rcol = right->col;
+    for(i=0;i<lrow;++i){
+        for(k = 0;k<rrow;++k){
+            r = this->matrix[i*this->col+k];
+            for(j=0;j<rcol;++j){
+                result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
             }
         }
     }
@@ -89,7 +90,7 @@ Matrix& Matrix::operator=(float *array) {
     }
 }
 
-Matrix::Matrix(int col, int row) {
+Matrix::Matrix(int row, int col) {
     this->col = col;
     this->row =row;
     int len = col*row;
@@ -108,12 +109,12 @@ Matrix::~Matrix() {
 void Matrix::print() {
     for (int i=0;i<row;i++){
         for(int j=0;j<col;j++){
-         printf("%-20f ",matrix[j+i*col]);
+         printf("%-10f ",matrix[j+i*col]);
         }
         printf("\n");
     }
 }
-void Matrix::set(int col,int row,float element){
+void Matrix::set(int row,int col,float element){
     matrix[(col-1)+(row-1)*this->col] = element;
 }
 void Matrix::clear() {
@@ -123,59 +124,65 @@ void Matrix::clear() {
     mode = 0;
 }
 
-Matrix Matrix::operator+(Matrix &right) const {
+Matrix& Matrix::operator+(Matrix &right){
     if(this->row!=right.row||this->col!=right.col){
         Error(2);
         return *new Matrix();
     } else{
-        Matrix m(this->col, this->row);
+        Matrix *m = new Matrix(this->row, this->col);
         for(int r=0;r<this->row;r++){
             for(int c=0;c<this->col;c++){
-                 m.set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
+                 m->set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
             }
         }
-        return m;
+        return *m;
     }
 }
-Matrix Matrix::operator-(Matrix &right) {
+Matrix& Matrix::operator-(Matrix &right) {
     if(this->row!=right.row||this->col!=right.col){
         Error(2);
         return *new Matrix();
     } else{
-        Matrix m(this->col, this->row);
+        Matrix *m= new Matrix(this->row, this->col);
         for(int r=0;r<this->row;r++){
             for(int c=0;c<this->col;c++){
-                m.set(c+1,r+1,this->matrix[r*this->col+c]-right.matrix[r*right.col+c]);
+                m->set(c+1,r+1,this->matrix[r*this->col+c]-right.matrix[r*right.col+c]);
             }
         }
-        return m;
+        return *m;
     }
 }
-Matrix Matrix::operator*(Matrix &right) {
-    if (cando(*this,right)){
+Matrix& Matrix::operator*(Matrix &right) {
+    if (this->col != right.row){
         Error(1);
         return *new Matrix();
     }
-    Matrix returnm(this->col,right.row);
+    int mode = this->mode;
+
+    Matrix *returnm= new Matrix(this->row,right.col);
     switch (mode) {
         case 0:
-            N_do(this, &right, &returnm);
-            return returnm;
+            N_do( &right,returnm);
+            break;
         case 1:
-
+            if((col!= row)|(right.col!=right.row)|(col!=right.col)|(isnum(col))){
+                N_do(&right,returnm);
+            }
+            Strassen(&right,returnm);
+            break;
         case 2:
-
+            open_mp(&right,returnm);
+            break;
         case 3:
-
+            open_do(&right,returnm);
+            break;
         case 4:
-
+            break;
         case 5:
+            break;
 
-        default:
-            Error(-2);
-            N_do(this, &right, &returnm);
-            return returnm;
     }
+    return *returnm;
 }
 inline float Matrix::Getelement(int col, int row) {
     return matrix[(col-1)+(row-1)*this->col];
@@ -189,31 +196,102 @@ float* Matrix::operator[](int i) {
     return re;
 }
 
-void Matrix::open_do(Matrix *left, Matrix *right, Matrix *result) {
-
-}
-
-void Matrix::open_mp(Matrix *left, Matrix *right, Matrix *result) {
-    #pragma omp parallel for num_threadsss(ThreadNum)
+void Matrix::open_do( Matrix *right, Matrix *result) {
     float r ;
     int i,j,k;
-    for(i=0;i<left->row;i++){
-        for(k = 0;k<right->row;k++){
-            r = left->matrix[i*left->col+k];
-            for(j=0;j<right->col;j++){
-                result->matrix[i*right->col+j] = r*right->matrix[k*right->col+j];
+    int lrow,rrow,rcol;
+    lrow = this->row;
+    rrow = right->row;
+    rcol = right->col;
+    for(i=0;i<lrow;++i){
+        for(k = 0;k<rrow;++k){
+            r = this->matrix[i*this->col+k];
+#pragma omp parallel for num_threads(64)
+            for(j=0;j<rcol;++j){
+                if (rcol-j>=8){
+                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
+                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
+                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
+                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
+                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
+                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
+                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
+                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
+                    j+=7;
+                    continue;
+                }
+                result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
             }
         }
     }
 }
 
-void Matrix::Open_super(Matrix *left, Matrix *right, Matrix *result) {
+void Matrix::open_mp( Matrix *right, Matrix *result) {
+    float r ;
+    int i,j,k;
+    int lrow,rrow,rcol;
+    lrow = this->row;
+    rrow = right->row;
+    rcol = right->col;
+    for(i=0;i<lrow;++i){
+        for(k = 0;k<rrow;++k){
+            r = this->matrix[i*this->col+k];
+            #pragma omp parallel for num_threads(64)
+            for(j=0;j<rcol;++j){
+                result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
+            }
+        }
+    }
+}
+
+void Matrix::Open_super( Matrix *right, Matrix *result) {
     #pragma omp parallel for num_threadsss(ThreadNum)
 
 
 
 
 
+}
+const int secondnum[30]={
+        2
+        ,4
+        ,8
+        ,16
+        ,32
+        ,64
+        ,128
+        ,256
+        ,512
+        ,1024
+        ,2048
+        ,4096
+        ,8192
+        ,16384
+        ,32768
+        ,65536
+        ,131072
+        ,262144
+       ,524288
+        ,1048576
+        ,2097152
+        ,4194304
+        ,8388608
+        ,16777216
+        ,33554432
+        ,67108864
+        ,134217728
+        ,268435456
+        ,536870912
+        ,1073741824
+};
+bool Matrix::isnum(int num) {
+    if(num==1){return true;}
+    for(int i=0;i<30;i++){
+        if(num == secondnum[i]){
+            return true;
+        }
+    }
+    return false;
 }
 
 

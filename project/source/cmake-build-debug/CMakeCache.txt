@@ -118,7 +118,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/source
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/matrix
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/MinGW/bin/ld.exe
@@ -249,12 +249,6 @@ matrix_BINARY_DIR:STATIC=G:/C_project/project/source/cmake-build-debug
 
 //Value Computed by CMake
 matrix_SOURCE_DIR:STATIC=G:/C_project/project/source
-
-//Value Computed by CMake
-source_BINARY_DIR:STATIC=G:/C_project/project/source/cmake-build-debug
-
-//Value Computed by CMake
-source_SOURCE_DIR:STATIC=G:/C_project/project/source
 
 
 ########################
