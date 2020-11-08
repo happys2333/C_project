@@ -526,3 +526,441 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Detecting C OpenMP compiler ABI info compiled with the following output:
+Change Dir: G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_6f0bb/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_6f0bb.dir\build.make CMakeFiles/cmTC_6f0bb.dir/build
+mingw32-make.exe[1]: Entering directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6f0bb.dir/OpenMPTryFlag.c.obj
+C:\MinGW\bin\gcc.exe   -fopenmp -v   -o CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj   -c G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.c
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\gcc.exe
+Target: mingw32
+Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2'
+Thread model: win32
+gcc version 9.2.0 (MinGW.org GCC Build-2) 
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/cc1.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/9.2.0/ -D_MT -D_REENTRANT G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=i586 -mthreads -auxbase-strip CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj -version -fopenmp -o C:\Users\happy\AppData\Local\Temp\cc2UGNE3.s
+GNU C17 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)
+	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include"
+ignoring nonexistent directory "/mingw/include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include-fixed"
+ignoring nonexistent directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"
+ignoring nonexistent directory "/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed
+End of search list.
+GNU C17 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)
+	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: a3c9f0fbd759fce24f2da2d17091ee0c
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj C:\Users\happy\AppData\Local\Temp\cc2UGNE3.s
+GNU assembler version 2.32 (mingw32) using BFD version (GNU Binutils) 2.32
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+Linking C executable cmTC_6f0bb.exe
+E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_6f0bb.dir\link.txt --verbose=1
+E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_6f0bb.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_6f0bb.dir/objects.a @CMakeFiles\cmTC_6f0bb.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe  -fopenmp -v    -Wl,--whole-archive CMakeFiles\cmTC_6f0bb.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6f0bb.exe -Wl,--out-implib,libcmTC_6f0bb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_6f0bb.dir\linklibs.rsp
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\gcc.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe
+Target: mingw32
+Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2'
+Thread model: win32
+gcc version 9.2.0 (MinGW.org GCC Build-2) 
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../
+Reading specs from c:/mingw/bin/../lib/gcc/mingw32/9.2.0/libgomp.spec
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_6f0bb.exe' '-v' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe -plugin c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\ccv5Shfn.res -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -Bdynamic -o cmTC_6f0bb.exe c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../.. @C:\Users\happy\AppData\Local\Temp\ccY8lCfA -lgomp -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc -lgcc_eh -lmoldname -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc -lgcc_eh -lmoldname -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_6f0bb.exe' '-v' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+mingw32-make.exe[1]: Leaving directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C OpenMP implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_6f0bb/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_6f0bb.dir\build.make CMakeFiles/cmTC_6f0bb.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_6f0bb.dir/OpenMPTryFlag.c.obj]
+  ignore line: [C:\MinGW\bin\gcc.exe   -fopenmp -v   -o CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj   -c G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\gcc.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c c++ objc obj-c++ fortran ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2']
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 9.2.0 (MinGW.org GCC Build-2) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/cc1.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/9.2.0/ -D_MT -D_REENTRANT G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=i586 -mthreads -auxbase-strip CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj -version -fopenmp -o C:\Users\happy\AppData\Local\Temp\cc2UGNE3.s]
+  ignore line: [GNU C17 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include"]
+  ignore line: [ignoring nonexistent directory "/mingw/include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"]
+  ignore line: [ignoring nonexistent directory "/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: a3c9f0fbd759fce24f2da2d17091ee0c]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [ c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj C:\Users\happy\AppData\Local\Temp\cc2UGNE3.s]
+  ignore line: [GNU assembler version 2.32 (mingw32) using BFD version (GNU Binutils) 2.32]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_6f0bb.dir\OpenMPTryFlag.c.obj' '-c' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [Linking C executable cmTC_6f0bb.exe]
+  ignore line: [E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_6f0bb.dir\link.txt --verbose=1]
+  ignore line: [E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_6f0bb.dir/objects.a]
+  ignore line: [C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_6f0bb.dir/objects.a @CMakeFiles\cmTC_6f0bb.dir\objects1.rsp]
+  ignore line: [C:\MinGW\bin\gcc.exe  -fopenmp -v    -Wl --whole-archive CMakeFiles\cmTC_6f0bb.dir/objects.a -Wl --no-whole-archive  -o cmTC_6f0bb.exe -Wl --out-implib libcmTC_6f0bb.dll.a -Wl --major-image-version 0 --minor-image-version 0 @CMakeFiles\cmTC_6f0bb.dir\linklibs.rsp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c c++ objc obj-c++ fortran ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2']
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 9.2.0 (MinGW.org GCC Build-2) ]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../]
+  ignore line: [Reading specs from c:/mingw/bin/../lib/gcc/mingw32/9.2.0/libgomp.spec]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_6f0bb.exe' '-v' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  link line: [ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe -plugin c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\ccv5Shfn.res -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -Bdynamic -o cmTC_6f0bb.exe c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../.. @C:\Users\happy\AppData\Local\Temp\ccY8lCfA -lgomp -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc -lgcc_eh -lmoldname -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc -lgcc_eh -lmoldname -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o]
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\ccv5Shfn.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwthrd] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwthrd] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6f0bb.exe] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o] ==> ignore
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0]
+    arg [-Lc:/mingw/bin/../lib/gcc] ==> dir [c:/mingw/bin/../lib/gcc]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..]
+    arg [@C:\Users\happy\AppData\Local\Temp\ccY8lCfA] ==> ignore
+    arg [-lgomp] ==> lib [gomp]
+    arg [-lmingwthrd] ==> lib [mingwthrd]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingwthrd] ==> lib [mingwthrd]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o] ==> ignore
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0] ==> [C:/MinGW/lib/gcc/mingw32/9.2.0]
+  collapse library dir [c:/mingw/bin/../lib/gcc] ==> [C:/MinGW/lib/gcc]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib] ==> [C:/MinGW/mingw32/lib]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..] ==> [C:/MinGW/lib]
+  implicit libs: [gomp;mingwthrd;mingw32;mingwex;mingw32;mingwex;gcc;moldname;pthread;advapi32;shell32;user32;kernel32;mingwthrd;mingw32;mingwex;mingw32;mingwex;gcc;moldname]
+  implicit dirs: [C:/MinGW/lib/gcc/mingw32/9.2.0;C:/MinGW/lib/gcc;C:/MinGW/mingw32/lib;C:/MinGW/lib]
+  implicit fwks: []
+
+
+Detecting CXX OpenMP compiler ABI info compiled with the following output:
+Change Dir: G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_9daef/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_9daef.dir\build.make CMakeFiles/cmTC_9daef.dir/build
+mingw32-make.exe[1]: Entering directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9daef.dir/OpenMPTryFlag.cpp.obj
+C:\MinGW\bin\g++.exe    -fopenmp -v   -o CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj -c G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.cpp
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\g++.exe
+Target: mingw32
+Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2'
+Thread model: win32
+gcc version 9.2.0 (MinGW.org GCC Build-2) 
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/9.2.0/ -D_MT -D_REENTRANT G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=i586 -mthreads -auxbase-strip CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj -version -fopenmp -o C:\Users\happy\AppData\Local\Temp\ccBE4jK4.s
+GNU C++14 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)
+	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++/mingw32"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++/backward"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include"
+ignoring nonexistent directory "/mingw/include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include-fixed"
+ignoring nonexistent directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"
+ignoring nonexistent directory "/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include
+ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed
+End of search list.
+GNU C++14 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)
+	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: cb31672760a9c1b42d1ddb86616116cd
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj C:\Users\happy\AppData\Local\Temp\ccBE4jK4.s
+GNU assembler version 2.32 (mingw32) using BFD version (GNU Binutils) 2.32
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+Linking CXX executable cmTC_9daef.exe
+E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_9daef.dir\link.txt --verbose=1
+E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_9daef.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_9daef.dir/objects.a @CMakeFiles\cmTC_9daef.dir\objects1.rsp
+C:\MinGW\bin\g++.exe  -fopenmp -v    -Wl,--whole-archive CMakeFiles\cmTC_9daef.dir/objects.a -Wl,--no-whole-archive  -o cmTC_9daef.exe -Wl,--out-implib,libcmTC_9daef.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_9daef.dir\linklibs.rsp
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\g++.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe
+Target: mingw32
+Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2'
+Thread model: win32
+gcc version 9.2.0 (MinGW.org GCC Build-2) 
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../
+Reading specs from c:/mingw/bin/../lib/gcc/mingw32/9.2.0/libgomp.spec
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_9daef.exe' '-v' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe -plugin c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\cc2z0tWj.res -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_9daef.exe c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../.. @C:\Users\happy\AppData\Local\Temp\ccg15rEt -lgomp -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc_s -lgcc -lmoldname -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc_s -lgcc -lmoldname -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_9daef.exe' '-v' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread'
+mingw32-make.exe[1]: Leaving directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX OpenMP implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_9daef/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_9daef.dir\build.make CMakeFiles/cmTC_9daef.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'G:/C_project/project/source/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_9daef.dir/OpenMPTryFlag.cpp.obj]
+  ignore line: [C:\MinGW\bin\g++.exe    -fopenmp -v   -o CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj -c G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\g++.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c c++ objc obj-c++ fortran ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2']
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 9.2.0 (MinGW.org GCC Build-2) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/9.2.0/ -D_MT -D_REENTRANT G:\C_project\project\source\cmake-build-debug\CMakeFiles\FindOpenMP\OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=i586 -mthreads -auxbase-strip CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj -version -fopenmp -o C:\Users\happy\AppData\Local\Temp\ccBE4jK4.s]
+  ignore line: [GNU C++14 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++/mingw32"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include/c++/backward"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include"]
+  ignore line: [ignoring nonexistent directory "/mingw/include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/9.2.0/../../../../mingw32/include"]
+  ignore line: [ignoring nonexistent directory "/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (MinGW.org GCC Build-2) version 9.2.0 (mingw32)]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: cb31672760a9c1b42d1ddb86616116cd]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [ c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj C:\Users\happy\AppData\Local\Temp\ccBE4jK4.s]
+  ignore line: [GNU assembler version 2.32 (mingw32) using BFD version (GNU Binutils) 2.32]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles\cmTC_9daef.dir\OpenMPTryFlag.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  ignore line: [Linking CXX executable cmTC_9daef.exe]
+  ignore line: [E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_9daef.dir\link.txt --verbose=1]
+  ignore line: [E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_9daef.dir/objects.a]
+  ignore line: [C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_9daef.dir/objects.a @CMakeFiles\cmTC_9daef.dir\objects1.rsp]
+  ignore line: [C:\MinGW\bin\g++.exe  -fopenmp -v    -Wl --whole-archive CMakeFiles\cmTC_9daef.dir/objects.a -Wl --no-whole-archive  -o cmTC_9daef.exe -Wl --out-implib libcmTC_9daef.dll.a -Wl --major-image-version 0 --minor-image-version 0 @CMakeFiles\cmTC_9daef.dir\linklibs.rsp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\g++.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c c++ objc obj-c++ fortran ada --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2']
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 9.2.0 (MinGW.org GCC Build-2) ]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/9.2.0/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../]
+  ignore line: [Reading specs from c:/mingw/bin/../lib/gcc/mingw32/9.2.0/libgomp.spec]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_9daef.exe' '-v' '-shared-libgcc' '-mtune=generic' '-march=i586' '-mthreads' '-pthread']
+  link line: [ c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe -plugin c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\cc2z0tWj.res -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingwthrd -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmsvcrt -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_9daef.exe c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../.. @C:\Users\happy\AppData\Local\Temp\ccg15rEt -lgomp -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc_s -lgcc -lmoldname -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingwthrd -lmingw32 -lmingwex -lmingw32 -lmingwex -lgcc_s -lgcc -lmoldname -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o]
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\happy\AppData\Local\Temp\cc2z0tWj.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwthrd] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwthrd] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+    arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-u] ==> ignore
+    arg [___register_frame_info] ==> ignore
+    arg [-u] ==> ignore
+    arg [___deregister_frame_info] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_9daef.exe] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../crt2.o] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtbegin.o] ==> ignore
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0]
+    arg [-Lc:/mingw/bin/../lib/gcc] ==> dir [c:/mingw/bin/../lib/gcc]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..]
+    arg [@C:\Users\happy\AppData\Local\Temp\ccg15rEt] ==> ignore
+    arg [-lgomp] ==> lib [gomp]
+    arg [-lmingwthrd] ==> lib [mingwthrd]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingwthrd] ==> lib [mingwthrd]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/crtend.o] ==> ignore
+  remove lib [msvcrt]
+  remove lib [msvcrt]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0] ==> [C:/MinGW/lib/gcc/mingw32/9.2.0]
+  collapse library dir [c:/mingw/bin/../lib/gcc] ==> [C:/MinGW/lib/gcc]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/lib] ==> [C:/MinGW/mingw32/lib]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../..] ==> [C:/MinGW/lib]
+  implicit libs: [gomp;mingwthrd;mingw32;mingwex;mingw32;mingwex;gcc_s;gcc;moldname;pthread;advapi32;shell32;user32;kernel32;mingwthrd;mingw32;mingwex;mingw32;mingwex;gcc_s;gcc;moldname]
+  implicit dirs: [C:/MinGW/lib/gcc/mingw32/9.2.0;C:/MinGW/lib/gcc;C:/MinGW/mingw32/lib;C:/MinGW/lib]
+  implicit fwks: []
+
+

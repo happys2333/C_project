@@ -14,6 +14,7 @@ private:
     int col;//column of the matrix
     int row;//row of the matrix
     float* matrix;//matrix itself
+    bool isnum(int num);
     /*
     * The numerical mode represents the mode of operation required by the user
     * 0: normal mode(don't use any advanced method)
@@ -21,7 +22,7 @@ private:
     * 2: open_MP mode(much powerful mode)
     * 3: open mode ( so tricks to speed up )
     * 4: open super (open mode with open MP)
-    * 5: open 8 core mode(use 8 core to do)
+    * 5: super MP_Strassen
     * */
     int mode = 0;
     void do_Strassen(float* left,float* right,int N,float *result);
