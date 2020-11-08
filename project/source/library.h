@@ -14,25 +14,22 @@ private:
     int col;//column of the matrix
     int row;//row of the matrix
     float* matrix;//matrix itself
-    bool isnum(int num);
     /*
     * The numerical mode represents the mode of operation required by the user
     * 0: normal mode(don't use any advanced method)
-    * 1: quick mode(use Strassen if it is possible)
+    * 1: quick mode
     * 2: open_MP mode(much powerful mode)
     * 3: open mode ( so tricks to speed up )
     * 4: open super (open mode with open MP)
-    * 5: super MP_Strassen
+    * 5: super MP_Quick mode
     * */
     int mode = 0;
-    void do_Strassen(float* left,float* right,int N,float *result);
-    void Strassen(Matrix* right,Matrix* result);
+    void Intel(Matrix* right,Matrix* result);
     void open_do(Matrix* right,Matrix* result);
     void open_mp(Matrix* right,Matrix* result);
     void Open_super(Matrix* right,Matrix* result);
+    void Super_quick(Matrix* right,Matrix* result);
     void N_do(Matrix* right,Matrix* result);
-    static void add(const float* left,const float* right,float* result,int N);
-    static void Sub(const float* left,const float *right,float *result,int N);
 
 public:
     //create an empty matrix

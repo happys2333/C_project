@@ -1,6 +1,7 @@
 #include "library.h"
 #include <iostream>
 #include <omp.h>
+#include <immintrin.h>
 const int ThreadNUM = 16;
 #pragma GCC optimize(3)
 inline void Error(int type){
@@ -22,43 +23,20 @@ inline void Error(int type){
             printf("unknown error!\n");
     }
 }
-void Matrix::add(const float *left, const float *right, float* result, int N) {
-    for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++){
-            result[i*N+j] = left[i*N+j]+right[i*N+j];
-        }
-    }
-}
+
 Matrix::Matrix(int row , int col,float * array) {
     this->col = col;
     this->matrix = array;
     this->row = row;
 }
-void Matrix::Sub(const float *left, const float *right, float *result, int N) {
-    int i,j;
-    for(i=0;i<N;i++){
-        for(j=0;j<N;j++){
-            result[i*N+j] = left[i*N+j]-right[i*N+j];
-        }
-    }
-}
-void Matrix::do_Strassen(float *left, float *right, int N, float *result) {
-    float A11[N][N],A12[N][N],A21[N][N],A22[N][N];
-    float B11[N][N],B12[N][N],B21[N][N],B22[N][N];
-    float C11[N][N],C12[N][N],C21[N][N],C22[N][N];
-    float M1[N][N],M2[N][N],M3[N][N],M4[N][N],M5[N][N],M6[N][N],M7[N][N];
-    float AA[N][N],BB[N][N];
-    if(N==2){
 
-    }
-}
 void Matrix::setMode(int semode) {
     this->mode = semode;
 }
 void Matrix::build(float *array) {
     this->matrix = array;
 }
-void Matrix::Strassen(Matrix* right,Matrix* result) {
+void Matrix::Intel(Matrix* right,Matrix* result) {
 
 }
 void Matrix::N_do(Matrix* right, Matrix* result) {
@@ -166,10 +144,7 @@ Matrix& Matrix::operator*(Matrix &right) {
             N_do( &right,returnm);
             break;
         case 1:
-            if((col!= row)|(right.col!=right.row)|(col!=right.col)|(isnum(col))){
-                N_do(&right,returnm);
-            }
-            Strassen(&right,returnm);
+            Intel(&right,returnm);
             break;
         case 2:
             open_mp(&right,returnm);
@@ -181,8 +156,8 @@ Matrix& Matrix::operator*(Matrix &right) {
             Open_super(&right,returnm);
             break;
         case 5:
+            Super_quick(&right,returnm);
             break;
-
     }
     return *returnm;
 }
@@ -199,26 +174,36 @@ float* Matrix::operator[](int i) {
 }
 
 void Matrix::open_do( Matrix *right, Matrix *result) {
-    float r ;
+    float* b0,*r0,r;
     int i,j,k;
     int lrow,rrow,rcol;
     lrow = this->row;
     rrow = right->row;
     rcol = right->col;
-    #pragma omp parallel for num_threads(ThreadNUM)
+#pragma omp parallel for num_threads(ThreadNUM)
     for(i=0;i<lrow;++i){
         for(k = 0;k<rrow;++k){
             r = this->matrix[i*this->col+k];
             for(j=0;j<rcol;++j){
                 if (rcol-j>=8){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
+                    b0 = &right->matrix[k*right->col+j];
+                    r0 = &result->matrix[i*result->col+j];
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
                     j+=7;
                     continue;
                 }
@@ -248,7 +233,7 @@ void Matrix::open_mp( Matrix *right, Matrix *result) {
 }
 
 void Matrix::Open_super( Matrix *right, Matrix *result) {
-    float r ;
+    float* b0,*r0,r;
     int i,j,k;
     int lrow,rrow,rcol;
     lrow = this->row;
@@ -262,223 +247,63 @@ void Matrix::Open_super( Matrix *right, Matrix *result) {
                 continue;
             }
             for(j=0;j<rcol;++j){
-                if(rcol-j>=100){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
-                    result->matrix[i*result->col+j+8] += (r*right->matrix[k*right->col+j+8]);
-                    result->matrix[i*result->col+j+9] += (r*right->matrix[k*right->col+j+9]);
-                    result->matrix[i*result->col+j+10] += (r*right->matrix[k*right->col+j+10]);
-                    result->matrix[i*result->col+j+11] += (r*right->matrix[k*right->col+j+11]);
-                    result->matrix[i*result->col+j+12] += (r*right->matrix[k*right->col+j+12]);
-                    result->matrix[i*result->col+j+13] += (r*right->matrix[k*right->col+j+13]);
-                    result->matrix[i*result->col+j+14] += (r*right->matrix[k*right->col+j+14]);
-                    result->matrix[i*result->col+j+15] += (r*right->matrix[k*right->col+j+15]);
-                    result->matrix[i*result->col+j+16] += (r*right->matrix[k*right->col+j+16]);
-                    result->matrix[i*result->col+j+17] += (r*right->matrix[k*right->col+j+17]);
-                    result->matrix[i*result->col+j+18] += (r*right->matrix[k*right->col+j+18]);
-                    result->matrix[i*result->col+j+19] += (r*right->matrix[k*right->col+j+19]);
-                    result->matrix[i*result->col+j+20] += (r*right->matrix[k*right->col+j+20]);
-                    result->matrix[i*result->col+j+21] += (r*right->matrix[k*right->col+j+21]);
-                    result->matrix[i*result->col+j+22] += (r*right->matrix[k*right->col+j+22]);
-                    result->matrix[i*result->col+j+23] += (r*right->matrix[k*right->col+j+23]);
-                    result->matrix[i*result->col+j+24] += (r*right->matrix[k*right->col+j+24]);
-                    result->matrix[i*result->col+j+25] += (r*right->matrix[k*right->col+j+25]);
-                    result->matrix[i*result->col+j+26] += (r*right->matrix[k*right->col+j+26]);
-                    result->matrix[i*result->col+j+27] += (r*right->matrix[k*right->col+j+27]);
-                    result->matrix[i*result->col+j+28] += (r*right->matrix[k*right->col+j+28]);
-                    result->matrix[i*result->col+j+29] += (r*right->matrix[k*right->col+j+29]);
-                    result->matrix[i*result->col+j+30] += (r*right->matrix[k*right->col+j+30]);
-                    result->matrix[i*result->col+j+31] += (r*right->matrix[k*right->col+j+31]);
-                    result->matrix[i*result->col+j+32] += (r*right->matrix[k*right->col+j+32]);
-                    result->matrix[i*result->col+j+33] += (r*right->matrix[k*right->col+j+33]);
-                    result->matrix[i*result->col+j+34] += (r*right->matrix[k*right->col+j+34]);
-                    result->matrix[i*result->col+j+35] += (r*right->matrix[k*right->col+j+35]);
-                    result->matrix[i*result->col+j+36] += (r*right->matrix[k*right->col+j+36]);
-                    result->matrix[i*result->col+j+37] += (r*right->matrix[k*right->col+j+37]);
-                    result->matrix[i*result->col+j+38] += (r*right->matrix[k*right->col+j+38]);
-                    result->matrix[i*result->col+j+39] += (r*right->matrix[k*right->col+j+39]);
-                    result->matrix[i*result->col+j+40] += (r*right->matrix[k*right->col+j+40]);
-                    result->matrix[i*result->col+j+41] += (r*right->matrix[k*right->col+j+41]);
-                    result->matrix[i*result->col+j+42] += (r*right->matrix[k*right->col+j+42]);
-                    result->matrix[i*result->col+j+43] += (r*right->matrix[k*right->col+j+43]);
-                    result->matrix[i*result->col+j+44] += (r*right->matrix[k*right->col+j+44]);
-                    result->matrix[i*result->col+j+45] += (r*right->matrix[k*right->col+j+45]);
-                    result->matrix[i*result->col+j+46] += (r*right->matrix[k*right->col+j+46]);
-                    result->matrix[i*result->col+j+47] += (r*right->matrix[k*right->col+j+47]);
-                    result->matrix[i*result->col+j+48] += (r*right->matrix[k*right->col+j+48]);
-                    result->matrix[i*result->col+j+49] += (r*right->matrix[k*right->col+j+49]);
-                    j+=50;
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
-                    result->matrix[i*result->col+j+8] += (r*right->matrix[k*right->col+j+8]);
-                    result->matrix[i*result->col+j+9] += (r*right->matrix[k*right->col+j+9]);
-                    result->matrix[i*result->col+j+10] += (r*right->matrix[k*right->col+j+10]);
-                    result->matrix[i*result->col+j+11] += (r*right->matrix[k*right->col+j+11]);
-                    result->matrix[i*result->col+j+12] += (r*right->matrix[k*right->col+j+12]);
-                    result->matrix[i*result->col+j+13] += (r*right->matrix[k*right->col+j+13]);
-                    result->matrix[i*result->col+j+14] += (r*right->matrix[k*right->col+j+14]);
-                    result->matrix[i*result->col+j+15] += (r*right->matrix[k*right->col+j+15]);
-                    result->matrix[i*result->col+j+16] += (r*right->matrix[k*right->col+j+16]);
-                    result->matrix[i*result->col+j+17] += (r*right->matrix[k*right->col+j+17]);
-                    result->matrix[i*result->col+j+18] += (r*right->matrix[k*right->col+j+18]);
-                    result->matrix[i*result->col+j+19] += (r*right->matrix[k*right->col+j+19]);
-                    result->matrix[i*result->col+j+20] += (r*right->matrix[k*right->col+j+20]);
-                    result->matrix[i*result->col+j+21] += (r*right->matrix[k*right->col+j+21]);
-                    result->matrix[i*result->col+j+22] += (r*right->matrix[k*right->col+j+22]);
-                    result->matrix[i*result->col+j+23] += (r*right->matrix[k*right->col+j+23]);
-                    result->matrix[i*result->col+j+24] += (r*right->matrix[k*right->col+j+24]);
-                    result->matrix[i*result->col+j+25] += (r*right->matrix[k*right->col+j+25]);
-                    result->matrix[i*result->col+j+26] += (r*right->matrix[k*right->col+j+26]);
-                    result->matrix[i*result->col+j+27] += (r*right->matrix[k*right->col+j+27]);
-                    result->matrix[i*result->col+j+28] += (r*right->matrix[k*right->col+j+28]);
-                    result->matrix[i*result->col+j+29] += (r*right->matrix[k*right->col+j+29]);
-                    result->matrix[i*result->col+j+30] += (r*right->matrix[k*right->col+j+30]);
-                    result->matrix[i*result->col+j+31] += (r*right->matrix[k*right->col+j+31]);
-                    result->matrix[i*result->col+j+32] += (r*right->matrix[k*right->col+j+32]);
-                    result->matrix[i*result->col+j+33] += (r*right->matrix[k*right->col+j+33]);
-                    result->matrix[i*result->col+j+34] += (r*right->matrix[k*right->col+j+34]);
-                    result->matrix[i*result->col+j+35] += (r*right->matrix[k*right->col+j+35]);
-                    result->matrix[i*result->col+j+36] += (r*right->matrix[k*right->col+j+36]);
-                    result->matrix[i*result->col+j+37] += (r*right->matrix[k*right->col+j+37]);
-                    result->matrix[i*result->col+j+38] += (r*right->matrix[k*right->col+j+38]);
-                    result->matrix[i*result->col+j+39] += (r*right->matrix[k*right->col+j+39]);
-                    result->matrix[i*result->col+j+40] += (r*right->matrix[k*right->col+j+40]);
-                    result->matrix[i*result->col+j+41] += (r*right->matrix[k*right->col+j+41]);
-                    result->matrix[i*result->col+j+42] += (r*right->matrix[k*right->col+j+42]);
-                    result->matrix[i*result->col+j+43] += (r*right->matrix[k*right->col+j+43]);
-                    result->matrix[i*result->col+j+44] += (r*right->matrix[k*right->col+j+44]);
-                    result->matrix[i*result->col+j+45] += (r*right->matrix[k*right->col+j+45]);
-                    result->matrix[i*result->col+j+46] += (r*right->matrix[k*right->col+j+46]);
-                    result->matrix[i*result->col+j+47] += (r*right->matrix[k*right->col+j+47]);
-                    result->matrix[i*result->col+j+48] += (r*right->matrix[k*right->col+j+48]);
-                    result->matrix[i*result->col+j+49] += (r*right->matrix[k*right->col+j+49]);
-                    j+=49;
-                    continue;
-                }
-                else if (rcol-j>=50){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
-                    result->matrix[i*result->col+j+8] += (r*right->matrix[k*right->col+j+8]);
-                    result->matrix[i*result->col+j+9] += (r*right->matrix[k*right->col+j+9]);
-                    result->matrix[i*result->col+j+10] += (r*right->matrix[k*right->col+j+10]);
-                    result->matrix[i*result->col+j+11] += (r*right->matrix[k*right->col+j+11]);
-                    result->matrix[i*result->col+j+12] += (r*right->matrix[k*right->col+j+12]);
-                    result->matrix[i*result->col+j+13] += (r*right->matrix[k*right->col+j+13]);
-                    result->matrix[i*result->col+j+14] += (r*right->matrix[k*right->col+j+14]);
-                    result->matrix[i*result->col+j+15] += (r*right->matrix[k*right->col+j+15]);
-                    result->matrix[i*result->col+j+16] += (r*right->matrix[k*right->col+j+16]);
-                    result->matrix[i*result->col+j+17] += (r*right->matrix[k*right->col+j+17]);
-                    result->matrix[i*result->col+j+18] += (r*right->matrix[k*right->col+j+18]);
-                    result->matrix[i*result->col+j+19] += (r*right->matrix[k*right->col+j+19]);
-                    result->matrix[i*result->col+j+20] += (r*right->matrix[k*right->col+j+20]);
-                    result->matrix[i*result->col+j+21] += (r*right->matrix[k*right->col+j+21]);
-                    result->matrix[i*result->col+j+22] += (r*right->matrix[k*right->col+j+22]);
-                    result->matrix[i*result->col+j+23] += (r*right->matrix[k*right->col+j+23]);
-                    result->matrix[i*result->col+j+24] += (r*right->matrix[k*right->col+j+24]);
-                    result->matrix[i*result->col+j+25] += (r*right->matrix[k*right->col+j+25]);
-                    result->matrix[i*result->col+j+26] += (r*right->matrix[k*right->col+j+26]);
-                    result->matrix[i*result->col+j+27] += (r*right->matrix[k*right->col+j+27]);
-                    result->matrix[i*result->col+j+28] += (r*right->matrix[k*right->col+j+28]);
-                    result->matrix[i*result->col+j+29] += (r*right->matrix[k*right->col+j+29]);
-                    result->matrix[i*result->col+j+30] += (r*right->matrix[k*right->col+j+30]);
-                    result->matrix[i*result->col+j+31] += (r*right->matrix[k*right->col+j+31]);
-                    result->matrix[i*result->col+j+32] += (r*right->matrix[k*right->col+j+32]);
-                    result->matrix[i*result->col+j+33] += (r*right->matrix[k*right->col+j+33]);
-                    result->matrix[i*result->col+j+34] += (r*right->matrix[k*right->col+j+34]);
-                    result->matrix[i*result->col+j+35] += (r*right->matrix[k*right->col+j+35]);
-                    result->matrix[i*result->col+j+36] += (r*right->matrix[k*right->col+j+36]);
-                    result->matrix[i*result->col+j+37] += (r*right->matrix[k*right->col+j+37]);
-                    result->matrix[i*result->col+j+38] += (r*right->matrix[k*right->col+j+38]);
-                    result->matrix[i*result->col+j+39] += (r*right->matrix[k*right->col+j+39]);
-                    result->matrix[i*result->col+j+40] += (r*right->matrix[k*right->col+j+40]);
-                    result->matrix[i*result->col+j+41] += (r*right->matrix[k*right->col+j+41]);
-                    result->matrix[i*result->col+j+42] += (r*right->matrix[k*right->col+j+42]);
-                    result->matrix[i*result->col+j+43] += (r*right->matrix[k*right->col+j+43]);
-                    result->matrix[i*result->col+j+44] += (r*right->matrix[k*right->col+j+44]);
-                    result->matrix[i*result->col+j+45] += (r*right->matrix[k*right->col+j+45]);
-                    result->matrix[i*result->col+j+46] += (r*right->matrix[k*right->col+j+46]);
-                    result->matrix[i*result->col+j+47] += (r*right->matrix[k*right->col+j+47]);
-                    result->matrix[i*result->col+j+48] += (r*right->matrix[k*right->col+j+48]);
-                    result->matrix[i*result->col+j+49] += (r*right->matrix[k*right->col+j+49]);
-                    j+=49;
-                    continue;
-                }
-                else if (rcol-j>=32){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
-                    result->matrix[i*result->col+j+8] += (r*right->matrix[k*right->col+j+8]);
-                    result->matrix[i*result->col+j+9] += (r*right->matrix[k*right->col+j+9]);
-                    result->matrix[i*result->col+j+10] += (r*right->matrix[k*right->col+j+10]);
-                    result->matrix[i*result->col+j+11] += (r*right->matrix[k*right->col+j+11]);
-                    result->matrix[i*result->col+j+12] += (r*right->matrix[k*right->col+j+12]);
-                    result->matrix[i*result->col+j+13] += (r*right->matrix[k*right->col+j+13]);
-                    result->matrix[i*result->col+j+14] += (r*right->matrix[k*right->col+j+14]);
-                    result->matrix[i*result->col+j+15] += (r*right->matrix[k*right->col+j+15]);
-                    result->matrix[i*result->col+j+16] += (r*right->matrix[k*right->col+j+16]);
-                    result->matrix[i*result->col+j+17] += (r*right->matrix[k*right->col+j+17]);
-                    result->matrix[i*result->col+j+18] += (r*right->matrix[k*right->col+j+18]);
-                    result->matrix[i*result->col+j+19] += (r*right->matrix[k*right->col+j+19]);
-                    result->matrix[i*result->col+j+20] += (r*right->matrix[k*right->col+j+20]);
-                    result->matrix[i*result->col+j+21] += (r*right->matrix[k*right->col+j+21]);
-                    result->matrix[i*result->col+j+22] += (r*right->matrix[k*right->col+j+22]);
-                    result->matrix[i*result->col+j+23] += (r*right->matrix[k*right->col+j+23]);
-                    result->matrix[i*result->col+j+24] += (r*right->matrix[k*right->col+j+24]);
-                    result->matrix[i*result->col+j+25] += (r*right->matrix[k*right->col+j+25]);
-                    result->matrix[i*result->col+j+26] += (r*right->matrix[k*right->col+j+26]);
-                    result->matrix[i*result->col+j+27] += (r*right->matrix[k*right->col+j+27]);
-                    result->matrix[i*result->col+j+28] += (r*right->matrix[k*right->col+j+28]);
-                    result->matrix[i*result->col+j+29] += (r*right->matrix[k*right->col+j+29]);
-                    result->matrix[i*result->col+j+30] += (r*right->matrix[k*right->col+j+30]);
-                    result->matrix[i*result->col+j+31] += (r*right->matrix[k*right->col+j+31]);
-                    j+=31;
-                    continue;
-                } else if(rcol-j>=10){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
-                    result->matrix[i*result->col+j+8] += (r*right->matrix[k*right->col+j+8]);
-                    result->matrix[i*result->col+j+9] += (r*right->matrix[k*right->col+j+9]);
-                    j+=9;
+                if (rcol-j>=16){
+                    b0 = &right->matrix[k*right->col+j];
+                    r0 = &result->matrix[i*result->col+j];
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    j+=15;
                     continue;
                 }
                 else if (rcol-j>=8){
-                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
-                    result->matrix[i*result->col+j+1] += (r*right->matrix[k*right->col+j+1]);
-                    result->matrix[i*result->col+j+2] += (r*right->matrix[k*right->col+j+2]);
-                    result->matrix[i*result->col+j+3] += (r*right->matrix[k*right->col+j+3]);
-                    result->matrix[i*result->col+j+4] += (r*right->matrix[k*right->col+j+4]);
-                    result->matrix[i*result->col+j+5] += (r*right->matrix[k*right->col+j+5]);
-                    result->matrix[i*result->col+j+6] += (r*right->matrix[k*right->col+j+6]);
-                    result->matrix[i*result->col+j+7] += (r*right->matrix[k*right->col+j+7]);
+                    b0 = &right->matrix[k*right->col+j];
+                    r0 = &result->matrix[i*result->col+j];
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
+                    *r0 += (r * *b0++);
+                    r0++;
                     j+=7;
                     continue;
                 }
@@ -487,45 +312,62 @@ void Matrix::Open_super( Matrix *right, Matrix *result) {
         }
     }
 }
-const int secondnum[30]={
-        2,4
-        ,8
-        ,16
-        ,32
-        ,64
-        ,128
-        ,256
-        ,512
-        ,1024
-        ,2048
-        ,4096
-        ,8192
-        ,16384
-        ,32768
-        ,65536
-        ,131072
-        ,262144
-        ,524288
-        ,1048576
-        ,2097152
-        ,4194304
-        ,8388608
-        ,16777216
-        ,33554432
-        ,67108864
-        ,134217728
-        ,268435456
-        ,536870912
-        ,1073741824
-};
-bool Matrix::isnum(int num) {
-    if(num==1){return true;}
-    for(int i=0;i<30;i++){
-        if(num == secondnum[i]){
-            return true;
+
+void Matrix::Super_quick(Matrix *right, Matrix *result) {
+    float* b0;
+    float *r0;
+    float rt;
+    int i,j,k;
+    int lrow,rrow,rcol;
+    lrow = this->row;
+    rrow = right->row;
+    rcol = right->col;
+    __m256 r,bt,c0 = _mm256_setzero_ps();
+#pragma omp parallel for num_threads(ThreadNUM)
+    for(i=0;i<lrow;++i){
+        for(k = 0;k<rrow;++k){
+            if(rrow-k>=8){
+                r = _mm256_load_ps(&matrix[i*col+k]);
+                b0 = &right->matrix[k*right->col];
+                r0 = &result->matrix[i*result->col];
+                for(j=0;j<rcol;++j){
+                    if(rcol-j>=8){
+                        c0 = _mm256_load_ps(r0+j);
+                        bt = _mm256_load_ps(b0+j);
+                        c0 =_mm256_add_ps(c0,_mm256_mul_ps(r,bt));
+                        _mm256_store_ps(r0+j,c0);
+                        j+=7;
+                    } else{
+                        result->matrix[i*result->col+j] += (matrix[i*col+k]*right->matrix[k*right->col+j]);
+                    }
+                }
+                k+=7;
+        }
+            for(j=0;j<rcol;++j){
+                if (rcol-j>=8){
+                    b0 = &right->matrix[k*right->col+j];
+                    r0 = &result->matrix[i*result->col+j];
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    r0++;
+                    *r0 += (rt * *b0++);
+                    j+=7;
+                    continue;
+                }
+                result->matrix[i*result->col+j] += (rt*right->matrix[k*right->col+j]);
+            }
         }
     }
-    return false;
 }
-
 

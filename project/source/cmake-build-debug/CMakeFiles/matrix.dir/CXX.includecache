@@ -13,6 +13,8 @@ iostream
 -
 omp.h
 -
+immintrin.h
+-
 
 G:/C_project/project/source/library.h
 

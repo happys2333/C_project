@@ -11,11 +11,12 @@ int main() {
     }
     Matrix m1 (10000,10000,array),m2(10000,10000,array2);
     Matrix re;
-    m1.setMode(3);
-    clock_t start = clock();
+    m1.setMode(5);
+    clock_t start1 = clock();
     re =m1 * m2;
-    clock_t ends = clock();
-    printf("use about %lf s\n",(double)(ends - start)/ CLOCKS_PER_SEC);
+    clock_t ends1 = clock();
 
+    printf("use about %lf s\n",(double)(ends1 - start1)/ CLOCKS_PER_SEC);
+    re.print();
     return 0;
 }
