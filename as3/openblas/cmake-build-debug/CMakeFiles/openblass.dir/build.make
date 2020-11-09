@@ -77,27 +77,27 @@ include CMakeFiles/openblass.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/openblass.dir/flags.make
 
-CMakeFiles/openblass.dir/main.cpp.o: CMakeFiles/openblass.dir/flags.make
-CMakeFiles/openblass.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/openblass.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openblass.dir/main.cpp.o -c /Users/happys/Desktop/project/C++/C_project/as3/openblas/main.cpp
+CMakeFiles/openblass.dir/test.cpp.o: CMakeFiles/openblass.dir/flags.make
+CMakeFiles/openblass.dir/test.cpp.o: ../test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/openblass.dir/test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openblass.dir/test.cpp.o -c /Users/happys/Desktop/project/C++/C_project/as3/openblas/test.cpp
 
-CMakeFiles/openblass.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openblass.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/happys/Desktop/project/C++/C_project/as3/openblas/main.cpp > CMakeFiles/openblass.dir/main.cpp.i
+CMakeFiles/openblass.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openblass.dir/test.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/happys/Desktop/project/C++/C_project/as3/openblas/test.cpp > CMakeFiles/openblass.dir/test.cpp.i
 
-CMakeFiles/openblass.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openblass.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/happys/Desktop/project/C++/C_project/as3/openblas/main.cpp -o CMakeFiles/openblass.dir/main.cpp.s
+CMakeFiles/openblass.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openblass.dir/test.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/happys/Desktop/project/C++/C_project/as3/openblas/test.cpp -o CMakeFiles/openblass.dir/test.cpp.s
 
 # Object files for target openblass
 openblass_OBJECTS = \
-"CMakeFiles/openblass.dir/main.cpp.o"
+"CMakeFiles/openblass.dir/test.cpp.o"
 
 # External object files for target openblass
 openblass_EXTERNAL_OBJECTS =
 
-openblass: CMakeFiles/openblass.dir/main.cpp.o
+openblass: CMakeFiles/openblass.dir/test.cpp.o
 openblass: CMakeFiles/openblass.dir/build.make
 openblass: CMakeFiles/openblass.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/happys/Desktop/project/C++/C_project/as3/openblas/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable openblass"

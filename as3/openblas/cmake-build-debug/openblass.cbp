@@ -82,16 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/CodeError.h">
-			<Option target="openblass"/>
-		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/cross_system.h">
-			<Option target="openblass"/>
-		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/main.cpp">
-			<Option target="openblass"/>
-		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/main.h">
+		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/test.cpp">
 			<Option target="openblass"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/C++/C_project/as3/openblas/CMakeLists.txt">

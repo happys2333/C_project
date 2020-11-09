@@ -6,35 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/CodeError.h
-iostream
--
-
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/cross_system.h
-string
--
-TargetConditionals.h
--
-
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/main.cpp
-iostream
--
-cross_system.h
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/cross_system.h
-main.h
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/main.h
-
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/main.h
-fstream
--
-string
--
-iostream
--
+/Users/happys/Desktop/project/C++/C_project/as3/openblas/test.cpp
 ctime
 -
-CodeError.h
-/Users/happys/Desktop/project/C++/C_project/as3/openblas/CodeError.h
 cblas.h
 -
 
