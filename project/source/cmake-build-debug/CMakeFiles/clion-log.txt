@@ -3,6 +3,3 @@ OPENMP FOUND
 -- Configuring done
 -- Generating done
 -- Build files have been written to: G:/C_project/project/source/cmake-build-debug
-
-Problems were encountered while collecting compiler information:
-	g++.exe: error: unrecognized command line option '-mkncni'

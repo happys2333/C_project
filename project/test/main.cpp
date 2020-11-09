@@ -3,13 +3,14 @@
 #include "lib/library.h"
 #pragma GCC optimize(3)
 int main() {
-    float * array = new float [100000000];
-    float * array2 = new float [100000000];
-    for(int i=0;i<100000000;i++){
-        array[i] = 4;
-        array2[i] = 3;
+    int n=8;
+    float * array = new float [n*n];
+    float * array2 = new float [n*n];
+    for(int i=0;i<n*n;i++){
+        array[i] = 3;
+        array2[i] = 2;
     }
-    Matrix m1 (10000,10000,array),m2(10000,10000,array2);
+    Matrix m1 (n,n,array),m2(n,n,array2);
     Matrix re;
     m1.setMode(5);
     clock_t start1 = clock();
@@ -20,3 +21,22 @@ int main() {
     re.print();
     return 0;
 }
+
+//#include <omp.h>
+//#include "iostream"
+//#define COUNT 10
+//
+//int main(int argc, char* argv[])
+//{
+//    int sum = 0;		// Assign an initial value.
+//#pragma omp parallel for num_threads(4) reduction(+:sum)
+//    for(int i = 0;i < COUNT; i++)
+//    {
+//        sum += (i+1);
+//        printf("i: %d\n",i+1);
+//        printf("Sum: %d\n",sum);
+//    }
+//    printf("Sum: %d\n",sum);
+//
+//    return 0;
+//}

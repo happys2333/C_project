@@ -31,22 +31,14 @@
   <component name="ChangeListManager">
     <list default="true" id="02a72733-07d7-43e4-8e55-17b480d62e92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../test/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../test/cmake-build-debug/CMakeFiles/project.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/cmake-build-debug/project.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../test/cmake-build-debug/project.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/lib/libmatrix.a" beforeDir="false" afterPath="$PROJECT_DIR$/../test/lib/libmatrix.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/lib/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/../test/lib/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../test/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,9 +75,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.matrix">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="matrix" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="matrix" TARGET_NAME="matrix" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/../test/cmake-build-debug/project.exe">
@@ -123,6 +115,7 @@
       <workItem from="1604718954512" duration="23106000" />
       <workItem from="1604802912756" duration="1719000" />
       <workItem from="1604816452744" duration="24513000" />
+      <workItem from="1604887222658" duration="9343000" />
     </task>
     <servers />
   </component>
@@ -161,22 +154,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604748435289" />
-    <state width="1877" height="346" key="GridCell.Tab.0.bottom" timestamp="1604769319278">
+    <state width="914" height="276" key="GridCell.Tab.0.bottom" timestamp="1604899833417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604769319278" />
-    <state width="1877" height="346" key="GridCell.Tab.0.center" timestamp="1604769319278">
+    <state width="914" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604899833417" />
+    <state width="914" height="276" key="GridCell.Tab.0.center" timestamp="1604899833417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604769319278" />
-    <state width="1877" height="346" key="GridCell.Tab.0.left" timestamp="1604769319278">
+    <state width="914" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604899833417" />
+    <state width="914" height="276" key="GridCell.Tab.0.left" timestamp="1604899833417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604769319278" />
-    <state width="1877" height="346" key="GridCell.Tab.0.right" timestamp="1604769319278">
+    <state width="914" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604899833417" />
+    <state width="914" height="276" key="GridCell.Tab.0.right" timestamp="1604899833417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604769319278" />
+    <state width="914" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604899833417" />
     <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1604769319278">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

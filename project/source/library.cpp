@@ -158,6 +158,8 @@ Matrix& Matrix::operator*(Matrix &right) {
         case 5:
             Super_quick(&right,returnm);
             break;
+        default:
+            Error(-2);
     }
     return *returnm;
 }
@@ -314,58 +316,64 @@ void Matrix::Open_super( Matrix *right, Matrix *result) {
 }
 
 void Matrix::Super_quick(Matrix *right, Matrix *result) {
-    float* b0;
-    float *r0;
-    float rt;
-    int i,j,k;
-    int lrow,rrow,rcol;
+
+    int i;
+    int lrow;
+    int rrow,rcol;
     lrow = this->row;
     rrow = right->row;
     rcol = right->col;
-    __m256 r,bt,c0 = _mm256_setzero_ps();
-#pragma omp parallel for num_threads(ThreadNUM)
+    const float* b0;
+    float *r0;
+    float r;
+    lrow = this->row;
+#pragma omp parallel for num_threads(8)
     for(i=0;i<lrow;++i){
-        for(k = 0;k<rrow;++k){
+        for(int k = 0;k<rrow;++k){
             if(rrow-k>=8){
-                r = _mm256_load_ps(&matrix[i*col+k]);
-                b0 = &right->matrix[k*right->col];
-                r0 = &result->matrix[i*result->col];
-                for(j=0;j<rcol;++j){
-                    if(rcol-j>=8){
-                        c0 = _mm256_load_ps(r0+j);
-                        bt = _mm256_load_ps(b0+j);
-                        c0 =_mm256_add_ps(c0,_mm256_mul_ps(r,bt));
-                        _mm256_store_ps(r0+j,c0);
-                        j+=7;
-                    } else{
-                        result->matrix[i*result->col+j] += (matrix[i*col+k]*right->matrix[k*right->col+j]);
+                    __m256 r,bt,c0;
+                    r = _mm256_loadu_ps(&matrix[i*col+k]);
+                    b0 = &right->matrix[k*right->col];
+                    r0 = &result->matrix[i*result->col];
+                    for(int j=0;j<rcol;++j){
+                        if(rcol-j>=8){
+                            c0 = _mm256_loadu_ps(r0+j);
+                            bt = _mm256_loadu_ps(b0+j);
+                            c0 =_mm256_add_ps(c0,_mm256_mul_ps(r,bt));
+                            _mm256_storeu_ps(r0+j,c0);
+                            j+=7;
+                        } else{
+                            result->matrix[i*result->col+j] += (matrix[i*col+k]*right->matrix[k*right->col+j]);
+                        }
                     }
+                    k+=7;
+                    continue ;
                 }
-                k+=7;
-        }
-            for(j=0;j<rcol;++j){
+            r = this->matrix[i*this->col+k];
+            for(int j=0;j<rcol;++j){
                 if (rcol-j>=8){
                     b0 = &right->matrix[k*right->col+j];
                     r0 = &result->matrix[i*result->col+j];
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
                     r0++;
-                    *r0 += (rt * *b0++);
+                    *r0 += (r * *b0++);
+                    r0++;
                     j+=7;
                     continue;
                 }
-                result->matrix[i*result->col+j] += (rt*right->matrix[k*right->col+j]);
+                result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
             }
         }
     }
