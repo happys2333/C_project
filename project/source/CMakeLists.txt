@@ -9,4 +9,5 @@ if(OPENMP_FOUND)
 endif()
 set(CMAKE_CXX_STANDARD 14)
 
+
 add_library(matrix library.cpp library.h)

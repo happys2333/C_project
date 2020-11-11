@@ -384,24 +384,28 @@ void Matrix::Super_quick(Matrix *right, Matrix *result) {
         }
     }
 }
-int BLOCKSIZE = 8;
-void Matrix::packMatrix(int n, float *A, float *B, float *C) {
-#pragma omp parallel for num_threads(8)
+void Matrix::packMatrix(int n, float *A, float *B, float *C,int BLOCKSIZE) {
     for(int i = 0; i < BLOCKSIZE; i++)
 
     {
         for(int j = 0; j < BLOCKSIZE; j++)
 
         {
-            double cij = C[i*n+j];
-                cij +=A[i*n+1] * B[n + j];
-                cij +=A[i*n] * B[j];
-                cij +=A[i*n+2] * B[2*n + j];
-                cij +=A[i*n+3] * B[3*n + j];
-                cij +=A[i*n+4] * B[4*n + j];
-                cij +=A[i*n+5] * B[5*n + j];
-                cij +=A[i*n+6] * B[6*n + j];
-            cij +=A[i*n+7] * B[7*n + j];
+            float cij = C[i*n+j];
+            for(int k = 0; k < BLOCKSIZE; k++ ){
+                if(BLOCKSIZE - k>=8){
+                    __m256 r;
+                    __m256 bt;
+                    __m256 c0;
+                    r = _mm256_loadu_ps(&A[i*n]+k);
+                    bt = _mm256_loadu_ps(&B[j]+k*n);
+                    c0 += r*bt;
+                    cij += (c0[1]+c0[2]+c0[0]+c0[3]+c0[4]+c0[5]+c0[6]+c0[7]);
+                    k+=7;
+                    continue;
+                }
+                cij +=A[i*n+k] * B[k*n + j];
+            }
             C[i*n+j] = cij;
 
         }
@@ -410,18 +414,37 @@ void Matrix::packMatrix(int n, float *A, float *B, float *C) {
 }
 
 void Matrix::Quick(Matrix *right, Matrix *result) {
+    int BLOCKSIZE = 0;
     float *A,*B,*C;
     int n = result->col;
     A = matrix;
     B = right->matrix;
     C = result->matrix;
+    if(n<1000){BLOCKSIZE = n;}
+    else{
+        if (n%200 ==0){BLOCKSIZE=200;}
+        else if(n%160 == 0){BLOCKSIZE=160;}
+        else if (n%80 == 0){BLOCKSIZE =80;}
+        else if(n%40 == 0){BLOCKSIZE = 40;}
+        else if(n%32 == 0){BLOCKSIZE = 32;}
+        else if(n%24 == 0){BLOCKSIZE = 24;}
+        else if(n%16 == 0){BLOCKSIZE = 16;}
+        else if(n%10 == 0){BLOCKSIZE = 10;}
+        else if(n%8 == 0){BLOCKSIZE = 8;}
+        else if (n%5 == 0){BLOCKSIZE = 5;}
+        else if (n%3 == 0){BLOCKSIZE = 3;}
+       else if(n%2==0){BLOCKSIZE = 2;}
+       else {
+           Super_quick(right,result);
+            return;
+       }
+    }
 #pragma omp parallel for num_threads(8)
     for ( int sj = 0; sj < n; sj += BLOCKSIZE )
-
+#pragma omp parallel for num_threads(8)
         for ( int si = 0; si < n; si += BLOCKSIZE )
-
+#pragma omp parallel for num_threads(8)
             for ( int sk = 0; sk < n; sk += BLOCKSIZE )
-
-                packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj);
+                packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
 
 }

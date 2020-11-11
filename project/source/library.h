@@ -25,7 +25,7 @@ private:
     * */
     int mode = 0;
     void Quick(Matrix* right,Matrix* result);
-    void packMatrix(int n, float *A, float *B, float *C);
+    void packMatrix(int n, float *A, float *B, float *C,int BLOCKSIZE);
     void open_do(Matrix* right,Matrix* result);
     void open_mp(Matrix* right,Matrix* result);
     void Open_super(Matrix* right,Matrix* result);

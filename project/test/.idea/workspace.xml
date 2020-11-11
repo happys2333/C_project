@@ -31,18 +31,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f157262f-c815-4f61-8591-a6a67ecd519f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../source/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../source/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../source/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../source/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../source/library.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../source/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/../source/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/project.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project.exe" afterDir="false" />
@@ -78,23 +71,23 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\C_project\project\test\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\C_project\project\test\lib" />
       <recent name="G:\C_project\project\test\cmake-build-debug" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\C_project\project\test\lib" />
-    </key>
   </component>
   <component name="RunManager">
-    <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -117,6 +110,7 @@
       <workItem from="1604816249801" duration="23484000" />
       <workItem from="1604884858159" duration="10008000" />
       <workItem from="1605007105616" duration="10546000" />
+      <workItem from="1605088831332" duration="7892000" />
     </task>
     <servers />
   </component>
@@ -151,38 +145,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604753051811" />
-    <state width="914" height="344" key="GridCell.Tab.0.bottom" timestamp="1605034025462">
+    <state width="914" height="280" key="GridCell.Tab.0.bottom" timestamp="1605108257627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
-    <state width="914" height="344" key="GridCell.Tab.0.center" timestamp="1605034025462">
+    <state width="914" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605108257627" />
+    <state width="914" height="280" key="GridCell.Tab.0.center" timestamp="1605108257627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
-    <state width="914" height="344" key="GridCell.Tab.0.left" timestamp="1605034025462">
+    <state width="914" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605108257627" />
+    <state width="914" height="280" key="GridCell.Tab.0.left" timestamp="1605108257626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
-    <state width="914" height="344" key="GridCell.Tab.0.right" timestamp="1605034025462">
+    <state width="914" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605108257626" />
+    <state width="914" height="280" key="GridCell.Tab.0.right" timestamp="1605108257627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
-    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1605034025463">
+    <state width="914" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605108257627" />
+    <state width="914" height="341" key="GridCell.Tab.1.bottom" timestamp="1605089005441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
-    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1605034025463">
+    <state width="914" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605089005441" />
+    <state width="914" height="341" key="GridCell.Tab.1.center" timestamp="1605089005441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
-    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1605034025462">
+    <state width="914" height="341" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605089005441" />
+    <state width="914" height="341" key="GridCell.Tab.1.left" timestamp="1605089005441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
-    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1605034025463">
+    <state width="914" height="341" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605089005441" />
+    <state width="914" height="341" key="GridCell.Tab.1.right" timestamp="1605089005441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
+    <state width="914" height="341" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605089005441" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1604765188161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -192,13 +186,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/../source/library.cpp</url>
-          <line>328</line>
+          <line>413</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

@@ -3,16 +3,16 @@
 #include "lib/library.h"
 #pragma GCC optimize(3)
 int main() {
-    int n=10000;
+    int n=1024;
     float * array = new float [n*n];
     float * array2 = new float [n*n];
     for(int i=0;i<n*n;i++){
-        array[i] = 3;
+        array[i] = 4;
         array2[i] = 2;
     }
     Matrix m1 (n,n,array),m2(n,n,array2);
     Matrix re;
-    m1.setMode(2);
+    m1.setMode(1);
     clock_t start1 = clock();
     re =m1 * m2;
     clock_t ends1 = clock();
