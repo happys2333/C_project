@@ -31,10 +31,18 @@
   <component name="ChangeListManager">
     <list default="true" id="f157262f-c815-4f61-8591-a6a67ecd519f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../source/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../source/cmake-build-debug/CMakeFiles/matrix.dir/library.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../source/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../source/library.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../source/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/../source/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/project.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project.exe" afterDir="false" />
@@ -54,12 +62,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1je8t7A14DWO4xxuYEVPeai59So" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
@@ -67,20 +78,15 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\C_project\project\test\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\C_project\project\test\lib" />
       <recent name="G:\C_project\project\test\cmake-build-debug" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\C_project\project\test\lib" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -110,6 +116,7 @@
       <workItem from="1604802903153" duration="2665000" />
       <workItem from="1604816249801" duration="23484000" />
       <workItem from="1604884858159" duration="10008000" />
+      <workItem from="1605007105616" duration="10546000" />
     </task>
     <servers />
   </component>
@@ -128,51 +135,54 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604746844013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604746844013" />
-    <state width="401" height="466" key="DebuggerActiveHint" timestamp="1604854512962">
+    <state width="401" height="466" key="DebuggerActiveHint" timestamp="1605027581707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="401" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1604854512962" />
+    <state width="401" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1605027581707" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604753051811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604753051811" />
-    <state width="914" height="346" key="GridCell.Tab.0.bottom" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.0.bottom" timestamp="1605034025462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.0.center" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
+    <state width="914" height="344" key="GridCell.Tab.0.center" timestamp="1605034025462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.0.left" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
+    <state width="914" height="344" key="GridCell.Tab.0.left" timestamp="1605034025462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.0.right" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
+    <state width="914" height="344" key="GridCell.Tab.0.right" timestamp="1605034025462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.1.bottom" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
+    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1605034025463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.1.center" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
+    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1605034025463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.1.left" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
+    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1605034025462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
-    <state width="914" height="346" key="GridCell.Tab.1.right" timestamp="1604899831736">
+    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025462" />
+    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1605034025463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604899831736" />
+    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605034025463" />
     <state x="0" y="167" key="SettingsEditor" timestamp="1604765188161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -185,6 +195,11 @@
           <url>file://$PROJECT_DIR$/main.cpp</url>
           <line>16</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../source/library.cpp</url>
+          <line>328</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,7 +3,7 @@
 #include "lib/library.h"
 #pragma GCC optimize(3)
 int main() {
-    int n=8;
+    int n=10000;
     float * array = new float [n*n];
     float * array2 = new float [n*n];
     for(int i=0;i<n*n;i++){
@@ -12,13 +12,13 @@ int main() {
     }
     Matrix m1 (n,n,array),m2(n,n,array2);
     Matrix re;
-    m1.setMode(5);
+    m1.setMode(2);
     clock_t start1 = clock();
     re =m1 * m2;
     clock_t ends1 = clock();
 
     printf("use about %lf s\n",(double)(ends1 - start1)/ CLOCKS_PER_SEC);
-    re.print();
+//    re.print();
     return 0;
 }
 

@@ -36,9 +36,6 @@ void Matrix::setMode(int semode) {
 void Matrix::build(float *array) {
     this->matrix = array;
 }
-void Matrix::Intel(Matrix* right,Matrix* result) {
-
-}
 void Matrix::N_do(Matrix* right, Matrix* result) {
     /*
      * ikj mode
@@ -88,7 +85,7 @@ Matrix::~Matrix() {
 void Matrix::print() {
     for (int i=0;i<row;i++){
         for(int j=0;j<col;j++){
-         printf("%-10f ",matrix[j+i*col]);
+            printf("%-10f ",matrix[j+i*col]);
         }
         printf("\n");
     }
@@ -111,7 +108,7 @@ Matrix& Matrix::operator+(Matrix &right){
         Matrix *m = new Matrix(this->row, this->col);
         for(int r=0;r<this->row;r++){
             for(int c=0;c<this->col;c++){
-                 m->set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
+                m->set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
             }
         }
         return *m;
@@ -144,7 +141,7 @@ Matrix& Matrix::operator*(Matrix &right) {
             N_do( &right,returnm);
             break;
         case 1:
-            Intel(&right,returnm);
+            Quick(&right,returnm);
             break;
         case 2:
             open_mp(&right,returnm);
@@ -222,7 +219,7 @@ void Matrix::open_mp( Matrix *right, Matrix *result) {
     lrow = this->row;
     rrow = right->row;
     rcol = right->col;
-    #pragma omp parallel for num_threads(ThreadNUM)
+#pragma omp parallel for num_threads(ThreadNUM)
     for(i=0;i<lrow;++i){
         for(k = 0;k<rrow;++k){
             r = this->matrix[i*this->col+k];
@@ -241,7 +238,7 @@ void Matrix::Open_super( Matrix *right, Matrix *result) {
     lrow = this->row;
     rrow = right->row;
     rcol = right->col;
-    #pragma omp parallel for num_threads(ThreadNUM)
+#pragma omp parallel for num_threads(ThreadNUM)
     for(i=0;i<lrow;++i){
         for(k = 0;k<rrow;++k){
             r = this->matrix[i*this->col+k];
@@ -323,59 +320,108 @@ void Matrix::Super_quick(Matrix *right, Matrix *result) {
     lrow = this->row;
     rrow = right->row;
     rcol = right->col;
-    const float* b0;
-    float *r0;
     float r;
     lrow = this->row;
 #pragma omp parallel for num_threads(8)
     for(i=0;i<lrow;++i){
-        for(int k = 0;k<rrow;++k){
-            if(rrow-k>=8){
-                    __m256 r,bt,c0;
-                    r = _mm256_loadu_ps(&matrix[i*col+k]);
-                    b0 = &right->matrix[k*right->col];
-                    r0 = &result->matrix[i*result->col];
-                    for(int j=0;j<rcol;++j){
-                        if(rcol-j>=8){
-                            c0 = _mm256_loadu_ps(r0+j);
-                            bt = _mm256_loadu_ps(b0+j);
-                            c0 =_mm256_add_ps(c0,_mm256_mul_ps(r,bt));
-                            _mm256_storeu_ps(r0+j,c0);
-                            j+=7;
-                        } else{
-                            result->matrix[i*result->col+j] += (matrix[i*col+k]*right->matrix[k*right->col+j]);
-                        }
-                    }
-                    k+=7;
-                    continue ;
-                }
-            r = this->matrix[i*this->col+k];
-            for(int j=0;j<rcol;++j){
-                if (rcol-j>=8){
-                    b0 = &right->matrix[k*right->col+j];
-                    r0 = &result->matrix[i*result->col+j];
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    *r0 += (r * *b0++);
-                    r0++;
-                    j+=7;
+        if(i == lrow-1){
+            float* b0,*r0,r;
+            for(int k = 0;k<rrow;++k){
+                r = this->matrix[i*this->col+k];
+                if(r==0){
                     continue;
                 }
-                result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
+                for(int j=0;j<rcol;++j){
+                    if (rcol-j>=8){
+                        b0 = &right->matrix[k*right->col+j];
+                        r0 = &result->matrix[i*result->col+j];
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        *r0 += (r * *b0++);
+                        r0++;
+                        j+=7;
+                        continue;
+                    }
+                    result->matrix[i*result->col+j] += (r*right->matrix[k*right->col+j]);
+                }
+            }
+
+        }else{
+            const float* b0;
+            float *r0;
+            for(int k = 0;k<rrow;++k){
+                __m256 r;
+                __m256 bt;
+                __m256 c0;
+                r = _mm256_loadu_ps(&matrix[i * col + k]);
+                b0 = &right->matrix[k * right->col];
+                for (int j = 0; j < rcol; ++j) {
+                    if (rcol - j >= 8) {
+                        r0 = &result->matrix[i * result->col];
+                        c0 = _mm256_loadu_ps(r0 + j);
+                        bt = _mm256_loadu_ps(b0 + j);
+                        c0 += (r*bt);
+                        _mm256_storeu_ps(r0 + j, c0);
+                        j += 7;
+                    } else {
+                        result->matrix[i * result->col + j] += (matrix[i * col + k] *
+                                                                right->matrix[k * right->col + j]);
+                    }
+                }
             }
         }
     }
 }
+int BLOCKSIZE = 8;
+void Matrix::packMatrix(int n, float *A, float *B, float *C) {
+#pragma omp parallel for num_threads(8)
+    for(int i = 0; i < BLOCKSIZE; i++)
 
+    {
+        for(int j = 0; j < BLOCKSIZE; j++)
+
+        {
+            double cij = C[i*n+j];
+                cij +=A[i*n+1] * B[n + j];
+                cij +=A[i*n] * B[j];
+                cij +=A[i*n+2] * B[2*n + j];
+                cij +=A[i*n+3] * B[3*n + j];
+                cij +=A[i*n+4] * B[4*n + j];
+                cij +=A[i*n+5] * B[5*n + j];
+                cij +=A[i*n+6] * B[6*n + j];
+            cij +=A[i*n+7] * B[7*n + j];
+            C[i*n+j] = cij;
+
+        }
+
+    }
+}
+
+void Matrix::Quick(Matrix *right, Matrix *result) {
+    float *A,*B,*C;
+    int n = result->col;
+    A = matrix;
+    B = right->matrix;
+    C = result->matrix;
+#pragma omp parallel for num_threads(8)
+    for ( int sj = 0; sj < n; sj += BLOCKSIZE )
+
+        for ( int si = 0; si < n; si += BLOCKSIZE )
+
+            for ( int sk = 0; sk < n; sk += BLOCKSIZE )
+
+                packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj);
+
+}
