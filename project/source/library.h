@@ -24,7 +24,8 @@ private:
     * 5: super MP_Quick mode
     * */
     int mode = 0;
-    void Intel(Matrix* right,Matrix* result);
+    void Quick(Matrix* right,Matrix* result);
+    void packMatrix(int n, float *A, float *B, float *C);
     void open_do(Matrix* right,Matrix* result);
     void open_mp(Matrix* right,Matrix* result);
     void Open_super(Matrix* right,Matrix* result);
