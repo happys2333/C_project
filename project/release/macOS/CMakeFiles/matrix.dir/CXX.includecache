@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/library.cpp
+library.h
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/library.h
+iostream
+-
+omp.h
+-
+immintrin.h
+-
+
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/library.h
+

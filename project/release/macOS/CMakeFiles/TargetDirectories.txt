@@ -1,0 +1,3 @@
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/CMakeFiles/rebuild_cache.dir
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/CMakeFiles/edit_cache.dir
+/Users/happys/Desktop/project/C++/C_project/project/release/macOS/CMakeFiles/matrix.dir
