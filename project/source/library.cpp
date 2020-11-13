@@ -2,8 +2,12 @@
 #include <iostream>
 #include <omp.h>
 #include <immintrin.h>
+#define A(i,j) a[ (j)*lda + (i) ]
+#define B(i,j) b[ (j)*ldb + (i) ]
+#define C(i,j) c[ (j)*ldc + (i) ]
 const int ThreadNUM = 16;
 #pragma GCC optimize(3)
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
 inline void Error(int type){
     printf("Error code : %d ",type);
     switch (type) {
@@ -18,6 +22,9 @@ inline void Error(int type){
             break;
         case -2:
             printf("wrong mode number please check your code, this time will use mode 0 to do!\n");
+            break;
+        case -1:
+            printf("Not support, this time will use mode 0 to do!\n");
             break;
         default:
             printf("unknown error!\n");

@@ -439,11 +439,11 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenMP
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v4.5()]
 //Details about finding OpenMP_C
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][C:/MinGW/lib/gcc/mingw32/9.2.0/libgomp.dll.a][C:/MinGW/lib/libmingwthrd.a][C:/MinGW/lib/libpthread.dll.a][C:/MinGW/lib/libmingwthrd.a][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][C:/MinGW/lib/gcc/mingw32/9.2.0/libgomp.dll.a][C:/MinGW/lib/libmingwthrd.a][C:/MinGW/lib/libpthread.dll.a][C:/MinGW/lib/libmingwthrd.a][v4.5()]
 //Details about finding OpenMP_CXX
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][C:/MinGW/lib/gcc/mingw32/9.2.0/libgomp.dll.a][C:/MinGW/lib/libmingwthrd.a][C:/MinGW/lib/libpthread.dll.a][C:/MinGW/lib/libmingwthrd.a][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][C:/MinGW/lib/gcc/mingw32/9.2.0/libgomp.dll.a][C:/MinGW/lib/libmingwthrd.a][C:/MinGW/lib/libpthread.dll.a][C:/MinGW/lib/libmingwthrd.a][v4.5()]
 //Result of TRY_COMPILE
 OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
 //Result of TRY_COMPILE

@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-G:/C_project/project/test/lib/library.h
-
 G:/C_project/project/test/main.cpp
+mmintrin.h
+-
+xmmintrin.h
+-
+pmmintrin.h
+-
+emmintrin.h
+-
 iostream
 -
 ctime
 -
-lib/library.h
-G:/C_project/project/test/lib/library.h
 
