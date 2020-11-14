@@ -29,7 +29,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f157262f-c815-4f61-8591-a6a67ecd519f" name="Default Changelist" comment="" />
+    <list default="true" id="f157262f-c815-4f61-8591-a6a67ecd519f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../source/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../source/cmake-build-debug/libmatrix.a" beforeDir="false" afterPath="$PROJECT_DIR$/../source/cmake-build-debug/libmatrix.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/project.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libmatrix.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libmatrix.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,23 +71,18 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\C_project\project\test\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\C_project\project\test\lib" />
       <recent name="G:\C_project\project\test\cmake-build-debug" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\C_project\project\test\lib" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -102,6 +109,7 @@
       <workItem from="1605152371873" duration="7147000" />
       <workItem from="1605198860385" duration="4012000" />
       <workItem from="1605231039403" duration="2218000" />
+      <workItem from="1605280158618" duration="139000" />
     </task>
     <servers />
   </component>
@@ -136,22 +144,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604753051811" />
-    <state width="1877" height="342" key="GridCell.Tab.0.bottom" timestamp="1605237537779">
+    <state width="914" height="287" key="GridCell.Tab.0.bottom" timestamp="1605280298312">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605237537779" />
-    <state width="1877" height="342" key="GridCell.Tab.0.center" timestamp="1605237537779">
+    <state width="914" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605280298312" />
+    <state width="914" height="287" key="GridCell.Tab.0.center" timestamp="1605280298312">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605237537779" />
-    <state width="1877" height="342" key="GridCell.Tab.0.left" timestamp="1605237537779">
+    <state width="914" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605280298312" />
+    <state width="914" height="287" key="GridCell.Tab.0.left" timestamp="1605280298311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605237537779" />
-    <state width="1877" height="342" key="GridCell.Tab.0.right" timestamp="1605237537779">
+    <state width="914" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605280298311" />
+    <state width="914" height="287" key="GridCell.Tab.0.right" timestamp="1605280298312">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605237537779" />
+    <state width="914" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605280298312" />
     <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1605237537779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -4,7 +4,7 @@
 #pragma GCC optimize(3)
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
 int main() {
-    int n=10000;
+    int n=1000;
     auto * array = new float [n*n];
     auto * array2 = new float [n*n];
     for(int i=0;i<n*n;i++){
