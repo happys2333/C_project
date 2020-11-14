@@ -11,7 +11,6 @@
 ## 目录
 - [设计思路与分析](#设计思路与分析)
 - [代码](#代码)
-- [测试结果](#测试结果)
 - [使用方法](#使用方法)
 - [亮点与思考](#程序亮点与思考)
 ## 设计思路与分析
@@ -73,7 +72,10 @@ inline float Getelement(int col,int row);
 - 并行计算（采取了openmp的并行库）
 - 针对硬件平台进行优化（使用Intel的SIMD）
 - 针对CPU缓存相关处理（处理个别超过cache的矩阵）       
-本程序默认打开了编译器的极限最优化设置
+本程序默认打开了编译器的极限最优化设置  
+测试代码的截图如下  
+![test](img/test.png)
+所有测试结果均在下文中写出，相关截图也一并给出。
 ```cpp
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
 ```
@@ -682,9 +684,13 @@ ar rcs libmatrix.a *.o
 这样您就可以在您的Mac上使用这个库了
 对于windows和Linux只需要在您的PC上安装好即可，自带默认会打开openmp和Intel的优化
 `本程序目前暂时不全面支持apple silicon以及arm构架的芯片，这与我们使用了Intel的指令集有关系，预期会在下一个版本进行更新`
-
-## 测试结果
-
-
 ## 程序亮点与思考
--
+#### 与openblas对比学习
+本次程序完成之后，对openblas的效率和我进行了对比
+![open](img/openblas.png)
+由此可见，我们和openblas的差距较大，我参考了一部分的openblas思路,如下链接中提供了很多思路
+[openblas矩阵乘法](#https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html)         
+尽管尽可能的去贴近openblas中的思路，但是效率仍然差了几倍效率，可能是针对不同CPU的优化不能做到，主要是对底层对内容不能熟练运用，包括汇编语言不会使用。
+#### float和double
+这次做实验我看出了float和double的不同差距，尤其是运算效率上，可能是float本身的数据量比较小，就会更加容易运算
+#### 
