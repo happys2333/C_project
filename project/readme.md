@@ -40,11 +40,11 @@ Matrix(int row,int col);
 void print();
 输出当前矩阵，会按照行列对齐输出
 void build(float* array);
-将矩阵
+将
 Matrix& operator*(Matrix& right);
 乘法重载，实现了两个矩阵的乘法，返回一个乘好的矩阵
 Matrix& operator=(float* array);
-等号重载，可以人一个已经规定好的
+等号重载，可以利用等号直接对矩阵进行赋值（注意必须提前规定好行列数目）
 Matrix& operator+(Matrix& right);
 加号重载，实现两个矩阵相加
 Matrix& operator-(Matrix& right);
@@ -52,9 +52,9 @@ Matrix& operator-(Matrix& right);
 float* operator[](int i);
 重载一个取值符，返回第i行的行数组
 void clear();
-清空整个数组，
+清空整个矩阵，腾出内存空间
 void set(int col,int row,float element);
-
+设置位于row col位置的值为element
 void setMode(int semode);
 设置矩阵乘法的模式
 一共有六种模式，下面会对这些模式讲解
