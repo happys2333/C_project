@@ -4,7 +4,7 @@
 ![language](https://img.shields.io/badge/language-C%2B%2B-brightgreen)
 ![author](https://img.shields.io/badge/author-happys-blue)
 ![support](https://img.shields.io/badge/supported%20OS-Windows%20Linux%20macOS-red)
-![img](https://img.shields.io/badge/build-passing-green)
+![built](https://img.shields.io/badge/build-passing-green)
 ##### 测试平台：`windows10 x64` `macOS 10.15` `linux(Ubuntu)`
 ##### 编码：`UTF-8`
 ##### C++标准：`C++14`
@@ -607,6 +607,8 @@ ar rcs libmatrix.a *.o
 ```
 这样您就可以在您的Mac上使用这个库了
 对于windows和Linux只需要在您的PC上安装好即可，自带默认会打开openmp和Intel的优化
+`本程序目前暂时不全面支持apple silicon以及arm构架的芯片，这与我们使用了Intel的指令集有关系，预期会在下一个版本进行更新`
+
 ## 测试结果
 
 
