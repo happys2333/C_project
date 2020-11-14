@@ -40,7 +40,7 @@ Matrix(int row,int col);
 void print();
 输出当前矩阵，会按照行列对齐输出
 void build(float* array);
-将
+对矩阵中的数组进行构建
 Matrix& operator*(Matrix& right);
 乘法重载，实现了两个矩阵的乘法，返回一个乘好的矩阵
 Matrix& operator=(float* array);
@@ -59,7 +59,7 @@ void setMode(int semode);
 设置矩阵乘法的模式
 一共有六种模式，下面会对这些模式讲解
 0-普通模式
-1-快速模式（分块）
+1-快速模式（分块）（要求方阵）
 2-利用openmp并行
 3-展开循环
 4-展开更多循环并利用openmp
@@ -67,7 +67,6 @@ void setMode(int semode);
 inline float Getelement(int col,int row);
 获取row行col列的元素值
 ```
-
 #### 对于矩阵乘法我们的优化主要是从以下方面进行优化         
 - 优化硬件处理（有关访存方面）
 - 展开运算（主要是for循环）
@@ -78,7 +77,21 @@ inline float Getelement(int col,int row);
 ```cpp
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
 ```
-
+矩阵乘法我们首先来看一下最朴素的算法，三层循环嵌套ijk式
+```cpp
+for (int i = 0; i < f1; i++) //i表示第i行
+ {
+  for (int j = 0; j < s2; j++) //j表示第j列
+  {
+   result[i*f2 + j] = 0;  //在这里 result[i][j] = result[i*f2+j];
+   for(int p=0;p<f2;p++)
+   {
+    result[i*f2 + j] +=left[i*f2+p]*right[p*f2+j];
+   }
+  }
+ }
+```
+利用这个方法，我们可以实现极其简单的矩阵乘法，没有优化，我尝试以此方法运行一个10000的矩阵
 
 
 
