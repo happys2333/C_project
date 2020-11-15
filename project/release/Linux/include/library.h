@@ -5,6 +5,7 @@
  * normally open O3
  * */
 #pragma GCC optimize(3)
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
 /*
  * report error
  * */
@@ -24,13 +25,13 @@ private:
     * 5: super MP_Quick mode
     * */
     int mode = 0;
-    void Intel(Matrix* right,Matrix* result);
+    void Quick(Matrix* right,Matrix* result);
+    void packMatrix(int n, float *A, float *B, float *C,int BLOCKSIZE);
     void open_do(Matrix* right,Matrix* result);
     void open_mp(Matrix* right,Matrix* result);
     void Open_super(Matrix* right,Matrix* result);
     void Super_quick(Matrix* right,Matrix* result);
     void N_do(Matrix* right,Matrix* result);
-
 public:
     //create an empty matrix
     Matrix();

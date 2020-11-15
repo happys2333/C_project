@@ -21,7 +21,7 @@ CPU： Intel Core i5 9400 （笔记本降频版本）
 内存：16G      
 #### 基本框架
 我首先实现了一个矩阵，对矩阵进行了简单初始化，为了方便用户使用这个程序，我们对程序的运算符进行了重载，作为一个方便使用的库进行设计。
-`本程序是一个矩阵运算的库，并非可以执行的文件，你需要将其调用到你自己的代码中，使用方法可以参考`[使用方法](#使用方法)
+<font color = red>本程序是一个矩阵运算的库，并非可以执行的文件，你需要将其调用到你自己的代码中，使用方法可以参考</font>[使用方法](#使用方法)
 #### 基本代码运行函数
 本库包括了一个相对完整的矩阵类，你可以通过这个矩阵类实现你想实现的绝大部分矩阵方面的功能，由于库是为了实现通用性，我摒弃了个别不能跨平台的方法，最终设计出了这套矩阵运行库。       
 我在做本次库的时候充分考虑了可能遇到的问题以及用户需求的不同，本套库的设计尽可能偏向用户的同时又能保证程序的运行高效自然。      
@@ -110,11 +110,13 @@ CPU读数据时，并不是直接访问内存，而是先查看缓存中是否�
 ![picture](img/0.png)
 从图中我们可以看出，经过优化后，我们得到了暂时可以接受的时间。
 ##### openmp模式
-在上面程序运行过程中，我们可以发现30-40%的CPU占用率，并不能挤满整个CPU，所以我们需要
+在上面程序运行过程中，我们可以发现30-40%的CPU占用率，并不能挤满整个CPU，所以我们需要压榨CPU的性能，这样必然会获取更高的性能效率，所以我们这里采取了openmp来实现。     
+利用openmp的并行计算能力，我们可以很轻松的对代码进一步优化，达到压榨CPU到极限的能力。经过处理后，我们终于实现了100%的CPU占用率。经过优化后我们将程序效率提高了约一倍以上：
+![picture](img/2.png)
 ##### 循环展开
-
+除了利用openmp这种方法，我们还可以实现一个别的方法，展开一个
 ##### avx指令集
-
+SIMD是一种更加优秀的指令集优化，但是只能在Intel上运行，所以
 ##### 矩阵分块（cache优化）
 
 ## 代码
@@ -655,12 +657,10 @@ if(OPENMP_FOUND)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -mfma ")
 endif()
 set(CMAKE_CXX_STANDARD 14)
-
-
 add_library(matrix library.cpp library.h)
 ```
 ## 使用方法
-`本程序采用的Cmake版本为3.17与现有部分操作系统上的版本有所不同，请自行更新您的cmake版本`
+<font color=red>本程序采用的Cmake版本为3.17与现有部分操作系统上的版本有所不同，请自行更新您的cmake版本</font>
 本次代码采取了封装为库的思路，通过将代码进行库封装，可以非常简单的进行代码迁移，本程序的test文件中示范了一个简单的方法将程序加入到您的工程之中，并不会影响您的其他代码。
 您的可以采用两种方法来使用本程序：
 - 通过本地的cmake编译器对源代码进行编译（强烈推荐）
@@ -670,7 +670,7 @@ add_library(matrix library.cpp library.h)
 cmake CMakeLists.txt
 make
 ```
-`我们这里需要强调的是，由于macOS下自带的clang编译器并不支持我们使用的openmp，所以这里给出了一个教程帮助您在您的Mac上构建您的程序`
+***我们这里需要强调的是，由于macOS下自带的clang编译器并不支持我们使用的openmp，所以这里给出了一个教程帮助您在您的Mac上构建您的程序***
 - 将您的控制台移动到source的文件下
 - 安装gcc
 ```shell
@@ -681,9 +681,35 @@ brew install gcc
 gcc-10  -c -fopenmp -mfma library.cpp -o libmatrix.o
 ar rcs libmatrix.a *.o
 ```
-这样您就可以在您的Mac上使用这个库了
-对于windows和Linux只需要在您的PC上安装好即可，自带默认会打开openmp和Intel的优化
-`本程序目前暂时不全面支持apple silicon以及arm构架的芯片，这与我们使用了Intel的指令集有关系，预期会在下一个版本进行更新`
+这样您就可以在您的Mac上使用这个库了.             
+对于windows和Linux只需要在您的PC上安装好即可，自带默认会打开openmp和Intel的优化             
+<font color = green>本程序目前暂时不全面支持apple silicon以及arm构架的芯片，这与我们使用了Intel的指令集有关系，预期会在下一个版本进行更新</font>
+将release文件中的三个版本文件直接拷贝到您的目录下，就可以使用本程序了，或者您拷贝出来其中的include文件，这样您就可以使用这个头文件了。          
+如何将库链接到您的文件呢？我们推荐您使用cmake进行编译,如下这个我们可以看出如何更加完美的添加到您的工程中。
+```CMake
+cmake_minimum_required(VERSION 3.17)
+project(project)
+set(CMAKE_CXX_STANDARD 14)
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -mfma")
+set(INC_DIR ./include)
+set(LINK_DIR ./lib)
+include_directories(${INC_DIR})
+link_directories(${LINK_DIR})
+link_libraries(matrix)
+add_executable(project main.cpp)
+
+target_link_libraries(project matrix)
+```
+或者您使用如下的编译指令，并在后面加上您原有的内容。
+```shell
+gcc -L ./lib -I ./include
+```
+在您的代码中加入
+```cpp
+#include "library.h"
+```
+即可进行我们的库的使用。
 ## 程序亮点与思考
 #### 与openblas对比学习
 本次程序完成之后，对openblas的效率和我进行了对比
@@ -699,4 +725,3 @@ ar rcs libmatrix.a *.o
 本次程序运行的时候，会明显发现大数据和小数据的差异，在1000x1000的矩阵乘法的时候，运行时间远低于s这个单位，但是仅仅是扩大了十倍，10000x10000就达到了惊人的百秒，这也让我知道在以后写代码进行调试的时候应该采用更大的数据量运行
 #### 兼容性与效率
 本次程序在设计之初的目的是实现一个更加通用的矩阵乘法计算库，我认为不能被平台，硬件等方面对程序本身造成限制，所以我在设计这个库的时候，直接放弃了CUDA设计，转向单纯对CPU的优化，CUDA的设计虽然会成千上万的提高程序效率，但是这样也限制了硬件的英伟达显卡，由于我本身就是macOS的用户，所以我并不希望被这个限制，所以一开始就没有去设计CUDA版本，兼容性和效率之间妥协完成了本通用库。
-#### 
