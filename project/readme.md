@@ -97,7 +97,7 @@ for (int i = 0; i < f1; i++) //i表示第i行
 接下来使用第一个优化算法
 ##### 内存寻址优化
 我们经过测试后，发现不同的寻址方法可以对时间有较大的影响，如下表格可以列出：
-                
+
 |顺序|时间|
 |-|-|
 |ijk|9.6|
@@ -721,8 +721,8 @@ gcc -L ./lib -I ./include
 即可进行我们的库的使用。
 ## 程序亮点与思考
 #### 与openblas对比学习
-本次程序完成之后，对openblas的效率和我进行了对比
-![open](img/openblas.png)
+本次程序完成之后，对openblas的效率和我进行了对比            
+![open](img/openblas.png)           
 由此可见，我们和openblas的差距较大，我参考了一部分的openblas思路,如下链接中提供了很多思路
 [openblas矩阵乘法](#https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html)         
 尽管尽可能的去贴近openblas中的思路，但是效率仍然差了几倍效率，可能是针对不同CPU的优化不能做到，主要是对底层对内容不能熟练运用，包括汇编语言不会使用。
