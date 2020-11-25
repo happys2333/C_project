@@ -14,10 +14,10 @@
 		19A73B2B256D68E80084196D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B2A256D68E80084196D /* Assets.xcassets */; };
 		19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B2C256D68E80084196D /* LaunchScreen.storyboard */; };
 		19A73B31256D68E80084196D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B30256D68E80084196D /* main.m */; };
-		19A73B3B256D68E80084196D /* SUSTech_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B3A256D68E80084196D /* SUSTech_HelperTests.m */; };
-		19A73B46256D68E80084196D /* SUSTech_HelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B45256D68E80084196D /* SUSTech_HelperUITests.m */; };
 		19A73B63256D6E760084196D /* Date.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B62256D6E760084196D /* Date.strings */; };
 		19A73B70256D6EA80084196D /* libofcpp.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B6F256D6EA80084196D /* libofcpp.m */; };
+		19A73B7B256D726A0084196D /* IOcore.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B7A256D726A0084196D /* IOcore.m */; };
+		19A73B8C256D75DB0084196D /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B8E256D75DB0084196D /* test.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19A73B1B256D68E70084196D /* SUSTech_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUSTech_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1970C625256DF98100EBD51F /* SUSTech_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUSTech_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1970C626256DF98100EBD51F /* SUSTech_HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1970C627256DF98100EBD51F /* SUSTech_HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1970C628256DFDEE00EBD51F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		19A73B1E256D68E70084196D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19A73B1F256D68E70084196D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		19A73B21256D68E70084196D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -50,14 +53,10 @@
 		19A73B2D256D68E80084196D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19A73B2F256D68E80084196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A73B30256D68E80084196D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19A73B36256D68E80084196D /* SUSTech_HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19A73B3A256D68E80084196D /* SUSTech_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUSTech_HelperTests.m; sourceTree = "<group>"; };
-		19A73B3C256D68E80084196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19A73B41256D68E80084196D /* SUSTech_HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19A73B45256D68E80084196D /* SUSTech_HelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUSTech_HelperUITests.m; sourceTree = "<group>"; };
-		19A73B47256D68E80084196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A73B62256D6E760084196D /* Date.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Date.strings; sourceTree = "<group>"; };
 		19A73B6F256D6EA80084196D /* libofcpp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libofcpp.m; sourceTree = "<group>"; };
+		19A73B7A256D726A0084196D /* IOcore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOcore.m; sourceTree = "<group>"; };
+		19A73B8D256D75DB0084196D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/test.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,20 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				19A73B1D256D68E70084196D /* SUSTech_Helper */,
-				19A73B39256D68E80084196D /* SUSTech_HelperTests */,
-				19A73B44256D68E80084196D /* SUSTech_HelperUITests */,
-				19A73B1C256D68E70084196D /* Products */,
+				1970C625256DF98100EBD51F /* SUSTech_Helper.app */,
+				1970C626256DF98100EBD51F /* SUSTech_HelperTests.xctest */,
+				1970C627256DF98100EBD51F /* SUSTech_HelperUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		19A73B1C256D68E70084196D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				19A73B1B256D68E70084196D /* SUSTech_Helper.app */,
-				19A73B36256D68E80084196D /* SUSTech_HelperTests.xctest */,
-				19A73B41256D68E80084196D /* SUSTech_HelperUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		19A73B1D256D68E70084196D /* SUSTech_Helper */ = {
@@ -121,26 +110,11 @@
 				19A73B30256D68E80084196D /* main.m */,
 				19A73B62256D6E760084196D /* Date.strings */,
 				19A73B6F256D6EA80084196D /* libofcpp.m */,
+				19A73B7A256D726A0084196D /* IOcore.m */,
+				19A73B8E256D75DB0084196D /* test.storyboard */,
+				1970C628256DFDEE00EBD51F /* README.md */,
 			);
 			path = SUSTech_Helper;
-			sourceTree = "<group>";
-		};
-		19A73B39256D68E80084196D /* SUSTech_HelperTests */ = {
-			isa = PBXGroup;
-			children = (
-				19A73B3A256D68E80084196D /* SUSTech_HelperTests.m */,
-				19A73B3C256D68E80084196D /* Info.plist */,
-			);
-			path = SUSTech_HelperTests;
-			sourceTree = "<group>";
-		};
-		19A73B44256D68E80084196D /* SUSTech_HelperUITests */ = {
-			isa = PBXGroup;
-			children = (
-				19A73B45256D68E80084196D /* SUSTech_HelperUITests.m */,
-				19A73B47256D68E80084196D /* Info.plist */,
-			);
-			path = SUSTech_HelperUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +134,7 @@
 			);
 			name = SUSTech_Helper;
 			productName = SUSTech_Helper;
-			productReference = 19A73B1B256D68E70084196D /* SUSTech_Helper.app */;
+			productReference = 1970C625256DF98100EBD51F /* SUSTech_Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		19A73B35256D68E80084196D /* SUSTech_HelperTests */ = {
@@ -178,7 +152,7 @@
 			);
 			name = SUSTech_HelperTests;
 			productName = SUSTech_HelperTests;
-			productReference = 19A73B36256D68E80084196D /* SUSTech_HelperTests.xctest */;
+			productReference = 1970C626256DF98100EBD51F /* SUSTech_HelperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		19A73B40256D68E80084196D /* SUSTech_HelperUITests */ = {
@@ -196,7 +170,7 @@
 			);
 			name = SUSTech_HelperUITests;
 			productName = SUSTech_HelperUITests;
-			productReference = 19A73B41256D68E80084196D /* SUSTech_HelperUITests.xctest */;
+			productReference = 1970C627256DF98100EBD51F /* SUSTech_HelperUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +203,7 @@
 				Base,
 			);
 			mainGroup = 19A73B12256D68E70084196D;
-			productRefGroup = 19A73B1C256D68E70084196D /* Products */;
+			productRefGroup = 19A73B12256D68E70084196D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -248,6 +222,7 @@
 				19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */,
 				19A73B2B256D68E80084196D /* Assets.xcassets in Resources */,
 				19A73B63256D6E760084196D /* Date.strings in Resources */,
+				19A73B8C256D75DB0084196D /* test.storyboard in Resources */,
 				19A73B29256D68E70084196D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A73B7B256D726A0084196D /* IOcore.m in Sources */,
 				19A73B26256D68E70084196D /* ViewController.m in Sources */,
 				19A73B70256D6EA80084196D /* libofcpp.m in Sources */,
 				19A73B20256D68E70084196D /* AppDelegate.m in Sources */,
@@ -285,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A73B3B256D68E80084196D /* SUSTech_HelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A73B46256D68E80084196D /* SUSTech_HelperUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +294,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		19A73B2C256D68E80084196D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -327,6 +302,14 @@
 				19A73B2D256D68E80084196D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19A73B8E256D75DB0084196D /* test.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19A73B8D256D75DB0084196D /* Base */,
+			);
+			name = test.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -458,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "happys.SUSTech-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,7 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "happys.SUSTech-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
