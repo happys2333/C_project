@@ -12,12 +12,17 @@
 @end
 
 @implementation ViewController
-
+// close and open
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
 }
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    NSLog(@"unwindSegue %@", sender);
+}
+// type your code here
 
 
 @end
