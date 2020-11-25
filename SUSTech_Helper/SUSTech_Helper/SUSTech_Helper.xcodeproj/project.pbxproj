@@ -15,7 +15,7 @@
 		19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B2C256D68E80084196D /* LaunchScreen.storyboard */; };
 		19A73B31256D68E80084196D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B30256D68E80084196D /* main.m */; };
 		19A73B63256D6E760084196D /* Date.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B62256D6E760084196D /* Date.strings */; };
-		19A73B70256D6EA80084196D /* libofcpp.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B6F256D6EA80084196D /* libofcpp.m */; };
+		19A73B70256D6EA80084196D /* libofcpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B6F256D6EA80084196D /* libofcpp.mm */; };
 		19A73B7B256D726A0084196D /* IOcore.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B7A256D726A0084196D /* IOcore.m */; };
 		19A73B8C256D75DB0084196D /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B8E256D75DB0084196D /* test.storyboard */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		19A73B2F256D68E80084196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A73B30256D68E80084196D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19A73B62256D6E760084196D /* Date.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Date.strings; sourceTree = "<group>"; };
-		19A73B6F256D6EA80084196D /* libofcpp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libofcpp.m; sourceTree = "<group>"; };
+		19A73B6F256D6EA80084196D /* libofcpp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = libofcpp.mm; sourceTree = "<group>"; };
 		19A73B7A256D726A0084196D /* IOcore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOcore.m; sourceTree = "<group>"; };
 		19A73B8D256D75DB0084196D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/test.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +109,7 @@
 				19A73B2F256D68E80084196D /* Info.plist */,
 				19A73B30256D68E80084196D /* main.m */,
 				19A73B62256D6E760084196D /* Date.strings */,
-				19A73B6F256D6EA80084196D /* libofcpp.m */,
+				19A73B6F256D6EA80084196D /* libofcpp.mm */,
 				19A73B7A256D726A0084196D /* IOcore.m */,
 				19A73B8E256D75DB0084196D /* test.storyboard */,
 				1970C628256DFDEE00EBD51F /* README.md */,
@@ -250,7 +250,7 @@
 			files = (
 				19A73B7B256D726A0084196D /* IOcore.m in Sources */,
 				19A73B26256D68E70084196D /* ViewController.m in Sources */,
-				19A73B70256D6EA80084196D /* libofcpp.m in Sources */,
+				19A73B70256D6EA80084196D /* libofcpp.mm in Sources */,
 				19A73B20256D68E70084196D /* AppDelegate.m in Sources */,
 				19A73B31256D68E80084196D /* main.m in Sources */,
 				19A73B23256D68E70084196D /* SceneDelegate.m in Sources */,
