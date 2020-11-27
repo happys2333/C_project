@@ -16,7 +16,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIm-lz-mec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-213"/>
+            <point key="canvasLocation" x="965" y="-104"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="oiH-hI-znX">
+            <objects>
+                <viewControllerPlaceholder id="mfI-Bc-xoh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Olj-9d-orh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boC-rV-mMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-38"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -26,19 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-YN-mto">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-YN-mto">
                                 <rect key="frame" x="25" y="69" width="340" height="716"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-Np-1Br">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="121"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-Np-1Br">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="135"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="欢迎使用你科小助手"/>
                                         <connections>
                                             <segue destination="Z2c-KL-JqC" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="dfp-bY-mn4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-ph-8yt">
-                                        <rect key="frame" x="0.0" y="158" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-ph-8yt">
+                                        <rect key="frame" x="0.0" y="170" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
@@ -49,47 +59,50 @@
                                             <segue destination="bUh-8m-MBD" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Mip-ue-uzf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29v-TL-391">
-                                        <rect key="frame" x="0.0" y="243" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29v-TL-391">
+                                        <rect key="frame" x="0.0" y="253" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="备忘录（又忘了）"/>
+                                        <connections>
+                                            <segue destination="mfI-Bc-xoh" kind="show" id="1v9-Ng-e0R"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-32-hSl">
-                                        <rect key="frame" x="0.0" y="328" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-32-hSl">
+                                        <rect key="frame" x="0.0" y="336" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="待办事项（DDL又到了）"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-wG-FsT">
-                                        <rect key="frame" x="0.0" y="413" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-wG-FsT">
+                                        <rect key="frame" x="0.0" y="419" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="校巴时间表（又偷懒了）"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjP-9x-4kQ">
-                                        <rect key="frame" x="0.0" y="498" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjP-9x-4kQ">
+                                        <rect key="frame" x="0.0" y="502" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="校历（快放假了）"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk3-jO-RCW">
-                                        <rect key="frame" x="0.0" y="583" width="340" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk3-jO-RCW">
+                                        <rect key="frame" x="0.0" y="585" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="GPA（看看你挂了几科）"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fn-uH-fls">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fn-uH-fls">
                                         <rect key="frame" x="0.0" y="668" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="今日运势（别卷了）"/>
+                                        <state key="normal" title="实用工具箱"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -116,7 +129,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QK-Cf-R5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-302"/>
+            <point key="canvasLocation" x="913" y="-150"/>
         </scene>
     </scenes>
     <resources>

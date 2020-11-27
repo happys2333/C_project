@@ -26,7 +26,8 @@ private:
     
 public:
     GPA(float sorce,int classsorce){
-        
+        this->sorce = sorce;
+        this->credits = classsorce;
     }
     
 };
