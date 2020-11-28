@@ -114,7 +114,6 @@
         <!--Item 1-->
         <scene sceneID="Cj8-jE-sEU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0TZ-dc-cpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pcN-s1-17F" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lt2-RL-Dxm">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -124,13 +123,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="BNV-fT-qWO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0TZ-dc-cpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1193" y="-865"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tMR-n9-NLu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CTM-nE-q31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="bwP-DX-FI6" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NHH-eR-lxn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0TX-42-fKl">
@@ -143,6 +142,7 @@
                         <segue destination="2ld-no-uWE" kind="relationship" relationship="viewControllers" id="cdS-LU-z24"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTM-nE-q31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285" y="-562"/>
         </scene>

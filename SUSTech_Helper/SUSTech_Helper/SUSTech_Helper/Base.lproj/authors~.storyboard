@@ -8,6 +8,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--author-->
+        <scene sceneID="DE5-gN-Cwt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="author" id="O5i-PC-Wsi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bGW-XI-yCo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABs-oA-ePI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="-220"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="1eO-5e-mv7">
+            <objects>
+                <viewControllerPlaceholder id="bUh-8m-MBD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5np-cV-1dp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIm-lz-mec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-104"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="oiH-hI-znX">
+            <objects>
+                <viewControllerPlaceholder id="mfI-Bc-xoh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Olj-9d-orh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boC-rV-mMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Kva-Gc-nIR">
+            <objects>
+                <viewController id="TIc-Xq-Ikq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAm-1g-9d8">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Fa-Oj-yRP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zRg-AD-ADt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCh-sa-bXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="158"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,56 +66,62 @@
                                 <rect key="frame" x="25" y="69" width="340" height="716"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-Np-1Br">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="136"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="135"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="欢迎使用你科小助手"/>
+                                        <connections>
+                                            <segue destination="TIc-Xq-Ikq" kind="show" id="utg-JR-xe1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-ph-8yt">
-                                        <rect key="frame" x="0.0" y="171" width="340" height="48"/>
+                                        <rect key="frame" x="0.0" y="170" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="课程表（翘了几节课）">
                                             <color key="titleColor" red="0.99580377340000004" green="0.67457646130000004" blue="0.4626886845" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="bUh-8m-MBD" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Mip-ue-uzf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29v-TL-391">
-                                        <rect key="frame" x="0.0" y="254" width="340" height="48"/>
+                                        <rect key="frame" x="0.0" y="253" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="备忘录（又忘了）"/>
+                                        <connections>
+                                            <segue destination="mfI-Bc-xoh" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="1v9-Ng-e0R"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-32-hSl">
-                                        <rect key="frame" x="0.0" y="337" width="340" height="48"/>
+                                        <rect key="frame" x="0.0" y="336" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="待办事项（DDL又到了）"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-wG-FsT">
-                                        <rect key="frame" x="0.0" y="420" width="340" height="48"/>
+                                        <rect key="frame" x="0.0" y="419" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="校巴时间表（又偷懒了）"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjP-9x-4kQ">
-                                        <rect key="frame" x="0.0" y="503" width="340" height="48"/>
+                                        <rect key="frame" x="0.0" y="502" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="校历（快放假了）"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk3-jO-RCW">
-                                        <rect key="frame" x="0.0" y="586" width="340" height="47"/>
+                                        <rect key="frame" x="0.0" y="585" width="340" height="48"/>
                                         <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="GPA（看看你挂了几科）"/>
-                                        <connections>
-                                            <segue destination="bwP-DX-FI6" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="zPn-C5-t5D"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fn-uH-fls">
                                         <rect key="frame" x="0.0" y="668" width="340" height="48"/>
@@ -94,57 +146,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.38461538461539" y="78.199052132701425"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="CZs-3R-AUx">
-            <objects>
-                <viewController id="2ld-no-uWE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uYm-rD-tkf">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="P5o-1P-BVX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Q1f-RI-qkH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8kS-l6-BD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1193" y="-257"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="Cj8-jE-sEU">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0TZ-dc-cpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="pcN-s1-17F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lt2-RL-Dxm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Eya-ZR-Dyy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="BNV-fT-qWO"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1193" y="-865"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="tMR-n9-NLu">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CTM-nE-q31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController id="bwP-DX-FI6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="NHH-eR-lxn"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0TX-42-fKl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="pcN-s1-17F" kind="relationship" relationship="viewControllers" id="vdW-I8-Ku4"/>
-                        <segue destination="2ld-no-uWE" kind="relationship" relationship="viewControllers" id="cdS-LU-z24"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="285" y="-562"/>
         </scene>
     </scenes>
     <resources>
