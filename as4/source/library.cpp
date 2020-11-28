@@ -219,6 +219,7 @@ void Matrix::open_do( Matrix *right, Matrix *result) {
     }
 }
 
+
 void Matrix::open_mp( Matrix *right, Matrix *result) {
     float r ;
     int i,j,k;
