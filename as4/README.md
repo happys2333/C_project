@@ -9,7 +9,18 @@
 -     [新增代码](#新代码)
 -     [运行效果](#运行效果)
 ## 相关修正
-在上一版的程序中，我们发现在macOS中存在编译失败的问题，这是因为macOS中系统会默认使用Clang编译器而不使用Gcc编译器，所以我们
+在上一版的程序中，我们发现在macOS中存在编译失败的问题，这是因为macOS中系统会默认使用Clang编译器而不使用Gcc编译器，所以我们对cmake中添加了一部分代码进行阻止在macOS下进行编译
+```cmake
+IF (WIN32)
+	MESSAGE(STATUS "Your are using Windows")
+ELSEIF (APPLE)
+	MESSAGE(STATUS "Your are using MacOS ,this cmake can't be used in MacOS because clang will stop this project for using gcc")
+    message(FATAL_ERROR "Error: We don't suppose the MacOS, please use the terminal to compile this program")
+ELSEIF (UNIX)
+	MESSAGE(STATUS "Your are using Linux")
+ENDIF ()
+```
+
 ## 新功能
 ## 新代码
 ## 运行效果
