@@ -2,7 +2,7 @@
 ## 概况
 ![license](https://img.shields.io/badge/license-MIT-yellowgreen)![language](https://img.shields.io/badge/language-C%2B%2B-brightgreen)![author](https://img.shields.io/badge/author-happys-blue)![support](https://img.shields.io/badge/Supported%20platform-Windows%20macOS%20Linux-red)
 ##### 测试平台：`Linux macOS Windows`
-#### 上次作业中，我们实现了对矩阵乘法的优化与实现，我们也对一部分的运算符进行了重载，但是我们认为应该本着*用户至上*的思想进一步让我们的代码进行完备，所以我们制作了本版
+#### 上次作业中，我们实现了对矩阵乘法的优化与实现，我们也对一部分的运算符进行了重载，但是我们认为应该本着<font color=red>用户至上</font>的思想进一步让我们的代码进行完备，所以我们制作了本版
 #### 目录
 - [bug修正](#相关修正)       	
 - [新增功能](#新功能)      	
