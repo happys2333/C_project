@@ -73,13 +73,13 @@ Matrix& Matrix::operator=(float *array) {
     }
 }
 
-Matrix::Matrix(int row, int col) {
+Matrix::Matrix(int row, int col,float num) {
     this->col = col;
     this->row =row;
     int len = col*row;
     matrix = new float [len];
     for(int i=0;i<len;i++){
-        matrix[i] =0;
+        matrix[i] =num;
     }
 }
 Matrix::Matrix() {
@@ -172,10 +172,7 @@ inline float Matrix::Getelement(int col, int row) {
 }
 
 float* Matrix::operator[](int i) {
-    auto *re = new float [this->col];
-    for(int j=0;j<this->col;j++){
-        re[j] = matrix[(i-1)*this->col+j];
-    }
+    auto *re = &this->matrix[(i-1)*this->col];
     return re;
 }
 

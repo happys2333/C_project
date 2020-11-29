@@ -19,36 +19,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
 }
-- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
-    NSLog(@"unwindSegue %@", sender);
-}
--(void)viewWillDisappear:(BOOL)animated
-
-{
-
-   [super viewWillDisappear:animated];
-
-   if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-
-       self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-
-   }
-
-}
-
-- (void)viewDidAppear:(BOOL)animated
-
-{
-
-   [super viewDidAppear:animated];
-
-//禁用返回手势
-
-   if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])
-
-       self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-
-}
 
 // type your code here
 

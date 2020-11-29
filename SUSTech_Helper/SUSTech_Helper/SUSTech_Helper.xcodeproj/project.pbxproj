@@ -18,6 +18,7 @@
 		19A73B63256D6E760084196D /* Date.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B62256D6E760084196D /* Date.strings */; };
 		19A73B70256D6EA80084196D /* libofcpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B6F256D6EA80084196D /* libofcpp.mm */; };
 		19A73B7B256D726A0084196D /* IOcore.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B7A256D726A0084196D /* IOcore.m */; };
+		19F2D2EE25737C5E00028539 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F2D2ED25737C5E00028539 /* img.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		19A73B62256D6E760084196D /* Date.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Date.strings; sourceTree = "<group>"; };
 		19A73B6F256D6EA80084196D /* libofcpp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = libofcpp.mm; sourceTree = "<group>"; };
 		19A73B7A256D726A0084196D /* IOcore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOcore.m; sourceTree = "<group>"; };
+		19F2D2ED25737C5E00028539 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img.png; path = Assets.xcassets/scan.imageset/img.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		19A73B1D256D68E70084196D /* SUSTech_Helper */ = {
 			isa = PBXGroup;
 			children = (
+				19F2D2ED25737C5E00028539 /* img.png */,
 				19A73B1E256D68E70084196D /* AppDelegate.h */,
 				19A73B1F256D68E70084196D /* AppDelegate.m */,
 				19A73B21256D68E70084196D /* SceneDelegate.h */,
@@ -223,6 +226,7 @@
 				19A73B2B256D68E80084196D /* Assets.xcassets in Resources */,
 				19A73B63256D6E760084196D /* Date.strings in Resources */,
 				19A73B29256D68E70084196D /* Main.storyboard in Resources */,
+				19F2D2EE25737C5E00028539 /* img.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

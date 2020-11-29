@@ -6,6 +6,12 @@
  * */
 #pragma GCC optimize(3)
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
+#define Matrix_normal_mode 0
+#define Matrix_quick_mode 1
+#define Matrix_openMP_mode 2
+#define Matrix_open_mode 3
+#define Matrix_openSuper_mode 4
+#define Matrix_super_MP_mode 5
 /*
  * report error
  * */
@@ -15,6 +21,7 @@ private:
     int col;//column of the matrix
     int row;//row of the matrix
     float* matrix;//matrix itself
+    int usethis = 1;
     /*
     * The numerical mode represents the mode of operation required by the user
     * 0: normal mode(don't use any advanced method)
@@ -38,14 +45,16 @@ public:
     //Create an matrix with col and row and matrix itself
     Matrix(int row , int col,float * array);
     // Create an matrix with col and row
-    Matrix(int row,int col);
+    Matrix(int row,int col,float num=0);
     // Delect an matrix
     ~Matrix();
     // Some functions to use
     void print();//print this matrix
+    void rand();//create a random matrix
     void build(float* array);
     Matrix& operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
+    Matrix& operator=(Matrix& right);//equal
     Matrix& operator+(Matrix& right);//add
     Matrix& operator-(Matrix& right);//minus
     float* operator[](int i);//get the line array

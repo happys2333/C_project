@@ -2,6 +2,7 @@
 #include <iostream>
 #include <omp.h>
 #include <immintrin.h>
+
 #define A(i,j) a[ (j)*lda + (i) ]
 #define B(i,j) b[ (j)*ldb + (i) ]
 #define C(i,j) c[ (j)*ldc + (i) ]
@@ -73,13 +74,13 @@ Matrix& Matrix::operator=(float *array) {
     }
 }
 
-Matrix::Matrix(int row, int col) {
+Matrix::Matrix(int row, int col,float num) {
     this->col = col;
     this->row =row;
     int len = col*row;
     matrix = new float [len];
     for(int i=0;i<len;i++){
-        matrix[i] =0;
+        matrix[i] =num;
     }
 }
 Matrix::Matrix() {
@@ -87,7 +88,11 @@ Matrix::Matrix() {
     col = 0;
 }
 Matrix::~Matrix() {
-    delete [] matrix;
+    if(usethis==1){
+        delete [] matrix;
+    }else{
+        usethis--;
+    }
 }
 void Matrix::print() {
     for (int i=0;i<row;i++){
@@ -172,10 +177,7 @@ inline float Matrix::Getelement(int col, int row) {
 }
 
 float* Matrix::operator[](int i) {
-    auto *re = new float [this->col];
-    for(int j=0;j<this->col;j++){
-        re[j] = matrix[(i-1)*this->col+j];
-    }
+    auto *re = &this->matrix[(i-1)*this->col];
     return re;
 }
 
@@ -454,5 +456,15 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
 #pragma omp parallel for num_threads(8)
             for ( int sk = 0; sk < n; sk += BLOCKSIZE )
                 packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
+
+}
+void Matrix::rand() {
+
+}
+
+Matrix &Matrix::operator=(Matrix &right) {
+    this->~Matrix();
+    right.usethis++;
+    
 
 }
