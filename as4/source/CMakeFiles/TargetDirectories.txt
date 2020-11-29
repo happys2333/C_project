@@ -1,0 +1,3 @@
+/Users/happys/Desktop/project/AI/C_project/as4/source/CMakeFiles/rebuild_cache.dir
+/Users/happys/Desktop/project/AI/C_project/as4/source/CMakeFiles/edit_cache.dir
+/Users/happys/Desktop/project/AI/C_project/as4/source/CMakeFiles/matrix.dir

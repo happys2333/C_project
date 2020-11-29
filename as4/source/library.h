@@ -48,9 +48,11 @@ public:
     Matrix& operator=(float* array);//equal
     Matrix& operator+(Matrix& right);//add
     Matrix& operator-(Matrix& right);//minus
-    float* operator[](int i);
+    float* operator[](int i);//get the line array
+    
     void clear();
     void set(int col,int row,float element);
+    //set your mode
     void setMode(int semode);
     inline float Getelement(int col,int row);
 
