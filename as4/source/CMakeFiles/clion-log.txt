@@ -1,22 +1,5 @@
 "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/bin/cmake" -G "CodeBlocks - Unix Makefiles" /Users/happys/Desktop/project/AI/C_project/as4/source
--- The C compiler identification is AppleClang 12.0.0.12000032
--- The CXX compiler identification is AppleClang 12.0.0.12000032
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- Your are using ARM, we will use the neon
--- Found OpenMP_C: -Xclang -fopenmp  
--- Found OpenMP_CXX: -Xclang -fopenmp  
--- Found OpenMP: TRUE   
 OPENMP FOUND
 -- Configuring done
 -- Generating done

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1964FBA4256EC54C000134C8 /* GPA.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1964FBA3256EC54C000134C8 /* GPA.mm */; };
 		19A73B20256D68E70084196D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B1F256D68E70084196D /* AppDelegate.m */; };
 		19A73B23256D68E70084196D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B22256D68E70084196D /* SceneDelegate.m */; };
 		19A73B26256D68E70084196D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B25256D68E70084196D /* ViewController.m */; };
@@ -15,10 +14,9 @@
 		19A73B2B256D68E80084196D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B2A256D68E80084196D /* Assets.xcassets */; };
 		19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B2C256D68E80084196D /* LaunchScreen.storyboard */; };
 		19A73B31256D68E80084196D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B30256D68E80084196D /* main.m */; };
-		19A73B63256D6E760084196D /* Date.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A73B62256D6E760084196D /* Date.strings */; };
-		19A73B70256D6EA80084196D /* libofcpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B6F256D6EA80084196D /* libofcpp.mm */; };
-		19A73B7B256D726A0084196D /* IOcore.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B7A256D726A0084196D /* IOcore.m */; };
 		19F2D2EE25737C5E00028539 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F2D2ED25737C5E00028539 /* img.png */; };
+		B70387321659C6EB6BC14C67 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = B703887BB384A138EB58139F /* file.mm */; };
+		B7038D24A96A3B46F493211E /* lib.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7038C94E0FE16D7DF8C524C /* lib.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1964FBA3256EC54C000134C8 /* GPA.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GPA.mm; sourceTree = "<group>"; };
 		1970C625256DF98100EBD51F /* SUSTech_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUSTech_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970C626256DF98100EBD51F /* SUSTech_HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970C627256DF98100EBD51F /* SUSTech_HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUSTech_HelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,10 +52,12 @@
 		19A73B2D256D68E80084196D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19A73B2F256D68E80084196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A73B30256D68E80084196D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19A73B62256D6E760084196D /* Date.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Date.strings; sourceTree = "<group>"; };
-		19A73B6F256D6EA80084196D /* libofcpp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = libofcpp.mm; sourceTree = "<group>"; };
-		19A73B7A256D726A0084196D /* IOcore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOcore.m; sourceTree = "<group>"; };
 		19F2D2ED25737C5E00028539 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img.png; path = Assets.xcassets/scan.imageset/img.png; sourceTree = "<group>"; };
+		B70380921AAC53D45430871A /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		B703887BB384A138EB58139F /* file.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
+		B70388A46597DF360943CE7C /* GPA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPA.h; sourceTree = "<group>"; };
+		B703892ECB7BAB380347EDB0 /* lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib.h; sourceTree = "<group>"; };
+		B7038C94E0FE16D7DF8C524C /* lib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = lib.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +110,12 @@
 				19A73B2C256D68E80084196D /* LaunchScreen.storyboard */,
 				19A73B2F256D68E80084196D /* Info.plist */,
 				19A73B30256D68E80084196D /* main.m */,
-				19A73B62256D6E760084196D /* Date.strings */,
-				19A73B6F256D6EA80084196D /* libofcpp.mm */,
-				19A73B7A256D726A0084196D /* IOcore.m */,
 				1970C628256DFDEE00EBD51F /* README.md */,
-				1964FBA3256EC54C000134C8 /* GPA.mm */,
+				B7038C94E0FE16D7DF8C524C /* lib.mm */,
+				B703892ECB7BAB380347EDB0 /* lib.h */,
+				B70388A46597DF360943CE7C /* GPA.h */,
+				B703887BB384A138EB58139F /* file.mm */,
+				B70380921AAC53D45430871A /* file.h */,
 			);
 			path = SUSTech_Helper;
 			sourceTree = "<group>";
@@ -224,7 +224,6 @@
 			files = (
 				19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */,
 				19A73B2B256D68E80084196D /* Assets.xcassets in Resources */,
-				19A73B63256D6E760084196D /* Date.strings in Resources */,
 				19A73B29256D68E70084196D /* Main.storyboard in Resources */,
 				19F2D2EE25737C5E00028539 /* img.png in Resources */,
 			);
@@ -251,13 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A73B7B256D726A0084196D /* IOcore.m in Sources */,
 				19A73B26256D68E70084196D /* ViewController.m in Sources */,
-				19A73B70256D6EA80084196D /* libofcpp.mm in Sources */,
-				1964FBA4256EC54C000134C8 /* GPA.mm in Sources */,
 				19A73B20256D68E70084196D /* AppDelegate.m in Sources */,
 				19A73B31256D68E80084196D /* main.m in Sources */,
 				19A73B23256D68E70084196D /* SceneDelegate.m in Sources */,
+				B7038D24A96A3B46F493211E /* lib.mm in Sources */,
+				B70387321659C6EB6BC14C67 /* file.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

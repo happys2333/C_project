@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-
+#include "lib.h"
 @interface ViewController ()
 
 @end
@@ -21,6 +21,10 @@
 }
 
 // type your code here
+-(void)doSth:(UIButton*)sender{
+    NSLog(@"click do Sth");
+}
+
 
 
 @end

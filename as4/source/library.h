@@ -51,6 +51,7 @@ public:
     // Some functions to use
     void print();//print this matrix
     void rand();//create a random matrix
+    string toString();
     void build(float* array);
     Matrix& operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
@@ -58,7 +59,8 @@ public:
     Matrix& operator+(Matrix& right);//add
     Matrix& operator-(Matrix& right);//minus
     float* operator[](int i);//get the line array
-    
+    friend ostream &operator<<(ostream &output, const Matrix& m)
+    void rand();
     void clear();
     void set(int col,int row,float element);
     //set your mode

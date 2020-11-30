@@ -447,3 +447,16 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
                 packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
 
 }
+
+void Matrix::rand() {
+
+}
+Matrix &Matrix::operator=(Matrix &right) {
+    this->~Matrix();
+    right.usethis++;
+    this->matrix = right.matrix;
+    this->usethis = right.usethis;
+    this->row = right.row;
+    this->col = right.col;
+    return *this;
+}

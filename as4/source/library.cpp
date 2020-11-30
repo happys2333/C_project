@@ -2,7 +2,7 @@
 #include <iostream>
 #include <omp.h>
 #include <immintrin.h>
-
+#include <time.h>
 #define A(i,j) a[ (j)*lda + (i) ]
 #define B(i,j) b[ (j)*ldb + (i) ]
 #define C(i,j) c[ (j)*ldc + (i) ]
@@ -26,6 +26,9 @@ inline void Error(int type){
             break;
         case -1:
             printf("Not support, this time will use mode 0 to do!\n");
+            break;
+            case 0:
+            printf("Empty matrix\n");
             break;
         default:
             printf("unknown error!\n");
@@ -459,12 +462,30 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
 
 }
 void Matrix::rand() {
+    if(row ==0|col ==0){Error(0);
+        return;
+    }
 
+    int len = row*col;
+    for(int i=0;i<len;i++){
+        srand((unsigned)time(NULL));
+        matrix[i] = rand();
+    }
 }
-
+string Matrix::toString(){
+    string result;
+    for(int i=0;i<row;i++){
+        for(int j=0; j <col;j++){
+            
+        }
+    }
+}
 Matrix &Matrix::operator=(Matrix &right) {
     this->~Matrix();
     right.usethis++;
-    
-
+    this->matrix = right.matrix;
+    this->usethis = right.usethis;
+    this->row = right.row;
+    this->col = right.col;
+    return *this;
 }
