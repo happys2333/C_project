@@ -3,6 +3,7 @@
 #include <omp.h>
 #include <immintrin.h>
 #include <time.h>
+using namespace std;
 #define A(i,j) a[ (j)*lda + (i) ]
 #define B(i,j) b[ (j)*ldb + (i) ]
 #define C(i,j) c[ (j)*ldc + (i) ]
@@ -148,7 +149,6 @@ Matrix& Matrix::operator*(Matrix &right) {
         Error(1);
         return *new Matrix();
     }
-    int mode = this->mode;
 
     Matrix *returnm= new Matrix(this->row,right.col);
     switch (mode) {
@@ -461,23 +461,37 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
                 packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
 
 }
-void Matrix::rand() {
+
+void Matrix::random() {
     if(row ==0|col ==0){Error(0);
         return;
     }
-
     int len = row*col;
+    if(len>=10000){
+        for(int i=0;i<len;i++){
+            srand((unsigned)time(NULL));
+            matrix[i] = rand();
+        }
+        return;
+    }
+    srand((unsigned)time(NULL));
     for(int i=0;i<len;i++){
-        srand((unsigned)time(NULL));
         matrix[i] = rand();
     }
 }
 string Matrix::toString(){
     string result;
+    for (int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            printf("%-10f ",matrix[j+i*col]);
+        }
+        printf("\n");
+    }
     for(int i=0;i<row;i++){
         for(int j=0; j <col;j++){
-            
+            result += ("%-10f",matrix[j+i*col]);
         }
+
     }
 }
 Matrix &Matrix::operator=(Matrix &right) {

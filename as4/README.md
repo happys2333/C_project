@@ -91,6 +91,34 @@ for(int k = 0;k<rrow;++k){
 	}
 }
 ```
-
+为了用户方便使用我们定义了一部分变量来辅助控制模式
+```cpp
+	const int Matrix_normal_mode=0;
+    const int Matrix_quick_mode =1;
+    const int Matrix_openMP_mode =2;
+    const int Matrix_open_mode =3;
+    const int Matrix_openSuper_mode =4;
+    const int Matrix_super_MP_mode =5;
+```
+实现了随机生成函数
+```cpp
+void Matrix::random() {
+    if(row ==0|col ==0){Error(0);
+        return;
+    }
+    int len = row*col;
+    if(len>=10000){
+        for(int i=0;i<len;i++){
+            srand((unsigned)time(NULL));
+            matrix[i] = rand();
+        }
+        return;
+    }
+    srand((unsigned)time(NULL));
+    for(int i=0;i<len;i++){
+        matrix[i] = rand();
+    }
+}
+```
 ## 运行效果
 本版程序并没有对速度进行优化，所以我们测试数据均以方便展示为主，采取一个简单的10x10矩阵进行测试,其中实现均用随机矩阵。

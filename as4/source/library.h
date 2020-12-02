@@ -1,3 +1,5 @@
+#include <climits>
+
 #ifndef SOURCE_LIBRARY_H
 #define SOURCE_LIBRARY_H
 //header your should include!
@@ -6,15 +8,11 @@
  * */
 #pragma GCC optimize(3)
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
-#define Matrix_normal_mode 0
-#define Matrix_quick_mode 1
-#define Matrix_openMP_mode 2
-#define Matrix_open_mode 3
-#define Matrix_openSuper_mode 4
-#define Matrix_super_MP_mode 5
+
 /*
  * report error
  * */
+#include <string>
 inline void  Error(int type);
 class Matrix{
 private:
@@ -40,6 +38,12 @@ private:
     void Super_quick(Matrix* right,Matrix* result);
     void N_do(Matrix* right,Matrix* result);
 public:
+    const int Matrix_normal_mode=0;
+    const int Matrix_quick_mode =1;
+    const int Matrix_openMP_mode =2;
+    const int Matrix_open_mode =3;
+    const int Matrix_openSuper_mode =4;
+    const int Matrix_super_MP_mode =5;
     //create an empty matrix
     Matrix();
     //Create an matrix with col and row and matrix itself
@@ -50,8 +54,7 @@ public:
     ~Matrix();
     // Some functions to use
     void print();//print this matrix
-    void rand();//create a random matrix
-    string toString();
+    std::string toString();
     void build(float* array);
     Matrix& operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
@@ -59,8 +62,8 @@ public:
     Matrix& operator+(Matrix& right);//add
     Matrix& operator-(Matrix& right);//minus
     float* operator[](int i);//get the line array
-    friend ostream &operator<<(ostream &output, const Matrix& m)
-    void rand();
+    friend std::ostream &operator<<(std::ostream &output, const Matrix& m);
+    void random();
     void clear();
     void set(int col,int row,float element);
     //set your mode

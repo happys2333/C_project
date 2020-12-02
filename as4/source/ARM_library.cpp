@@ -448,7 +448,7 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
 
 }
 
-void Matrix::rand() {
+__unused void Matrix::random() {
 
 }
 Matrix &Matrix::operator=(Matrix &right) {
@@ -459,4 +459,8 @@ Matrix &Matrix::operator=(Matrix &right) {
     this->row = right.row;
     this->col = right.col;
     return *this;
+}
+using namespace std;
+ostream &operator<<(ostream &output, const Matrix &m) {
+
 }

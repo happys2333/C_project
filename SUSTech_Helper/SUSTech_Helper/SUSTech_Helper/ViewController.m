@@ -6,12 +6,13 @@
 //
 
 #import "ViewController.h"
-#include "lib.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
 // close and open
 - (void)viewDidLoad {
     [super viewDidLoad];
