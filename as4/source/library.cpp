@@ -479,21 +479,6 @@ void Matrix::random() {
         matrix[i] = rand();
     }
 }
-string Matrix::toString(){
-    string result;
-    for (int i=0;i<row;i++){
-        for(int j=0;j<col;j++){
-            printf("%-10f ",matrix[j+i*col]);
-        }
-        printf("\n");
-    }
-    for(int i=0;i<row;i++){
-        for(int j=0; j <col;j++){
-            result += ("%-10f",matrix[j+i*col]);
-        }
-
-    }
-}
 Matrix &Matrix::operator=(Matrix &right) {
     this->~Matrix();
     right.usethis++;
@@ -502,4 +487,8 @@ Matrix &Matrix::operator=(Matrix &right) {
     this->row = right.row;
     this->col = right.col;
     return *this;
+}
+using namespace std;
+ostream &operator<<(ostream &output, const Matrix &m) {
+    
 }

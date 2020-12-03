@@ -54,7 +54,6 @@ public:
     ~Matrix();
     // Some functions to use
     void print();//print this matrix
-    std::string toString();
     void build(float* array);
     Matrix& operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
@@ -69,6 +68,7 @@ public:
     //set your mode
     void setMode(int semode);
     inline float Getelement(int col,int row);
+
 
 };
 

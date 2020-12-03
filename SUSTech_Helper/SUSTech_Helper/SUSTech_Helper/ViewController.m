@@ -12,19 +12,14 @@
 @end
 
 @implementation ViewController
+- (IBAction)exitout:(id)sender forEvent:(UIEvent *)event {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 // close and open
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-}
 
-// type your code here
--(void)doSth:(UIButton*)sender{
-    NSLog(@"click do Sth");
-}
+
+
 
 
 

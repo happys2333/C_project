@@ -23,6 +23,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="136"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="欢迎使用你科小助手"/>
+                                        <connections>
+                                            <segue destination="8MD-3l-B4D" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Z8R-n4-2rF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-ph-8yt">
                                         <rect key="frame" x="0.0" y="171" width="340" height="48"/>
@@ -68,7 +71,7 @@
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="GPA（看看你挂了几科）"/>
                                         <connections>
-                                            <segue destination="bwP-DX-FI6" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="zPn-C5-t5D"/>
+                                            <segue destination="bwP-DX-FI6" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="zPn-C5-t5D"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fn-uH-fls">
@@ -126,7 +129,7 @@
                                     <navigationItem title="单科成绩运算" id="0gw-mi-mnN">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.circle.fill" catalog="system" id="r59-R5-cXD">
                                             <connections>
-                                                <action selector="back:" destination="YGf-Ls-5rG" id="MUN-iq-kRa"/>
+                                                <action selector="out:" destination="YGf-Ls-5rG" id="zRG-oB-nn6"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -142,6 +145,34 @@
                 <exit id="YGf-Ls-5rG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1193" y="-865"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f7R-aM-xpi">
+            <objects>
+                <viewController id="8MD-3l-B4D" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qQv-JN-l7V">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw8-Ha-K43">
+                                <rect key="frame" x="120" y="94" width="124" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="exitout:" destination="jfB-sG-yO6" eventType="touchUpInside" id="WSp-Nf-ZTE"/>
+                                    <action selector="exitout:forEvent:" destination="jfB-sG-yO6" eventType="touchUpInside" id="jKB-NP-KaR"/>
+                                    <action selector="exitout:forEvent:" destination="8MD-3l-B4D" eventType="touchUpInside" id="tp7-Gb-ANI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="746-1n-fpo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85t-17-GsQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jfB-sG-yO6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1913.8461538461538" y="-611.37440758293837"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tMR-n9-NLu">
