@@ -148,4 +148,4 @@ void Matrix::random() {
 
 ## 安装方法
 Windows和macOS以及Linux 在Intel构架下的安装过程和上次相同
-可以访问
+可以访问如下的链接进行查看![安装方法](https://github.com/happys2333/C_project/tree/master/project#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
