@@ -143,9 +143,31 @@ void Matrix::random() {
 ```
 ## 运行效果
 本版程序并没有对速度进行优化，所以我们测试数据均以方便展示为主，采取一个简单的10x10矩阵进行测试,其中实现均用随机矩阵。
-
+首先程序均在macOS上完成编译运行测试
 
 
 ## 安装方法
+##### release版本
+对于不能或难以编译本程序的库的用户，我们提供了release版本，针对大部分情况下我们的已经编译好的版本都是您的选择之一，但是我们绝对不推荐，因为程序使用了更加底层的设计，所以无论何时在您的电脑上重新编译再使用是您最好的选择
+Windows版本：
+<a href="release/win.7z" target="_blank">windows</a>		
+Linux版本（基于ubuntu）：
+<a href="release/Linux.7z" target="_blank">Linux</a>		
+macOS版本：
+<a href="release/macOS.7z" target="_blank">macOS</a>			
+ARM版本（基于ubuntu server）：
+<a href="release/arm.7z" target="_blank">ARM</a>		
+##### 编译运行
 Windows和macOS以及Linux 在Intel构架下的安装过程和上次相同
-可以访问如下的链接进行查看![安装方法](https://github.com/happys2333/C_project/tree/master/project#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+可以访问如下的链接进行查看![安装方法](https://github.com/happys2333/C_project/tree/master/project#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)				
+对于arm用户，我们需要将source下的CMakeLists.txt中的
+```cmakeList
+option(ARM_platform "if you use arm set it ON" OFF)
+```
+这句话中的OFF改成ON即可
+```cmakeList
+option(ARM_platform "if you use arm set it ON" ON)
+```
+接着继续编译即可达到您的使用目的,您可以参考如下的图片来看是否您已经可以使用本库文件
+![arm](img/IMG_0039.jpeg)
+在程序中的使用和其他程序中相同
