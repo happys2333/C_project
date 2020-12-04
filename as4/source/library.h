@@ -68,7 +68,8 @@ public:
     //set your mode
     void setMode(int semode);
     inline float Getelement(int col,int row);
-    
+    void reshape(int newcol,int newrow);
+    friend Matrix& operator-(const Matrix& m );
 
 
 };

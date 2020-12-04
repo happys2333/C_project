@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(matrix)
 option(ARM_platform "if you use arm set it ON" OFF)
-IF(ARM_platform )
+IF(ARM_platform)
 	MESSAGE(STATUS "Your are using ARM, we will use the neon")
 	FIND_PACKAGE( OpenMP REQUIRED)
 	if(OPENMP_FOUND)

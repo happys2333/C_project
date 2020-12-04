@@ -497,3 +497,24 @@ ostream &operator<<(ostream &output, const Matrix &m) {
     }
     return output;
 }
+
+void Matrix::reshape(int newcol, int newrow) {
+    if(newcol*newrow==col*row){
+        col = newcol;
+        row = newrow;
+    }
+    else{
+        printf("wrong column and row number!\n");
+    }
+}
+
+Matrix &operator-(const Matrix &m) {
+    int r = m.row,c=m.col;
+    Matrix *re = new Matrix(r,c);
+    for (int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            re->matrix[i*c+j] = (-m.matrix[i*c+j]);
+        }
+    }
+    return *re;
+}

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/AI/C_project/as4/source/ARM_library.cpp
+library.h
+/Users/happys/Desktop/project/AI/C_project/as4/source/library.h
+iostream
+-
+omp.h
+-
+arm_neon.h
+-
+iomanip
+-
+
+/Users/happys/Desktop/project/AI/C_project/as4/source/library.h
+climits
+-
+string
+-
+
