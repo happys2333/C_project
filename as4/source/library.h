@@ -29,7 +29,7 @@ private:
     * 4: open super (open mode with open MP)
     * 5: super MP_Quick mode
     * */
-    int mode = 0;
+    int mode = Matrix_normal_mode;
     void Quick(Matrix* right,Matrix* result);
     void packMatrix(int n, float *A, float *B, float *C,int BLOCKSIZE);
     void open_do(Matrix* right,Matrix* result);
@@ -64,10 +64,11 @@ public:
     friend std::ostream &operator<<(std::ostream &output, const Matrix& m);
     void random();
     void clear();
-    void set(int col,int row,float element);
+    void set(int col,int row,float element);//set the element
     //set your mode
     void setMode(int semode);
     inline float Getelement(int col,int row);
+    
 
 
 };

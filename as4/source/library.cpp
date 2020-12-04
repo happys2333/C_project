@@ -110,11 +110,16 @@ void Matrix::set(int row,int col,float element){
     matrix[(col-1)+(row-1)*this->col] = element;
 }
 void Matrix::clear() {
-    ~Matrix();
+    if(usethis==1){
+        delete [] matrix;
+    }else{
+        usethis--;
+    }
     col = 0;
     row = 0;
     mode = 0;
 }
+
 
 Matrix& Matrix::operator+(Matrix &right){
     if(this->row!=right.row||this->col!=right.col){
@@ -461,7 +466,6 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
                 packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
 
 }
-
 void Matrix::random() {
     if(row ==0|col ==0){Error(0);
         return;
@@ -488,7 +492,18 @@ Matrix &Matrix::operator=(Matrix &right) {
     this->col = right.col;
     return *this;
 }
+#include <iomanip>
 using namespace std;
 ostream &operator<<(ostream &output, const Matrix &m) {
-
+    int r = m.row;
+    int c = m.col;
+    float *matrix = m.matrix;
+    output.flags(ios::left);
+    for (int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            output<<setw(10)<<matrix[j+i*c];
+        }
+        output<<endl;
+    }
+    return output;
 }

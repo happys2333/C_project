@@ -456,8 +456,22 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
 
 }
 
-__unused void Matrix::random() {
-
+void Matrix::random() {
+    if(row ==0|col ==0){Error(0);
+        return;
+    }
+    int len = row*col;
+    if(len>=10000){
+        for(int i=0;i<len;i++){
+            srand((unsigned)time(NULL));
+            matrix[i] = rand();
+        }
+        return;
+    }
+    srand((unsigned)time(NULL));
+    for(int i=0;i<len;i++){
+        matrix[i] = rand();
+    }
 }
 Matrix &Matrix::operator=(Matrix &right) {
     this->~Matrix();
@@ -468,7 +482,18 @@ Matrix &Matrix::operator=(Matrix &right) {
     this->col = right.col;
     return *this;
 }
+#include <iomanip>
 using namespace std;
 ostream &operator<<(ostream &output, const Matrix &m) {
-
+    int r = m.row;
+    int c = m.col;
+    float *matrix = m.matrix;
+    output.flags(ios::left);
+    for (int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            output<<setw(10)<<matrix[j+i*c];
+        }
+        output<<endl;
+    }
+    return output;
 }
