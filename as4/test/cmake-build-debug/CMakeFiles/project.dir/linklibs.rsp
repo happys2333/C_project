@@ -1,1 +1,1 @@
-  -LG:/C_project/project/test/lib  -Wl,-Bstatic -lmatrix -Wl,-Bdynamic -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -LG:/C_project/as4/test/lib  -Wl,-Bstatic -lmatrix -Wl,-Bdynamic -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

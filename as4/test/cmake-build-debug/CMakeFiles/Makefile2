@@ -54,19 +54,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = E:\developtool\apps\CLion\ch-0\203.5981.166\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = E:\developtool\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = E:\developtool\apps\CLion\ch-0\203.5981.166\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = G:\C_project\project\test
+CMAKE_SOURCE_DIR = G:\C_project\as4\test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = G:\C_project\project\test\cmake-build-debug
+CMAKE_BINARY_DIR = G:\C_project\as4\test\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/project.dir/clean
 CMakeFiles/project.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\project\test\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=G:\C_project\as4\test\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target project"
 .PHONY : CMakeFiles/project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\test\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\as4\test\cmake-build-debug\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/project.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\project\test\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start G:\C_project\as4\test\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/project.dir/rule
 
 # Convenience name for target.

@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-G:/C_project/project/test/lib/library.h
+G:/C_project/as4/test/lib/library.h
+climits
+-
+string
+-
 
-G:/C_project/project/test/main.cpp
+G:/C_project/as4/test/main.cpp
 iostream
 -
-ctime
--
 lib/library.h
-G:/C_project/project/test/lib/library.h
+G:/C_project/as4/test/lib/library.h
 

@@ -2,6 +2,8 @@
 #include <iostream>
 #include <omp.h>
 #include <arm_neon.h>
+#include <time.h>
+using namespace std;
 #define A(i,j) a[ (j)*lda + (i) ]
 #define B(i,j) b[ (j)*ldb + (i) ]
 #define C(i,j) c[ (j)*ldc + (i) ]
@@ -26,6 +28,9 @@ inline void Error(int type){
         case -1:
             printf("Not support, this time will use mode 0 to do!\n");
             break;
+        case 0:
+            printf("Empty matrix\n");
+            break;
         default:
             printf("unknown error!\n");
     }
@@ -42,6 +47,7 @@ void Matrix::setMode(int semode) {
 }
 void Matrix::build(float *array) {
     this->matrix = array;
+    if(usethis==0){usethis++;}
 }
 void Matrix::N_do(Matrix* right, Matrix* result) {
     /*
@@ -64,6 +70,7 @@ void Matrix::N_do(Matrix* right, Matrix* result) {
 }
 
 Matrix& Matrix::operator=(float *array) {
+    if(usethis==0){usethis++;}
     if(col==0||row==0){
         printf("please set the col and row number before you want to do something! ");
         return *new Matrix();
@@ -85,8 +92,12 @@ Matrix::Matrix(int row, int col,float num) {
 Matrix::Matrix() {
     row = 0;
     col = 0;
+    usethis = 0;
 }
 Matrix::~Matrix() {
+    if (usethis == 0){
+        return;
+    }
     if(usethis==1){
         delete [] matrix;
     }else{

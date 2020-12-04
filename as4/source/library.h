@@ -14,6 +14,12 @@
  * */
 #include <string>
 inline void  Error(int type);
+const int Matrix_normal_mode=0;
+const int Matrix_quick_mode =1;
+const int Matrix_openMP_mode =2;
+const int Matrix_open_mode =3;
+const int Matrix_openSuper_mode =4;
+const int Matrix_super_MP_mode =5;
 class Matrix{
 private:
     int col;//column of the matrix
@@ -38,12 +44,6 @@ private:
     void Super_quick(Matrix* right,Matrix* result);
     void N_do(Matrix* right,Matrix* result);
 public:
-    const int Matrix_normal_mode=0;
-    const int Matrix_quick_mode =1;
-    const int Matrix_openMP_mode =2;
-    const int Matrix_open_mode =3;
-    const int Matrix_openSuper_mode =4;
-    const int Matrix_super_MP_mode =5;
     //create an empty matrix
     Matrix();
     //Create an matrix with col and row and matrix itself

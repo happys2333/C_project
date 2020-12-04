@@ -1,6 +1,0 @@
-"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -G "CodeBlocks - Unix Makefiles" /Users/happys/Desktop/project/AI/C_project/as4/source
--- Your are using ARM, we will use the neon
-OPENMP FOUND
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/happys/Desktop/project/AI/C_project/as4/source

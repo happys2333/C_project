@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/happys/Desktop/project/AI/C_project/as4/source/ARM_library.cpp" "/Users/happys/Desktop/project/AI/C_project/as4/source/CMakeFiles/matrix.dir/ARM_library.cpp.o"
+  "G:/C_project/as4/source/library.cpp" "G:/C_project/as4/source/CMakeFiles/matrix.dir/library.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

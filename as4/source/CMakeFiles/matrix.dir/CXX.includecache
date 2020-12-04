@@ -6,19 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/happys/Desktop/project/AI/C_project/as4/source/ARM_library.cpp
+G:/C_project/as4/source/library.cpp
 library.h
-/Users/happys/Desktop/project/AI/C_project/as4/source/library.h
+G:/C_project/as4/source/library.h
 iostream
 -
 omp.h
 -
-arm_neon.h
+immintrin.h
+-
+time.h
 -
 iomanip
 -
 
-/Users/happys/Desktop/project/AI/C_project/as4/source/library.h
+G:/C_project/as4/source/library.h
 climits
 -
 string

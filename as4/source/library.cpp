@@ -47,6 +47,7 @@ void Matrix::setMode(int semode) {
 }
 void Matrix::build(float *array) {
     this->matrix = array;
+    if(usethis==0){usethis++;}
 }
 void Matrix::N_do(Matrix* right, Matrix* result) {
     /*
@@ -69,6 +70,7 @@ void Matrix::N_do(Matrix* right, Matrix* result) {
 }
 
 Matrix& Matrix::operator=(float *array) {
+    if(usethis==0){usethis++;}
     if(col==0||row==0){
         printf("please set the col and row number before you want to do something! ");
         return *new Matrix();
@@ -90,8 +92,12 @@ Matrix::Matrix(int row, int col,float num) {
 Matrix::Matrix() {
     row = 0;
     col = 0;
+    usethis = 0;
 }
 Matrix::~Matrix() {
+    if (usethis == 0){
+        return;
+    }
     if(usethis==1){
         delete [] matrix;
     }else{
