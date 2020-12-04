@@ -1,6 +1,0 @@
-E:\developtool\apps\CLion\ch-0\203.5981.166\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" G:\C_project\as4\source
--- Your are using Windows
-OPENMP FOUND
--- Configuring done
--- Generating done
--- Build files have been written to: G:/C_project/as4/source

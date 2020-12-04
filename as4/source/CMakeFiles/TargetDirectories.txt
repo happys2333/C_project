@@ -1,3 +1,0 @@
-G:/C_project/as4/source/CMakeFiles/matrix.dir
-G:/C_project/as4/source/CMakeFiles/edit_cache.dir
-G:/C_project/as4/source/CMakeFiles/rebuild_cache.dir
