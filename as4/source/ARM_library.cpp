@@ -1,7 +1,7 @@
 #include "library.h"
 #include <iostream>
 #include <omp.h>
-#include <arm_neon.h>
+
 #include <time.h>
 using namespace std;
 #define A(i,j) a[ (j)*lda + (i) ]
@@ -335,7 +335,7 @@ void Matrix::Open_super( Matrix *right, Matrix *result) {
         }
     }
 }
-
+#include <arm_neon.h>
 void Matrix::Super_quick(Matrix *right, Matrix *result) {
 
     int i;
