@@ -13,7 +13,7 @@
 @implementation Button
 
 - (IBAction)back:(UIBarButtonItem *)sender {
-   
+        [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

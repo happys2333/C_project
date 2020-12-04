@@ -24,7 +24,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="欢迎使用你科小助手"/>
                                         <connections>
-                                            <segue destination="Lvl-Ny-aeA" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="bRz-3e-Fye"/>
+                                            <segue destination="TBk-X8-9lN" kind="modal" id="l6O-fS-PaR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-ph-8yt">
@@ -98,6 +98,21 @@
             </objects>
             <point key="canvasLocation" x="135.38461538461539" y="78.199052132701425"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9LT-lK-xR0">
+            <objects>
+                <viewController id="TBk-X8-9lN" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uqs-cF-pW2">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cfh-LU-68O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sei-mm-71y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821" y="281"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="CZs-3R-AUx">
             <objects>
@@ -163,14 +178,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTM-nE-q31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285" y="-562"/>
-        </scene>
-        <!--au-->
-        <scene sceneID="6tl-sz-vUH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="au" id="Lvl-Ny-aeA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZK2-Yd-Zrv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1058" y="105"/>
         </scene>
     </scenes>
     <resources>

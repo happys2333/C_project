@@ -16,6 +16,7 @@
 		19A73B31256D68E80084196D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A73B30256D68E80084196D /* main.m */; };
 		19AB5D1925779998000C0AB5 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB5D1825779998000C0AB5 /* UIViewController+BackButtonHandler.m */; };
 		19AB5D2225779C18000C0AB5 /* button.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AB5D2125779C18000C0AB5 /* button.m */; };
+		19EAEF5E2579D6E000AD97DF /* au.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EAEF5C2579D6E000AD97DF /* au.storyboard */; };
 		19F2D2EE25737C5E00028539 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F2D2ED25737C5E00028539 /* img.png */; };
 		B70387321659C6EB6BC14C67 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = B703887BB384A138EB58139F /* file.mm */; };
 		B7038D24A96A3B46F493211E /* lib.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7038C94E0FE16D7DF8C524C /* lib.mm */; };
@@ -57,6 +58,7 @@
 		19AB5D1825779998000C0AB5 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		19AB5D1D257799A7000C0AB5 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		19AB5D2125779C18000C0AB5 /* button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = button.m; sourceTree = "<group>"; };
+		19EAEF5D2579D6E000AD97DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SUSTech_Helper/Base.lproj/au.storyboard; sourceTree = "<group>"; };
 		19F2D2ED25737C5E00028539 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img.png; path = Assets.xcassets/scan.imageset/img.png; sourceTree = "<group>"; };
 		B703887BB384A138EB58139F /* file.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
 		B70388A46597DF360943CE7C /* GPA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPA.h; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		19A73B12256D68E70084196D = {
 			isa = PBXGroup;
 			children = (
+				19EAEF5C2579D6E000AD97DF /* au.storyboard */,
 				19A73B1D256D68E70084196D /* SUSTech_Helper */,
 				1970C625256DF98100EBD51F /* SUSTech_Helper.app */,
 				1970C626256DF98100EBD51F /* SUSTech_HelperTests.xctest */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A73B2E256D68E80084196D /* LaunchScreen.storyboard in Resources */,
+				19EAEF5E2579D6E000AD97DF /* au.storyboard in Resources */,
 				19A73B2B256D68E80084196D /* Assets.xcassets in Resources */,
 				19A73B29256D68E70084196D /* Main.storyboard in Resources */,
 				19F2D2EE25737C5E00028539 /* img.png in Resources */,
@@ -310,6 +314,14 @@
 				19A73B2D256D68E80084196D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19EAEF5C2579D6E000AD97DF /* au.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19EAEF5D2579D6E000AD97DF /* Base */,
+			);
+			name = au.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
