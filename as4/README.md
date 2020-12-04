@@ -9,7 +9,8 @@
 - [新增代码](#新代码)      	
 - [运行效果](#运行效果)     	
 ## 相关修正
-在上一版的程序中，我们发现在macOS中存在编译失败的问题，这是因为macOS中系统会默认使用Clang编译器而不使用Gcc编译器，所以我们对cmake中添加了一部分代码进行阻止在macOS下进行编译.
+##### macOS防止误用cmake
+在上一版的程序中，我们发现在macOS中存在编译失败的问题，这是因为macOS中系统会默认使用Clang编译器而不使用Gcc编译器，所以我们对cmake中添加了一部分代码进行阻止在macOS下进行编译.				
 <font color =green>由于部分用户使用的Cmake版本并不是原来使用的3.17版本，所以本版程序中，我们降低了cmake版本限制，您现在只需要3.15版本以上即可运行</font>
 ```cmake
 IF (WIN32)
@@ -21,11 +22,30 @@ ELSEIF (UNIX)
 	MESSAGE(STATUS "Your are using Linux")
 ENDIF ()
 ```
-这样避免因不知晓而导致的误操作。				
-对于macOS用户在使用的时候仍然建议以gcc命令行模式下运行，clang对于指令集的支持我们不再进行教授修改方法。
+这样避免因不知晓而导致的误操作。					
+对于macOS用户在使用的时候仍然建议以gcc命令行模式下运行，clang对于指令集的支持我们不再进行教授修改方法。		
+##### ARM指令集支持
 增加了对ARM的支持，cmake中添加了arm专属对设置，当您在arm上编译的时候我们会采用arm上专用的指令集neno来进行加速。
 由于arm平台下的限制，我们在适配arm的时候只能通过一次四位整数的思想进行运行，采用了arm上的自带指令集以及现在arm对openmp都有所适配所以我们没有让openmp失效
-
+通过使用NENO指令集加速了我们在arm平台下的运行，同时保证了arm下的使用正常，在树莓派的ubuntu系统中我们进行编译后正常的图片如下
+![arm](img/IMG_0039.jpeg)				
+##### 代码安全
+对于上一版中，我们发现一些容易出现的问题，比如说在调用析构函数的时候会误删除另一个使用的情况，所以我们仿照OPENCV使用了一个值来表示当前的使用量
+```cpp
+int usethis = 1;
+```
+然后对等号重载
+```cpp
+Matrix &Matrix::operator=(Matrix &right) {
+    this->~Matrix();
+    right.usethis++;
+    this->matrix = right.matrix;
+    this->usethis = right.usethis;
+    this->row = right.row;
+    this->col = right.col;
+    return *this;
+}
+```
 ## 新功能
 - 随机矩阵			
 为了方便您测试某些数据的需要，我们增加了随机矩阵的支持，您现在只需要使用random函数即可对您的当前矩阵随机生成一个符合要求的矩阵

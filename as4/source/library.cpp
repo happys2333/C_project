@@ -110,7 +110,7 @@ void Matrix::set(int row,int col,float element){
     matrix[(col-1)+(row-1)*this->col] = element;
 }
 void Matrix::clear() {
-    delete [] matrix;
+    ~Matrix();
     col = 0;
     row = 0;
     mode = 0;
@@ -490,5 +490,5 @@ Matrix &Matrix::operator=(Matrix &right) {
 }
 using namespace std;
 ostream &operator<<(ostream &output, const Matrix &m) {
-    
+
 }

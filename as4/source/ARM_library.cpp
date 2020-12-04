@@ -87,7 +87,11 @@ Matrix::Matrix() {
     col = 0;
 }
 Matrix::~Matrix() {
-    delete [] matrix;
+    if(usethis==1){
+        delete [] matrix;
+    }else{
+        usethis--;
+    }
 }
 void Matrix::print() {
     for (int i=0;i<row;i++){
@@ -101,7 +105,11 @@ void Matrix::set(int row,int col,float element){
     matrix[(col-1)+(row-1)*this->col] = element;
 }
 void Matrix::clear() {
-    delete [] matrix;
+    if(usethis==1){
+        delete [] matrix;
+    }else{
+        usethis--;
+    }
     col = 0;
     row = 0;
     mode = 0;
