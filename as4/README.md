@@ -2,7 +2,7 @@
 ## 概况
 ![license](https://img.shields.io/badge/license-MIT-yellowgreen)![language](https://img.shields.io/badge/language-C%2B%2B-brightgreen)![author](https://img.shields.io/badge/author-happys-blue)![support](https://img.shields.io/badge/Supported--platform-windows%20macOS%20Linux%20ARM--Linux-red)
 ##### 测试平台：`Linux macOS Windows ARM(ubuntu)`
-#### 上次作业中，我们实现了对矩阵乘法的优化与实现，我们也对一部分的运算符进行了重载，但是我们认为应该本着<font color=red>用户至上</font>的思想进一步让我们的代码进行完备，所以我们制作了本版
+#### 上次代码中，我们实现了对矩阵乘法的优化与实现，我们也对一部分的运算符进行了重载（[上次代码](https://github.com/happys2333/C_project/tree/master/project)），但是我们认为应该本着<font color=red>用户至上</font>的思想进一步让我们的代码进行完备，所以我们制作了本版
 #### 目录
 - [相关修正](#相关修正)       	
 - [新功能](#新功能)      	
@@ -48,6 +48,8 @@ Matrix &Matrix::operator=(Matrix &right) {
 }
 ```
 ## 新功能
+- 运算符的重载			
+对大部分运算符进行了重载，保证常用的运算符可以正常使用			
 - 随机矩阵			
 为了方便您测试某些数据的需要，我们增加了随机矩阵的支持，您现在只需要使用random函数即可对您的当前矩阵随机生成一个符合要求的矩阵			
 - 填充矩阵			
@@ -141,12 +143,81 @@ void Matrix::random() {
     }
 }
 ```
+对于cout的重载
+```cpp
+#include <iomanip>
+using namespace std;
+ostream &operator<<(ostream &output, const Matrix &m) {
+    int r = m.row;
+    int c = m.col;
+    float *matrix = m.matrix;
+    output.flags(ios::left);
+    for (int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            output<<setw(10)<<matrix[j+i*c];
+        }
+        output<<endl;
+    }
+    return output;
+}
+```
+重塑矩阵
+```cpp
+void Matrix::reshape(int newcol, int newrow) {
+    if(newcol*newrow==col*row){
+        col = newcol;
+        row = newrow;
+    }
+    else{
+        printf("wrong column and row number!\n");
+    }
+}
+```
+矩阵取相反数
+```cpp
+Matrix &operator-(const Matrix &m) {
+    int r = m.row,c=m.col;
+    Matrix *re = new Matrix(r,c);
+    for (int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            re->matrix[i*c+j] = (-m.matrix[i*c+j]);
+        }
+    }
+    return *re;
+}
+```
 ## 运行效果
 本版程序并没有对速度进行优化，所以我们测试数据均以方便展示为主，采取一个简单的10x10矩阵进行测试,其中实现均用随机矩阵。
 首先程序均在macOS上完成编译运行测试,对于macOS重复实验我们不再列出主要列出在其他平台的测试情况。
+测试代码如下：
+```cpp
+#include <iostream>
+using namespace std;
+#include "lib/library.h"
+#pragma GCC optimize(3)
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
+int main() {
+    int n=10;
+    Matrix m1 (n,n,2),m2(n,n,4);
+    Matrix re;
 
-
-
+    m1.setMode(Matrix_super_MP_mode);
+    re =m1 * m2;
+    cout<<re;
+    re = m2-m1;
+    cout<<re;
+    re = m1+m2;
+    cout<<re;
+    re = (-m1);
+    cout<<re;
+}
+```
+Windows & macOS
+![img](img/Windows.png)
+Linux（x86）
+![img](img/Linux.png)
+Linux（ARM）
+![img](img/arm.jpeg)
 ## 安装方法
 ##### release版本
 对于不能或难以编译本程序的库的用户，我们提供了release版本，针对大部分情况下我们的已经编译好的版本都是您的选择之一，但是我们绝对不推荐，因为程序使用了更加底层的设计，所以无论何时在您的电脑上重新编译再使用是您最好的选择

@@ -8,7 +8,7 @@ int main() {
     Matrix m1 (n,n,2),m2(n,n,4);
     Matrix re;
 
-    m1.setMode(Matrix_normal_mode);
+    m1.setMode(Matrix_super_MP_mode);
     re =m1 * m2;
     cout<<re;
     re = m2-m1;
