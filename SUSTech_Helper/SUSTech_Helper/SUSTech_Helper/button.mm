@@ -7,13 +7,19 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "method.mm"
 @interface Button : UIViewController
-
 @end
 @implementation Button
-
 - (IBAction)back:(UIBarButtonItem *)sender {
+    
         [self dismissModalViewControllerAnimated:YES];
 }
+
+
+
+
+
+
 
 @end

@@ -101,7 +101,7 @@
         <!--Item 2-->
         <scene sceneID="CZs-3R-AUx">
             <objects>
-                <viewController id="2ld-no-uWE" sceneMemberID="viewController">
+                <viewController id="2ld-no-uWE" customClass="Button" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uYm-rD-tkf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -4,8 +4,8 @@
 
 #ifndef SUSTECH_HELPER_GPA_H
 #define SUSTECH_HELPER_GPA_H
-
-
+#import <UIKit/UIKit.h>
+using namespace std;
 class GPA {
 private:
     float gpa=0;
