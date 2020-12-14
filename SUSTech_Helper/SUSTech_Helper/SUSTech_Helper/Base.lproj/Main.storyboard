@@ -63,6 +63,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99562817810000004" green="0.65924984220000005" blue="0.41954076289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="校历（快放假了）"/>
+                                        <connections>
+                                            <action selector="web:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dd4-fV-88m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk3-jO-RCW">
                                         <rect key="frame" x="0.0" y="586" width="340" height="47"/>
@@ -98,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="-1343" y="25"/>
         </scene>
-        <!--Item 2-->
+        <!--总GPA计算-->
         <scene sceneID="CZs-3R-AUx">
             <objects>
                 <viewController id="2ld-no-uWE" customClass="Button" sceneMemberID="viewController">
@@ -123,13 +126,13 @@
                         <viewLayoutGuide key="safeArea" id="P5o-1P-BVX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Q1f-RI-qkH"/>
+                    <tabBarItem key="tabBarItem" title="总GPA计算" id="Q1f-RI-qkH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kS-l6-BD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1193" y="-257"/>
         </scene>
-        <!--Item 1-->
+        <!--单科计算-->
         <scene sceneID="Cj8-jE-sEU">
             <objects>
                 <viewController id="pcN-s1-17F" customClass="Button" sceneMemberID="viewController">
@@ -166,34 +169,8 @@
                                 <rect key="frame" x="16" y="127" width="358" height="483"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0MI-mN-u6M">
-                                        <rect key="frame" x="141" y="40" width="77" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分数                       占比                   约总分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdN-FY-4gq">
-                                        <rect key="frame" x="8" y="8" width="345" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azB-ZV-Q47">
-                                        <rect key="frame" x="216" y="47" width="16" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROt-Nn-O1w">
-                                        <rect key="frame" x="8" y="40" width="77" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXm-Jw-vYX">
-                                        <rect key="frame" x="67" y="173" width="273" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分数                   占比%          约总分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdN-FY-4gq">
+                                        <rect key="frame" x="8" y="8" width="342" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -211,7 +188,14 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-Oq-Mk7">
-                                <rect key="frame" x="54" y="662" width="270" height="35"/>
+                                <rect key="frame" x="38" y="662" width="336" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGy-dR-q8Q">
+                                <rect key="frame" x="156" y="705" width="98" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -221,11 +205,12 @@
                         <viewLayoutGuide key="safeArea" id="Eya-ZR-Dyy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="BNV-fT-qWO"/>
+                    <tabBarItem key="tabBarItem" title="单科计算" id="BNV-fT-qWO"/>
                     <connections>
+                        <outlet property="GPAsigview" destination="Lt2-RL-Dxm" id="eOa-5E-x0N"/>
                         <outlet property="ad" destination="0dc-bk-NDu" id="TW6-Fz-2cy"/>
+                        <outlet property="ranklabel" destination="dGy-dR-q8Q" id="vPX-Jm-rSe"/>
                         <outlet property="sigGPALable" destination="aMw-Oq-Mk7" id="b6Z-ge-Mm5"/>
-                        <outlet property="sorce" destination="zXm-Jw-vYX" id="sG1-0A-6Oz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TZ-dc-cpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

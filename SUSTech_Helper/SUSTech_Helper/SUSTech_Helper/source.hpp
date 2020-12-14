@@ -24,6 +24,7 @@ public:
     GPA(float sorce,int classsorce){
         this->sorce = sorce;
         this->credits = classsorce;
+        
     }
     ~GPA(){
         gpa = 0;
@@ -34,29 +35,21 @@ public:
         return gpa;
     }
 
-    void setGpa(float gpa) {
-        GPA::gpa = gpa;
-    }
-
     int getCredits() const {
         return credits;
     }
-
-    void setCredits(int credits) {
-        GPA::credits = credits;
-    }
-
     float getSorce() const {
         return sorce;
     }
-
-    void setSorce(float sorce) {
-        GPA::sorce = sorce;
-    }
-
-
     GPA& operator=(float g){
         this->gpa = g;
+        return *this;
+    }
+    GPA& operator+(GPA& g){
+        this->credits = this->credits+g.credits;
+        this->gpa += g.gpa;
+        
+        
         return *this;
     }
 
