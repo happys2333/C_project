@@ -6,9 +6,9 @@
 //
 
 #import "ViewController.h"
-
+#import <WebKit/WKWebView.h>
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet WKWebView *WebPage;
 @end
 
 @implementation ViewController
@@ -17,8 +17,7 @@
 }
 - (IBAction)web:(id)sender {
     NSURL *URL = [NSURL URLWithString:@"https://www.sustech.edu.cn/zh/academic-calendar.html"];
-    [[UIApplication sharedApplication]openURL:URL options:@{} completionHandler:^(BOOL success) {
-    }];
+    [_WebPage loadRequest:[NSURLRequest requestWithURL:URL]];
 }
 
 // close and open
