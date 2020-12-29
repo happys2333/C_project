@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libOpenUI.a  CMakeFiles/OpenUI.dir/library.cpp.o CMakeFiles/OpenUI.dir/Top/OpenGame_top.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libOpenUI.a

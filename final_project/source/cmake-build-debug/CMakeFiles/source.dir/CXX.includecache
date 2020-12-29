@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/AI/C_project/final_project/source/library.cpp
+library.h
+/Users/happys/Desktop/project/AI/C_project/final_project/source/library.h
+iostream
+-
+
+/Users/happys/Desktop/project/AI/C_project/final_project/source/library.h
+

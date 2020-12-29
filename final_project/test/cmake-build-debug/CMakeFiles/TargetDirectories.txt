@@ -1,0 +1,3 @@
+/Users/happys/Desktop/project/AI/C_project/final_project/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/happys/Desktop/project/AI/C_project/final_project/test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/happys/Desktop/project/AI/C_project/final_project/test/cmake-build-debug/CMakeFiles/test.dir
