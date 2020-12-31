@@ -4,9 +4,9 @@
 
 #ifndef OPENGUI_OPENGUI_TEXTBOX_H
 #define OPENGUI_OPENGUI_TEXTBOX_H
+#include "GUIroot.h"
 
-
-class CTextBox {
+class CTextBox : UIkit {
 
 };
 

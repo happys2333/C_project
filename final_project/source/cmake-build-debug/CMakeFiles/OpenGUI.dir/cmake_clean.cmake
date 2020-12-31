@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o"
   "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_frame.cpp.o"
   "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.o"
-  "CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o"
   "libOpenGUI.a"
   "libOpenGUI.pdb"
 )

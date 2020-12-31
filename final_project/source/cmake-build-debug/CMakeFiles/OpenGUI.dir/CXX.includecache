@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_frame.cpp
+../Header/OpenGUI_frame.h
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.h
+
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h
+string
+-
+
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.h
+GUIroot.h
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h
+string
+-
+

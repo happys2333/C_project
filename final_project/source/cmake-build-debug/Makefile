@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/happys/Desktop/project/AI/C_project/final_project/sour
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -251,33 +251,6 @@ Frame/OpenGUI_label.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.s
 .PHONY : Frame/OpenGUI_label.cpp.s
 
-Top/OpenGUI.o: Top/OpenGUI.cpp.o
-
-.PHONY : Top/OpenGUI.o
-
-# target to build an object file
-Top/OpenGUI.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o
-.PHONY : Top/OpenGUI.cpp.o
-
-Top/OpenGUI.i: Top/OpenGUI.cpp.i
-
-.PHONY : Top/OpenGUI.i
-
-# target to preprocess a source file
-Top/OpenGUI.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.i
-.PHONY : Top/OpenGUI.cpp.i
-
-Top/OpenGUI.s: Top/OpenGUI.cpp.s
-
-.PHONY : Top/OpenGUI.s
-
-# target to generate assembly for a file
-Top/OpenGUI.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.s
-.PHONY : Top/OpenGUI.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -299,9 +272,6 @@ help:
 	@echo "... Frame/OpenGUI_label.o"
 	@echo "... Frame/OpenGUI_label.i"
 	@echo "... Frame/OpenGUI_label.s"
-	@echo "... Top/OpenGUI.o"
-	@echo "... Top/OpenGUI.i"
-	@echo "... Top/OpenGUI.s"
 .PHONY : help
 
 

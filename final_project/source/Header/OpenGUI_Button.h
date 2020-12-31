@@ -4,9 +4,9 @@
 
 #ifndef OPENGUI_OPENGUI_BUTTON_H
 #define OPENGUI_OPENGUI_BUTTON_H
+#include "GUIroot.h"
 
-
-class CButton {
+class CButton : UIkit{
 
 };
 

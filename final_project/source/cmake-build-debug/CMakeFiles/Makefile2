@@ -55,10 +55,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -94,12 +94,12 @@ clean: CMakeFiles/OpenGUI.dir/clean
 CMakeFiles/OpenGUI.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target OpenGUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target OpenGUI"
 .PHONY : CMakeFiles/OpenGUI.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OpenGUI.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OpenGUI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/OpenGUI.dir/rule

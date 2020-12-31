@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -129,26 +129,12 @@ CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_TextBox.cpp -o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.s
 
-CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o: CMakeFiles/OpenGUI.dir/flags.make
-CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o: ../Top/OpenGUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o -c /Users/happys/Desktop/project/AI/C_project/final_project/source/Top/OpenGUI.cpp
-
-CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/happys/Desktop/project/AI/C_project/final_project/source/Top/OpenGUI.cpp > CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.i
-
-CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/happys/Desktop/project/AI/C_project/final_project/source/Top/OpenGUI.cpp -o CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.s
-
 # Object files for target OpenGUI
 OpenGUI_OBJECTS = \
 "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_frame.cpp.o" \
 "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_Button.cpp.o" \
 "CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.o" \
-"CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o" \
-"CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o"
+"CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o"
 
 # External object files for target OpenGUI
 OpenGUI_EXTERNAL_OBJECTS =
@@ -157,10 +143,9 @@ libOpenGUI.a: CMakeFiles/OpenGUI.dir/Frame/OpenGUI_frame.cpp.o
 libOpenGUI.a: CMakeFiles/OpenGUI.dir/Frame/OpenGUI_Button.cpp.o
 libOpenGUI.a: CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.o
 libOpenGUI.a: CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o
-libOpenGUI.a: CMakeFiles/OpenGUI.dir/Top/OpenGUI.cpp.o
 libOpenGUI.a: CMakeFiles/OpenGUI.dir/build.make
 libOpenGUI.a: CMakeFiles/OpenGUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libOpenGUI.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libOpenGUI.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/OpenGUI.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenGUI.dir/link.txt --verbose=$(VERBOSE)
 
