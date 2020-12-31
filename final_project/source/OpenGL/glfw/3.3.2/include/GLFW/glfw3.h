@@ -3049,7 +3049,7 @@ GLFWAPI void glfwSetWindowSize(GLFWwindow* window, int width, int height);
  *
  *  @ingroup window
  */
-GLFWAPI void glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height);
+GLFWAPI void glfwGetFramebufferSize(GLFWwindow* window, unsigned int *width, unsigned int *height);
 
 /*! @brief Retrieves the size of the frame of the window.
  *

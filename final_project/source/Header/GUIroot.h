@@ -4,11 +4,12 @@
 
 #ifndef OPENGUI_GUIROOT_H
 #define OPENGUI_GUIROOT_H
-
+bool initialGUI = true;
 #include <string>
 class UIkit{
 protected:
     unsigned int x=0,y=0;
+    unsigned int width=0,high=0;
     int id;
     std::string title;
 public:

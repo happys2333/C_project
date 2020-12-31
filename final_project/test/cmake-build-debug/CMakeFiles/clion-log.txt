@@ -1,4 +1,4 @@
-"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/happys/Desktop/project/AI/C_project/final_project/test
+"/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/happys/Desktop/project/AI/C_project/final_project/test
 -- The C compiler identification is AppleClang 12.0.0.12000032
 -- The CXX compiler identification is AppleClang 12.0.0.12000032
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
