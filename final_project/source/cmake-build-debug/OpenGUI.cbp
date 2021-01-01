@@ -44,9 +44,9 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/GLTools"/>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/glfw/3.3.2/include/GLFW"/>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/GLTools"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glfw/3.3.2/include/GLFW"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glew/2.2.0/include/GL"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -68,9 +68,9 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/GLTools"/>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/glfw/3.3.2/include/GLFW"/>
-					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/./OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/GLTools"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glfw/3.3.2/include/GLFW"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glew/2.2.0/include/GL"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -102,6 +102,9 @@
 			<Option target="OpenGUI"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h">
+			<Option target="OpenGUI"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/KeyBorad.h">
 			<Option target="OpenGUI"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_Button.h">

@@ -1,5 +1,6 @@
 "/Users/happys/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/happys/Desktop/project/AI/C_project/final_project/source
 -- Welcome to use OpenGUI, your system is MacOS!
+-- Your path is /Users/happys/Desktop/project/AI/C_project/final_project/source
 -- Finding the OpenGL...
 -- Found the OpenGL
 -- Linking to the library...

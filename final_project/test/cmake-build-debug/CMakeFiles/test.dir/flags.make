@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/GLTools -I/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glfw/3.3.2/include/GLFW -I/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glew/2.2.0/include/GL -I/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/Header 
 

@@ -99,6 +99,10 @@ test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/main.cpp.o
 test: CMakeFiles/test.dir/build.make
+test: ../OpenGUI/OpenGL/glew/2.2.0/lib/libGLEW.2.2.dylib
+test: ../OpenGUI/OpenGL/glfw/3.3.2/lib/libglfw.3.dylib
+test: ../OpenGUI/OpenGL/GLTools/libgltools.dylib
+test: ../OpenGUI/lib/libOpenGUI.a
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
