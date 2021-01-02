@@ -4,14 +4,17 @@
 
 #ifndef OPENUI_OPENGUI_FRAME_H
 #define OPENUI_OPENGUI_FRAME_H
+
 #include "GUIroot.h"
+
+#include "Func.h"
+#include <iostream>
 #include <string>
-#include <glfw3.h>
 #include "OpenGUI_Button.h"
 #include "OpenGUI_TextBox.h"
 #include "OpenGUI_label.h"
-#include "Func.h"
-#include <iostream>
+
+extern bool OPENGUI_Init;
 class CFrame : UIkit {
 private:
     int ExitButton = -10;
@@ -33,14 +36,16 @@ private:
         fprintf(stderr, "error: %s\n", des);
     }
     void initial(){
-        glfwSetErrorCallback(errorCallback);
-        if (!glfwInit()) {
-            exit(EXIT_FAILURE);
+        if(OPENGUI_Init){
+            glfwSetErrorCallback(errorCallback);
+            if (!glfwInit()) {
+                exit(EXIT_FAILURE);
+            }
+            glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 使用core-profile这行代码很重要
+            glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
         }
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 使用core-profile这行代码很重要
-        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     }
     void mainloop();
     bool isPress(int button);
@@ -59,7 +64,6 @@ private:
     void SmallScreen();
     void Setsize(unsigned int width,unsigned int height);
     void ReNewWindow();
-    bool stay();
     void setBackgroundColor(int red,int green,int blue,int alpha);
 };
 

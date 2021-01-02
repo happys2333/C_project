@@ -12,7 +12,7 @@ private:
         return true;
     }
     bool remove(int i){
-        std::vector<T>::iterator It;
+        typename std::vector<T>::iterator It;
         It = list.begin();
         for(int j=0;j<list.size();j++,It++)
         {
@@ -24,7 +24,7 @@ private:
         return false;
     }
     bool remove(T t){
-        std::vector<T>::iterator it;
+        typename std::vector<T>::iterator it;
         it= find(list.begin(),list.end(),t);
         if(it!=list.end()){
             list.erase(it);
@@ -42,6 +42,10 @@ private:
             list[i]=t;
             return true;
         }
+    }
+    void free(){
+        list.clear();
+        std::vector<T>().swap(list);
     }
 };
 

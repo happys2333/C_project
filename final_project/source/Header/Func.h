@@ -43,6 +43,10 @@ private:
             return true;
         }
     }
+    void free(){
+        list.clear();
+        std::vector<T>().swap(list);
+    }
 };
 
 

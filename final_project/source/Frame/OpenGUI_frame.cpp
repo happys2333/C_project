@@ -1,14 +1,10 @@
-//
-// Created by 开心 on 2020/12/24.
-//
 
 
 
-#include <glew.h>
-#include <glfw3.h>
+
 #include "../Header/OpenGUI_frame.h"
-#include <utility>
 
+bool OPENGUI_Init = true;
 
 void CFrame::visualize() {
     window = glfwCreateWindow(width,height,title.c_str(), nullptr,nullptr);
@@ -28,6 +24,7 @@ void CFrame::visualize() {
     glViewport(x,y,width,height);
     glClearColor(Background_red,Background_green,Background_blue,Background_alpha);//清空屏幕
     glClear(GL_COLOR_BUFFER_BIT);// 清空缓冲区
+    glfwSwapBuffers(window);
     if(ExitButton!=-10){
         glfwSetKeyCallback(window,keyCallback);
     }
@@ -52,14 +49,23 @@ void CFrame::SmallScreen() {
 }
 
 CFrame::~CFrame() {
-    glfwTerminate();
+    ExitButton = 0;
+    Background_red = 0;
+    Background_green = 0;
+    Background_blue = 0;
+    Background_alpha = 0;
+    CButtonlist.free();
+    CTextBoxlist.free();
+    CLabellist.free();
+    bool Big = false;
+    GLFWwindow *window;
 }
 
 void CFrame::mainloop() {
     while (!glfwWindowShouldClose(window)){
         glfwPollEvents();
-        glfwSwapBuffers(window);
     }
+    glfwTerminate();
 }
 
 void CFrame::Setsize(unsigned int width, unsigned int height) {
@@ -88,7 +94,7 @@ void CFrame::addTextBox(const CTextBox &t) {
 }
 
 bool CFrame::isPress(int button) {
-
+    return glfwGetKey(window,button)==GLFW_PRESS;
 }
 
 void CFrame::PressTodo(int button) {
@@ -111,6 +117,8 @@ void CFrame::setBackgroundColor(int red, int green, int blue, int alpha) {
     this->Background_blue = blue;
     this->Background_alpha = alpha;
 }
+
+
 
 
 

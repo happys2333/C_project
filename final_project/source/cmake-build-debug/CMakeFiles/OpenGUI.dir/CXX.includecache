@@ -75,20 +75,16 @@ GL/glu.h
 -
 
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_frame.cpp
-glew.h
--
-glfw3.h
--
 ../Header/OpenGUI_frame.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.h
-utility
--
 
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Func.h
 vector
 -
 
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h
+glew.h
+-
 glfw3.h
 -
 iostream
@@ -109,9 +105,11 @@ GUIroot.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.h
 GUIroot.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h
-string
+Func.h
+/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Func.h
+iostream
 -
-glfw3.h
+string
 -
 OpenGUI_Button.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_Button.h
@@ -119,10 +117,6 @@ OpenGUI_TextBox.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_TextBox.h
 OpenGUI_label.h
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_label.h
-Func.h
-/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Func.h
-iostream
--
 
 /Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_label.h
 GUIroot.h

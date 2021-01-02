@@ -4,27 +4,25 @@
 
 #ifndef OPENGUI_GUIROOT_H
 #define OPENGUI_GUIROOT_H
+
 #include <glew.h>
 #include <glfw3.h>
+
 #include <iostream>
 #include <string>
-void InitGUI(){
-    glfwInit();
-    if (glewInit() != GLEW_OK)
-    {
-        std::cout << "Failed to initialize GLEW" << std::endl;
-        return;
-    }
-    std::cout<<glGetString(GL_VERSION);
-    glewExperimental = GL_TRUE;
-}
+#include <ctime>
+
 class UIkit{
 protected:
     unsigned int x=0,y=0;
-    unsigned int width=0,high=0;
+    unsigned int width=0,height=0;
     int id;
     std::string title;
 public:
+    UIkit(){
+        srand((unsigned)time(NULL));
+        id = rand();
+    }
     int getX() const {
         return x;
     }
@@ -55,6 +53,31 @@ public:
     void setTitle(const std::string &title) {
         UIkit::title = title;
     }
+
+};
+class Text{
+protected:
+    std::string words;
+    int size;
+public:
+    Text(std::string words = "", int size = 0){
+        this->words = words;
+        this->size = size;
+    }
+    const std::string &getWords() const {
+        return words;
+    }
+    void setWords(const std::string &words) {
+        Text::words = words;
+    }
+    int getSize() const {
+        return size;
+    }
+    void setSize(int size) {
+        Text::size = size;
+    }
+
+
 
 };
 #endif //OPENGUI_GUIROOT_H

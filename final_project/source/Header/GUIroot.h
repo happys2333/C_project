@@ -4,7 +4,10 @@
 
 #ifndef OPENGUI_GUIROOT_H
 #define OPENGUI_GUIROOT_H
+
+#include <glew.h>
 #include <glfw3.h>
+
 #include <iostream>
 #include <string>
 #include <ctime>
