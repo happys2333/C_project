@@ -94,9 +94,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/Shader.h">
-			<Option target="test"/>
-		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/main.cpp">
 			<Option target="test"/>
 		</Unit>
