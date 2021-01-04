@@ -1,170 +1,166 @@
-//#define GLFW_INCLUDE_GLCOREARB      // 会是glfw包含OpenGL/gl3.h
-//#include "glfw3.h"
+//#include <glfw3.h>
+//#include <cstring>
 //
-//#include <iostream>
-//using std::cout;
-//using std::endl;
-//#define BUFFER_OFFSET(a) ((void*)(a))
+//#include <ft2build.h>
+//#include FT_FREETYPE_H
+//unsigned char* img;
+//#include<opencv2/opencv.hpp>
+//GLint width=480 ,height=320;
+//void readImage(const char* filename){
 //
-//static void errorCallback(int error, const char *des) {
-//    fprintf(stderr, "error: %s\n", des);
 //}
+//void DrawImage(const char *filename)
+//{
 //
-//static void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
-//    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-//        glfwSetWindowShouldClose(window, GLFW_TRUE);
-//    }
 //}
+//void drawTriangle()
+//{
+//    int Cwidth=100,Cheight=100;
+//    int x=50,y=60;
+//    float picx,picy;
+//    float pirx = (float)2/(float)width,piry = (float)2/(float)height;
+//    picx = (-1+(float)x*pirx);
+//    picy = (1-(float)y*piry);
+//    float addx=(float)Cwidth*pirx,addy=(float)Cheight*piry;
+//    glClearColor (1, 1, 1, 1);
+//    glClear (GL_COLOR_BUFFER_BIT);
+//    glBegin(GL_QUADS);
 //
-//enum { Triangle, NumVao };
+//    glColor3f(0, 0.0, 0.0);    // Red
+//    glVertex3f(picx, picy, 0.0);
 //
-//enum { VertexBuffer, NumBuffer };
+//    glColor3f(0.0, 0, 0.0);    // Green
+//    glVertex3f(picx+addx, picy, 0.0);
 //
-//enum { vPosition = 0, };
+//    glColor3f(0.0, 0.0, 0);    // Blue
+//    glVertex3f(picx+addx, picy+addy, 0.0);
 //
-//GLuint vaos[NumVao];
-//GLuint buffers[NumBuffer];
-//const GLuint kNumVertices = 6;
-//
-//GLuint makeShader(GLuint sType, const GLchar *shaderStr) {
-//    GLuint shader = glCreateShader(sType);
-//    glShaderSource(shader, 1, &shaderStr, NULL);
-//    glCompileShader(shader);
-//    GLint compiled;
-//    glGetShaderiv( shader, GL_COMPILE_STATUS, &compiled );
-//    if ( !compiled ) {
-//        GLsizei len;
-//        glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &len );
-//
-//        GLchar* log = new GLchar[len];
-//        glGetShaderInfoLog( shader, len, &len, log );
-//        std::cerr << "shader compilation failed: " << log << std::endl;
-//        delete [] log;
-//        return 0;
-//    }
-//    return shader;
+//    glColor3f(0, 0.0, 0);    // Blue
+//    glVertex3f(picx, picy+addy, 0.0);
+//    glEnd();
 //}
+//int main(void)
+//{
+//    GLFWwindow* window;
 //
-//void init() {
-//    glGenVertexArrays(NumVao, vaos);
-//    glBindVertexArray(vaos[Triangle]);
+//    /* Initialize the library */
+//    if (!glfwInit())
+//        return -1;
 //
-//    GLfloat  vertices[kNumVertices][2] = {
-//            { -0.90, -0.90 },  // Triangle 1
-//            {  0.85, -0.90 },
-//            { -0.90,  0.85 },
-//            {  0.90, -0.85 },  // Triangle 2
-//            {  0.90,  0.90 },
-//            { -0.85,  0.90 }
-//    };
-//
-//    glGenBuffers(NumBuffer, buffers);
-//    glBindBuffer(GL_ARRAY_BUFFER, buffers[VertexBuffer]);
-//    glBufferData(GL_ARRAY_BUFFER, sizeof vertices, vertices, GL_STATIC_DRAW);
-//
-//    const GLchar *vertShaderStr =                 \
-//        "#version 410 core                        \n "
-//        "layout( location = 0) in vec4 vPosition; \n "
-//        "                                         \n "
-//        "void main()                              \n "
-//        "{                                        \n "
-//        "    gl_Position = vPosition;             \n "
-//        "}                                        \n "
-//    ;
-//    GLuint vertShader = makeShader(GL_VERTEX_SHADER, vertShaderStr);
-//
-//    const GLchar *fragShaderStr =              \
-//        "#version 410 core                     \n"
-//        "out vec4 fColor;                      \n"
-//        "void main()                           \n"
-//        "{                                     \n"
-//        "   fColor = vec4(0.5, 0.4, 0.8, 1.0); \n"
-//        " }                                    \n"
-//    ;
-//    GLuint fragShader = makeShader(GL_FRAGMENT_SHADER, fragShaderStr);
-//
-//    GLuint program = glCreateProgram();
-//    glAttachShader(program, vertShader);
-//    glAttachShader(program, fragShader);
-//    glLinkProgram(program);
-//    GLint linked;
-//    glGetProgramiv( program, GL_LINK_STATUS, &linked );
-//    if ( !linked ) {
-//        std::cout << "link error" << std::endl;
-//        GLsizei len;
-//        glGetProgramiv( program, GL_INFO_LOG_LENGTH, &len );
-//
-//        GLchar* log = new GLchar[len+1];
-//        glGetProgramInfoLog( program, len, &len, log );
-//        std::cerr << "Shader linking failed: " << log << std::endl;
-//        delete [] log;
-//    }
-//
-//    glUseProgram(program);
-//
-//    glVertexAttribPointer(vPosition, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
-//    glEnableVertexAttribArray(vPosition);
-//}
-//
-//void display() {
-//    glClear(GL_COLOR_BUFFER_BIT);
-//    glBindVertexArray(vaos[Triangle]);
-//    glDrawArrays(GL_TRIANGLES, 0, kNumVertices);
-//    glFlush();
-//}
-//
-//int main() {
-//
-//    GLFWwindow *window;
-//
-//    glfwSetErrorCallback(errorCallback);
-//    if (!glfwInit()) {
-//        exit(EXIT_FAILURE);
-//    }
-//
-//    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 使用core-profile这行代码很重要
-//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-//
-//    window = glfwCreateWindow(640, 480, "red", nullptr, nullptr);
-//    if (!window) {
+//    /* Create a windowed mode window and its OpenGL context */
+//    window = glfwCreateWindow(480, 320, "Hello World", NULL, NULL);
+//    if (!window)
+//    {
 //        glfwTerminate();
-//        exit(EXIT_FAILURE);
+//        return -1;
 //    }
 //
-//    glfwSetKeyCallback(window, keyCallback);
-//
+//    /* Make the window's context current */
 //    glfwMakeContextCurrent(window);
+//unsigned char * c = new unsigned char[200*300*4];
+//for(int i = 0; i < 200;i++){
+//    for(int j=0;j<300*4;j+=4){
+//        c[j+i*30]=1;
+//        c[j+i*30+1]=0;
+//        c[j+i*30+2]=0;
+//        c[j+i*30+3]=0;
 //
-//    cout << "OpenGL Vendor:"    << glGetString(GL_VENDOR)                   << endl;
-//    cout << "OpenGL Renderer: " << glGetString(GL_RENDERER)                 << endl;
-//    cout << "OpenGL Version: "  << glGetString(GL_VERSION)                  << endl;
-//    cout << "GLSL Version:"     << glGetString(GL_SHADING_LANGUAGE_VERSION) << endl;
-//
-//    glfwSwapInterval(1);
-//
-//    init();
-//
-//    while (!glfwWindowShouldClose(window)) {
-//        display();
+//    }
+//}
+//    /* Loop until the user closes the window */
+//    while (!glfwWindowShouldClose(window))
+//    {
+//        /*your draw*/
+////         drawPoint();
+////         drawLint();
+////         drawTriangle();
+//        glClearColor (1, 1, 1, 1);
+//        glClear (GL_COLOR_BUFFER_BIT);
+//        glRasterPos2i(100,100);
+//        glDrawPixels(200,300, GL_RGBA, GL_UNSIGNED_BYTE, c);
+//        /* Swap front and back buffers */
 //        glfwSwapBuffers(window);
+//        /* Poll for and process events */
 //        glfwPollEvents();
 //    }
 //
-//    glfwDestroyWindow(window);
 //    glfwTerminate();
-//
 //    return 0;
 //}
-#include <OpenGUI_frame.h>
-
-int main(){
-    CFrame frame(800,600,100,100,"OpenGUI_frame");
-    frame.setBackgroundColor(1,1,1,1);
-    frame.visualize();
-    CFrame frame2(200,200,0,0,"second_frame");
-    frame2.visualize();
-
-    std::cout<<"hi";
+#include <OpenGUI_label.hpp>
+#include <OpenGUI_frame.hpp>
+#include <OpenGUI_Button.hpp>
+#include <KeyBorad.hpp>
+bool Test1(){
+    using namespace std;
+    cout << "Testing1"<<endl;
+    return true;
 }
+bool Test2(){
+    using namespace std;
+    cout << "Testing2"<<endl;
+    return true;
+}
+int main(){
+    CFrame test(1024,800,0,0,"Happys");
+    test.setExitButton(KEY_ESCAPE);
+    test.setBackgroundColor(1,1,0,0);
+    CButton button("hi",50,30,800,200);
+    CButton button2("hi",50,30,800,300);
+    button.setBackgroundColor(0,0,0,0);
+    button.SetButtonFun(Test1);
+    button2.setBackgroundColor(1,1,1,1);
+    button2.SetButtonFun(Test2);
+    test.addButton(button);
+    test.addButton(button2);
+    CLabel label("../img/test.bmp",true,100,0,640,640);
+    test.addLable(label);
+    test.visualize();
+}
+
+//#include <glew.h>
+////#include <glfw3.h>
+////#include <iostream>
+////
+////void curse_poscallback(GLFWwindow *window, double x, double y)
+////{
+////    std::cout << "(pos:" << x << "," << y << ")" << std::endl;
+////}
+////
+////int main()
+////{
+////    glfwInit();
+////    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 使用core-profile这行代码很重要
+////    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+////    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+////    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+////    GLFWwindow *window = glfwCreateWindow(480, 270, "LearningOpenGL", nullptr, nullptr);
+////    if (!window)
+////    {
+////        std::cout << "Filed to create window." << std::endl;
+////        glfwTerminate();
+////        return -1;
+////    }
+////    glfwMakeContextCurrent(window);
+////    // 使用回调函数
+////    glfwSetCursorPosCallback(window, curse_poscallback);
+////    glewExperimental = GL_TRUE;
+////    if (glewInit() != GLEW_OK)
+////    {
+////        std::cout << "Failed to create glew." << std::endl;
+////        return -1;
+////    }
+////    int width=480, height=270;
+////
+////    glViewport(0, 0, width, height);
+////    while (!glfwWindowShouldClose(window))
+////    {
+////        glfwPollEvents();
+////        glClearColor(1.4f, 0.5f, 0.3f, 1.0f);
+////        glClear(GL_COLOR_BUFFER_BIT);
+////        glfwSwapBuffers(window);
+////    }
+////    glfwTerminate();
+////    return 0;
+////}
+// Std. Includes

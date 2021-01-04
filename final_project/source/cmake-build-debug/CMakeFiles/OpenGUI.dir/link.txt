@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libOpenGUI.a  CMakeFiles/OpenGUI.dir/Frame/OpenGUI_frame.cpp.o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_Button.cpp.o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ar qc libOpenGUI.a  CMakeFiles/OpenGUI.dir/Frame/OpenGUI_frame.cpp.o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_Button.cpp.o CMakeFiles/OpenGUI.dir/Frame/OpenGUI_label.cpp.o
 /Library/Developer/CommandLineTools/usr/bin/ranlib libOpenGUI.a

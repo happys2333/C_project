@@ -5,7 +5,7 @@
 		<Option title="OpenGUI"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug"/>
@@ -47,6 +47,8 @@
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/GLTools"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glfw/3.3.2/include/GLFW"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/FreeText/include/freetype2"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.0_5/include/opencv4"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -71,6 +73,8 @@
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/GLTools"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glfw/3.3.2/include/GLFW"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/source/OpenGL/FreeText/include/freetype2"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.0_5/include/opencv4"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -89,38 +93,47 @@
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_Button.cpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_TextBox.cpp">
-			<Option target="OpenGUI"/>
-		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_frame.cpp">
 			<Option target="OpenGUI"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Frame/OpenGUI_label.cpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Func.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Color.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/Func.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/KeyBorad.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/GUIroot.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_Button.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/KeyBorad.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_TextBox.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_Button.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_frame.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
-		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_label.h">
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/Header/OpenGUI_label.hpp">
 			<Option target="OpenGUI"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/source/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

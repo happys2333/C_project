@@ -170,33 +170,6 @@ Frame/OpenGUI_Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Frame/OpenGUI_Button.cpp.s
 .PHONY : Frame/OpenGUI_Button.cpp.s
 
-Frame/OpenGUI_TextBox.o: Frame/OpenGUI_TextBox.cpp.o
-
-.PHONY : Frame/OpenGUI_TextBox.o
-
-# target to build an object file
-Frame/OpenGUI_TextBox.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.o
-.PHONY : Frame/OpenGUI_TextBox.cpp.o
-
-Frame/OpenGUI_TextBox.i: Frame/OpenGUI_TextBox.cpp.i
-
-.PHONY : Frame/OpenGUI_TextBox.i
-
-# target to preprocess a source file
-Frame/OpenGUI_TextBox.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.i
-.PHONY : Frame/OpenGUI_TextBox.cpp.i
-
-Frame/OpenGUI_TextBox.s: Frame/OpenGUI_TextBox.cpp.s
-
-.PHONY : Frame/OpenGUI_TextBox.s
-
-# target to generate assembly for a file
-Frame/OpenGUI_TextBox.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/Frame/OpenGUI_TextBox.cpp.s
-.PHONY : Frame/OpenGUI_TextBox.cpp.s
-
 Frame/OpenGUI_frame.o: Frame/OpenGUI_frame.cpp.o
 
 .PHONY : Frame/OpenGUI_frame.o
@@ -263,9 +236,6 @@ help:
 	@echo "... Frame/OpenGUI_Button.o"
 	@echo "... Frame/OpenGUI_Button.i"
 	@echo "... Frame/OpenGUI_Button.s"
-	@echo "... Frame/OpenGUI_TextBox.o"
-	@echo "... Frame/OpenGUI_TextBox.i"
-	@echo "... Frame/OpenGUI_TextBox.s"
 	@echo "... Frame/OpenGUI_frame.o"
 	@echo "... Frame/OpenGUI_frame.i"
 	@echo "... Frame/OpenGUI_frame.s"

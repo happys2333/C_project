@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../OpenGUI/Header/Func.h
+../OpenGUI/Header/Func.hpp
 vector
 -
 
-../OpenGUI/Header/GUIroot.h
-glew.h
--
+../OpenGUI/Header/GUIroot.hpp
 glfw3.h
 -
 iostream
@@ -22,57 +20,31 @@ string
 ctime
 -
 
-../OpenGUI/Header/OpenGUI_Button.h
-GUIroot.h
-../OpenGUI/Header/GUIroot.h
+../OpenGUI/Header/KeyBorad.hpp
 
-../OpenGUI/Header/OpenGUI_TextBox.h
-GUIroot.h
-../OpenGUI/Header/GUIroot.h
+../OpenGUI/Header/OpenGUI_Button.hpp
+GUIroot.hpp
+../OpenGUI/Header/GUIroot.hpp
 
-../OpenGUI/Header/OpenGUI_frame.h
-GUIroot.h
-../OpenGUI/Header/GUIroot.h
-Func.h
-../OpenGUI/Header/Func.h
+../OpenGUI/Header/OpenGUI_frame.hpp
+GUIroot.hpp
+../OpenGUI/Header/GUIroot.hpp
+Func.hpp
+../OpenGUI/Header/Func.hpp
 iostream
 -
 string
 -
-OpenGUI_Button.h
-../OpenGUI/Header/OpenGUI_Button.h
-OpenGUI_TextBox.h
-../OpenGUI/Header/OpenGUI_TextBox.h
-OpenGUI_label.h
-../OpenGUI/Header/OpenGUI_label.h
+OpenGUI_Button.hpp
+../OpenGUI/Header/OpenGUI_Button.hpp
+OpenGUI_label.hpp
+../OpenGUI/Header/OpenGUI_label.hpp
 
-../OpenGUI/Header/OpenGUI_label.h
-GUIroot.h
-../OpenGUI/Header/GUIroot.h
-
-../OpenGUI/OpenGL/glew/2.2.0/include/GL/glew.h
-cstddef
--
-cstdint
--
-stddef.h
--
-stdint.h
--
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-Availability.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
+../OpenGUI/Header/OpenGUI_label.hpp
+GUIroot.hpp
+../OpenGUI/Header/GUIroot.hpp
+Func.hpp
+../OpenGUI/Header/Func.hpp
 
 ../OpenGUI/OpenGL/glfw/3.3.2/include/GLFW/glfw3.h
 stddef.h
@@ -119,6 +91,12 @@ GL/glu.h
 -
 
 /Users/happys/Desktop/project/AI/C_project/final_project/test/main.cpp
-OpenGUI_frame.h
+OpenGUI_label.hpp
+-
+OpenGUI_frame.hpp
+-
+OpenGUI_Button.hpp
+-
+KeyBorad.hpp
 -
 

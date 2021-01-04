@@ -94,12 +94,12 @@ clean: CMakeFiles/OpenGUI.dir/clean
 CMakeFiles/OpenGUI.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGUI.dir/build.make CMakeFiles/OpenGUI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target OpenGUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target OpenGUI"
 .PHONY : CMakeFiles/OpenGUI.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OpenGUI.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OpenGUI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/happys/Desktop/project/AI/C_project/final_project/source/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/OpenGUI.dir/rule

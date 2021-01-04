@@ -5,7 +5,7 @@
 		<Option title="test"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\glm\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/happys/Desktop/project/AI/C_project/final_project/test/cmake-build-debug"/>
@@ -45,9 +45,12 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/GLTools"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glm/0.9.9.8/include/glm"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glfw/3.3.2/include/GLFW"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/FreeText/include/freetype2"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/Header"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.0_5/include/opencv4"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -70,9 +73,12 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/GLTools"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glm/0.9.9.8/include/glm"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glfw/3.3.2/include/GLFW"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/OpenGL/glew/2.2.0/include/GL"/>
+					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/FreeText/include/freetype2"/>
 					<Add directory="/Users/happys/Desktop/project/AI/C_project/final_project/test/OpenGUI/Header"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.0_5/include/opencv4"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -88,11 +94,32 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/Shader.h">
+			<Option target="test"/>
+		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/main.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/glm/GLMConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/glm/GLMConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/happys/Desktop/project/AI/C_project/final_project/test/../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
