@@ -27,6 +27,7 @@ void CLabel::Draw(float preX,float preY) {
     if(img){
         DrawImage( preX, preY);
     }else{
+        return;
         DrawString( preX, preY);
     }
 }
@@ -35,7 +36,7 @@ void CLabel::Draw(float preX,float preY) {
 void CLabel::loadImg(const char *filename) {
     using namespace cv;
     Mat img = imread(filename);
-    transpose(img, img);
+//    transpose(img, img);
 //    flip(img,img,1);
     int maxH = img.rows;
     int max_width = img.cols;
@@ -51,9 +52,9 @@ void CLabel::loadImg(const char *filename) {
             if(j>=max_width){
                 continue;
             }
-            _pixel[i*width+j].R = (float)img.at<Vec3b>(j,i)[2]/(float)255;
-            _pixel[i*width+j].G = (float)img.at<Vec3b>(j,i)[1]/(float)255;
-            _pixel[i*width+j].B = (float)img.at<Vec3b>(j,i)[0]/(float)255;
+            _pixel[i*width+j].R = (float)img.at<Vec3b>(i,j)[2]/(float)255;
+            _pixel[i*width+j].G = (float)img.at<Vec3b>(i,j)[1]/(float)255;
+            _pixel[i*width+j].B = (float)img.at<Vec3b>(i,j)[0]/(float)255;
         }
     }
     img.release();
