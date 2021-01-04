@@ -75,10 +75,26 @@ CLabel::CLabel(std::string str, bool img, unsigned int x, unsigned int y, unsign
         }
     }
 }
+#include <ft2build.h>
+#include FT_FREETYPE_H
 void CLabel::DrawChar(char c){
+    switch(c){
 
+    }
 }
 void CLabel::DrawString(float preX,float preY) {
+    FT_Library	library;
+    FT_Face		face;
+    FT_Error	error;
+    FT_UInt		charIdx;
+    error = FT_Init_FreeType(&library);
+    error = FT_New_Face(library, "/System/Library/Fonts/STHeiti Light.ttc", 0, &face);
+
+
+    if(error){
+        printf("error in creating font\n");
+        exit(1);
+    }
 
 
 }

@@ -15,7 +15,14 @@ void CFrame::visualize() {
         glfwTerminate();
         exit(1);
     }
-    window = glfwCreateWindow(width,height,title.c_str(), nullptr,nullptr);
+    int monitorCount;
+    GLFWmonitor** pMonitor = Big ? glfwGetMonitors(&monitorCount) : nullptr;
+    if(Big){
+        window = glfwCreateWindow(width,height,title.c_str(), pMonitor[0],nullptr);
+    }
+    else{
+        window = glfwCreateWindow(width,height,title.c_str(), nullptr,nullptr);
+    }
 
     if(window==nullptr){
         std::cout<<"Error: Failed to create an Window"<<std::endl;
