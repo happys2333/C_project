@@ -2,9 +2,5 @@ cmake-build-debug\
 .idea
 
 .DS_Store
-.omc/project-memory.json
-.omc/state/hud-stdin-cache.json
-.omc/state/sessions/2bb61786-136e-416f-8bf6-b5baeaf1cddc/hud-state.json
-.omc/state/sessions/fcdfe328-94cb-4eca-b0cf-8e4060cffa7b/hud-state.json
-.DS_Store
-.DS_Store
+.omc/
+.claude/
