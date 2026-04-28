@@ -8,11 +8,10 @@
 
 
 
-class CButton : UIkit{
+class CButton : public UIkit{
 private:
     typedef bool (*ButtonFun) ();
-    ButtonFun fun;
-    bool need = true;
+    ButtonFun fun = nullptr;
 public:
     ~CButton();
     CButton(std::string title="Button",unsigned width=100,unsigned int height=50,unsigned int x=0,unsigned int y=0);
@@ -23,15 +22,9 @@ public:
         fun=f;
     }
     void DoButtonFun(){
-        if(need){
-            need=false;
-            if(!(*fun)()){
-                exit(1);
-            }
+        if(fun) {
+            fun();
         }
-       else{
-           need = true;
-       }
     }
     int getHeight(){
         return height;

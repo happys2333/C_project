@@ -13,24 +13,26 @@
 #include "OpenGUI_Button.hpp"
 #include "OpenGUI_label.hpp"
 
-extern bool OPENGUI_Init;
-class CFrame : UIkit {
+class CFrame : public UIkit {
 private:
     GLint ExitButton = -10;
     LinkedLists<CButton> CButtonlist;
     LinkedLists<CLabel> CLabellist;
     bool Big = false;
-    GLFWwindow *window;
-    float preX,preY;
+    GLFWwindow *window = nullptr;
+    float preX, preY;
+    int mouseX = 0, mouseY = 0;
+    bool prevMousePressed = false;
     void mainloop();
     bool isPress(int button);
     void getPre();
+    static void cursorPosCallback(GLFWwindow* window, double x, double y);
 public:
     ~CFrame();
     void DrawButton(CButton b);
     void setExitButton(int button);
-    explicit CFrame(GLint weight=800,GLint height=600,GLint x=0,GLint y=0,std::string title="OpenGUI_frame");
-    void addLable(const CLabel &l);
+    explicit CFrame(GLint width=800,GLint height=600,GLint x=0,GLint y=0,std::string title="OpenGUI_frame");
+    void addLabel(const CLabel &l);
     void addButton(const CButton &b);
     void visualize();
     void BigScreen();

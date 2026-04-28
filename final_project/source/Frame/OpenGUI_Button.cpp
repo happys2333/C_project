@@ -24,7 +24,7 @@ CButton::CButton(std::string title, unsigned int width, unsigned int height, uns
 
 bool CButton::isClick(int MouseX,int MouseY) {
     if(MouseX>=x&&MouseX<=x+width){
-        if(MouseY<=y&&MouseY>=y-height){
+        if(MouseY>=y&&MouseY<=y+height){
             return true;
         }
     }

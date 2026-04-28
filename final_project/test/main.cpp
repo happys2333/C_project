@@ -11,7 +11,7 @@ bool Test1(){
     return true;
 }
 bool Test2(){
-    test.addLable(label2);
+    test.addLabel(label2);
     return true;
 }
 int main(){
@@ -27,7 +27,7 @@ int main(){
     test.addButton(button);
     test.addButton(button2);
     CLabel label("../img/test.bmp",true,100,0,640,640);
-    test.addLable(label);
+    test.addLabel(label);
     test.visualize();
 }
 

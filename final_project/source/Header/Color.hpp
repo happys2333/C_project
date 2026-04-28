@@ -6,13 +6,13 @@
 #define OPENGUI_COLOR_HPP
 #define  Black 0,0,0,1
 #define Red 1,0,0,1
-#define Yellow 1,1,0,0
+#define Yellow 1,1,0,1
 #define Green 0,1,0,1
-#define LightBlue 0,1,1,0
-#define Pink 1,0,1,0
-#define DarkGreen 0.1,0.3,0,0
-#define DeepBlue 0.1,0.3,0.5,0
-#define DeepGreen 0.1,0.5,0.2,0
-#define Blue 0,0,1,0
+#define LightBlue 0,1,1,1
+#define Pink 1,0,1,1
+#define DarkGreen 0.1,0.3,0,1
+#define DeepBlue 0.1,0.3,0.5,1
+#define DeepGreen 0.1,0.5,0.2,1
+#define Blue 0,0,1,1
 #define White 1,1,1,1
 #endif //OPENGUI_COLOR_HPP

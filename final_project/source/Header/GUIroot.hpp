@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <string>
-#include <ctime>
+#include <atomic>
 
 class UIkit{
 protected:
@@ -22,8 +22,8 @@ protected:
     float Background_alpha = 1;
 public:
     UIkit(){
-        srand((unsigned)time(NULL));
-        id = rand();
+        static std::atomic<int> nextId{0};
+        id = nextId++;
     }
     GLint getX() const {
         return x;
@@ -109,7 +109,7 @@ public:
     GLint getHeight() const {
         return height;
     }
-    ~UIkit() {
+    virtual ~UIkit() {
         x=0,y=0;
         width=0,height=0;
         title = "";

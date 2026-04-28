@@ -6,7 +6,7 @@
 #define OPENGUI_OPENGUI_LABEL_HPP
 #include "GUIroot.hpp"
 #include "Func.hpp"
-class CLabel :UIkit{
+class CLabel : public UIkit{
 private:
 
     class Img{
@@ -23,11 +23,13 @@ private:
     std::string str;
     void DrawImage(float preX,float preY);
     bool img;
-    Img *_pixel;
+    Img *_pixel = nullptr;
     void DrawString(float preX,float preY);
     void DrawChar(char c);
 public:
     CLabel(std::string str= "", bool img = false, unsigned int x=0, unsigned int y=0, unsigned int width=50, unsigned int height=30);
+    CLabel(const CLabel& other);
+    CLabel& operator=(const CLabel& other);
     void Draw(float preX,float preY);
     ~CLabel();
     void free();

@@ -2,6 +2,7 @@
 #ifndef OPENGUI_FUNC_HPP
 #define OPENGUI_FUNC_HPP
 #include <vector>
+#include <stdexcept>
 template <typename T>
 class LinkedLists {
 private:
@@ -12,16 +13,9 @@ private:
         return true;
     }
     bool remove(int i){
-        typename std::vector<T>::iterator It;
-        It = list.begin();
-        for(int j=0;j<list.size();j++,It++)
-        {
-            if(j==i){
-                list.erase(It);
-                return true;
-            }
-        }
-        return false;
+        if (i < 0 || static_cast<size_t>(i) >= list.size()) return false;
+        list.erase(list.begin() + i);
+        return true;
     }
     bool remove(T t){
         typename std::vector<T>::iterator it;
@@ -32,11 +26,13 @@ private:
         }
         return false;
     }
-    T get(int i){
+    T& get(int i){
+        if (i < 0 || static_cast<size_t>(i) >= list.size())
+            throw std::out_of_range("LinkedLists::get index out of range");
         return list[i];
     }
     bool set(int i,T t){
-        if(i>=list.size()){
+        if(i < 0 || static_cast<size_t>(i) >= list.size()){
             return false;
         }else{
             list[i]=t;
@@ -48,7 +44,7 @@ private:
         std::vector<T>().swap(list);
     }
     int size(){
-        return list.size();
+        return static_cast<int>(list.size());
     }
 
 };
