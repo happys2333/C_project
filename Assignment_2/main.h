@@ -21,7 +21,7 @@ using namespace std;
 #define M_sqrt_pi "1.77245385090551602729816748334"
 #define M_pi_2 "1.57079632679489661923132169164"
 //报错板块
-void error(int code,string filename,int line){
+[[noreturn]] void error(int code,string filename,int line){
     switch (code) {
         case -1:
             printf("Error: unsupported system please use other system and try again.\n"
@@ -52,10 +52,9 @@ void error(int code,string filename,int line){
 //快速读取
 inline string readlinecmd(){
     string a;
-    char ch=getchar();
-    while (ch!='\n'){
-        a+=ch;
-        ch=getchar();
+    int ch;
+    while ((ch=getchar()) != '\n' && ch != EOF){
+        a+=(char)ch;
     }
     return a;
 }
@@ -68,6 +67,9 @@ inline string readlinecmd(){
 
 # if defined(TARGET_OS_MAC) && TARGET_OS_MAC
 #   define MAC
+#   ifndef __FILE_NAME__
+#     define __FILE_NAME__ __FILE__
+#   endif
 # endif
 #elif defined(__linux__) || defined(__linux)
 #   define LINUX
@@ -111,7 +113,7 @@ string delblock(string s1){
 class Fuction{
 public:
     string delremin(string s1){
-        if(s1.find('.')==-1){
+        if(s1.find('.')==string::npos){
             return s1;
         }
         int len=s1.length();
@@ -141,16 +143,17 @@ public:
         return str;
     }
     string add(string a1,string a2){
-        int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
-        if(a1.find('.')==-1&&a2.find('.')==-1){
+        int a1len=a1.find('.')!=string::npos?a1.length()-a1.find('.')-1:0;
+        int a2len=a2.find('.')!=string::npos?a2.length()-a2.find('.')-1:0;
+        if(a1.find('.')==string::npos&&a2.find('.')==string::npos){
         }
-        else if (a1.find('.')==-1){
+        else if (a1.find('.')==string::npos){
             a1+='.';
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
         }
-        else if (a2.find('.')==-1){
+        else if (a2.find('.')==string::npos){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
@@ -181,7 +184,7 @@ public:
         a1+="0";a2+="0";
         string result,tempstr;
         int add;
-        for(int i=0;i<=maxlength;i++){
+        for(int i=0;i<maxlength;i++){
             add=a1[i]+a2[i]-'0'-'0';
             if (add>=10){
                 if (a1[i+1]=='.'){
@@ -216,9 +219,12 @@ public:
         return result;
     }
     bool big(string str1,string str2){
-        if(str1.find('.')>str2.find('.')){
+        size_t p1=str1.find('.'), p2=str2.find('.');
+        if(p1==string::npos) p1=str1.length();
+        if(p2==string::npos) p2=str2.length();
+        if(p1>p2){
             return true;
-        }else if(str1.find('.')<str2.find('.')){
+        }else if(p1<p2){
             return false;
         }else{
             int len1 = str1.length(),len2 = str2.length();
@@ -238,16 +244,17 @@ public:
     string minusnum(string a1,string a2){
         bool positve;
         big(a1,a2)?positve=true:positve=false;
-        int a1len=a1.length()-a1.find('.')-1,a2len=a2.length()-a2.find('.')-1;
-        if(a1.find('.')==-1&&a2.find('.')==-1){
+        int a1len=a1.find('.')!=string::npos?a1.length()-a1.find('.')-1:0;
+        int a2len=a2.find('.')!=string::npos?a2.length()-a2.find('.')-1:0;
+        if(a1.find('.')==string::npos&&a2.find('.')==string::npos){
         }
-       else if (a1.find('.')==-1){
+       else if (a1.find('.')==string::npos){
             a1+='.';
             for (int i=0;i<a2len;i++){
                 a1+='0';
             }
         }
-        else if (a2.find('.')==-1){
+        else if (a2.find('.')==string::npos){
             a2+='.';
             for (int i=0;i<a1len;i++){
                 a2+='0';
@@ -318,7 +325,7 @@ public:
     }
     string multiple(string s1,string s2){
         if(s1=="0"||s2=="0"){return "0";}
-        if(s2.find('.')!=-1) {//浮点数乘法进行非精准计算
+        if(s2.find('.')!=string::npos) {//浮点数乘法进行非精准计算
             string temp;
             long double a1=stod(s1),a2=stod(s2);
             temp=doubletostr(a1*a2,10);
@@ -395,18 +402,15 @@ public:
         if(x=="e") return M_e;
         if(x=="pi_2") return M_pi_2;
         error(2,__FILE_NAME__,__LINE__);
+        return "";
     }
     string facts(string x){
         if(x[0]=='-') error(-4,__FILE_NAME__,__LINE__);
         if(x=="1"||x=="0") return "1";
-        string result="0";
-        long long ned=stoll(x);
-        long long finalr=ned;
-        for(long long i=ned-1;i>0;i--){
-            ned = ned * i;
-        }
-        result = to_string(ned);
-        return result;
+        long long n = stoll(x);
+        long long result = 1;
+        for(long long i = 2; i <= n; i++) result *= i;
+        return to_string(result);
     }
     string exps(string x){
         return doubletostr(exp(stold(x)),10);
@@ -467,9 +471,11 @@ public:
         return out.str();
     }
     string changetonormal(string a1){
-        int point=a1.find_first_of('e');
+        size_t point=a1.find_first_of('e');
         string temp;
-        for(int i=point+1;i<a1.length();i++){
+        bool negExp = false;
+        for(size_t i=point+1;i<a1.length();i++){
+            if(a1[i]=='-'){ negExp=true; continue; }
             if(a1[i]<='9'&&a1[i]>='0') temp+=a1[i];
         }
         stringstream ss(a1),s2(temp);
@@ -477,11 +483,12 @@ public:
         long double d;
         ss>>d;
         s2>>len;
-        if (a1.find_first_of('-')!=-1){
-            int len2=a1.find('.');
-            if (len-len2>3){return "wrong";}
+        if (negExp) len = -len;
+        if (a1.find_first_of('-')!=string::npos){
+            size_t len2=a1.find('.');
+            if (len2!=string::npos && (int)len-(int)len2>3){return "wrong";}
         }
-        return doubletostr(d,len);
+        return doubletostr(d,len<0?1:len);
     }
     /*
      * 这里是对命令行的处理，通过递归实现
@@ -501,15 +508,15 @@ public:
     }
     string calcut(string expression){
         //处理科学计数法
-        int in=0;
+        size_t in=0;
         while (true){
             in=expression.find_first_of('e',in);
-            if(in==-1) break;
+            if(in==string::npos) break;
             else{
                 string num="",temp="";
                 int left=0,right=expression.length();
-                for(int i=in-1;i>=0;i--){
-                    if((expression[i]>='0'&&expression[i]<='9'||expression[i]=='.')||expression[i]=='.'){
+                for(int i=(int)in-1;i>=0;i--){
+                    if(((expression[i]>='0'&&expression[i]<='9') || expression[i]=='.')){
                         num = expression[i]+num;
                     }
                     else{
@@ -521,8 +528,8 @@ public:
                     continue;
                 }
                 num+="e";
-                for(int i=in+1;i<expression.length();i++){
-                    if((expression[i]>='0'&&expression[i]<='9'||expression[i]=='.')||expression[i]=='.'){
+                for(int i=(int)in+1;i<(int)expression.length();i++){
+                    if(((expression[i]>='0'&&expression[i]<='9') || expression[i]=='.') || expression[i]=='-'){
                         num += expression[i];
                     }
                     else{
@@ -535,12 +542,12 @@ public:
             }
         }
         //对正负号处理
-        int index=0,index2=0;
+        size_t index=0,index2=0;
         while (true){
             index=expression.find_first_of('+',index);
             index2=expression.find_first_of('-',index2);
-            if(index==-1&&index2==-1) break;
-            if(index!=-1){
+            if(index==string::npos&&index2==string::npos) break;
+            if(index!=string::npos){
                 if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
                 if(index==0){
                     if(expression[index+1]=='-') expression=expression.replace(0,2,"-");
@@ -551,7 +558,7 @@ public:
                     else expression=expression.replace(index,2,"+");
                 }
             }
-            else if(index2!=-1){
+            else if(index2!=string::npos){
                 if(expression[index2+1]!='+'&&expression[index2+1]!='-') { index2++;continue;}
                 if(index2==0){
                     if(expression[index2+1]=='-') expression=expression.replace(0,2,"");
@@ -565,34 +572,34 @@ public:
         }
         string num1,num2,dosomething,tmp;
         while (true){
-            int left=expression.find_first_of('('),right=expression.find_first_of(')');
-            if (left==-1&&right==-1){break;}
-            if (left==-1&&right!=-1){
+            size_t left=expression.find_first_of('('),right=expression.find_first_of(')');
+            if (left==string::npos&&right==string::npos){break;}
+            if (left==string::npos&&right!=string::npos){
                 error(2,__FILE_NAME__,__LINE__);
             }
-            if (right==-1&&left!=-1){
+            if (right==string::npos&&left!=string::npos){
                 error(2,__FILE_NAME__,__LINE__);
-            }int mark=left;
+            }size_t mark=left;
             while (left<right){
-                if (left!=-1){
-                    mark=left;
-                }
-                if(left==-1){ break;}
-                left=expression.find_first_of('(',left+1);
+                size_t next=expression.find_first_of('(',left+1);
+                if (next!=string::npos && next<right){
+                    mark=next;
+                    left=next;
+                } else { break; }
             }
             left=mark;
-            tmp = getSub(expression,left+1,right);
+            tmp = getSub(expression,(int)left+1,(int)right);
             tmp = calcut(tmp);
             expression=expression.replace(left,right-left+1,tmp);
         }
-          int low=0,high=0;
+          size_t low=0,high=0;
             //先遍历第一次实现对所有科学函数的处理转化
             while (true){
                 low=expression.find_first_of('[');
                 high=expression.find_first_of(']');
-                if(high==-1&&low!=-1) error(2,__FILE_NAME__,__LINE__);
-                else if(high!=-1&&low==-1) error(2,__FILE_NAME__,__LINE__);
-                else if(high==-1&&low==-1) break;
+                if(high==string::npos&&low!=string::npos) error(2,__FILE_NAME__,__LINE__);
+                else if(high!=string::npos&&low==string::npos) error(2,__FILE_NAME__,__LINE__);
+                else if(high==string::npos&&low==string::npos) break;
                 else{
                     switch(expression[low-1]){
                         case 'w':{
@@ -699,19 +706,20 @@ public:
             //第二次遍历处理乘除法
             while (true){
                 string num1,num2,result;
-                index=expression.find_first_of('*'),index2=expression.find_first_of('/');
-                if(index==-1&&index2==-1) break;
-                if(index==-1) index=expression.length();
-                if(index2==-1) index2=expression.length();
+                index=expression.find_first_of('*'); index2=expression.find_first_of('/');
+                if(index==string::npos&&index2==string::npos) break;
+                if(index==string::npos) index=expression.length();
+                if(index2==string::npos) index2=expression.length();
                 if(index<index2){
                     int po=0;
-                    for(int i=index-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'||expression[i]=='-'){
+                    for(int i=(int)index-1;i>=0;i--){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'||expression[i]=='-'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
-                    }for (int i=index+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'||expression[i]=='-'){
+                    }
+                    for (int i=(int)index+1;i<(int)expression.length();i++){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'||expression[i]=='-'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -721,14 +729,14 @@ public:
                 }
                 else{
                     int po=0;
-                    for(int i=index2-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    for(int i=(int)index2-1;i>=0;i--){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }
-                    for (int i=index2+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    for (int i=(int)index2+1;i<(int)expression.length();i++){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -742,8 +750,8 @@ public:
         while (true){
             index=expression.find_first_of('+',index);
             index2=expression.find_first_of('-',index2);
-            if(index==-1&&index2==-1) break;
-            if(index!=-1){
+            if(index==string::npos&&index2==string::npos) break;
+            if(index!=string::npos){
                 if(expression[index+1]!='+'&&expression[index+1]!='-') {index++; continue;}
                 if(index==0){
                     if(expression[index+1]=='-') expression=expression.replace(0,2,"-");
@@ -754,7 +762,7 @@ public:
                     else expression=expression.replace(index,2,"+");
                 }
             }
-            else if(index2!=-1){
+            else if(index2!=string::npos){
                 if(expression[index2+1]!='+'&&expression[index2+1]!='-') { index2++;continue;}
                 if(index2==0){
                     if(expression[index2+1]=='-') expression=expression.replace(0,2,"");
@@ -769,19 +777,20 @@ public:
             //第三次遍历处理加减法
             while (true) {
                 string num1,num2,result;
-                index=expression.find_first_of('+'),index2=expression.find_first_of('-');
-                if(index<=0&&index2<=0) break;
-                if(index==-1) index=expression.length();
-                if(index2==-1) index2=expression.length();
+                index=expression.find_first_of('+'); index2=expression.find_first_of('-');
+                if((index==string::npos||index==0)&&(index2==string::npos||index2==0)) break;
+                if(index==string::npos) index=expression.length();
+                if(index2==string::npos) index2=expression.length();
                 if(index<index2){
                     int po=0;
-                    for(int i=index-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    for(int i=(int)index-1;i>=0;i--){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
-                    }for (int i=index+1;i<expression.length();i++){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    }
+                    for (int i=(int)index+1;i<(int)expression.length();i++){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -791,14 +800,14 @@ public:
                 }
                 else{
                     int po=0;
-                    for(int i=index2-1;i>=0;i--){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    for(int i=(int)index2-1;i>=0;i--){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num1 =expression[i]+num1;
                             po=i;
                         } else break;
                     }
-                    for (int i=index2+1;i<expression.length();i++||expression[i]=='.'){
-                        if(expression[i]>='0'&&expression[i]<='9'||expression[i]=='.'){
+                    for (int i=(int)index2+1;i<(int)expression.length();i++){
+                        if((expression[i]>='0'&&expression[i]<='9')||expression[i]=='.'){
                             num2 +=expression[i];
                         } else break;
                     }
@@ -832,8 +841,8 @@ void multiline(){
     while (true){
         expression=readlinecmd();
         expression=delblock(expression);
-        if(expression.find_first_of('=')==-1){break;}
-        string name=expression.substr(0,expression.find_first_of('=')),value=expression.substr(expression.find_first_of('=')+1,expression.length());
+        if(expression.find('=')==string::npos){break;}
+        string name=expression.substr(0,expression.find('=')),value=expression.substr(expression.find('=')+1,expression.length());
         M.name=name;
         M.value=calculator.calcut(value);
         ex.add(M);//传入动态数组
@@ -842,8 +851,11 @@ void multiline(){
     for(int i=0;i<ex.size();i++) {
         string name = ex.get(i).name;
         string value = ex.get(i).value;
-        int left = expression.find_first_of(name);
-        expression=expression.replace(left,name.size(),value);
+        size_t left = expression.find(name);
+        while(left != string::npos) {
+            expression=expression.replace(left,name.size(),value);
+            left=expression.find(name);
+        }
     }
     cout<<calculator.calcut(expression)<<endl;
 }

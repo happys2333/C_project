@@ -12,4 +12,8 @@ int main(){
     cblas_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,10000,10000,10000,1,array,10000,array2,10000,0,re,10000);
     clock_t finish_t = clock();
     printf("time about: %lf s",(double )(finish_t - begin_t )/CLOCKS_PER_SEC);
+    delete[] array;
+    delete[] array2;
+    delete[] re;
+    return 0;
 }

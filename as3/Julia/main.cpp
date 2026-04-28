@@ -7,7 +7,7 @@
  * date : 2020-10-9
  * ****/
 #include <julia.h>
-#include <zconf.h>
+#include <unistd.h>
 #include <string>
 #include "cross_system.h"
 using namespace std;
@@ -25,7 +25,9 @@ void setpathofjulia(){
         path+=buffer;
         free(buffer);
     }
-    path= path.substr(0,path.find("as3/"));
+    size_t pos = path.find("as3/");
+    if (pos == string::npos) { fprintf(stderr, "Cannot find as3/ in path\n"); exit(1); }
+    path= path.substr(0,pos);
     path += "as3/Julia/Juliacore.jl\")";
 }
 int main(int argc, char *argv[])

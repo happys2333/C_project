@@ -20,7 +20,7 @@ using namespace std;
  * CUDA core
  * */
 void tofree(double** needtofree,int len){
-    for (int i=0;i<n;i++){
+    for (int i=0;i<len;i++){
         delete [] needtofree[i];
     }
     delete [] needtofree;
@@ -39,37 +39,42 @@ cudaError_t dodot(double *c, const double *a, const double *b, unsigned int size
 
     // Choose which GPU to run on, change this on a multi-GPU system.
     cudaStatus = cudaSetDevice(0);
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     // Allocate GPU buffers for three vectors (two input, one output)    .
     cudaStatus = cudaMalloc((void**)&dev_c, size * sizeof(double));
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     cudaStatus = cudaMalloc((void**)&dev_a, size * sizeof(double));
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     cudaStatus = cudaMalloc((void**)&dev_b, size * sizeof(double));
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     // Copy input vectors from host memory to GPU buffers.
     cudaStatus = cudaMemcpy(dev_a, a, size * sizeof(double), cudaMemcpyHostToDevice);
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     cudaStatus = cudaMemcpy(dev_b, b, size * sizeof(double), cudaMemcpyHostToDevice);
+    if (cudaStatus != cudaSuccess) goto Error;
 
-    int num = size/960;
-    int remin =size%960;
+    {
+        int num = size/960;
+        int remin = size%960;
 
-    for(int i = 0; i <num;i++){
-        dot<<<1,960>>>(dev_c, dev_a, dev_b,i);
+        for(int i = 0; i <num;i++){
+            dot<<<1,960>>>(dev_c, dev_a, dev_b,i);
+        }
+        if (remin > 0) dot<<<1,remin>>>(dev_c, dev_a, dev_b,num);
     }
-    dot<<<1,remin>>>(dev_c, dev_a, dev_b,num);
     cudaStatus = cudaGetLastError();
+    if (cudaStatus != cudaSuccess) goto Error;
 
     cudaStatus = cudaDeviceSynchronize();
+    if (cudaStatus != cudaSuccess) goto Error;
 
     cudaStatus = cudaMemcpy(c, dev_c, size * sizeof(double), cudaMemcpyDeviceToHost);
-
+    if (cudaStatus != cudaSuccess) goto Error;
 
     Error:
     cudaFree(dev_c);
@@ -99,13 +104,10 @@ void completed(const int n,const int dim,double** vectors){
         out<<sum<<endl;
         all +=(finish-start);
         sum = 0;
-
-        cudaStatus = cudaDeviceReset();
-
     }
+    cudaDeviceReset();
     out.close();
-    free(b);
-    free(a);
+    delete[] c;
 
     cout<<"All done!"<<endl<<"we use about "<<((double) all/CLOCKS_PER_SEC-0.1)<<"seconds to finish"<<endl;
 }
@@ -113,10 +115,13 @@ void commandmode(){
     printf("welcome to use command mode\n");
     int n=0;
     int dim=0;
+    int scanf_result;
     printf("Please enter your vector dimension:");
-    scanf("%d",&dim);
+    scanf_result = scanf("%d",&dim);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     printf("Please enter your number of vectors:");
-    scanf("%d",&n);
+    scanf_result = scanf("%d",&n);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     if(n%2!=0){
         Wronglinenum(n);
         return;
@@ -141,10 +146,13 @@ void fileMode(){
            "Please makesure your file txt type is same as the command mode\n");
     int n=0;
     int dim=0;
+    int scanf_result;
     printf("Please enter your vector dimension:");
-    scanf("%d",&dim);
+    scanf_result = scanf("%d",&dim);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     printf("Please enter your number of vectors:");
-    scanf("%d",&n);
+    scanf_result = scanf("%d",&n);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     if(n%2!=0){
         Wronglinenum(n);
         return;
@@ -160,6 +168,7 @@ void fileMode(){
     }
     if(!in){
         failtoread();
+        return;
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<dim;j++){

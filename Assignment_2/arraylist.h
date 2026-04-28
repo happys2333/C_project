@@ -44,26 +44,31 @@ private:
         delete[] arr;
         arr=tmp;
     }
-    int indexOfRange(Object o, int start, int end) {
-        Object* tmp=clone();
-        int i;
-        if (o == NULL) {
-            for(i = start; i < end; ++i) {
-                if (tmp[i] == NULL) {
-                    return i;
-                }
-            }
-        } else {
-            for(i = start; i < end; ++i) {
-                if (o==tmp[i]) {
-                    return i;
-                }
+    int indexOfRange(const Object& o, int start, int end) {
+        for(int i = start; i < end; ++i) {
+            if (o == arr[i]) {
+                return i;
             }
         }
-
         return -1;
     }
 public :
+    ArrayList() = default;
+    ~ArrayList() { delete[] arr; }
+    ArrayList(const ArrayList& other)
+        : DEFAULT_CAPACITY(other.DEFAULT_CAPACITY), length(other.length),
+          arr(new Object[other.DEFAULT_CAPACITY]) {
+        for (int i = 0; i < length; i++) arr[i] = other.arr[i];
+    }
+    ArrayList& operator=(const ArrayList& other) {
+        if (this == &other) return *this;
+        delete[] arr;
+        DEFAULT_CAPACITY = other.DEFAULT_CAPACITY;
+        length = other.length;
+        arr = new Object[DEFAULT_CAPACITY];
+        for (int i = 0; i < length; i++) arr[i] = other.arr[i];
+        return *this;
+    }
     void replace(Object old, Object newobj) {
         for (int i=0;i<length;i++) {
             if (arr[i] == old) {
@@ -100,7 +105,9 @@ public :
         }
     }
     void trimToSize() {
+        Object* old=arr;
         arr=clone();
+        delete[] old;
         DEFAULT_CAPACITY=length;
     }
     bool contains(Object o) {
@@ -116,7 +123,7 @@ public :
     bool isEmpty() {
         return length == 0;
     }
-    int indexOf(Object o) {
+    int indexOf(const Object& o) {
         return indexOfRange(o, 0, length);
     }
     void add(Object t) {
@@ -155,7 +162,7 @@ public :
                 }
             }
             delete[] arr;
-            DEFAULT_CAPACITY++;
+            DEFAULT_CAPACITY = length+1;
             arr=ob;
         }
         length++;
@@ -171,7 +178,7 @@ public :
         return false;
     }
     void remove(int index){
-        if(index>length||index<0){
+        if(index>=length||index<0){
             string s="IndexOutOfBoundsException Index: ";
             ostringstream oss;
             oss<<index;
@@ -183,16 +190,13 @@ public :
             cout<<s;
             exit(1);
         }
-        else if(index==length){
-            arr[index]=NULL;
-        }
         else{
             for (int i = index; i <length-1 ; ++i) {
                 arr[i]=arr[i+1];
             }
-            arr[length]=NULL;
+            length--;
+            arr[length] = Object{};
         }
-        length--;
     }
     void set(int index, Object o){
         if (index>= length||index<0)

@@ -4,11 +4,12 @@
 #define TableSize	8193
 #define TWO_PI 		6.283185306
 #define HALF_PI 	1.5707963265
-extern const long double sinetable[8193];
-extern long double lookup_sin (long double x);
-extern long double lookup_cos (long double x);
-extern long double lookup_tan (long double x);
-extern long double lookup_cot (long double x);
+inline long double lookup_sin (long double x);
+inline long double lookup_cos (long double x);
+inline long double lookup_tan (long double x);
+inline long double lookup_cot (long double x);
+#ifndef SINETABLE_DEFINED
+#define SINETABLE_DEFINED
 const long double sinetable[8193] = {
         0.000000,0.000767,0.001534,0.002301,0.003068,0.003835,0.004602,0.005369,0.006136,0.006903,0.007670,0.008437,0.009204,0.009971,0.010738,0.011505,0.012272,0.013038,0.013805,0.014572,0.015339,0.016106,0.016873,0.017640,0.018407,0.019174,0.019940,0.020707,0.021474,0.022241,0.023008,0.023774,0.024541,
         0.025308,0.026075,0.026841,0.027608,0.028375,0.029142,0.029908,0.030675,0.031441,0.032208,0.032975,0.033741,0.034508,0.035274,0.036041,0.036807,0.037574,0.038340,0.039107,0.039873,0.040639,0.041406,0.042172,0.042938,0.043705,0.044471,0.045237,0.046003,0.046769,0.047535,0.048302,0.049068,
@@ -267,8 +268,9 @@ const long double sinetable[8193] = {
         -0.048302,-0.047535,-0.046769,-0.046003,-0.045237,-0.044471,-0.043705,-0.042938,-0.042172,-0.041406,-0.040639,-0.039873,-0.039107,-0.038340,-0.037574,-0.036807,-0.036041,-0.035274,-0.034508,-0.033741,-0.032975,-0.032208,-0.031441,-0.030675,-0.029908,-0.029142,-0.028375,-0.027608,-0.026841,-0.026075,-0.025308,-0.024541,
         -0.023774,-0.023008,-0.022241,-0.021474,-0.020707,-0.019940,-0.019174,-0.018407,-0.017640,-0.016873,-0.016106,-0.015339,-0.014572,-0.013805,-0.013038,-0.012272,-0.011505,-0.010738,-0.009971,-0.009204,-0.008437,-0.007670,-0.006903,-0.006136,-0.005369,-0.004602,-0.003835,-0.003068,-0.002301,-0.001534,-0.000767,-0.000000
 };
+#endif
 
-long double lookup_sin(long double x)
+inline long double lookup_sin(long double x)
 {
     while(x > TWO_PI)
     {
@@ -281,24 +283,28 @@ long double lookup_sin(long double x)
 
     if(x<0)
     {
-        return -sinetable[(int)(TableSize*fabs(x)/(TWO_PI))];
+        return -sinetable[((int)(TableSize*fabs(x)/(TWO_PI))) % TableSize];
     }
 
-    return sinetable[(int)(TableSize*x/(TWO_PI))];
+    return sinetable[((int)(TableSize*x/(TWO_PI))) % TableSize];
 
 }
-long double lookup_cos(long double x)
+inline long double lookup_cos(long double x)
 {
     return lookup_sin(HALF_PI - fabs(x));
 }
-long double lookup_tan(long double x)
+inline long double lookup_tan(long double x)
 {
-    return lookup_sin(x)/lookup_cos(x);
+    long double c = lookup_cos(x);
+    if (c < 1e-10 && c > -1e-10) return HUGE_VAL;
+    return lookup_sin(x)/c;
 }
 
-long double lookup_cot(long double x)
+inline long double lookup_cot(long double x)
 {
-    return lookup_cos(x)/lookup_sin(x);
+    long double s = lookup_sin(x);
+    if (s < 1e-10 && s > -1e-10) return HUGE_VAL;
+    return lookup_cos(x)/s;
 }
 
 

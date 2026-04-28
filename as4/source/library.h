@@ -2,12 +2,7 @@
 
 #ifndef SOURCE_LIBRARY_H
 #define SOURCE_LIBRARY_H
-//header your should include!
-/*
- * normally open O3
- * */
-#pragma GCC optimize(3)
-#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
+//header you should include!
 
 /*
  * report error
@@ -50,16 +45,18 @@ public:
     Matrix(int row , int col,float * array);
     // Create an matrix with col and row
     Matrix(int row,int col,float num=0);
+    // Copy constructor
+    Matrix(const Matrix& other);
     // Delect an matrix
     ~Matrix();
     // Some functions to use
     void print();//print this matrix
     void build(float* array);
-    Matrix& operator*(Matrix& right);//multiple
+    Matrix operator*(Matrix& right);//multiple
     Matrix& operator=(float* array);//equal
-    Matrix& operator=(Matrix& right);//equal
-    Matrix& operator+(Matrix& right);//add
-    Matrix& operator-(Matrix& right);//minus
+    Matrix& operator=(const Matrix& right);//equal
+    Matrix operator+(const Matrix& right) const;//add
+    Matrix operator-(const Matrix& right) const;//minus
     float* operator[](int i);//get the line array
     friend std::ostream &operator<<(std::ostream &output, const Matrix& m);
     void random();
@@ -69,7 +66,7 @@ public:
     void setMode(int semode);
     inline float Getelement(int col,int row);
     void reshape(int newcol,int newrow);
-    friend Matrix& operator-(const Matrix& m );
+    friend Matrix operator-(const Matrix& m );
 
 
 };

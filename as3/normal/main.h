@@ -8,12 +8,11 @@
 #include<iostream>
 #include <ctime>
 #include "CodeError.h"
-void free(double** needtofree,int n){
+void free_vectors(double** needtofree,int n){
     for (int i=0;i<n;i++){
         delete []needtofree[i];
     }
     delete []needtofree;
-    needtofree = NULL;
 }
 void completed(int n,int dim,double **vectors){
     ofstream out("result.txt");
@@ -22,7 +21,8 @@ void completed(int n,int dim,double **vectors){
     double result = 0;
     start=clock();
     for(int j=0;j<k;j++){
-        for(int i=dim-1;i>0;i--){
+        result = 0;
+        for(int i=dim-1;i>=0;i--){
             if(i>=8){
                 result += (
                         vectors[2*j][i]*vectors[2*j+1][i]+
@@ -46,10 +46,13 @@ void commandmode(){
     printf("欢迎使用命令行模式，请按照规定使用本程序：");
     int n=0;
     int dim=0;
+    int scanf_result;
     printf("请输入您的向量维度:");
-    scanf("%d",&dim);
+    scanf_result = scanf("%d",&dim);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     printf("请输入您的向量个数:");
-    scanf("%d",&n);
+    scanf_result = scanf("%d",&n);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     if(n%2!=0){
         Wronglinenum(n);
         return;
@@ -67,17 +70,20 @@ void commandmode(){
         }
     }
     completed(n,dim,vectors);
-    free(vectors);
+    free_vectors(vectors,n);
 }
 void fileMode(){
     printf("欢迎使用文件模式\n"
            "请确保您的文件中的内容按照以结尾回车的方法分离每个数据\n");
     int n=0;
     int dim=0;
+    int scanf_result;
     printf("请输入您的向量维度:");
-    scanf("%d",&dim);
+    scanf_result = scanf("%d",&dim);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     printf("请输入您的向量个数:");
-    scanf("%d",&n);
+    scanf_result = scanf("%d",&n);
+    if (scanf_result != 1) { fprintf(stderr, "Invalid input\n"); exit(1); }
     if(n%2!=0){
         Wronglinenum(n);
         return;
@@ -93,6 +99,7 @@ void fileMode(){
     }
     if(!in){
         failtoread();
+        return;
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<dim;j++){
@@ -101,7 +108,7 @@ void fileMode(){
         }
     }
     completed(n,dim,vectors);
-    free(vectors);
+    free_vectors(vectors,n);
 }
 
 

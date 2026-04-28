@@ -3,6 +3,7 @@
 #include <omp.h>
 #include <immintrin.h>
 #include <time.h>
+#include <string.h>
 using namespace std;
 #define A(i,j) a[ (j)*lda + (i) ]
 #define B(i,j) b[ (j)*ldb + (i) ]
@@ -73,7 +74,7 @@ Matrix& Matrix::operator=(float *array) {
     if(usethis==0){usethis++;}
     if(col==0||row==0){
         printf("please set the col and row number before you want to do something! ");
-        return *new Matrix();
+        return *this;
     } else{
         this->matrix = array;
         return *this;
@@ -83,11 +84,16 @@ Matrix& Matrix::operator=(float *array) {
 Matrix::Matrix(int row, int col,float num) {
     this->col = col;
     this->row =row;
-    int len = col*row;
+    size_t len = (size_t)col*row;
     matrix = new float [len];
-    for(int i=0;i<len;i++){
+    for(size_t i=0;i<len;i++){
         matrix[i] =num;
     }
+}
+Matrix::Matrix(const Matrix& other) : row(other.row), col(other.col), mode(other.mode), usethis(1) {
+    size_t len = (size_t)row * col;
+    matrix = new float[len];
+    memcpy(matrix, other.matrix, len * sizeof(float));
 }
 Matrix::Matrix() {
     row = 0;
@@ -118,6 +124,7 @@ void Matrix::set(int row,int col,float element){
 void Matrix::clear() {
     if(usethis==1){
         delete [] matrix;
+        matrix = nullptr;
     }else{
         usethis--;
     }
@@ -127,64 +134,64 @@ void Matrix::clear() {
 }
 
 
-Matrix& Matrix::operator+(Matrix &right){
+Matrix Matrix::operator+(const Matrix &right) const {
     if(this->row!=right.row||this->col!=right.col){
         Error(2);
-        return *new Matrix();
+        return Matrix();
     } else{
-        Matrix *m = new Matrix(this->row, this->col);
+        Matrix m(this->row, this->col);
         for(int r=0;r<this->row;r++){
             for(int c=0;c<this->col;c++){
-                m->set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
+                m.set(c+1,r+1,this->matrix[r*this->col+c]+right.matrix[r*right.col+c]);
             }
         }
-        return *m;
+        return m;
     }
 }
-Matrix& Matrix::operator-(Matrix &right) {
+Matrix Matrix::operator-(const Matrix &right) const {
     if(this->row!=right.row||this->col!=right.col){
         Error(2);
-        return *new Matrix();
+        return Matrix();
     } else{
-        Matrix *m= new Matrix(this->row, this->col);
+        Matrix m(this->row, this->col);
         for(int r=0;r<this->row;r++){
             for(int c=0;c<this->col;c++){
-                m->set(c+1,r+1,this->matrix[r*this->col+c]-right.matrix[r*right.col+c]);
+                m.set(c+1,r+1,this->matrix[r*this->col+c]-right.matrix[r*right.col+c]);
             }
         }
-        return *m;
+        return m;
     }
 }
-Matrix& Matrix::operator*(Matrix &right) {
+Matrix Matrix::operator*(Matrix &right) {
     if (this->col != right.row){
         Error(1);
-        return *new Matrix();
+        return Matrix();
     }
 
-    Matrix *returnm= new Matrix(this->row,right.col);
+    Matrix returnm(this->row,right.col);
     switch (mode) {
         case 0:
-            N_do( &right,returnm);
+            N_do( &right,&returnm);
             break;
         case 1:
-            Quick(&right,returnm);
+            Quick(&right,&returnm);
             break;
         case 2:
-            open_mp(&right,returnm);
+            open_mp(&right,&returnm);
             break;
         case 3:
-            open_do(&right,returnm);
+            open_do(&right,&returnm);
             break;
         case 4:
-            Open_super(&right,returnm);
+            Open_super(&right,&returnm);
             break;
         case 5:
-            Super_quick(&right,returnm);
+            Super_quick(&right,&returnm);
             break;
         default:
             Error(-2);
     }
-    return *returnm;
+    return returnm;
 }
 inline float Matrix::Getelement(int col, int row) {
     return matrix[(col-1)+(row-1)*this->col];
@@ -386,10 +393,9 @@ void Matrix::Super_quick(Matrix *right, Matrix *result) {
             const float* b0;
             float *r0;
             for(int k = 0;k<rrow;++k){
-                __m256 r;
                 __m256 bt;
                 __m256 c0;
-                r = _mm256_loadu_ps(&matrix[i * col + k]);
+                __m256 r = _mm256_set1_ps(matrix[i * col + k]);
                 b0 = &right->matrix[k * right->col];
                 for (int j = 0; j < rcol; ++j) {
                     if (rcol - j >= 8) {
@@ -418,11 +424,9 @@ void Matrix::packMatrix(int n, float *A, float *B, float *C,int BLOCKSIZE) {
             float cij = C[i*n+j];
             for(int k = 0; k < BLOCKSIZE; k++ ){
                 if(BLOCKSIZE - k>=8){
-                    __m256 r;
-                    __m256 bt;
-                    __m256 c0;
-                    r = _mm256_loadu_ps(&A[i*n]+k);
-                    bt = _mm256_loadu_ps(&B[j]+k*n);
+                    __m256 c0 = _mm256_setzero_ps();
+                    __m256 r = _mm256_set1_ps(A[i*n+k]);
+                    __m256 bt = _mm256_loadu_ps(&B[j]+k*n);
                     c0 += r*bt;
                     cij += (c0[1]+c0[2]+c0[0]+c0[3]+c0[4]+c0[5]+c0[6]+c0[7]);
                     k+=7;
@@ -463,39 +467,35 @@ void Matrix::Quick(Matrix *right, Matrix *result) {
             return;
        }
     }
-#pragma omp parallel for num_threads(8)
+#pragma omp parallel for collapse(2) num_threads(8)
     for ( int sj = 0; sj < n; sj += BLOCKSIZE )
-#pragma omp parallel for num_threads(8)
         for ( int si = 0; si < n; si += BLOCKSIZE )
-#pragma omp parallel for num_threads(8)
             for ( int sk = 0; sk < n; sk += BLOCKSIZE )
                 packMatrix(n, A+si*n+sk, B+sk*n+sj,  C+si*n+sj,BLOCKSIZE);
 
 }
 void Matrix::random() {
-    if(row ==0|col ==0){Error(0);
+    if(row ==0||col ==0){Error(0);
         return;
     }
-    int len = row*col;
-    if(len>=10000){
-        for(int i=0;i<len;i++){
-            srand((unsigned)time(NULL));
-            matrix[i] = rand();
-        }
-        return;
-    }
+    size_t len = (size_t)row*col;
     srand((unsigned)time(NULL));
-    for(int i=0;i<len;i++){
-        matrix[i] = rand();
+    for(size_t i=0;i<len;i++){
+        matrix[i] = (float)rand() / RAND_MAX;
     }
 }
-Matrix &Matrix::operator=(Matrix &right) {
-    this->~Matrix();
-    right.usethis++;
-    this->matrix = right.matrix;
-    this->usethis = right.usethis;
-    this->row = right.row;
-    this->col = right.col;
+Matrix &Matrix::operator=(const Matrix &right) {
+    if (this == &right) return *this;
+    if (usethis == 1) {
+        delete[] matrix;
+    }
+    row = right.row;
+    col = right.col;
+    mode = right.mode;
+    size_t len = (size_t)row * col;
+    matrix = new float[len];
+    memcpy(matrix, right.matrix, len * sizeof(float));
+    usethis = 1;
     return *this;
 }
 #include <iomanip>
@@ -522,13 +522,13 @@ void Matrix::reshape(int newcol, int newrow) {
         printf("wrong column and row number!\n");
     }
 }
-Matrix &operator-(const Matrix &m) {
+Matrix operator-(const Matrix &m) {
     int r = m.row,c=m.col;
-    Matrix *re = new Matrix(r,c);
+    Matrix re(r,c);
     for (int i=0;i<r;i++){
         for(int j=0;j<c;j++){
-            re->matrix[i*c+j] = (-m.matrix[i*c+j]);
+            re.matrix[i*c+j] = (-m.matrix[i*c+j]);
         }
     }
-    return *re;
+    return re;
 }
